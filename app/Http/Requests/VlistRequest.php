@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Requests;
+
+use App\Http\Requests\Request;
+
+class VlistRequest extends Request
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'vname' => 'required|min:4',
+            'vservice'=> 'required|min:4',
+            'vfax' => 'required',
+            'vphone'=> 'required',
+            'vaddress'=> 'required',
+            'created_on'=> 'required|date'
+
+        ];
+    }
+}
