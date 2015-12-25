@@ -7,9 +7,10 @@ use App\PO;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tag;
-use DB;
+
 use Carbon\Carbon;
 use Auth;
+
 
 
 class POsController extends Controller
@@ -28,11 +29,15 @@ class POsController extends Controller
     public function index()
     {
       //  $po = PO::latest('updated_at')->published()->get();
-        $po =PO::orderBy('created_at', 'desc')->get();
-
-
+     $po =PO::orderBy('created_at', 'desc')->paginate(10);
+     //  $po = $this->getPaginated();
 
         return view ('pos.index', compact('po' ));
+    }
+
+    public function getPaginated($howMany =10)
+    {
+        return PO::simplePaginate($howMany);
     }
 
     /**
@@ -84,8 +89,8 @@ class POsController extends Controller
     public function update(PO $po , PORequest $request)
     {
         $po->update($request->all());
-        $this->syncTags($po, $request->input('tag_list_po'));
 
+        $this->syncTags($po, $request->input('tag_list_po'));
         return redirect ('pos');
     }
 
@@ -99,6 +104,9 @@ class POsController extends Controller
         $po->tags()->sync($tags);
     }
 
+
+
+
     /** save a new PO
      * @param PORequest $request
      * @return mixed
@@ -107,6 +115,7 @@ class POsController extends Controller
     {
         $po= Auth::user()->po()->create($request->all());    //get authenticated user who saved  PO
         $this->syncTags($po, $request->input('tag_list_po'));
+
         return $po;
     }
 

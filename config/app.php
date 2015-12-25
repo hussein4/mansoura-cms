@@ -203,6 +203,7 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
         'Carbon'    => Carbon\Carbon::class,
 
+
     ],
 
 ];

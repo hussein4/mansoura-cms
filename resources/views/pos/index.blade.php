@@ -26,16 +26,18 @@
 
                                 </tr>
                                 </thead>
-                            @foreach($po as $po)
+                            @foreach($po as $p)
                                     <tbody>
                                     <tr>
 
-                                <td><a href=" {{ action('POsController@show', [$po->id])  }} " > {{ $po->po_no }} </a></td>
-                                        <td>{{ $po->po_subject }}</td>
-                                        <td>{{ $po->po_issued }}</td>
-                                        <td>{{ $po->created_at }}</td>
+                                <td><a href=" {{ action('POsController@show', [$p->id])  }} " > {{ $p->po_no }} </a></td>
+                                        <td>{{ $p->po_subject }}</td>
+                                        <td>{{ $p->po_issued }}</td>
+                                        <td>{{ $p->created_at }}</td>
                                     </tr>
                                     </tbody>
+
+
                             @endforeach
 
                             </table>
@@ -48,4 +50,6 @@
             </div>
         </div>
     </div>
+
+    {!! $po->render() !!}
 @endsection

@@ -23,7 +23,7 @@
     <div class="row">
         <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_issued','', ['class'=> 'form-control','id'=>'datetimepicker1']) !!}
+{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker1']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
