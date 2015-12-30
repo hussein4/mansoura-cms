@@ -11,6 +11,7 @@
 <script src="  //asset('/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
 -->
 <!-- Bootstrap 3.3.2 JS -->
+
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
@@ -66,7 +67,44 @@
         ({
             format:'d-M-Y H:m',
             inline:true
-
         });
     });
+</script>
+
+
+<script type="text/javascript">
+    $('#tag_list').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+
+
+<script>
+    $(document).ready(function(){
+        $('#iCheck').iCheck({
+            checkboxClass: 'icheckbox_minimal-red',
+            radioClass: 'iradio_minimal-red',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+<script>
+$('iCheck').iCheck({
+checkboxClass: 'icheckbox_minimal-red',
+radioClass: 'iradio_minimal-red',
+increaseArea: '20%' // optional
+});
+$('input').iCheck('update');
+$('input ').on('ifClicked ', function(event)
+{
+if ($('input').prop('checked'))
+{
+alert('1');
+} else {
+alert('2');
+});
 </script>

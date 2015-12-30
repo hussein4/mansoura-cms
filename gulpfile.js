@@ -20,14 +20,16 @@ elixir(function(mix) {
     mix.styles ([
         'libs/bootstrap.min.css',
         'libs/select2.min.css',
-        'libs/jquery.datetimepicker.css'
+        'libs/jquery.datetimepicker.css',
+
     ]);
 
     mix.scripts(
         [
             'libs/jquery.js',
             'libs/select2.min.js',
-            'libs/jquery.datetimepicker.full.min.js'
+            'libs/jquery.datetimepicker.full.min.js',
+
         ]);
 
 

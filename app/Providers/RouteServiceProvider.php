@@ -34,6 +34,7 @@ class RouteServiceProvider extends ServiceProvider
             return \App\Vlist::published()->findOrFail($id);
         });
 
+
         $router->bind('mrs',function($id)
         {
             return \App\MR::published()->findOrFail($id);
@@ -46,7 +47,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $router->bind('tags',function($name)
         {
-            return \App\Tag::where('name',$name)->firstOrFail();
+            return \App\Tag::where('name',$name)->findOrFail();
         });
 
     }

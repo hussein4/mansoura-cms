@@ -19,9 +19,11 @@ class Vlist extends Model
         'vcontactperson',
         'vaddress',
         'vcapitallimit',
+        'vremarks',
+        'vgrade',
         'created_on' ,
         'created_at',
-    //    'user_id'   //temporary
+
 
     ];
 

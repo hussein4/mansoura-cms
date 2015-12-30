@@ -25,13 +25,13 @@
                                         <th>Remarks</th>
                                     </tr>
                                     </thead>
-                @foreach($vlist as $vlist)
+                @foreach($vlist as $list)
                                 <tbody>
                                 <tr>
-                                <td><a href="{{ action('VlistController@show', [$vlist->id])  }}">{{ $vlist->vname }}</a></td>
-                                 <td>{{$vlist->vservice}}</td>
-                                 <td>{{$vlist->vgrade}}</td>
-                                 <td>{{$vlist->vremarks}}</td>
+                                <td><a href="{{ action('VlistController@show', [$list->id])  }}">{{ $list->vname }}</a></td>
+                                 <td>{{$list->vservice}}</td>
+                                 <td>{{$list->vgrade}}</td>
+                                 <td>{{$list->vremarks}}</td>
                                  </tr>
                                  </tbody>
                  @endforeach

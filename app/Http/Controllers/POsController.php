@@ -30,15 +30,10 @@ class POsController extends Controller
     {
       //  $po = PO::latest('updated_at')->published()->get();
      $po =PO::orderBy('created_at', 'desc')->paginate(10);
-     //  $po = $this->getPaginated();
-
-        return view ('pos.index', compact('po' ));
+     return view ('pos.index', compact('po' ));
     }
 
-    public function getPaginated($howMany =10)
-    {
-        return PO::simplePaginate($howMany);
-    }
+
 
     /**
      * @param PO $po

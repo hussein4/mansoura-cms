@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
-use App\Vlist;
+use App\Services\AlgoliaSearch;
 use Illuminate\Support\ServiceProvider;
+use App\Contracts\Search;
+use AlgoliaSearch\Client;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +27,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(Search::class ,function(){
+            $config = config('services.algolia');
+
+              return new AlgoliaSearch(
+                  new Client($config['app_id'] ,$config['api_key'])
+              );
+        });
     }
 }

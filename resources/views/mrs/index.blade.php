@@ -24,11 +24,11 @@
 
                                 </tr>
                                 </thead>
-                                @foreach($mr as $mr)
+                                @foreach($mr as $m)
                                     <tbody>
                                     <tr>
-                                        <td><a href="{{ action('MRsController@show', [$mr->id])  }}">{{ $mr->mr_no }}</a></td>
-                                        <td>{{$mr->mr_date}}</td>
+                                        <td><a href="{{ action('MRsController@show', [$m->id])  }}">{{ $m->mr_no }}</a></td>
+                                        <td>{{$m->mr_date}}</td>
 
                                     </tr>
                                     </tbody>

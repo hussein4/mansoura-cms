@@ -12,16 +12,32 @@
 */
 
 use App\Http\Controllers\VlistController;
+use Illuminate\Http\Request;
+use App\Contracts\Search;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (Search $search ,Request $request) {
+
+    $results = $search->index('getstarted_actors')
+               ->get($request->name);
+    return view('welcome', compact('results'));
 });
 
+Route::get('/search', function (Search $search ,Request $request) {
+
+    $results = $search->index('getstarted_actors')
+        ->get($request->name);
+    return view('search', compact('results'));
+});
 
 Route::resource('vlist','VlistController');
+
+
+
 Route::resource('mrs','MRsController');
 Route::resource('pos','POsController');
 
+
+Route::get('evals','EvalController@store');
 
 Route::get('tags/{tags}', 'TagsController@show');
 

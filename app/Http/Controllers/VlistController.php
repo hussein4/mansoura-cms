@@ -36,6 +36,7 @@ class VlistController extends Controller
 
     public function show(Vlist $vlist)
     {
+
         return view('vlist.show', compact ('vlist'));
     }
 
@@ -66,6 +67,7 @@ class VlistController extends Controller
     public function edit(Vlist $vlist)
     {
         $tags = Tag::lists('name','id')->all();
+
         return view('vlist.edit',compact('vlist','tags'));
     }
 
@@ -82,11 +84,14 @@ class VlistController extends Controller
         return redirect ('vlist');
     }
 
+
     /** sync up the list  of tags in database
      * @param Vlist $vlist
      * @param array $tags
      * @internal param VlistRequest $request
-     */
+          */
+
+
     public function syncTags(Vlist $vlist , array $tags)
     {
         $vlist->tags()->sync($tags);
@@ -98,8 +103,15 @@ class VlistController extends Controller
      */
     private function createVlist(VlistRequest $request)
     {
-          $vlist= Auth::user()->vlist()->create($request->all());    //get authenticated user who saved  vlist
+     $average = round(($request->get('quality') + $request->get('delivery')) / 2, 0, PHP_ROUND_HALF_UP);
+        $vlist= Auth::user()->vlist()->vgrade = array_sum($request->average) / 4;
+        $vlist= Auth::user()->vlist()->create($request->all());
+        //  $vlist= Auth::user()->vlist()->create($request->all());    //get authenticated user who saved  vlist
+        //  $vlist->vgrade = array_sum($request->average) / 4;
           $this->syncTags($vlist, $request->input('tag_list'));
         return $vlist;
     }
+
+
+
 }

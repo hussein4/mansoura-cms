@@ -27,7 +27,7 @@ class MRsController extends Controller
     public function index()
     {
        // $mr = MR::latest('updated_at')->published()->get();
-        $mr =MR::orderBy('created_at', 'desc')->get();
+        $mr =MR::orderBy('created_at', 'desc')->paginate(10);
         return view ('mrs.index', compact('mr' ));
     }
 
