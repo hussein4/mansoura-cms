@@ -46,7 +46,7 @@
                             ready: function() {
                                 this.client = algoliasearch("PY8GPW56GA", "6dabc8a9c04052b74d462107700604f6");
 
-                                this.index = this.client.initIndex("getstarted_actors");
+                                this.index = this.client.initIndex("mrs");
 
                                 $('#typeahead')
                                         .typeahead({hint: false}, {

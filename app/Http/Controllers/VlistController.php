@@ -14,36 +14,36 @@ use Auth;
 
 
 
-class VlistController extends Controller
-{
+class VlistController extends Controller {
 
     /**
      * Create a New Vlist instance
      */
 
-   public function __construct()
+    public function __construct()
     {
-       $this->middleware('auth', ['except'=> ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
-
 
 
     public function index()
     {
         $vlist = Vlist::latest('updated_at')->published()->get();
-        return view ('vlist.index', compact('vlist' ));
+
+        return view('vlist.index', compact('vlist'));
     }
 
     public function show(Vlist $vlist)
     {
 
-        return view('vlist.show', compact ('vlist'));
+        return view('vlist.show', compact('vlist'));
     }
 
     public function create()
     {
-        $tags= Tag::lists('name','id')->all();
-        return view('vlist.create',compact('tags'));
+        $tags = Tag::lists('name', 'id')->all();
+
+        return view('vlist.create', compact('tags'));
     }
 
     /**
@@ -52,12 +52,13 @@ class VlistController extends Controller
      */
     public function store(VlistRequest $request)
     {
-      //  dd($request->input('tag_list'));
-       $this->createVlist($request);
+        //  dd($request->input('tag_list'));
+        $this->createVlist($request);
 
-     //   flash()->success('The Supplier has been Added');
+        //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Supplier has been Successfully Added!', 'Good Job');
-        return redirect ('vlist');
+
+        return redirect('vlist');
     }
 
     /**
@@ -66,9 +67,9 @@ class VlistController extends Controller
      */
     public function edit(Vlist $vlist)
     {
-        $tags = Tag::lists('name','id')->all();
+        $tags = Tag::lists('name', 'id')->all();
 
-        return view('vlist.edit',compact('vlist','tags'));
+        return view('vlist.edit', compact('vlist', 'tags'));
     }
 
     /**
@@ -76,12 +77,20 @@ class VlistController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Vlist $vlist , VlistRequest $request)
+    public function update(Vlist $vlist, VlistRequest $request)
     {
+/*
         $vlist->update($request->all());
         $this->syncTags($vlist, $request->input('tag_list'));
+        return redirect('vlist');
+  */
+        $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4);
+        $vlist->update($request->all());
+        $vlist->vgrade = $average;
+        Auth::user()->vlist()->save($vlist);
+        $this->syncTags($vlist, $request->input('tag_list'));
+        return redirect('vlist');
 
-        return redirect ('vlist');
     }
 
 
@@ -89,10 +98,10 @@ class VlistController extends Controller
      * @param Vlist $vlist
      * @param array $tags
      * @internal param VlistRequest $request
-          */
+     */
 
 
-    public function syncTags(Vlist $vlist , array $tags)
+    public function syncTags(Vlist $vlist, array $tags)
     {
         $vlist->tags()->sync($tags);
     }
@@ -103,15 +112,38 @@ class VlistController extends Controller
      */
     private function createVlist(VlistRequest $request)
     {
-     $average = round(($request->get('quality') + $request->get('delivery')) / 2, 0, PHP_ROUND_HALF_UP);
-        $vlist= Auth::user()->vlist()->vgrade = array_sum($request->average) / 4;
-        $vlist= Auth::user()->vlist()->create($request->all());
-        //  $vlist= Auth::user()->vlist()->create($request->all());    //get authenticated user who saved  vlist
-        //  $vlist->vgrade = array_sum($request->average) / 4;
-          $this->syncTags($vlist, $request->input('tag_list'));
+        /*
+
+           $vlist= Auth::user()->vlist();
+        // $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4, 0, PHP_ROUND_HALF_UP);
+            $average =['quality','delivery','bidbond','desc'];
+
+
+         //  $vlist =Vlist::all();
+            $vlist->vgrade = array_sum($request->average) / 4;
+            dd($request);
+         //  $vlist->vgrade=$average;
+
+            $vlist= Auth::user()->vlist()->create($request->all());
+
+           // $vlist->create($request->all());
+
+           // $vlist= Auth::user()->vlist()->create($request->all());
+
+            //  $vlist= Auth::user()->vlist()->create($request->all());    //get authenticated user who saved  vlist
+            //  $vlist->vgrade = array_sum($request->average) / 4;
+              $this->syncTags($vlist, $request->input('tag_list'));
+            return $vlist;
+        */
+        $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4);
+        $vlist = new Vlist;
+        $vlist->fill($request->all());
+        $vlist->vgrade = $average;
+
+        Auth::user()->vlist()->save($vlist);
+        $this->syncTags($vlist, $request->input('tag_list'));
         return $vlist;
+
+
     }
-
-
-
 }

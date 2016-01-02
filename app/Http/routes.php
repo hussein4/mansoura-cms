@@ -15,6 +15,7 @@ use App\Http\Controllers\VlistController;
 use Illuminate\Http\Request;
 use App\Contracts\Search;
 
+
 Route::get('/', function (Search $search ,Request $request) {
 
     $results = $search->index('getstarted_actors')
@@ -37,7 +38,6 @@ Route::resource('mrs','MRsController');
 Route::resource('pos','POsController');
 
 
-Route::get('evals','EvalController@store');
 
 Route::get('tags/{tags}', 'TagsController@show');
 

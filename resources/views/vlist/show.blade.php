@@ -92,7 +92,7 @@
 
 
            <li><a href="{{ action('VlistController@edit', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Edit Supplier : {!! $vlist->vname !!}</span></a></li>
-                            <li><a href="{{ action('EvalController@store', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Eval Supplier : {!! $vlist->vname !!}</span></a></li>
+           <li><a href="{{ url('vlist', [$vlist->id]) }}">  <i class='fa fa-link'></i> <span>Eval Supplier : {!! $vlist->vname !!}</span></a></li>
 
                         </vlist>
 
