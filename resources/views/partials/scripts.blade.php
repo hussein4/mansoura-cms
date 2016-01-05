@@ -82,29 +82,3 @@
 </script>
 
 
-
-<script>
-    $(document).ready(function(){
-        $('#iCheck').iCheck({
-            checkboxClass: 'icheckbox_minimal-red',
-            radioClass: 'iradio_minimal-red',
-            increaseArea: '20%' // optional
-        });
-    });
-</script>
-<script>
-$('iCheck').iCheck({
-checkboxClass: 'icheckbox_minimal-red',
-radioClass: 'iradio_minimal-red',
-increaseArea: '20%' // optional
-});
-$('input').iCheck('update');
-$('input ').on('ifClicked ', function(event)
-{
-if ($('input').prop('checked'))
-{
-alert('1');
-} else {
-alert('2');
-});
-</script>

@@ -23,8 +23,9 @@ class VlistRequest extends Request
      */
     public function rules()
     {
+
         return [
-            'vname' => 'required|min:4',
+          'vname' => 'required|min:4',
             'vservice'=> 'required|min:4',
             'vfax' => 'required',
             'vphone'=> 'required',

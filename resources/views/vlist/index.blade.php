@@ -26,24 +26,38 @@
                                     </tr>
                                     </thead>
                 @foreach($vlist as $list)
+
+
                                 <tbody>
-                                <tr>
+                           <tr>
+
                                 <td><a href="{{ action('VlistController@show', [$list->id])  }}">{{ $list->vname }}</a></td>
                                  <td>{{$list->vservice}}</td>
                                  <td>{{$list->vgrade}}</td>
                                  <td>{{$list->vremarks}}</td>
-                                 </tr>
-                                 </tbody>
-                 @endforeach
+                                   <td>
+                                       <form action="/vlist/{{ $list->id }}" method="POST">
+                                           {{ csrf_field() }}
+                                           {{ method_field('DELETE') }}
 
+                                           <button>Delete </button>
+                                       </form>
+                                   </td>
+                           </tr>
+
+
+
+                                </tbody>
+                 @endforeach
                               </table>
+
 
                 </vlist>
 
-
 </div>
 </div>
 </div>
 </div>
 </div>
+    {!! $vlist->render() !!}
 @endsection

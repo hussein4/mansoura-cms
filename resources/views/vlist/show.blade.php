@@ -14,7 +14,6 @@
 
                     <div class="panel-body">
 
-
                         <vlist>
 
                             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
@@ -73,15 +72,13 @@
                                     <th>Updated At</th>
                                     <td>{{  $vlist->updated_at }}</td>
                                  </tr>
-
-
                                 </thead>
 
                                 </tbody>
+
                             </table>
 
                              @unless ($vlist->tags->isEmpty())
-
                             <h5>Tags:</h5>
                             <ul>
                                 @foreach ($vlist->tags as $tag)
@@ -92,8 +89,12 @@
 
 
            <li><a href="{{ action('VlistController@edit', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Edit Supplier : {!! $vlist->vname !!}</span></a></li>
-           <li><a href="{{ url('vlist', [$vlist->id]) }}">  <i class='fa fa-link'></i> <span>Eval Supplier : {!! $vlist->vname !!}</span></a></li>
+                            <div class = "form-control">
+                                {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistController@destroy',$vlist->id ]]) !!}
+                                {!! Form::submit('Delete Supplier',['class'=> 'btn btn-danger ']) !!}
 
+                                {!! Form::close() !!}
+                            </div>
                         </vlist>
 
 

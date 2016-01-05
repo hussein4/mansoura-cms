@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Vlist extends Model
 {
     protected $table = 'vlist';
@@ -88,5 +89,7 @@ class Vlist extends Model
     {
         return $this->tags->lists('id')->all();
     }
+
+
 }
 

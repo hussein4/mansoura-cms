@@ -16,15 +16,22 @@
                  <!--   <div class="panel-body">   -->
 
 
-                     {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistController@update',$vlist->id]]) !!}
+       {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistController@update',$vlist->id]]) !!}
 
                          @include('vlist.form',['submitButtonText'=>'Update Supplier'])
 
                         {!! Form::close() !!}
 
 
-                        @include('errors.list')
+                <div class = "form-control">
+                    {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistController@destroy',$vlist->id ]]) !!}
+                    {!! Form::submit('Delete Supplier',['class'=> 'btn btn-danger ']) !!}
+                    {!! Form::close() !!}
+                </div>
 
+
+                      @include('errors.list')
+     </div>
                 <!--    </div>     -->
                 </div>
             </div>

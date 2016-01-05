@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\VlistRequest;
 use App\Tag;
 use App\Vlist;
+use Gate;
+//use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,8 +30,8 @@ class VlistController extends Controller {
 
     public function index()
     {
-        $vlist = Vlist::latest('updated_at')->published()->get();
-
+      //  $vlist = Vlist::latest('updated_at')->published()->get();
+        $vlist = Vlist::orderBy('created_at', 'desc')->paginate(10);
         return view('vlist.index', compact('vlist'));
     }
 
@@ -73,9 +75,10 @@ class VlistController extends Controller {
     }
 
     /**
-     * @param $id
-     * @param Request $request
+     * @param Vlist $vlist
+     * @param VlistRequest|Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @internal param $id
      */
     public function update(Vlist $vlist, VlistRequest $request)
     {
@@ -92,6 +95,22 @@ class VlistController extends Controller {
         return redirect('vlist');
 
     }
+
+    public function average(Vlist $vlist, VlistRequest $request)
+    {
+
+        $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4);
+        $vlist->vgrade = $average;
+      // $vlist->fill($vlist);
+        Auth::user()->vlist()->save($vlist);
+
+        $tags = Tag::lists('name', 'id')->all();
+        $this->syncTags($vlist, $request->input('tag_list'));
+        return view('vlist.eval', compact('vlist', 'tag_list'));
+
+
+    }
+
 
 
     /** sync up the list  of tags in database
@@ -144,6 +163,12 @@ class VlistController extends Controller {
         $this->syncTags($vlist, $request->input('tag_list'));
         return $vlist;
 
+    }
+    public function destroy(Request $request, Vlist $vlist)
+    {
+       $this->authorize('destroy', $vlist);
+        $vlist->delete();
 
+        return redirect('/vlist');
     }
 }
