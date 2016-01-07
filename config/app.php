@@ -149,6 +149,7 @@ return [
         Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider::class,
         'Laracasts\Flash\FlashServiceProvider',
         App\Providers\ViewComposerServiceProvider::class,
+        'Maatwebsite\Excel\ExcelServiceProvider',
 
     ],
 
@@ -202,6 +203,7 @@ return [
         'Html'      => Illuminate\Html\HtmlFacade::class,
         'Flash'     => Laracasts\Flash\Flash::class,
         'Carbon'    => Carbon\Carbon::class,
+        'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
 
 
     ],

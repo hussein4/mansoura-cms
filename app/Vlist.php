@@ -20,6 +20,7 @@ class Vlist extends Model
         'vcontactperson',
         'vaddress',
         'vcapitallimit',
+        'vegpcno',
         'vremarks',
         'vgrade',
         'created_on' ,

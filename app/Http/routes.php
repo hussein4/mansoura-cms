@@ -12,8 +12,10 @@
 */
 
 use App\Http\Controllers\VlistController;
+use App\Vlist;
 use Illuminate\Http\Request;
 use App\Contracts\Search;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 Route::get('/', function (Search $search ,Request $request) {
@@ -31,6 +33,10 @@ Route::get('/search', function (Search $search ,Request $request) {
 });
 
 Route::resource('vlist','VlistController');
+
+
+Route::get('/vlist/{id}/export' , 'VlistController@export');
+
 
 /*
 

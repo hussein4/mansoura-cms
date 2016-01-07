@@ -16,7 +16,7 @@
 
                 <vlist>
 
-                                <table id="example" class="table stripe row-border order-column" width="100%" cellspacing="0">
+                                <table id="users-table" class="table stripe row-border order-column" width="100%" cellspacing="0">
                                     <thead>
                                     <tr>
                                         <th>Supplier</th>
@@ -39,10 +39,14 @@
                                        <form action="/vlist/{{ $list->id }}" method="POST">
                                            {{ csrf_field() }}
                                            {{ method_field('DELETE') }}
-
                                            <button>Delete </button>
                                        </form>
                                    </td>
+                               <td>
+
+
+
+                               </td>
                            </tr>
 
 

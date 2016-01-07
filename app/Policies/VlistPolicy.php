@@ -24,4 +24,9 @@ class VlistPolicy
     {
         return $user->id === $vlist->user_id;
     }
+
+    public function export(User $user, Vlist $vlist)
+    {
+        return $user->id === $vlist->user_id;
+    }
 }

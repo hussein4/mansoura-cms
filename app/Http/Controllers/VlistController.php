@@ -13,7 +13,7 @@ use App\Http\Controllers\Controller;
 //use Request;
 use Carbon\Carbon;
 use Auth;
-
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class VlistController extends Controller {
@@ -113,7 +113,7 @@ class VlistController extends Controller {
 
 
 
-    /** sync up the list  of tags in database
+    /** sync up the list  of tags in querybase
      * @param Vlist $vlist
      * @param array $tags
      * @internal param VlistRequest $request
@@ -171,4 +171,90 @@ class VlistController extends Controller {
 
         return redirect('/vlist');
     }
+/*
+    public function export( Request $request, Vlist $vlist )
+    {
+
+        $this->authorize('export', $vlist);
+
+
+
+            $filename = 'test';
+            Excel::create($filename, function ($excel) use ($vlist)
+            {
+                // Set the title
+                $excel->setTitle('Supplier Details');
+                $excel->setCreator('Hussein')
+                    ->setCompany('Mansoura');
+                $excel->sheet('Sheet 1', function ($sheet) use ($vlist)
+                {
+
+                    $sheet->cell('A4', function($cell) {
+                        $cell->setValue('test');
+                    });
+
+                });
+            })->export('xlsx');
+        }
+*/
+
+
+
+    public function export(Request $request ,Vlist $vlist ,$id)
+    {
+
+        $filename = 'test';
+
+
+        Excel::create($filename.time(), function($excel) use ($id)
+        {
+          //  $supplier = Vlist::where('id',$id)->get(['vname']);
+            // Set the title
+            $excel->setTitle('Supplier Details');
+            $excel->setCreator('Hussein')
+                ->setCompany('Mansoura');
+            $excel->sheet('supplier', function($sheet) use ($id)
+            {
+                $data = Vlist::where('id', $id)->get(['vname','vservice','vphone','vmobile', 'vemail', 'vcontactperson','vaddress','vegpcno','vcapitallimit','vgrade','vremarks','updated_at']);
+
+                $sheet->cells('A1:L1', function($cells) {
+                    // Set font
+                    $cells->setFont(array(
+                        'family'     => 'Arial',
+                        'size'       => '16',
+                        'bold'       =>  true
+                    ));
+                    $cells->setAlignment('center');
+
+                });
+                $sheet->cells('A2:L2', function($cells) {
+                    $cells->setFont(array(
+                        'family'     => 'Arial',
+                        'size'       => '12',
+                        'bold'       =>  false
+                    ));
+                    $cells->setAlignment('center');
+                });
+
+              //  $sheet->setCellValue('D8', $data);
+
+            //  $sheet->fromArray($data);
+                $sheet->fromArray($data,null,'A1',false,false)->prependRow(array(
+                    'Name', 'Service', 'Phone', 'Mobile', 'Email',
+                    'Contact Person', 'Address', 'EGPC No', 'Capital Limit' , 'Grade' , 'Remarks'
+                        ,'Updated At'
+                    )
+
+                );
+
+
+
+
+            });
+        })->download('xlsx');
+    }
+
+
+
+
 }

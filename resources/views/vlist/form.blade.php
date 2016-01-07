@@ -25,10 +25,20 @@
     {!! Form::text('vphone', null , ['class'=> 'form-control']) !!}
 </div>
 
+<div class="form-group">
+    {!! Form::label('vmobile', 'Mobile:') !!}
+    {!! Form::text('vmobile', null , ['class'=> 'form-control']) !!}
+</div>
+
 
 <div class="form-group">
     {!! Form::label('vemail', 'Email:') !!}
     {!! Form::text('vemail', null , ['class'=> 'form-control']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('vcontactperson', 'Contact Person:') !!}
+    {!! Form::text('vcontactperson', null , ['class'=> 'form-control']) !!}
 </div>
 
 <div class="form-group">
