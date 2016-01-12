@@ -12,19 +12,19 @@
 
 -->
 
-<div class="container">
+
     <div class="form-group">
         {!! Form::label('mr_date', 'MR DATE:') !!}
         <div class="row">
             <div class='col-sm-6'>
-   <span class="input-group-addon">
+
 {!! Form::input('text','mr_date',$mr->mr_date, ['class'=> 'form-control','id'=>'datetimepicker1']) !!}
-    <span class="glyphicon glyphicon-calendar"></span>
-    </span>
+
+
             </div>
         </div>
     </div>
-</div>
+
 
 <div class="form-group">
     <!--<select class="tag_list" multiple="multiple" data-tags="true  style="width: 50%">   -->
