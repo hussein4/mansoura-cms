@@ -63,12 +63,16 @@
 
 
 <script>
+
+
     $(function()
     {
         $('#datetimepicker1').datetimepicker
         ({
-            format: 'DD-MM-YYYY hh:00 A',
-         //   timeFormat:  'hh:mm',
+
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
             inline:true,
             sideBySide: true
         });

@@ -102,12 +102,12 @@ class MR extends Model
 
     public function getmrdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-m-Y g:i A');
+        return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
     public function setmrdateAttribute($date)
     {
-        $this->attributes['mr_date'] = Carbon::createFromFormat('d-m-Y g:i A', $date);
+        $this->attributes['mr_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
     public function user()
