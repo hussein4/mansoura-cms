@@ -31,6 +31,7 @@ class CreatePosTable extends Migration
             $table->integer('po_penalty');
             $table->timestamp('po_cover_invoice')->default(Carbon::now());
             $table->timestamp('po_completed')->default(Carbon::now());
+            $table->string('popath');
             $table->timestamps();
             $table->integer('user_id')->unsigned();
             $table->integer('mr_id')->unsigned();

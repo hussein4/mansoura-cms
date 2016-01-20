@@ -27,6 +27,7 @@ class CreateVlistTable extends Migration
             $table->integer('vgrade');
             $table->text('vremarks');
             $table->integer('vcapitallimit');
+            $table->string('vpath');
             $table->timestamp('created_on')->default(Carbon::now());
             $table->timestamp('updated_on')->default(Carbon::now());
             $table->timestamps();

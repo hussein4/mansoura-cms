@@ -16,7 +16,7 @@
                  <!--   <div class="panel-body">   -->
 
 
-       {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistController@update',$vlist->id]]) !!}
+       {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistController@update',$vlist->id , 'files'=>'true','enctype' => 'multipart/form-data']]) !!}
 
                          @include('vlist.form',['submitButtonText'=>'Update Supplier'])
 

@@ -53,6 +53,7 @@ class PO extends Model
         'po_penalty',
         'po_cover_invoice',
         'po_completed',
+        'popath',
 
     ];
 

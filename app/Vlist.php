@@ -23,6 +23,7 @@ class Vlist extends Model
         'vegpcno',
         'vremarks',
         'vgrade',
+        'vpath',
         'created_on' ,
         'created_at',
 

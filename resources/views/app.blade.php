@@ -78,9 +78,13 @@ desired effect
 
 
   <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
 
-    <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+  <script type="text/javascript" src="/bower_components/dropzone/dropzone.js"></script>
+
+
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+
+  <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
 
          <!--
                      <script type="text/javascript" src="/node_modules/npm-zepto/zepto/src/zepto.js"></script>

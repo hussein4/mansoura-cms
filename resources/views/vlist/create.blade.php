@@ -16,7 +16,7 @@
                        <div class="panel-body">
 
 
-                        {!! Form::model($vlist =new \App\Vlist, ['url' => 'vlist' ]) !!}
+                        {!! Form::model($vlist =new \App\Vlist, ['files'=>'true','url' => 'vlist' , 'enctype' => 'multipart/form-data' ]) !!}
 
                               @include('vlist.form', ['submitButtonText' =>'Add New Supplier'])
 

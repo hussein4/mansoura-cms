@@ -37,6 +37,8 @@ Route::resource('vlist','VlistController');
 
 Route::get('/vlist/{id}/export' , 'VlistController@export');
 
+Route::post('/vlist/{id}/file' , 'VlistController@post_upload');
+
 
 /*
 

@@ -57,6 +57,15 @@
     {!! Form::textarea('vremarks', null , ['class'=> 'form-control']) !!}
 </div>
 
+<div class="dropzone-previews">
+    {!! Form::label('vpath', 'Docs:') !!}
+    {!! Form::file('vpath' , ['class'=> 'dropzone', 'id' =>'myAwesomeDropzone', 'enctype'=>"multipart/form-data" , 'multiple']) !!}
+
+</div>
+
+
+
+
 <div class="form-group">
 <!--<select class="tag_list" multiple="multiple" data-tags="true  style="width: 50%">   -->
     {!! Form::label('tag_list', 'Tags:') !!}

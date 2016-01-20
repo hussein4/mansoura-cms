@@ -69,6 +69,10 @@
                                     <td>{{ $vlist->vremarks }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Documents</th>
+                                    <td><a href="{{ $vlist->vpath }}"> <span>Documents </span></a></td>
+                                </tr>
+                                <tr>
                                     <th>Updated At</th>
                                     <td>{{  $vlist->updated_at }}</td>
                                  </tr>

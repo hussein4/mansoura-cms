@@ -13,7 +13,10 @@ use App\Http\Controllers\Controller;
 //use Request;
 use Carbon\Carbon;
 use Auth;
+
+
 use Maatwebsite\Excel\Facades\Excel;
+
 
 
 class VlistController extends Controller {
@@ -54,7 +57,17 @@ class VlistController extends Controller {
      */
     public function store(VlistRequest $request)
     {
-        //  dd($request->input('tag_list'));
+      //if (Input::hasFile('vpath'))
+        if($request->hasFile('vpath'))
+       {
+          // $file = Input::file('vpath');
+           $file = $request->file('vpath');
+           $filename = time().'-'.$file->getClientOriginalName();
+           $file->move(public_path() .'/views/vlist/docs', $filename);
+           $this->vpath = $filename;
+       }
+
+
         $this->createVlist($request);
 
         //   flash()->success('The Supplier has been Added');

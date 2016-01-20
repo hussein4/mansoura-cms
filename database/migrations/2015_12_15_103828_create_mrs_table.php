@@ -41,6 +41,7 @@ class CreateMrsTable extends Migration
             $table->timestamp('mr_sent_for_budget_expansion')->default(Carbon::now());
             $table->timestamp('mr_sent_for_budget_expansion_reminder')->default(Carbon::now());
             $table->integer('user_id')->unsigned();
+            $table->string('mrpath');
            // $table->integer('vlist_id')->unsigned();
 
             $table->timestamps();
