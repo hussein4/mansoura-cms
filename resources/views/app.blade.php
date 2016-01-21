@@ -91,7 +91,7 @@ desired effect
 
                         <script type="text/javascript" src="/node_modules/npm-zepto/zepto/src/zepto.js"></script>
 
-                        <link rel="stylesheet" href="/bower_components/iCheck/skins/minimal/red.css" />
+                        <link rel="stylesheet" href="/bower_components/iCheck/skins/flat/red.css" />
                        <script type="text/javascript" src="/bower_components/iCheck/icheck.js"></script>
 
                      <!-- Your Page Content Here -->

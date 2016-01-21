@@ -130,13 +130,11 @@
 -->
 
 </script>
-
 <script>
 $(document).ready(function(){
     $('input').iCheck({
-        checkboxClass: 'icheckbox_minimal-red',
-        radioClass: 'iradio_minimal-red',
-        increaseArea: '20%' // optional
+        checkboxClass: 'icheckbox_flat-red',
+        radioClass: 'iradio_flat-red'
     });
 });
 </script>
