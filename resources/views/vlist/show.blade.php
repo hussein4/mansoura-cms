@@ -70,7 +70,7 @@
                                 </tr>
                                 <tr>
                                     <th>Documents</th>
-                                    <td><a href="{{ $vlist->vpath }}"> <span>Documents </span></a></td>
+                                    <td><a href=" {{ '/docs/' }}{{ $vlist->vpath }} "> <span>Documents </span></a></td>
                                 </tr>
                                 <tr>
                                     <th>Updated At</th>
@@ -110,4 +110,6 @@
             </div>
         </div>
     </div>
+
+    @include('partials.disqus')
 @endsection

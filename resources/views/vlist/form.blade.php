@@ -56,13 +56,13 @@
     {!! Form::label('vremarks', 'Remarks:') !!}
     {!! Form::textarea('vremarks', null , ['class'=> 'form-control']) !!}
 </div>
-
+<!--
 <div class="dropzone-previews">
     {!! Form::label('vpath', 'Docs:') !!}
     {!! Form::file('vpath' , ['class'=> 'dropzone', 'id' =>'myAwesomeDropzone', 'enctype'=>"multipart/form-data" , 'multiple']) !!}
 
 </div>
-
+-->
 
 
 

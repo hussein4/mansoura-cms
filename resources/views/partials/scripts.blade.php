@@ -87,7 +87,7 @@
         ]
     });
 </script>
-
+<!--
 <script type="text/javascript">
 
     Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
@@ -127,8 +127,16 @@
         }
 
     }
-
+-->
 
 </script>
 
-
+<script>
+$(document).ready(function(){
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_minimal-red',
+        radioClass: 'iradio_minimal-red',
+        increaseArea: '20%' // optional
+    });
+});
+</script>
