@@ -58,6 +58,7 @@
 
 
 
+
                             <li><a href=" {{ action('POsController@edit', [$po->id]) }} "><i class='fa fa-link'></i> <span>Edit Purchase Order : {!! $po->po_no !!}</span></a></li>
                         </po>
 
@@ -67,4 +68,6 @@
             </div>
         </div>
     </div>
+
+    @include('partials.disqus')
 @endsection

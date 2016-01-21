@@ -39,10 +39,11 @@
                                 <h5>Tags:</h5>
                                 <ul>
                                     @foreach ($mr->tags as $tag)
-                                        <li> {{ $tag->name }}</li>
+                                        <li><a href=" {{ $tag->name }} "><span> {{ $tag->name }} </span></a></li>
                                     @endforeach
                                 </ul>
                             @endunless
+
 
 
 <li><a href="{{ action('MRsController@edit', [$mr->id])  }}"><i class='fa fa-link'></i> <span>Edit MR : {!! $mr->mr_no !!}</span></a></li>
@@ -55,4 +56,6 @@
             </div>
         </div>
     </div>
+
+    @include('partials.disqus')
 @endsection

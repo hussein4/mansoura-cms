@@ -85,13 +85,15 @@ desired effect
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
 
   <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+     <script id="dsq-count-scr" src="//mansoura-cms.disqus.com/count.js" async></script>
 
-         <!--
-                     <script type="text/javascript" src="/node_modules/npm-zepto/zepto/src/zepto.js"></script>
 
-                     <link rel="stylesheet" href="/bower_components/iCheck/skins/minimal/red.css" />
-                    <script type="text/javascript" src="/bower_components/iCheck/icheck.js"></script>
-         -->
+            <!--
+                        <script type="text/javascript" src="/node_modules/npm-zepto/zepto/src/zepto.js"></script>
+
+                        <link rel="stylesheet" href="/bower_components/iCheck/skins/minimal/red.css" />
+                       <script type="text/javascript" src="/bower_components/iCheck/icheck.js"></script>
+            -->
                      <!-- Your Page Content Here -->
             @yield('main-content')
 

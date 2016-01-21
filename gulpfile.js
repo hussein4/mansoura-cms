@@ -21,6 +21,7 @@ elixir(function(mix) {
         'libs/bootstrap.min.css',
         'libs/select2.min.css',
         'libs/jquery.datetimepicker.css',
+        'libs/disqus.css',
 
     ]);
 
