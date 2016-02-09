@@ -23,11 +23,11 @@
                         {!! Form::close() !!}
 
 
-                <div class = "form-control">
+
                     {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistController@destroy',$vlist->id ]]) !!}
                     {!! Form::submit('Delete Supplier',['class'=> 'btn btn-danger ']) !!}
                     {!! Form::close() !!}
-                </div>
+
 
 
                       @include('errors.list')

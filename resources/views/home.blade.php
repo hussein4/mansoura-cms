@@ -17,7 +17,7 @@
 
                       latest Update on Supplier's List :
 
-                    <li>{!! link_to_action('VlistController@show', $latest->title, [$latest->id]) !!}</li>
+                    <li>  {!! link_to_action('VlistController@show', $latest->title, [$latest->id]) !!}  </li>
 
 				</div>
 			</div>
