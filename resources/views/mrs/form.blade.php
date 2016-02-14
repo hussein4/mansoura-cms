@@ -43,7 +43,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_estimated_cost',$mr->mr_estimated_cost, ['class'=> 'form-control','id'=>'datetimepicker22']) !!}
+            {!! Form::input('text','mr_estimated_cost',$mr->mr_estimated_cost, ['class'=> 'form-control']) !!}
 
         </div>
     </div>
@@ -218,7 +218,7 @@
     {!! Form::label('mr_sent_for_budget_expansion', 'Budget Expansion Memo:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_sent_for_budget_expansion',$mr->mr_offers_clarifications_sent_to_tech, ['class'=> 'form-control','id'=>'datetimepicker20']) !!}
+            {!! Form::input('text','mr_sent_for_budget_expansion',$mr->mr_sent_for_budget_expansion, ['class'=> 'form-control','id'=>'datetimepicker20']) !!}
         </div>
     </div>
 </div>

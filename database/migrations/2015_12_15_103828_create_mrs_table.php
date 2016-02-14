@@ -20,6 +20,7 @@ class CreateMrsTable extends Migration
             $table->timestamp('mr_received_date')->default(Carbon::now());
             $table->timestamp('mr_received_by_officer_date')->default(Carbon::now());
             $table->integer('mr_estimated_cost');
+            //date required
             $table->timestamp('mr_budgetry_rfq')->default(Carbon::now());
             $table->timestamp('mr_rfq_budgetry_closing_date')->default(Carbon::now());
             $table->timestamp('mr_rfq_budgetry_reminder')->default(Carbon::now());

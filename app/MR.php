@@ -48,7 +48,7 @@ class MR extends Model
         'mr_date',
         'mr_received_date',
         'mr_received_by_officer_date',
-        'mr_estimated_cost',
+
         'mr_budgetry_rfq',
         'mr_rfq_budgetry_closing_date',
         'mr_rfq_budgetry_reminder',
@@ -134,247 +134,229 @@ class MR extends Model
     }
 
 
-    public function getmr_budgetry_rfqAttribute($date)
+    public function getmrbudgetryrfqAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_budgetry_rfqAttribute($date)
+    public function setmrbudgetryrfqAttribute($date)
     {
         $this->attributes['mr_budgetry_rfq'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_rfq_budgetry_closing_dateAttribute($date)
+    public function getmrrfqbudgetryclosingdateAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_rfq_budgetry_closing_dateAttribute($date)
+    public function setmrrfqbudgetryclosingdateAttribute($date)
     {
         $this->attributes['mr_rfq_budgetry_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_rfq_budgetry_reminderAttribute($date)
+    public function getmrrfqbudgetryreminderAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_rfq_budgetry_reminderAttribute($date)
+    public function setmrrfqbudgetryreminderAttribute($date)
     {
         $this->attributes['mr_rfq_budgetry_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
 
-    public function getmr_budgetry_memoAttribute($date)
+    public function getmrbudgetrymemoAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_budgetry_memoAttribute($date)
+    public function setmrbudgetrymemoAttribute($date)
     {
         $this->attributes['mr_budgetry_memo'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
 
-    public function getmr_checked_on_egpc_siteAttribute($date)
+    public function getmrcheckedonegpcsiteAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_checked_on_egpc_siteAttribute($date)
+    public function setmrcheckedonegpcsiteAttribute($date)
     {
         $this->attributes['mr_checked_on_egpc_site'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_rfqAttribute($date)
+    public function getmrrfqAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_rfqAttribute($date)
+    public function setmrrfqAttribute($date)
     {
         $this->attributes['mr_rfq'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_rfq_closing_dateAttribute($date)
+    public function getmrrfqclosingdateAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_rfq_closing_dateAttribute($date)
+    public function setmrrfqclosingdateAttribute($date)
     {
         $this->attributes['mr_rfq_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
 
-    public function getmr_rfq_reminderAttribute($date)
+    public function getmrrfqreminderAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_rfq_reminderAttribute($date)
+    public function setmrrfqreminderAttribute($date)
     {
         $this->attributes['mr_rfq_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_openAttribute($date)
+    public function getmroffersopenAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_openAttribute($date)
+    public function setmroffersopenAttribute($date)
     {
         $this->attributes['mr_offers_open'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_sent_to_tech_deptAttribute($date)
+    public function getmrofferssenttotechdeptAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_sent_to_tech_deptAttribute($date)
+    public function setmrofferssenttotechdeptAttribute($date)
     {
         $this->attributes['mr_offers_sent_to_tech_dept'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_received_from_tech_dept_closing_dateAttribute($date)
+    public function getmroffersreceivedfromtechdeptclosingdateAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_received_from_tech_dept_closing_dateAttribute($date)
+    public function setmroffersreceivedfromtechdeptclosingdateAttribute($date)
     {
         $this->attributes['mr_offers_received_from_tech_dept_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_received_from_tech_dept_reminderAttribute($date)
+    public function getmroffersreceivedfromtechdeptreminderAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_received_from_tech_dept_reminderAttribute($date)
+    public function setmroffersreceivedfromtechdeptreminderAttribute($date)
     {
         $this->attributes['mr_offers_received_from_tech_dept_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_clarifications_sent_to_suppliersAttribute($date)
+    public function getmroffersclarificationssenttosuppliersAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_clarifications_sent_to_suppliersAttribute($date)
+    public function setmroffersclarificationssenttosuppliersAttribute($date)
     {
         $this->attributes['mr_offers_clarifications_sent_to_suppliers'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
 
-    public function getmr_offers_clarifications_closing_dateAttribute($date)
+    public function getmroffersclarificationsclosingdateAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_clarifications_closing_dateAttribute($date)
+    public function setmroffersclarificationsclosingdateAttribute($date)
     {
         $this->attributes['mr_offers_clarifications_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_clarifications_received_from_supplier_reminderAttribute($date)
+    public function getmroffersclarificationsreceivedfromsupplierreminderAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_clarifications_received_from_supplier_reminderAttribute($date)
+    public function setmroffersclarificationsreceivedfromsupplierreminderAttribute($date)
     {
         $this->attributes['mr_offers_clarifications_received_from_supplier_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_clarifications_received_from_supplierAttribute($date)
+    public function getmroffersclarificationsreceivedfromsupplierAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_clarifications_received_from_supplierAttribute($date)
+    public function setmroffersclarificationsreceivedfromsupplierAttribute($date)
     {
         $this->attributes['mr_offers_clarifications_received_from_supplier'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
 
-    public function getmr_offers_clarifications_sent_to_techAttribute($date)
+    public function getmroffersclarificationssenttotechAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_clarifications_sent_to_techAttribute($date)
+    public function setmroffersclarificationssenttotechAttribute($date)
     {
         $this->attributes['mr_offers_clarifications_sent_to_tech'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_offers_evaluationAttribute($date)
+    public function getmroffersevaluationAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_offers_evaluationAttribute($date)
+    public function setmroffersevaluationAttribute($date)
     {
         $this->attributes['mr_offers_evaluation'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_sent_for_budget_expansionAttribute($date)
+    public function getmrsentforbudgetexpansionAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_sent_for_budget_expansionAttribute($date)
+    public function setmrsentforbudgetexpansionAttribute($date)
     {
         $this->attributes['mr_sent_for_budget_expansion'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
 
 
-    public function getmr_sent_for_budget_expansion_reminderAttribute($date)
+    public function getmrsentforbudgetexpansionreminderAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    public function setmr_sent_for_budget_expansion_reminderAttribute($date)
+    public function setmrsentforbudgetexpansionreminderAttribute($date)
     {
         $this->attributes['mr_sent_for_budget_expansion_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
