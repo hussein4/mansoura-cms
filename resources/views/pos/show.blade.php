@@ -34,6 +34,8 @@
                                     <td>{{ $po->po_issued }}</td>
                                 </tr>
 
+
+
                                 <tr>
                                     <th>Created at</th>
                                     <td>{{ $po->created_at }}</td>

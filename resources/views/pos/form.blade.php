@@ -10,20 +10,14 @@
     {!! Form::text('po_subject',null, ['class'=> 'form-control']) !!}
 </div>
 
-<!--  working datepicker
-<div class="form-group">
-    {!! Form::label('po_issued', 'PO DATE:') !!}
-    {!! Form::input('text','po_issued',Carbon::now(), ['class'=> 'form-control','id'=>'datepicker']) !!}
-</div>
 
--->
 <div class="container">
     <div class="form-group">
     {!! Form::label('po_issued', 'PO DATE:') !!}
     <div class="row">
         <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker1']) !!}
+{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker60']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -32,9 +26,184 @@
 </div>
 
 
-<div class="form-group">
-    {!! Form::label('created_at', 'Created On:') !!}
-    {!! Form::input('text','created_at',Carbon::now(), ['class'=> 'form-control','id'=>'datepicker1' ]) !!}
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_confirmation', 'PO Confirmed Date:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_confirmation',$po->po_confirmation, ['class'=> 'form-control','id'=>'datetimepicker61']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_loaded_on_ideas', 'PO Loaded on Ideas:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_loaded_on_ideas',$po->po_loaded_on_ideas, ['class'=> 'form-control','id'=>'datetimepicker62']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_approved_on_ideas', 'PO. Approved on Ideas:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_approved_on_ideas',$po->po_approved_on_ideas, ['class'=> 'form-control','id'=>'datetimepicker63']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_memo_to_fin', 'Finance Memo:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_memo_to_fin',$po->po_memo_to_fin, ['class'=> 'form-control','id'=>'datetimepicker64']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_delivery_date', 'Delivery Date:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_delivery_date',$po->po_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker65']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_reminder_delivery_date', 'Delivery Date Reminder:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_reminder_delivery_date',$po->po_reminder_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker66']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_mr_received_date', 'Materials Received Date:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_mr_received_date',$po->po_mr_received_date, ['class'=> 'form-control','id'=>'datetimepicker67']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_mrr_missing_date', 'Missing From MRR:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_mrr_missing_date',$po->po_mrr_missing_date, ['class'=> 'form-control','id'=>'datetimepicker68']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_mrr_rejected_date', 'Rejected From MRR:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_mrr_rejected_date',$po->po_mrr_rejected_date, ['class'=> 'form-control','id'=>'datetimepicker69']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_mrr_received_date', 'MRR Received Date:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_mrr_received_date',$po->po_mrr_received_date, ['class'=> 'form-control','id'=>'datetimepicker70']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_invoice_received_date', 'Invoice Received Date:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_invoice_received_date',$po->po_invoice_received_date, ['class'=> 'form-control','id'=>'datetimepicker71']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group" >
+    {!! Form::label('po_penalty', 'Penalty:') !!}
+    {!! Form::text('po_penalty',null, ['class'=> 'form-control']) !!}
+</div>
+
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_cover_invoice', 'Invoice Cover:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_cover_invoice',$po->po_cover_invoice, ['class'=> 'form-control','id'=>'datetimepicker72']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_completed', 'Completed:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_completed',$po->po_completed, ['class'=> 'form-control','id'=>'datetimepicker73']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
 </div>
 
 

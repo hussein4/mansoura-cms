@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MR extends Model
 {
     protected $table = 'mrs';
-  protected $dateFormat = 'd-M-Y H:i';
+  protected $dateFormat = 'd-M-Y g:i A';
     protected $fillable = [
 
 
@@ -97,7 +97,7 @@ class MR extends Model
      */
     public function getCreatedatAttribute($date)
     {
-        return  Carbon::parse($date)->format('d-M-Y H:i:s');
+        return  Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
 
