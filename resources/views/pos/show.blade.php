@@ -34,14 +34,63 @@
                                     <td>{{ $po->po_issued }}</td>
                                 </tr>
 
-
-
                                 <tr>
-                                    <th>Created at</th>
-                                    <td>{{ $po->created_at }}</td>
+                                    <th>Supplier Confirmation</th>
+                                    <td>{{ $po->po_confirmation }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Loaded On Ideas</th>
+                                    <td>{{ $po->po_loaded_on_ideas }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Approved On Ideas</th>
+                                    <td>{{ $po->po_approved_on_ideas }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Memo To Finance </th>
+                                    <td>{{ $po->po_memo_to_fin }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Delivery Date </th>
+                                    <td>{{ $po->po_delivery_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Reminder For Delivery Date </th>
+                                    <td>{{ $po->po_reminder_delivery_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Materials Received Date </th>
+                                    <td>{{ $po->po_mr_received_date }}</td>
                                 </tr>
 
-
+                                <tr>
+                                    <th>Fax for Missing Materials Date </th>
+                                    <td>{{ $po->po_mrr_missing_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Materials Received Report Date </th>
+                                    <td>{{ $po->po_mrr_received_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Fax for Rejected Materials Date </th>
+                                    <td>{{ $po->po_mrr_rejected_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Materials Invoice Date </th>
+                                    <td>{{ $po->po_invoice_received_date }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Penalty to be Applied </th>
+                                    <td>{{ $po->po_penalty }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Invoice Cover </th>
+                                    <td>{{ $po->po_cover_invoice }}</td>
+                                </tr>
+                                <tr>
+                                    <th>PO Completion </th>
+                                    <td>{{ $po->po_completed }}</td>
+                                </tr>
 
                                 </thead>
 

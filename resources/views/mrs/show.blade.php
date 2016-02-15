@@ -22,7 +22,7 @@
                                 <tbody>
                                 <tr>
                                     <th>Material Request No.</th>
-                                    <td>{{ $mr->mr_no }}</td>
+                                    <td><b>{{ $mr->mr_no }} </b> </td>
                                 </tr>
                                 <tr>
                                     <th>MR Date</th>

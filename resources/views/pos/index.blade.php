@@ -22,7 +22,8 @@
                                     <th>PO Number</th>
                                     <th>Subject</th>
                                     <th>PO issuance</th>
-                                    <th>Created at</th>
+                                    <th>Estimated Delivery </th>
+
 
                                 </tr>
                                 </thead>
@@ -33,7 +34,8 @@
                                 <td><a href=" {{ action('POsController@show', [$p->id])  }} " > {{ $p->po_no }} </a></td>
                                         <td>{{ $p->po_subject }}</td>
                                         <td>{{ $p->po_issued }}</td>
-                                        <td>{{ $p->created_at }}</td>
+                                        <td>{{ $p->po_delivery_date }}</td>
+
                                     </tr>
                                     </tbody>
 

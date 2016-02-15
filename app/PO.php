@@ -34,7 +34,7 @@ class PO extends Model
         'po_no',
         'po_subject',
         'po_issued',
-
+         //po_cost
         'po_confirmation',
         'po_loaded_on_ideas',
         'po_approved_on_ideas',
@@ -198,6 +198,18 @@ class PO extends Model
     {
         $this->attributes['po_invoice_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
     }
+
+
+    public function getpomrrreceiveddateAttribute($date)
+    {
+        return Carbon::parse($date)->format('d-M-Y g:i A');
+    }
+
+    public function setpomrrreceiveddateAttribute($date)
+    {
+        $this->attributes['po_mrr_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+    }
+
 
 
     public function getpocoverinvoiceAttribute($date)
