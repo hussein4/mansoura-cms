@@ -29,6 +29,20 @@
                                     <td>{{ $po->po_subject }}</td>
                                 </tr>
 
+                                @unless ($po->mr->isEmpty())
+                                    <tr>
+                                    <th>Mr. No.:</th>
+                                        <td>
+                                    <ul>
+                                        @foreach ($po->mr as $mrs)
+                                            <li> {{ $mrs->mr_no }}</li>
+                                        @endforeach
+                                    </ul>
+                                        </td>
+                                    </tr>
+                                @endunless
+
+
                                 <tr>
                                     <th>PO Date</th>
                                     <td>{{ $po->po_issued }}</td>

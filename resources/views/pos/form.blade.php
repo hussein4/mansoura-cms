@@ -11,6 +11,14 @@
 </div>
 
 
+<div class="form-group">
+    <!--<select class="tag_list" multiple="multiple" data-tags="true  style="width: 50%">   -->
+    {!! Form::label('mr_list', 'MR:') !!}
+    {!! Form::select('mr_list[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_list' ,'multiple']) !!}
+</div>
+
+
+
 <div class="container">
     <div class="form-group">
     {!! Form::label('po_issued', 'PO DATE:') !!}
@@ -231,26 +239,18 @@
         ]
     });
 </script>
-<!--
-<script>
-    $(function() {
-        $( "#datepicker" ).datepicker();
+
+<script type="text/javascript">
+    $('#mr_list').select2({
+        placeholder: 'choose a MR',
+        tags:true,
+        data:[
+        ]
     });
 </script>
 
--->
-<!--
-<script>
-    $(function()
-    {
-         $('#datepicker').datepicker({
-             dateFormat: 'yy-m-d ',
-             timeFormat:  'H:i:s'
-         });
 
-});
-        </script>
-        -->
+
 <script>
     $(function()
     {

@@ -368,6 +368,11 @@ class MR extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function po()
+    {
+        return $this->hasMany('App\PO')->withTimestamps();
+    }
+
     public function tags()
     {
         return $this->belongsToMany('App\Tag' ,'mrs_tag','mr_id')->withTimestamps();

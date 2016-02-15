@@ -7,6 +7,7 @@ use App\PO;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tag;
+use App\MR;
 
 use Carbon\Carbon;
 use Auth;
@@ -48,7 +49,8 @@ class POsController extends Controller
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
-        return view('pos.create',compact('tags'));
+        $mr=MR::lists('mr_no','id')->all();
+        return view('pos.create',compact('tags' ,'mr'));
     }
 
     /**
@@ -72,7 +74,8 @@ class POsController extends Controller
     public function edit(PO $po)
     {
         $tags = Tag::lists('name','id')->all();
-        return view('pos.edit',compact('po','tags'));
+        $mr = MR::lists('mr_no','id')->all();
+        return view('pos.edit',compact('po','tags','mr'));
     }
 
     /**
@@ -86,6 +89,7 @@ class POsController extends Controller
         $po->update($request->all());
 
         $this->syncTags($po, $request->input('tag_list_po'));
+        $this->syncMr($po, $request->input('mr_list'));
         return redirect ('pos');
     }
 
@@ -99,6 +103,12 @@ class POsController extends Controller
         $po->tags()->sync($tags);
     }
 
+    public function syncMr(PO $po , array $mr)
+    {
+        $po->mr()->sync($mr);
+    }
+
+
 
 
 
@@ -110,6 +120,7 @@ class POsController extends Controller
     {
         $po= Auth::user()->po()->create($request->all());    //get authenticated user who saved  PO
         $this->syncTags($po, $request->input('tag_list_po'));
+        $this->syncMr($po, $request->input('mr_list'));
 
         return $po;
     }

@@ -21,6 +21,7 @@
                                 <tr>
                                     <th>PO Number</th>
                                     <th>Subject</th>
+                                    <th>MR No.</th>
                                     <th>PO issuance</th>
                                     <th>Estimated Delivery </th>
 
@@ -33,6 +34,17 @@
 
                                 <td><a href=" {{ action('POsController@show', [$p->id])  }} " > {{ $p->po_no }} </a></td>
                                         <td>{{ $p->po_subject }}</td>
+
+
+                                        <td>
+                                            <ul>
+                                                @foreach ($p->mr as $mrs)
+                                                    <li> {{ $mrs->mr_no }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
+
+
                                         <td>{{ $p->po_issued }}</td>
                                         <td>{{ $p->po_delivery_date }}</td>
 

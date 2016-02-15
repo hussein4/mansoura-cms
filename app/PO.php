@@ -242,6 +242,12 @@ class PO extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function mr()
+    {
+        return $this->belongsToMany('App\MR' ,'mr_po','po_id','mr_id');
+    }
+
+
     public function tags()
     {
         return $this->belongsToMany('App\Tag' ,'pos_tag' ,'po_id')->withTimestamps();
@@ -258,5 +264,12 @@ class PO extends Model
     {
         return $this->tags->lists('id')->all();
     }
+
+    public function getMrListAttribute()
+    {
+        return $this->mr->lists('id')->all();
+    }
+
+
 
 }
