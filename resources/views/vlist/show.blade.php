@@ -93,11 +93,11 @@
 
 
 
-           <li><a href="{{ action('VlistController@edit', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Edit Supplier : {!! $vlist->vname !!}</span></a></li>
-           <li><a href="{{ action('VlistController@export', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Export Supplier : {!! $vlist->vname !!}</span></a></li>
+           <li><a href="{{ action('VlistsController@edit', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Edit Supplier : {!! $vlist->vname !!}</span></a></li>
+           <li><a href="{{ action('VlistsController@export', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Export Supplier : {!! $vlist->vname !!}</span></a></li>
 
                             <div class = "form-control">
-                                {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistController@destroy',$vlist->id ]]) !!}
+                                {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistsController@destroy',$vlist->id ]]) !!}
                                 {!! Form::submit('Delete Supplier',['class'=> 'btn btn-danger ']) !!}
 
                                 {!! Form::close() !!}

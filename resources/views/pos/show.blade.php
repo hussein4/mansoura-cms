@@ -29,7 +29,7 @@
                                     <td>{{ $po->po_subject }}</td>
                                 </tr>
 
-                                @unless ($po->mr->isEmpty())
+
                                     <tr>
                                     <th>Mr. No.:</th>
                                         <td>
@@ -40,7 +40,18 @@
                                     </ul>
                                         </td>
                                     </tr>
-                                @endunless
+                                <tr>
+                                    <th>Supplier</th>
+                                    <td>
+                                        <ul>
+                                            @foreach ($po->suppliers as $supplier)
+                                                <li> {{ $supplier->vname }}</li>
+                                            @endforeach
+                                        </ul>
+
+                                    </td>
+                                </tr>
+
 
 
                                 <tr>

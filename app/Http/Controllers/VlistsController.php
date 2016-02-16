@@ -19,7 +19,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 
 
-class VlistController extends Controller {
+class VlistsController extends Controller {
 
     /**
      * Create a New Vlist instance
@@ -33,7 +33,7 @@ class VlistController extends Controller {
 
     public function index()
     {
-      //  $vlist = Vlist::latest('updated_at')->published()->get();
+        //  $vlist = Vlist::latest('updated_at')->published()->get();
         $vlist = Vlist::orderBy('created_at', 'desc')->paginate(10);
         return view('vlist.index', compact('vlist'));
     }
@@ -57,15 +57,15 @@ class VlistController extends Controller {
      */
     public function store(VlistRequest $request)
     {
-      //if (Input::hasFile('vpath'))
+        //if (Input::hasFile('vpath'))
         if($request->hasFile('vpath'))
-       {
-          // $file = Input::file('vpath');
-           $file = $request->file('vpath');
-           $filename = time().'-'.$file->getClientOriginalName();
-           $file->move(public_path() .'/views/vlist/docs', $filename);
-           $this->vpath = $filename;
-       }
+        {
+            // $file = Input::file('vpath');
+            $file = $request->file('vpath');
+            $filename = time().'-'.$file->getClientOriginalName();
+            $file->move(public_path() .'/views/vlist/docs', $filename);
+            $this->vpath = $filename;
+        }
 
 
         $this->createVlist($request);
@@ -95,11 +95,11 @@ class VlistController extends Controller {
      */
     public function update(Vlist $vlist, VlistRequest $request)
     {
-/*
-        $vlist->update($request->all());
-        $this->syncTags($vlist, $request->input('tag_list'));
-        return redirect('vlist');
-  */
+        /*
+                $vlist->update($request->all());
+                $this->syncTags($vlist, $request->input('tag_list'));
+                return redirect('vlist');
+          */
         $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4);
         $vlist->update($request->all());
         $vlist->vgrade = $average;
@@ -114,7 +114,7 @@ class VlistController extends Controller {
 
         $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4);
         $vlist->vgrade = $average;
-      // $vlist->fill($vlist);
+        // $vlist->fill($vlist);
         Auth::user()->vlist()->save($vlist);
 
         $tags = Tag::lists('name', 'id')->all();
@@ -179,37 +179,37 @@ class VlistController extends Controller {
     }
     public function destroy(Request $request, Vlist $vlist)
     {
-       $this->authorize('destroy', $vlist);
+        $this->authorize('destroy', $vlist);
         $vlist->delete();
 
         return redirect('/vlist');
     }
-/*
-    public function export( Request $request, Vlist $vlist )
-    {
+    /*
+        public function export( Request $request, Vlist $vlist )
+        {
 
-        $this->authorize('export', $vlist);
+            $this->authorize('export', $vlist);
 
 
 
-            $filename = 'test';
-            Excel::create($filename, function ($excel) use ($vlist)
-            {
-                // Set the title
-                $excel->setTitle('Supplier Details');
-                $excel->setCreator('Hussein')
-                    ->setCompany('Mansoura');
-                $excel->sheet('Sheet 1', function ($sheet) use ($vlist)
+                $filename = 'test';
+                Excel::create($filename, function ($excel) use ($vlist)
                 {
+                    // Set the title
+                    $excel->setTitle('Supplier Details');
+                    $excel->setCreator('Hussein')
+                        ->setCompany('Mansoura');
+                    $excel->sheet('Sheet 1', function ($sheet) use ($vlist)
+                    {
 
-                    $sheet->cell('A4', function($cell) {
-                        $cell->setValue('test');
+                        $sheet->cell('A4', function($cell) {
+                            $cell->setValue('test');
+                        });
+
                     });
-
-                });
-            })->export('xlsx');
-        }
-*/
+                })->export('xlsx');
+            }
+    */
 
 
 
@@ -221,7 +221,7 @@ class VlistController extends Controller {
 
         Excel::create($filename.time(), function($excel) use ($id)
         {
-          //  $supplier = Vlist::where('id',$id)->get(['vname']);
+            //  $supplier = Vlist::where('id',$id)->get(['vname']);
             // Set the title
             $excel->setTitle('Supplier Details');
             $excel->setCreator('Hussein')
@@ -249,13 +249,13 @@ class VlistController extends Controller {
                     $cells->setAlignment('center');
                 });
 
-              //  $sheet->setCellValue('D8', $data);
+                //  $sheet->setCellValue('D8', $data);
 
-            //  $sheet->fromArray($data);
+                //  $sheet->fromArray($data);
                 $sheet->fromArray($data,null,'A1',false,false)->prependRow(array(
-                    'Name', 'Service', 'Phone', 'Mobile', 'Email',
-                    'Contact Person', 'Address', 'EGPC No', 'Capital Limit' , 'Grade' , 'Remarks'
-                        ,'Updated At'
+                        'Name', 'Service', 'Phone', 'Mobile', 'Email',
+                        'Contact Person', 'Address', 'EGPC No', 'Capital Limit' , 'Grade' , 'Remarks'
+                    ,'Updated At'
                     )
 
                 );

@@ -11,7 +11,7 @@
 |
 */
 
-use App\Http\Controllers\VlistController;
+use App\Http\Controllers\VlistsController;
 use App\Vlist;
 use Illuminate\Http\Request;
 use App\Contracts\Search;
@@ -32,12 +32,12 @@ Route::get('/search', function (Search $search ,Request $request) {
     return view('search', compact('results'));
 });
 
-Route::resource('vlist','VlistController');
+Route::resource('vlist','VlistsController');
 
 
-Route::get('/vlist/{id}/export' , 'VlistController@export');
+Route::get('/vlist/{id}/export' , 'VlistsController@export');
 
-Route::post('/vlist/{id}/file' , 'VlistController@post_upload');
+Route::post('/vlist/{id}/file' , 'VlistsController@post_upload');
 
 
 /*
@@ -53,10 +53,10 @@ Route::get('vlist/{id}/eval', array('as' => 'vlist.eval', function($id)
 
 
 
-Route::get('vlist/{vlist}/eval','VlistController@average');
+Route::get('vlist/{vlist}/eval','VlistsController@average');
 
 /*
-Route::get('vlist/{vlist}/eval','VlistController@average', function($id)
+Route::get('vlist/{vlist}/eval','VlistsController@average', function($id)
 {
     return View('vlist.eval')
         ->with('vlist', \App\Vlist::find($id));

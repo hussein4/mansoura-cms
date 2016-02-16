@@ -21,7 +21,7 @@
         <!-- name -->
 
 
-        {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistController@update',$vlist->id]]) !!}
+        {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistsController@update',$vlist->id]]) !!}
         <div class="form-group ">
 
             {!! Form::label('quality', 'Quality:', ['class'=> 'form-control' ,'id'=>'iCheck']) !!}

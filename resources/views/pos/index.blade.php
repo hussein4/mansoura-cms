@@ -22,6 +22,7 @@
                                     <th>PO Number</th>
                                     <th>Subject</th>
                                     <th>MR No.</th>
+                                    <th>Supplier</th>
                                     <th>PO issuance</th>
                                     <th>Estimated Delivery </th>
 
@@ -44,6 +45,13 @@
                                             </ul>
                                         </td>
 
+                                        <td>
+                                            <ul>
+                                                @foreach ($p->suppliers as $supplier)
+                                                    <li> {{ $supplier->vname }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
 
                                         <td>{{ $p->po_issued }}</td>
                                         <td>{{ $p->po_delivery_date }}</td>

@@ -31,7 +31,7 @@
                                 <tbody>
                            <tr>
 
-                                <td><a href="{{ action('VlistController@show', [$list->id])  }}">{{ $list->vname }}</a></td>
+                                <td><a href="{{ action('VlistsController@show', [$list->id])  }}">{{ $list->vname }}</a></td>
                                  <td>{{$list->vservice}}</td>
                                  <td>{{$list->vgrade}}</td>
                                  <td>{{$list->vremarks}}</td>

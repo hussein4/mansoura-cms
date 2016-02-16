@@ -12,10 +12,17 @@
 
 
 <div class="form-group">
-    <!--<select class="tag_list" multiple="multiple" data-tags="true  style="width: 50%">   -->
+
     {!! Form::label('mr_list', 'MR:') !!}
     {!! Form::select('mr_list[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_list' ,'multiple']) !!}
 </div>
+
+<div class="form-group">
+
+    {!! Form::label('suppliers_list', 'Supplier') !!}
+    {!! Form::select('suppliers_list[]',$suppliers,null,[ 'class'=>'form-control','id'=> 'suppliers_list','multiple' ]) !!}
+</div>
+
 
 
 
@@ -249,6 +256,14 @@
     });
 </script>
 
+<script type="text/javascript">
+    $('#suppliers_list').select2({
+        placeholder: 'Supplier',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
 
 
 <script>

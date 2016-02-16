@@ -79,7 +79,7 @@ class Vlist extends Model
 
     public function po()
     {
-        return $this->belongsToMany('App\PO' ,'pos_tag')->withTimestamps();
+        return $this->hasMany('App\PO' ,'po_vlist');
     }
 
 

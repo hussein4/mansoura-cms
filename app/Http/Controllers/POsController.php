@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tag;
 use App\MR;
+use App\Vlist;
 
 use Carbon\Carbon;
 use Auth;
@@ -49,8 +50,9 @@ class POsController extends Controller
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
-        $mr=MR::lists('mr_no','id')->all();
-        return view('pos.create',compact('tags' ,'mr'));
+        $mr= MR::lists('mr_no','id')->all();
+        $suppliers = Vlist::lists('vname','id')->all();
+        return view('pos.create',compact('tags' ,'mr','suppliers'));
     }
 
     /**
@@ -75,7 +77,8 @@ class POsController extends Controller
     {
         $tags = Tag::lists('name','id')->all();
         $mr = MR::lists('mr_no','id')->all();
-        return view('pos.edit',compact('po','tags','mr'));
+        $suppliers = Vlist::lists('vname','id')->all();
+        return view('pos.edit',compact('po','tags','mr','suppliers'));
     }
 
     /**
@@ -90,6 +93,7 @@ class POsController extends Controller
 
         $this->syncTags($po, $request->input('tag_list_po'));
         $this->syncMr($po, $request->input('mr_list'));
+        $this->syncSuppliers($po, $request->input('suppliers_list'));
         return redirect ('pos');
     }
 
@@ -108,6 +112,11 @@ class POsController extends Controller
         $po->mr()->sync($mr);
     }
 
+    public function syncSuppliers(PO $po , array $suppliers)
+    {
+        $po->suppliers()->sync($suppliers);
+    }
+
 
 
 
@@ -121,6 +130,7 @@ class POsController extends Controller
         $po= Auth::user()->po()->create($request->all());    //get authenticated user who saved  PO
         $this->syncTags($po, $request->input('tag_list_po'));
         $this->syncMr($po, $request->input('mr_list'));
+        $this->syncSuppliers($po, $request->input('suppliers_list'));
 
         return $po;
     }

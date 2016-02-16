@@ -16,7 +16,7 @@
                  <!--   <div class="panel-body">   -->
 
 
-       {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistController@update',$vlist->id , 'files'=>'true','enctype' => 'multipart/form-data']]) !!}
+       {!! Form::model($vlist,['method' => 'PATCH' , 'action' => ['VlistsController@update',$vlist->id , 'files'=>'true','enctype' => 'multipart/form-data']]) !!}
 
                          @include('vlist.form',['submitButtonText'=>'Update Supplier'])
 
@@ -24,7 +24,7 @@
 
 
 
-                    {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistController@destroy',$vlist->id ]]) !!}
+                    {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistsController@destroy',$vlist->id ]]) !!}
                     {!! Form::submit('Delete Supplier',['class'=> 'btn btn-danger ']) !!}
                     {!! Form::close() !!}
 

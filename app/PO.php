@@ -236,7 +236,6 @@ class PO extends Model
 
 
 
-
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -254,9 +253,9 @@ class PO extends Model
     }
 
 
-    public function vlist()
+    public function suppliers()
     {
-        return $this->belongsTo('App\Vlist');
+        return $this->belongsToMany('App\Vlist','po_vlist' ,'po_id','vlist_id');
     }
 
 
@@ -268,6 +267,12 @@ class PO extends Model
     public function getMrListAttribute()
     {
         return $this->mr->lists('id')->all();
+    }
+
+    public function getSuppliersListAttribute()
+    {
+
+        return $this->suppliers()->lists('id')->all();
     }
 
 
