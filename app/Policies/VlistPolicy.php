@@ -29,4 +29,10 @@ class VlistPolicy
     {
         return $user->id === $vlist->user_id;
     }
+    public function postUploadCsv(User $user, Vlist $vlist)
+    {
+        return $user->id === $vlist->user_id;
+    }
+
+
 }

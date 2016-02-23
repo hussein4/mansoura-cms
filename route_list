@@ -1,0 +1,51 @@
++--------+--------------------------------+-------------------------------------------------------+---------------+------------------------------------------------------------+------------+
+| Domain | Method                         | URI                                                   | Name          | Action                                                     | Middleware |
++--------+--------------------------------+-------------------------------------------------------+---------------+------------------------------------------------------------+------------+
+|        | GET|HEAD                       | /                                                     |               | Closure                                                    |            |
+|        | GET|HEAD                       | auth/login/{one?}/{two?}/{three?}/{four?}/{five?}     |               | App\Http\Controllers\Auth\AuthController@getLogin          | guest      |
+|        | POST                           | auth/login/{one?}/{two?}/{three?}/{four?}/{five?}     |               | App\Http\Controllers\Auth\AuthController@postLogin         | guest      |
+|        | GET|HEAD                       | auth/logout/{one?}/{two?}/{three?}/{four?}/{five?}    |               | App\Http\Controllers\Auth\AuthController@getLogout         |            |
+|        | GET|HEAD                       | auth/register/{one?}/{two?}/{three?}/{four?}/{five?}  |               | App\Http\Controllers\Auth\AuthController@getRegister       | guest      |
+|        | POST                           | auth/register/{one?}/{two?}/{three?}/{four?}/{five?}  |               | App\Http\Controllers\Auth\AuthController@postRegister      | guest      |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | auth/{_missing}                                       |               | App\Http\Controllers\Auth\AuthController@missingMethod     | guest      |
+|        | GET|HEAD                       | home                                                  | home          | Closure                                                    | auth       |
+|        | GET|HEAD                       | mrs                                                   | mrs.index     | App\Http\Controllers\MRsController@index                   |            |
+|        | POST                           | mrs                                                   | mrs.store     | App\Http\Controllers\MRsController@store                   | auth       |
+|        | GET|HEAD                       | mrs/create                                            | mrs.create    | App\Http\Controllers\MRsController@create                  | auth       |
+|        | GET|HEAD                       | mrs/import                                            |               | Closure                                                    |            |
+|        | PUT                            | mrs/import                                            |               | App\Http\Controllers\MRsController@import                  | auth       |
+|        | PUT                            | mrs/{mrs}                                             | mrs.update    | App\Http\Controllers\MRsController@update                  | auth       |
+|        | DELETE                         | mrs/{mrs}                                             | mrs.destroy   | App\Http\Controllers\MRsController@destroy                 | auth       |
+|        | GET|HEAD                       | mrs/{mrs}                                             | mrs.show      | App\Http\Controllers\MRsController@show                    | auth       |
+|        | PATCH                          | mrs/{mrs}                                             |               | App\Http\Controllers\MRsController@update                  | auth       |
+|        | GET|HEAD                       | mrs/{mrs}/edit                                        | mrs.edit      | App\Http\Controllers\MRsController@edit                    | auth       |
+|        | GET|HEAD                       | password/email/{one?}/{two?}/{three?}/{four?}/{five?} |               | App\Http\Controllers\Auth\PasswordController@getEmail      | guest      |
+|        | POST                           | password/email/{one?}/{two?}/{three?}/{four?}/{five?} |               | App\Http\Controllers\Auth\PasswordController@postEmail     | guest      |
+|        | POST                           | password/reset/{one?}/{two?}/{three?}/{four?}/{five?} |               | App\Http\Controllers\Auth\PasswordController@postReset     | guest      |
+|        | GET|HEAD                       | password/reset/{one?}/{two?}/{three?}/{four?}/{five?} |               | App\Http\Controllers\Auth\PasswordController@getReset      | guest      |
+|        | GET|HEAD|POST|PUT|PATCH|DELETE | password/{_missing}                                   |               | App\Http\Controllers\Auth\PasswordController@missingMethod | guest      |
+|        | POST                           | pos                                                   | pos.store     | App\Http\Controllers\POsController@store                   | auth       |
+|        | GET|HEAD                       | pos                                                   | pos.index     | App\Http\Controllers\POsController@index                   |            |
+|        | GET|HEAD                       | pos/create                                            | pos.create    | App\Http\Controllers\POsController@create                  | auth       |
+|        | GET|HEAD                       | pos/import                                            |               | Closure                                                    |            |
+|        | PUT                            | pos/import                                            |               | App\Http\Controllers\POsController@import                  | auth       |
+|        | GET|HEAD                       | pos/{pos}                                             | pos.show      | App\Http\Controllers\POsController@show                    | auth       |
+|        | DELETE                         | pos/{pos}                                             | pos.destroy   | App\Http\Controllers\POsController@destroy                 | auth       |
+|        | PUT                            | pos/{pos}                                             | pos.update    | App\Http\Controllers\POsController@update                  | auth       |
+|        | PATCH                          | pos/{pos}                                             |               | App\Http\Controllers\POsController@update                  | auth       |
+|        | GET|HEAD                       | pos/{pos}/edit                                        | pos.edit      | App\Http\Controllers\POsController@edit                    | auth       |
+|        | GET|HEAD                       | search                                                |               | Closure                                                    |            |
+|        | GET|HEAD                       | tags/{tags}                                           |               | App\Http\Controllers\TagsController@show                   |            |
+|        | POST                           | vlist                                                 | vlist.store   | App\Http\Controllers\VlistsController@store                | auth       |
+|        | GET|HEAD                       | vlist                                                 | vlist.index   | App\Http\Controllers\VlistsController@index                |            |
+|        | GET|HEAD                       | vlist/create                                          | vlist.create  | App\Http\Controllers\VlistsController@create               | auth       |
+|        | PUT                            | vlist/import                                          |               | App\Http\Controllers\VlistsController@import               | auth       |
+|        | GET|HEAD                       | vlist/import                                          |               | Closure                                                    |            |
+|        | GET|HEAD                       | vlist/{id}/export                                     |               | App\Http\Controllers\VlistsController@export               | auth       |
+|        | POST                           | vlist/{id}/file                                       |               | App\Http\Controllers\VlistsController@post_upload          | auth       |
+|        | GET|HEAD                       | vlist/{vlist}                                         | vlist.show    | App\Http\Controllers\VlistsController@show                 |            |
+|        | DELETE                         | vlist/{vlist}                                         | vlist.destroy | App\Http\Controllers\VlistsController@destroy              | auth       |
+|        | PUT                            | vlist/{vlist}                                         | vlist.update  | App\Http\Controllers\VlistsController@update               | auth       |
+|        | PATCH                          | vlist/{vlist}                                         |               | App\Http\Controllers\VlistsController@update               | auth       |
+|        | GET|HEAD                       | vlist/{vlist}/edit                                    | vlist.edit    | App\Http\Controllers\VlistsController@edit                 | auth       |
++--------+--------------------------------+-------------------------------------------------------+---------------+------------------------------------------------------------+------------+

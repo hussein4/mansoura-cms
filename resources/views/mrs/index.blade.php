@@ -38,7 +38,7 @@
                                 @endforeach
 
                             </table>
-
+                            <a href="mr_s/import">Import pos</a>
                         </mr>
 
 

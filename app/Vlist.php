@@ -24,6 +24,7 @@ class Vlist extends Model
         'vremarks',
         'vgrade',
         'vpath',
+        'user_id',
         'created_on' ,
         'created_at',
 

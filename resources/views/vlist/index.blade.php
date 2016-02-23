@@ -56,6 +56,10 @@
                               </table>
 
 
+                    <li><a href="v_list/import">Import</a></li>
+
+
+
                 </vlist>
 
 </div>

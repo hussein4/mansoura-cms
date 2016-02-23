@@ -12,7 +12,8 @@ use App\Vlist;
 
 use Carbon\Carbon;
 use Auth;
-
+use Illuminate\Support\Facades\Input;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class POsController extends Controller
@@ -140,5 +141,42 @@ class POsController extends Controller
      * @return mixed
      */
 
+    public function import()
+    {
+        $file=Input::file("file");
+
+        Excel::load($file, function($reader)
+        {
+            $results = $reader->get();
+
+            foreach($results as $row):
+                $vlist=PO::create([
+                    'po_no'                    =>$row->po_no,
+                    'po_subject'               =>$row->po_subject,
+                    'po_issued'                =>date("d-M-Y g:i A",strtotime($row->po_issued)),
+                    'po_confirmation'          =>date("d-M-Y g:i A",strtotime($row->po_confirmation)),
+                    'po_loaded_on_ideas'       =>$row->date("d-M-Y g:i A",strtotime($row->po_loaded_on_ideas)),
+                    'po_approved_on_ideas'     =>$row->date("d-M-Y g:i A",strtotime($row->po_approved_on_ideas)),
+                    'po_memo_to_fin'           =>$row->date("d-M-Y g:i A",strtotime($row->po_memo_to_fin)),
+                    'po_delivery_date'         =>$row->date("d-M-Y g:i A",strtotime($row->po_delivery_date)),
+                    'po_reminder_delivery_date'=>$row->date("d-M-Y g:i A",strtotime($row->po_reminder_delivery_date)),
+                    'po_mr_received_date'      =>$row->date("d-M-Y g:i A",strtotime($row->po_mr_received_date)),
+                    'po_mrr_received_date'     =>$row->date("d-M-Y g:i A",strtotime($row->po_mrr_received_date)),
+                    'po_mrr_missing_date'      =>$row->date("d-M-Y g:i A",strtotime($row->po_mrr_missing_date)),
+                    'po_mrr_rejected_date'     =>$row->date("d-M-Y g:i A",strtotime($row->po_mrr_rejected_date)),
+                    'po_invoice_received_date' =>$row->date("d-M-Y g:i A",strtotime($row->po_invoice_received_date)),
+                    'po_penalty'               =>$row->po_penalty,
+                    'po_cover_invoice'         =>$row->date("d-M-Y g:i A",strtotime($row->po_cover_invoice)),
+                    'po_completed'             =>$row->date("d-M-Y g:i A",strtotime($row->po_completed)),
+                    'popath'                   =>$row->popath,
+                    'user_id'                  =>Auth::user()->id
+
+
+                ]);
+            endforeach;
+
+        });
+        return redirect ('pos');
+    }
 
 }

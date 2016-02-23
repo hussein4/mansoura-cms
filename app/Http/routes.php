@@ -21,7 +21,7 @@ use Maatwebsite\Excel\Facades\Excel;
 Route::get('/', function (Search $search ,Request $request) {
 
     $results = $search->index('getstarted_actors')
-               ->get($request->name);
+        ->get($request->name);
     return view('welcome', compact('results'));
 });
 
@@ -38,6 +38,11 @@ Route::resource('vlist','VlistsController');
 Route::get('/vlist/{id}/export' , 'VlistsController@export');
 
 Route::post('/vlist/{id}/file' , 'VlistsController@post_upload');
+
+Route::get('v_list/import', function () {
+    return view('vlist.upload_vlist');
+});
+Route::put('v_list/import','VlistsController@import');
 
 
 /*
@@ -67,7 +72,16 @@ Route::get('vlist/{vlist}/eval','VlistsController@average', function($id)
 
 
 Route::resource('mrs','MRsController');
+Route::get('mr_s/import', function () {
+    return view('mrs.upload_mrs');
+});
+Route::put('mr_s/import','MRsController@import');
+
 Route::resource('pos','POsController');
+Route::get('po_s/import', function () {
+    return view('pos.upload_pos');
+});
+Route::put('po_s/import','POsController@import');
 
 
 
@@ -78,5 +92,4 @@ Route::get('tags/{tags}', 'TagsController@show');
 Route::controllers([
     'auth'=>'Auth\AuthController',
     'password'=>'Auth\PasswordController',
-    ]);
-
+]);

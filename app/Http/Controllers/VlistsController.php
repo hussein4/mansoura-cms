@@ -5,6 +5,7 @@ use App\Http\Requests\VlistRequest;
 use App\Tag;
 use App\Vlist;
 use Gate;
+use Illuminate\Support\Facades\Input;
 //use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ use Auth;
 
 
 use Maatwebsite\Excel\Facades\Excel;
+
 
 
 
@@ -266,7 +268,33 @@ class VlistsController extends Controller {
             });
         })->download('xlsx');
     }
+    
+    public function import()
+    {
+        $file=Input::file("file");
 
+        Excel::load($file, function($reader)
+        {
+            $results = $reader->get();
+            foreach($results as $row):
+                $vlist=Vlist::create([
+                    'vname'           =>$row->vname,
+                    'vservice'        =>$row->vservice,
+                    'vphone'          =>$row->vphone,
+                    'vmobile'         =>$row->vmobile,
+                    'vemail'          =>$row->vemail,
+                    'vcontactperson'  =>$row->vcontactperson,
+                    'vaddress'        =>$row->vaddress,
+                    'vegpcno'         =>$row->vegpcno,
+                    'vcapitallimit'   =>$row->vcapitallimit,
+                    'vgrade'          =>$row->vgrade,
+                    'vremarks'        =>$row->vremarks,
+                    'user_id'        =>Auth::user()->id
+                ]);
+            endforeach;
+        });
+        return redirect('vlist');
+    }
 
 
 

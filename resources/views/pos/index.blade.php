@@ -63,7 +63,7 @@
                             @endforeach
 
                             </table>
-
+                            <a href="po_s/import">Import pos</a>
                         </po>
 
 
