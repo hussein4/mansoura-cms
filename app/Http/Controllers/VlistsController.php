@@ -268,7 +268,7 @@ class VlistsController extends Controller {
             });
         })->download('xlsx');
     }
-    
+
     public function import()
     {
         $file=Input::file("file");

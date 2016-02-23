@@ -56,7 +56,7 @@
                               </table>
 
 
-                    <li><a href="v_list/import">Import</a></li>
+                    <li><a href="v_list/import">Import Suppliers List</a></li>
 
 
 

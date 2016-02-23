@@ -34,7 +34,7 @@ class PO extends Model
         'po_no',
         'po_subject',
         'po_issued',
-         //po_cost
+         'po_cost',
         'po_confirmation',
         'po_loaded_on_ideas',
         'po_approved_on_ideas',
@@ -50,6 +50,7 @@ class PO extends Model
         'po_cover_invoice',
         'po_completed',
         'popath',
+        'user_id',
 
     ];
 

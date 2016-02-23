@@ -16,6 +16,7 @@ class MR extends Model
         'mr_date',
         'mr_subject',
         'mr_received_date',
+        'mr_required_date',
         'mr_received_by_officer_date',
         'mr_estimated_cost',
         'mr_budgetry_rfq',
@@ -39,6 +40,7 @@ class MR extends Model
         'mr_sent_for_budget_expansion',
         'mr_sent_for_budget_expansion_reminder',
         'mrpath',
+        'user_id',
 
     ];
 
@@ -48,7 +50,7 @@ class MR extends Model
         'mr_date',
         'mr_received_date',
         'mr_received_by_officer_date',
-
+        'mr_required_date',
         'mr_budgetry_rfq',
         'mr_rfq_budgetry_closing_date',
         'mr_rfq_budgetry_reminder',
@@ -61,7 +63,7 @@ class MR extends Model
         'mr_offers_sent_to_tech_dept',
         'mr_offers_received_from_tech_dept_closing_date',
         'mr_offers_received_from_tech_dept_reminder',
-        //mr_offers_received_from_tech_dept ,
+        'mr_offers_received_from_tech_dept' ,
         'mr_offers_clarifications_sent_to_suppliers',
         'mr_offers_clarifications_closing_date',
         'mr_offers_clarifications_received_from_supplier',
@@ -70,7 +72,7 @@ class MR extends Model
         'mr_offers_evaluation',
         'mr_sent_for_budget_expansion',
         'mr_sent_for_budget_expansion_reminder',
-          //mr_evaluation_signature
+         //mr_evaluation_signature
     ];
 
 
