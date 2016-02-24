@@ -49,43 +49,6 @@
     </div>
 </div>
 
-<div class="form-group">
-    {!! Form::label('mr_budgetry_rfq', 'Budgetry RFQ') !!}
-    <div class="row">
-        <div class='col-sm-6'>
-
-            {!! Form::input('text','mr_budgetry_rfq',$mr->mr_budgetry_rfq, ['class'=> 'form-control','id'=>'datetimepicker4']) !!}
-        </div>
-    </div>
-</div>
-
-<div class="form-group">
-    {!! Form::label('mr_rfq_budgetry_closing_date', 'Budgetry Offer Closing Date:') !!}
-    <div class="row">
-        <div class='col-sm-6'>
-            {!! Form::input('text','mr_rfq_budgetry_closing_date',$mr->mr_rfq_budgetry_closing_date, ['class'=> 'form-control','id'=>'datetimepicker5']) !!}
-
-        </div>
-    </div>
-</div>
-
-<div class="form-group">
-    {!! Form::label('mr_rfq_budgetry_reminder', 'Budgetry Offer Reminder:') !!}
-    <div class="row">
-        <div class='col-sm-6'>
-            {!! Form::input('text','mr_rfq_budgetry_reminder',$mr->mr_rfq_budgetry_reminder, ['class'=> 'form-control','id'=>'datetimepicker6']) !!}
-        </div>
-    </div>
-</div>
-
-<div class="form-group">
-    {!! Form::label('mr_budgetry_memo', 'Budgetry Memo To Technical Dept.:') !!}
-    <div class="row">
-        <div class='col-sm-6'>
-            {!! Form::input('text','mr_budgetry_memo',$mr->mr_budgetry_memo, ['class'=> 'form-control','id'=>'datetimepicker7']) !!}
-        </div>
-    </div>
-</div>
 
 <div class="form-group">
     {!! Form::label('mr_checked_on_egpc_site', 'Checked EGPC Site:') !!}

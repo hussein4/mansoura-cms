@@ -61,10 +61,13 @@
       user experience. Slimscroll is required when using the
       fixed layout. -->
 
+<!-- from  1-20 datetimepicker budgetry   -->
+<!-- from  21-50 datetimepicker quotation   -->
+<!-- from  51-80 datetimepicker Tender   -->
+<!-- from  81-100 datetimepicker PO   -->
+
 
 <script>
-
-
     $(function()
     {
         $('#datetimepicker1').datetimepicker
@@ -387,8 +390,462 @@ sideBySide: true
 </script>
 
 
-<!-- p.o scripts  -->
+<script>
+    $(function()
+    {
+        $('#datetimepicker25').datetimepicker
+        ({
 
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker26').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker27').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker28').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker29').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker30').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker31').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker32').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker33').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker34').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker35').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker36').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker37').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker38').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker39').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker40').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker41').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker42').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker43').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker44').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker45').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker46').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker47').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker48').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker49').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker50').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker51').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker52').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker53').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker54').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker55').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker56').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker57').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker58').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker59').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
 <script>
     $(function()
     {
@@ -402,7 +859,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -416,7 +872,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -430,7 +885,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -457,7 +911,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -510,7 +963,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -537,7 +989,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -551,8 +1002,6 @@ sideBySide: true
         });
     });
 </script>
-
-
 <script>
     $(function()
     {
@@ -566,7 +1015,6 @@ sideBySide: true
         });
     });
 </script>
-
 <script>
     $(function()
     {
@@ -580,6 +1028,541 @@ sideBySide: true
         });
     });
 </script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker74').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker75').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker76').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker77').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker78').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker79').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker80').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker81').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker82').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker83').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker84').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker85').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker86').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker87').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker89').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker90').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker91').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker92').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker93').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker94').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker95').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker96').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker97').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker98').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker99').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker100').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+
+
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker101').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker102').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker103').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker104').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker105').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker106').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker107').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker108').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker109').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker110').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+<script>
+    $(function()
+    {
+        $('#datetimepicker111').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker112').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker113').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker114').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+
 
 
 <script type="text/javascript">
@@ -590,49 +1573,16 @@ sideBySide: true
         ]
     });
 </script>
-<!--
+
 <script type="text/javascript">
+    $('#currency_list').select2({
+        placeholder: 'choose a currency',
 
-    Dropzone.options.myAwesomeDropzone = { // The camelized version of the ID of the form element
-
-        // The configuration we've talked about above
-        autoProcessQueue: false,
-        uploadMultiple: true,
-        parallelUploads: 100,
-        maxFiles: 100,
-
-        // The setting up of the dropzone
-        init: function() {
-            var myDropzone = this;
-
-            // First change the button to actually tell Dropzone to process the queue.
-            this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
-                // Make sure that the form isn't actually being sent.
-                e.preventDefault();
-                e.stopPropagation();
-                myDropzone.processQueue();
-            });
-
-            // Listen to the sendingmultiple event. In this case, it's the sendingmultiple event instead
-            // of the sending event because uploadMultiple is set to true.
-            this.on("sendingmultiple", function() {
-                // Gets triggered when the form is actually being sent.
-                // Hide the success button or the complete form.
-            });
-            this.on("successmultiple", function(files, response) {
-                // Gets triggered when the files have successfully been sent.
-                // Redirect user or notify of success.
-            });
-            this.on("errormultiple", function(files, response) {
-                // Gets triggered when there was an error sending the files.
-                // Maybe show form again, and notify user of error
-            });
-        }
-
-    }
--->
-
+        data:[
+        ]
+    });
 </script>
+
 <script>
 $(document).ready(function(){
     $('input').iCheck({

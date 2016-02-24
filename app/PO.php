@@ -25,7 +25,7 @@ class PO extends Model
         'po_mrr_rejected_date',
         'po_invoice_received_date',
         'po_cover_invoice',
-        'po_completed',
+
     ];
 
 
@@ -33,8 +33,13 @@ class PO extends Model
     protected $fillable = [
         'po_no',
         'po_subject',
+        'po_materials_cost',
+        'po_freight_cost',
+        'po_total_cost',
+        'po_currency',
+        'po_payment_method',
+        'po_delivery_method',
         'po_issued',
-         'po_cost',
         'po_confirmation',
         'po_loaded_on_ideas',
         'po_approved_on_ideas',
@@ -48,7 +53,11 @@ class PO extends Model
         'po_invoice_received_date',
         'po_penalty',
         'po_cover_invoice',
+
         'po_completed',
+
+
+       
         'popath',
         'user_id',
 
