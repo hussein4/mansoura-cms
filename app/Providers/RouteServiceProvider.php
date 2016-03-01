@@ -45,6 +45,17 @@ class RouteServiceProvider extends ServiceProvider
             return \App\PO::published()->findOrFail($id);
         });
 
+        $router->bind('budgetries',function($id)
+        {
+            return \App\Budgetry::published()->findOrFail($id);
+        });
+
+        $router->bind('tenders',function($id)
+        {
+            return \App\Tender::published()->findOrFail($id);
+        });
+
+
         $router->bind('tags',function($name)
         {
             return \App\Tag::where('name',$name)->findOrFail();

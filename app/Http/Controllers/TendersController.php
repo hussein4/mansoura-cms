@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\MR;
+use App\Vlist;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\MRRequest;
-use App\MR;
+use App\Http\Requests\TenderRequest;
+
 use App\Tag;
+use App\Tender;
 
 
 use Carbon\Carbon;
@@ -17,63 +20,65 @@ use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
-
-
-
-class MRsController extends Controller
+class TendersController extends Controller
 {
+
     public function __construct()
     {
-        $this->middleware('auth', ['except'=> ['index']]);
+        $this->middleware('auth');
     }
 
 
 
     public function index()
     {
-       // $mr = MR::latest('updated_at')->published()->get();
-        $mr =MR::orderBy('created_at', 'desc')->paginate(10);
-        return view ('mrs.index', compact('mr' ));
+        // $tender = $Tender::latest('updated_at')->published()->get();
+        $tender =Tender::orderBy('created_at', 'desc')->paginate(10);
+        return view ('tenders.index', compact('tender' ));
     }
 
-    public function show(MR $mr)
+    public function show(Tender $tender)
     {
-        return view('mrs.show', compact ('mr'));
+        return view('tenders.show', compact ('tender'));
     }
 
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
-        return view('mrs.create',compact('tags'));
-        dd($tags);
-      //  return view('mrs.create_b',compact('tags'));
+        $mr= MR::lists('mr_no','id')->all();
+        $suppliers = Vlist::lists('vname','id')->all();
+        return view('tenders.create',compact('tags','mr','suppliers'));
+
+        //  return view('$tenders.create_b',compact('tags'));
     }
 
 
 
 
     /**
-     * @param CreateMRRequest $request
+     * @param Create$TenderRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(MRRequest $request)
+    public function store(TenderRequest $request)
     {
-         // dd($request->input('tag_list'));
-        $this->createMR($request);
+        // dd($request->input('tag_list'));
+        $this->createTender($request);
 
         //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Material Request has been Successfully Added!', 'Good Job');
-        return redirect ('mrs');
+        return redirect ('tenders');
     }
 
     /**
-     * @param MR $mr
+     * @param $Tender $tender
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(MR $mr)
+    public function edit(Tender $tender)
     {
         $tags = Tag::lists('name','id')->all();
-        return view('mrs.edit',compact('mr','tags'));
+        $mr= MR::lists('mr_no','id')->all();
+        $suppliers = Vlist::lists('vname','id')->all();
+        return view('tenders.edit',compact('tender','tags','mr','suppliers'));
     }
 
     /**
@@ -81,93 +86,107 @@ class MRsController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(MR $mr , MRRequest $request)
+    public function update(Tender $tender , TenderRequest $request)
     {
-        $mr->update($request->all());
-        $this->syncTags($mr, $request->input('tag_list_mr'));
-
-        return redirect ('mrs');
+        $tender->update($request->all());
+        $this->syncTags($tender, $request->input('tag_list_tender'));
+        $this->syncMr($tender, $request->input('mr_list_tender'));
+        $this->syncSuppliers($tender, $request->input('suppliers_list'));
+        return redirect ('tenders');
     }
 
     /** sync up the list  of tags in database
-     * @param MR $mr
+     * @param $Tender $tender
      * @param array $tags
-     * @internal param MRRequest $request
+     * @internal param $TenderRequest $request
      */
-    public function syncTags(MR $mr , array $tags)
+    public function syncTags(Tender $tender , array $tags)
     {
-        $mr->tags()->sync($tags);
+        $tender->tags()->sync($tags);
+
+    }
+
+    public function syncMr(Tender $tender , array $mr)
+    {
+        $tender->mr()->sync($mr);
+    }
+
+    public function syncSuppliers(Tender $tender , array $suppliers)
+    {
+        $tender->suppliers()->sync($suppliers);
     }
 
     /** save a new mr
-     * @param MRRequest $request
+     * @param $TenderRequest $request
      * @return mixed
      */
-    private function createMR(MRRequest $request)
+    private function createTender(TenderRequest $request)
     {
-        $mr= Auth::user()->mr()->create($request->all());    //get authenticated user who saved  mr
-        $this->syncTags($mr, $request->input('tag_list_mr'));
-        return $mr;
+        $tender= Auth::user()->tender()->create($request->all());    //get authenticated user who saved  mr
+        $this->syncTags($tender, $request->input('tag_list_tender'));
+        $this->syncMr($tender, $request->input('mr_list_tender'));
+        $this->syncSuppliers($tender, $request->input('suppliers_list'));
+        return $tender;
     }
 
 
-/*
-
-    public function postUploadCsv(Request $request ,MR $mr ,$id )
-    {
-        $mr= Auth::user()->mr()->create($request->all());
-
-        $excelFile = public_path() . '/import.xlsx';
-        //   Excel::load($excelFile, function($reader);
-       // $results = \Excel::load($excelFile, function ($reader)
-         Excel::load($excelFile, function($reader) use ($id) {
-
-            // Getting all results
-           // $results = $reader->get();
-
-            // ->all() is a wrapper for ->get() and will work the same
-            $results = $reader->all();
-
-                 foreach($results as $key => $value)
-
-                    {
-
-                        //   $result = $reader->select(array('mr_no','mr_subject','mr_date',''mr_received_date'))->get();
-
-
-
-
-                            foreach ($value as $key => $value1) {
-                                 //value1 = test import mr
-
-
-                                MR::create([
-
-                                    // 'date' => date("Y-m-d",strtotime($value1->date)),
-                                    'mr_no'=>'value1',
-                                    'mr_subject' => 'value1',
-                                //    'mr_date' => 'value1',
-                                //    'mr_received_date' => 'value1',
-
-                                ]);
+    /*
+    
+        public function postUploadCsv(Request $request ,$Tender $tender ,$id )
+        {
+            $tender= Auth::user()->mr()->create($request->all());
+    
+            $excelFile = public_path() . '/import.xlsx';
+            //   Excel::load($excelFile, function($reader);
+           // $results = \Excel::load($excelFile, function ($reader)
+             Excel::load($excelFile, function($reader) use ($id) {
+    
+                // Getting all results
+               // $results = $reader->get();
+    
+                // ->all() is a wrapper for ->get() and will work the same
+                $results = $reader->all();
+    
+                     foreach($results as $key => $value)
+    
+                        {
+    
+                            //   $result = $reader->select(array('mr_no','mr_subject','mr_date',''mr_received_date'))->get();
+    
+    
+    
+    
+                                foreach ($value as $key => $value1) {
+                                     //value1 = test import mr
+    
+    
+                                    $Tender::create([
+    
+                                        // 'date' => date("Y-m-d",strtotime($value1->date)),
+                                        'mr_no'=>'value1',
+                                        'mr_subject' => 'value1',
+                                    //    'mr_date' => 'value1',
+                                    //    'mr_received_date' => 'value1',
+    
+                                    ]);
+                                }
                             }
-                        }
-
-
-        });
-
-        return view('mrs.import', compact('results'));
-    }
-*/
+    
+    
+            });
+    
+            return view('$tenders.import', compact('results'));
+        }
+    */
     public function import()
     {
-       $file=Input::file("file");
-      //  $file = public_path() . '/import.xlsx';
+        $file=Input::file("file");
+        //  $file = public_path() . '/import.xlsx';
         Excel::load($file, function($reader)
         {
             $results = $reader->get();
             foreach($results as $row):
-                $vlist=MR::create([
+                Tender::create([
                     'mr_no'                                                     =>$row->mr_no,
                     'mr_subject'                                                =>$row->mr_subject,
                     'mr_date'                                                   =>date("d-M-Y g:i A",strtotime($row->mr_date)),
@@ -199,7 +218,9 @@ class MRsController extends Controller
                 ]);
             endforeach;
         });
-        return redirect ('mrs');
+        return redirect ('tenders');
     }
+
+
 
 }

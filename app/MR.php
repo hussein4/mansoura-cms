@@ -22,15 +22,6 @@ class MR extends Model
         'mr_estimated_cost',
         'mr_currency',
        
-        //Budgetry
-        'mr_b_date',
-        'mr_b_received_date',
-        'mr_b_received_by_officer_date',
-        'mr_budgetry_rfq',
-        'mr_rfq_budgetry_closing_date',
-        'mr_rfq_budgetry_reminder',
-        'mr_budgetry_memo',
-
 
 
         //Quotation
@@ -51,37 +42,7 @@ class MR extends Model
         'mr_sent_for_budget_expansion',
         'mr_sent_for_budget_expansion_reminder',
 
-        //Tender
-        'mr_t_identity',
-        'mr_t_willing_fax',
-        'mr_t_willing_fax_closing_date',
-        'mr_t_prepare_draft',
-        'mr_t_sub_bid_committee_formation_memo',
-        'mr_t_tender_criteria_memo',
-        'mr_t_tender_criteria_memo_reply',
-        'mr_t_tender_call_for_tender_memo',
-        'mr_t_tender_call_for_tender_signature',
-        'mr_t_tender_send_invitation_fax',
-        'mr_t_closing_date',
-        'mr_t_clarifications_sent_to_tech_dept',
-        'mr_t_clarifications_received_from_tech_dept',
-        'mr_t_clarifications_reply_fax',
-        'mr_t_open_tech_envelops',
-        'mr_t_received_tech_clarifications_from_tech_dept',
-        'mr_t_sending_tech_clarifications_to_suppliers',
-        'mr_t_receive_tech_clarifications_reply',
-        'mr_t_send_tech_clarifications_reply_to_tech_dept',
-        'mr_t_receive_tech_evaluation_report',
-        'mr_t_issue_tech_evaluation',
-        'mr_t_tech_eval_signature',
-        'mr_t_open_commercial_offers',
-        'mr_t_issue_commercial_evaluation',
-        'mr_t_commercial_evaluation_signature',
-        'mr_t_sending_awarding_faxes',
 
-        'mr_t_sending_fin_memo',
-
-        'mr_t_finished',
         
         'mrpath',
         'user_id',
@@ -96,15 +57,7 @@ class MR extends Model
         'mr_received_by_officer_date',
         'mr_required_date',
         
-        //budgetry
-        'mr_b_date',
-        'mr_b_received_date',
-        'mr_b_received_by_officer_date',
-        'mr_budgetry_rfq',
-        'mr_rfq_budgetry_closing_date',
-        'mr_rfq_budgetry_reminder',
-        'mr_budgetry_memo',
-        
+
         
         
        //Quotation
@@ -126,35 +79,7 @@ class MR extends Model
         'mr_sent_for_budget_expansion',
         'mr_sent_for_budget_expansion_reminder',
 
-        //Tender
-        
-        'mr_t_willing_fax',
-        'mr_t_willing_fax_closing_date',
-        'mr_t_prepare_draft',
-        'mr_t_sub_bid_committee_formation_memo',
-        'mr_t_tender_criteria_memo',
-        'mr_t_tender_criteria_memo_reply',
-        'mr_t_tender_call_for_tender_memo',
-        'mr_t_tender_call_for_tender_signature',
-        'mr_t_tender_send_invitation_fax',
-        'mr_t_closing_date',
-        'mr_t_clarifications_sent_to_tech_dept',
-        'mr_t_clarifications_received_from_tech_dept',
-        'mr_t_clarifications_reply_fax',
-        'mr_t_open_tech_envelops',
-        'mr_t_received_tech_clarifications_from_tech_dept',
-        'mr_t_sending_tech_clarifications_to_suppliers',
-        'mr_t_receive_tech_clarifications_reply',
-        'mr_t_send_tech_clarifications_reply_to_tech_dept',
-        'mr_t_receive_tech_evaluation_report',
-        'mr_t_issue_tech_evaluation',
-        'mr_t_tech_eval_signature',
-        'mr_t_open_commercial_offers',
-        'mr_t_issue_commercial_evaluation',
-        'mr_t_commercial_evaluation_signature',
-        'mr_t_sending_awarding_faxes',
 
-        'mr_t_sending_fin_memo',
          
     ];
 
@@ -197,7 +122,7 @@ class MR extends Model
 
     public function setmrbdateAttribute($date)
     {
-        $this->attributes['mr_b_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_b_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
    
     public function getmrbreceiveddateAttribute($date)
@@ -207,7 +132,7 @@ class MR extends Model
 
     public function setmrbreceiveddateAttribute($date)
     {
-        $this->attributes['mr_b_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_b_received_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrbreceivedbyofficerdateAttribute($date)
@@ -217,7 +142,7 @@ class MR extends Model
 
     public function setmrbreceivedbyofficerdateAttribute($date)
     {
-        $this->attributes['mr_b_received_by_officer_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_b_received_by_officer_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -232,7 +157,7 @@ class MR extends Model
 
     public function setmrbudgetryrfqAttribute($date)
     {
-        $this->attributes['mr_budgetry_rfq'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_budgetry_rfq'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -243,7 +168,7 @@ class MR extends Model
 
     public function setmrrfqbudgetryclosingdateAttribute($date)
     {
-        $this->attributes['mr_rfq_budgetry_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_rfq_budgetry_closing_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -254,7 +179,7 @@ class MR extends Model
 
     public function setmrrfqbudgetryreminderAttribute($date)
     {
-        $this->attributes['mr_rfq_budgetry_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_rfq_budgetry_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -266,7 +191,7 @@ class MR extends Model
 
     public function setmrbudgetrymemoAttribute($date)
     {
-        $this->attributes['mr_budgetry_memo'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_budgetry_memo'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -278,7 +203,7 @@ class MR extends Model
 
     public function setmrdateAttribute($date)
     {
-        $this->attributes['mr_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrreceiveddateAttribute($date)
@@ -288,7 +213,7 @@ class MR extends Model
 
     public function setmrreceiveddateAttribute($date)
     {
-        $this->attributes['mr_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_received_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -299,7 +224,7 @@ class MR extends Model
 
     public function setmrreceivedbyofficerdateAttribute($date)
     {
-        $this->attributes['mr_received_by_officer_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_received_by_officer_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     
@@ -312,7 +237,7 @@ class MR extends Model
 
     public function setmrcheckedonegpcsiteAttribute($date)
     {
-        $this->attributes['mr_checked_on_egpc_site'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_checked_on_egpc_site'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -323,7 +248,7 @@ class MR extends Model
 
     public function setmrrfqAttribute($date)
     {
-        $this->attributes['mr_rfq'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_rfq'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -334,7 +259,7 @@ class MR extends Model
 
     public function setmrrfqclosingdateAttribute($date)
     {
-        $this->attributes['mr_rfq_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_rfq_closing_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -346,7 +271,7 @@ class MR extends Model
 
     public function setmrrfqreminderAttribute($date)
     {
-        $this->attributes['mr_rfq_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_rfq_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -357,7 +282,7 @@ class MR extends Model
 
     public function setmroffersopenAttribute($date)
     {
-        $this->attributes['mr_offers_open'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_open'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -368,7 +293,7 @@ class MR extends Model
 
     public function setmrofferssenttotechdeptAttribute($date)
     {
-        $this->attributes['mr_offers_sent_to_tech_dept'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_sent_to_tech_dept'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -379,7 +304,7 @@ class MR extends Model
 
     public function setmroffersreceivedfromtechdeptclosingdateAttribute($date)
     {
-        $this->attributes['mr_offers_received_from_tech_dept_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_received_from_tech_dept_closing_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -390,7 +315,7 @@ class MR extends Model
 
     public function setmroffersreceivedfromtechdeptreminderAttribute($date)
     {
-        $this->attributes['mr_offers_received_from_tech_dept_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_received_from_tech_dept_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -401,7 +326,7 @@ class MR extends Model
 
     public function setmroffersclarificationssenttosuppliersAttribute($date)
     {
-        $this->attributes['mr_offers_clarifications_sent_to_suppliers'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_clarifications_sent_to_suppliers'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -413,7 +338,7 @@ class MR extends Model
 
     public function setmroffersclarificationsclosingdateAttribute($date)
     {
-        $this->attributes['mr_offers_clarifications_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_clarifications_closing_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -424,7 +349,7 @@ class MR extends Model
 
     public function setmroffersclarificationsreceivedfromsupplierreminderAttribute($date)
     {
-        $this->attributes['mr_offers_clarifications_received_from_supplier_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_clarifications_received_from_supplier_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -435,7 +360,7 @@ class MR extends Model
 
     public function setmroffersclarificationsreceivedfromsupplierAttribute($date)
     {
-        $this->attributes['mr_offers_clarifications_received_from_supplier'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_clarifications_received_from_supplier'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -447,7 +372,7 @@ class MR extends Model
 
     public function setmroffersclarificationssenttotechAttribute($date)
     {
-        $this->attributes['mr_offers_clarifications_sent_to_tech'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_clarifications_sent_to_tech'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -458,7 +383,7 @@ class MR extends Model
 
     public function setmroffersevaluationAttribute($date)
     {
-        $this->attributes['mr_offers_evaluation'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_offers_evaluation'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -469,7 +394,7 @@ class MR extends Model
 
     public function setmrsentforbudgetexpansionAttribute($date)
     {
-        $this->attributes['mr_sent_for_budget_expansion'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_sent_for_budget_expansion'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -480,7 +405,7 @@ class MR extends Model
 
     public function setmrsentforbudgetexpansionreminderAttribute($date)
     {
-        $this->attributes['mr_sent_for_budget_expansion_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_sent_for_budget_expansion_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -496,7 +421,7 @@ class MR extends Model
 
     public function setmrtwillingfaxAttribute($date)
     {
-        $this->attributes['mr_t_willing_fax'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_willing_fax'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtwillingfaxclosingdateAttribute($date)
@@ -506,7 +431,7 @@ class MR extends Model
 
     public function setmrtwillingfaxclosingdateAttribute($date)
     {
-        $this->attributes['mr_t_willing_fax_closing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_willing_fax_closing_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmr_t_prepare_draftAttribute($date)
@@ -516,7 +441,7 @@ class MR extends Model
 
     public function setmrtpreparedraftAttribute($date)
     {
-        $this->attributes['mr_t_prepare_draft']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_prepare_draft']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtsubbidcommitteeformationmemoAttribute($date)
@@ -526,7 +451,7 @@ class MR extends Model
 
     public function setmrtsubbidcommitteeformationmemoAttribute($date)
     {
-        $this->attributes['mr_t_sub_bid_committee_formation_memo']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_sub_bid_committee_formation_memo']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttendercriteriamemoreplyAttribute($date)
@@ -536,7 +461,7 @@ class MR extends Model
 
     public function setmrttendercriteriamemoreplyAttribute($date)
     {
-        $this->attributes['mr_sent_for_budget_expansion_reminder'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_sent_for_budget_expansion_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttendercriteriamemoAttribute($date)
@@ -546,7 +471,7 @@ class MR extends Model
 
     public function setmrttendercriteriamemoAttribute($date)
     {
-        $this->attributes['mr_t_tender_criteria_memo']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_tender_criteria_memo']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttendercallfortendermemoAttribute($date)
@@ -556,7 +481,7 @@ class MR extends Model
 
     public function setmrttendercallfortendermemoAttribute($date)
     {
-        $this->attributes['mr_t_tender_call_for_tender_memo']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_tender_call_for_tender_memo']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttendercallfortendersignatureAttribute($date)
@@ -566,7 +491,7 @@ class MR extends Model
 
     public function setmrttendercallfortendersignatureAttribute($date)
     {
-        $this->attributes['mr_t_tender_call_for_tender_signature']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_tender_call_for_tender_signature']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttendersendinvitationfaxAttribute($date)
@@ -576,7 +501,7 @@ class MR extends Model
 
     public function setmrttendersendinvitationfaxAttribute($date)
     {
-        $this->attributes['mr_t_tender_send_invitation_fax'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_tender_send_invitation_fax'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtclarificationssenttotechdeptAttribute($date)
@@ -586,7 +511,7 @@ class MR extends Model
 
     public function setmrtclarificationssenttotechdeptAttribute($date)
     {
-        $this->attributes['mr_t_clarifications_sent_to_tech_dept'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_clarifications_sent_to_tech_dept'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtclosingdateAttribute($date)
@@ -596,7 +521,7 @@ class MR extends Model
 
     public function setmrtclosingdateAttribute($date)
     {
-        $this->attributes['mr_t_closing_date']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_closing_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtclarificationsreceivedfromtechdeptAttribute($date)
@@ -606,7 +531,7 @@ class MR extends Model
 
     public function setmrtclarificationsreceivedfromtechdeptAttribute($date)
     {
-        $this->attributes['mr_t_clarifications_received_from_tech_dept'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_clarifications_received_from_tech_dept'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtclarificationsreplyfaxAttribute($date)
@@ -616,7 +541,7 @@ class MR extends Model
 
     public function setmrtclarificationsreplyfaxAttribute($date)
     {
-        $this->attributes['mr_t_clarifications_reply_fax']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_clarifications_reply_fax']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtopentechenvelopsAttribute($date)
@@ -626,7 +551,7 @@ class MR extends Model
 
     public function setmrtopentechenvelopsAttribute($date)
     {
-        $this->attributes['mr_t_open_tech_envelops']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_open_tech_envelops']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -637,7 +562,7 @@ class MR extends Model
 
     public function setmrtreceivedtechclarificationsfromtechdeptAttribute($date)
     {
-        $this->attributes['mr_t_received_tech_clarifications_from_tech_dept']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_received_tech_clarifications_from_tech_dept']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtsendingtechclarificationstosuppliersAttribute($date)
@@ -657,7 +582,7 @@ class MR extends Model
 
     public function setmrtreceivetechclarificationsreplyAttribute($date)
     {
-        $this->attributes['mr_t_receive_tech_clarifications_reply']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_receive_tech_clarifications_reply']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtsendtechclarificationsreplytotechdeptAttribute($date)
@@ -667,7 +592,7 @@ class MR extends Model
 
     public function setmrtsendtechclarificationsreplytotechdeptAttribute($date)
     {
-        $this->attributes['mr_t_send_tech_clarifications_reply_to_tech_dept']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_send_tech_clarifications_reply_to_tech_dept']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtreceivetechevaluationreportAttribute($date)
@@ -677,7 +602,7 @@ class MR extends Model
 
     public function setmrtreceivetechevaluationreportAttribute($date)
     {
-        $this->attributes['mr_t_receive_tech_evaluation_report']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_receive_tech_evaluation_report']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtissuetechevaluationAttribute($date)
@@ -687,7 +612,7 @@ class MR extends Model
 
     public function setmrtissuetechevaluationAttribute($date)
     {
-        $this->attributes['mr_t_issue_tech_evaluation']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_issue_tech_evaluation']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttechevalsignatureAttribute($date)
@@ -697,7 +622,7 @@ class MR extends Model
 
     public function setmrttechevalsignatureAttribute($date)
     {
-        $this->attributes['mr_t_tech_eval_signature']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_tech_eval_signature']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtopencommercialoffersAttribute($date)
@@ -707,7 +632,7 @@ class MR extends Model
 
     public function setmrtopencommercialoffersAttribute($date)
     {
-        $this->attributes['mr_t_open_commercial_offers']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_open_commercial_offers']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrtissuecommercialevaluationAttribute($date)
@@ -717,7 +642,7 @@ class MR extends Model
 
     public function setmrtissuecommercialevaluationAttribute($date)
     {
-        $this->attributes['mr_t_issue_commercial_evaluation']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_issue_commercial_evaluation']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
     
      public function getmrtcommercialevaluationsignatureAttribute($date)
@@ -727,7 +652,7 @@ class MR extends Model
 
     public function setmrtcommercialevaluationsignatureAttribute($date)
     {
-        $this->attributes['mr_t_commercial_evaluation_signature']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_commercial_evaluation_signature']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
  public function getmrtsendingawardingfaxesAttribute($date)
@@ -737,7 +662,7 @@ class MR extends Model
 
     public function setmrtsendingawardingfaxesAttribute($date)
 {
-$this->attributes['mr_t_sending_awarding_faxes']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+$this->attributes['mr_t_sending_awarding_faxes']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
     
      public function getmrtsendingfinmemoAttribute($date)
@@ -747,7 +672,7 @@ $this->attributes['mr_t_sending_awarding_faxes']= Carbon::createFromFormat('d-M-
 
     public function setmrtsendingfinmemoAttribute($date)
     {
-        $this->attributes['mr_t_sending_fin_memo']= Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['mr_t_sending_fin_memo']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -772,6 +697,11 @@ $this->attributes['mr_t_sending_awarding_faxes']= Carbon::createFromFormat('d-M-
     public function vlist()
     {
         return $this->hasMany('App\Vlist')->withTimestamps();
+    }
+
+    public function tenders()
+    {
+        return $this->hasMany('App\Tender' ,'mr_tender' ,'mr_id')->withTimestamps();
     }
 
 

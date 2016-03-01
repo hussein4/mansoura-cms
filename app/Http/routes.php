@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\VlistsController;
+use App\Tag;
 use App\Vlist;
 use Illuminate\Http\Request;
 use App\Contracts\Search;
@@ -32,7 +33,9 @@ Route::get('/search', function (Search $search ,Request $request) {
     return view('search', compact('results'));
 });
 
-Route::resource('vlist','VlistsController');
+
+
+
 
 
 Route::get('/vlist/{id}/export' , 'VlistsController@export');
@@ -43,6 +46,8 @@ Route::get('v_list/import', function () {
     return view('vlist.upload_vlist');
 });
 Route::put('v_list/import','VlistsController@import');
+
+Route::resource('vlist','VlistsController');
 
 
 /*
@@ -70,18 +75,47 @@ Route::get('vlist/{vlist}/eval','VlistsController@average', function($id)
 // route to process the form
 
 
+Route::get('budgetry_s/import', function () {
+    return view('budgetries.upload_mrs');
+});
 
-Route::resource('mrs','MRsController');
+Route::put('budgetry_s/import','BudgetriesController@import');
+
+Route::resource('budgetries','BudgetriesController');
+
+
+
+
+
 Route::get('mr_s/import', function () {
     return view('mrs.upload_mrs');
 });
+
 Route::put('mr_s/import','MRsController@import');
 
-Route::resource('pos','POsController');
+Route::resource('mrs','MRsController');
+
+
+
+
+
 Route::get('po_s/import', function () {
     return view('pos.upload_pos');
 });
 Route::put('po_s/import','POsController@import');
+
+Route::resource('pos','POsController');
+
+
+
+
+Route::get('tender_s/import', function () {
+    return view('tenders.upload_pos');
+});
+Route::put('tender_s/import','POsController@import');
+
+Route::resource('tenders','TendersController');
+
 
 
 

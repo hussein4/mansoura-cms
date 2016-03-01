@@ -11,9 +11,8 @@ class Tag extends Model
         'name',
 
 
-
-
 ];
+
 
     /**
      * Get the Vlist associated with a given tag
@@ -32,6 +31,16 @@ class Tag extends Model
     public function po()
     {
         return $this->belongsToMany('App\PO',"pos_tag", "po_id")->withTimestamps();
+    }
+
+    public function budgetry()
+    {
+        return $this->belongsToMany('App\Budgetry',"budgetry_tag", "budgetry_id")->withTimestamps();
+    }
+
+    public function tender()
+    {
+        return $this->belongsToMany('App\Tender',"tenders_tag", "tender_id")->withTimestamps();
     }
 
 }

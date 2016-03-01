@@ -7,167 +7,163 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Http\Requests\MRRequest;
-use App\MR;
+use App\Http\Requests\BudgetryRequest;
+use App\Budgetry;
 use App\Tag;
+
 
 
 use Carbon\Carbon;
 use Auth;
+
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
 
-
-
-class MRsController extends Controller
+class BudgetriesController extends Controller
 {
+
     public function __construct()
     {
-        $this->middleware('auth', ['except'=> ['index']]);
+        $this->middleware('auth');
     }
-
 
 
     public function index()
     {
-       // $mr = MR::latest('updated_at')->published()->get();
-        $mr =MR::orderBy('created_at', 'desc')->paginate(10);
-        return view ('mrs.index', compact('mr' ));
+
+       $budgetry =Budgetry::orderBy('created_at', 'desc')->paginate(10);
+        return view ('budgetries.index', compact('budgetry' ));
     }
 
-    public function show(MR $mr)
+    public function show(Budgetry $budgetry)
     {
-        return view('mrs.show', compact ('mr'));
+        return view('budgetries.show', compact ('budgetry'));
     }
 
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
-        return view('mrs.create',compact('tags'));
-        dd($tags);
-      //  return view('mrs.create_b',compact('tags'));
+        return view('budgetries.create',compact('tags'));
+
     }
 
 
 
 
     /**
-     * @param CreateMRRequest $request
+     * @param CreateBudgetryRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(MRRequest $request)
+    public function store(BudgetryRequest $request)
     {
-         // dd($request->input('tag_list'));
-        $this->createMR($request);
+        // dd($request->input('tag_list'));
+        $this->createBudgetry($request);
 
         //   flash()->success('The Supplier has been Added');
-        flash()->overlay('The Material Request has been Successfully Added!', 'Good Job');
-        return redirect ('mrs');
+        flash()->overlay('The Budgetry Request has been Successfully Added!', 'Good Job');
+        return redirect ('budgetries');
     }
 
     /**
-     * @param MR $mr
+     * @param Budgetry$budgetry
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(MR $mr)
+    public function edit(Budgetry $budgetry)
     {
         $tags = Tag::lists('name','id')->all();
-        return view('mrs.edit',compact('mr','tags'));
+        return view('budgetries.edit',compact('budgetry','tags'));
     }
 
-    /**
-     * @param $id
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function update(MR $mr , MRRequest $request)
-    {
-        $mr->update($request->all());
-        $this->syncTags($mr, $request->input('tag_list_mr'));
 
-        return redirect ('mrs');
+    public function update(Budgetry $budgetry , BudgetryRequest $request)
+    {
+       $budgetry->update($request->all());
+        $this->syncTags($budgetry, $request->input('tag_list_budgetry'));
+
+        return redirect ('budgetries');
     }
 
     /** sync up the list  of tags in database
-     * @param MR $mr
+     * @param Budgetry$budgetry
      * @param array $tags
-     * @internal param MRRequest $request
+     * @internal param BudgetryRequest $request
      */
-    public function syncTags(MR $mr , array $tags)
+    public function syncTags(Budgetry $budgetry , array $tags)
     {
-        $mr->tags()->sync($tags);
+       $budgetry->tags()->sync($tags);
     }
 
     /** save a new mr
-     * @param MRRequest $request
+     * @param BudgetryRequest $request
      * @return mixed
      */
-    private function createMR(MRRequest $request)
+    private function createBudgetry(BudgetryRequest $request)
     {
-        $mr= Auth::user()->mr()->create($request->all());    //get authenticated user who saved  mr
-        $this->syncTags($mr, $request->input('tag_list_mr'));
-        return $mr;
+       $budgetry= Auth::user()->budgetry()->create($request->all());    //get authenticated user who saved  mr
+
+        $this->syncTags($budgetry, $request->input('tag_list_budgetry'));
+        return $budgetry;
     }
 
 
-/*
-
-    public function postUploadCsv(Request $request ,MR $mr ,$id )
-    {
-        $mr= Auth::user()->mr()->create($request->all());
-
-        $excelFile = public_path() . '/import.xlsx';
-        //   Excel::load($excelFile, function($reader);
-       // $results = \Excel::load($excelFile, function ($reader)
-         Excel::load($excelFile, function($reader) use ($id) {
-
-            // Getting all results
-           // $results = $reader->get();
-
-            // ->all() is a wrapper for ->get() and will work the same
-            $results = $reader->all();
-
-                 foreach($results as $key => $value)
-
-                    {
-
-                        //   $result = $reader->select(array('mr_no','mr_subject','mr_date',''mr_received_date'))->get();
-
-
-
-
-                            foreach ($value as $key => $value1) {
-                                 //value1 = test import mr
-
-
-                                MR::create([
-
-                                    // 'date' => date("Y-m-d",strtotime($value1->date)),
-                                    'mr_no'=>'value1',
-                                    'mr_subject' => 'value1',
-                                //    'mr_date' => 'value1',
-                                //    'mr_received_date' => 'value1',
-
-                                ]);
+    /*
+    
+        public function postUploadCsv(Request $request ,Budgetry$budgetry ,$id )
+        {
+           $budgetry= Auth::user()->mr()->create($request->all());
+    
+            $excelFile = public_path() . '/import.xlsx';
+            //   Excel::load($excelFile, function($reader);
+           // $results = \Excel::load($excelFile, function ($reader)
+             Excel::load($excelFile, function($reader) use ($id) {
+    
+                // Getting all results
+               // $results = $reader->get();
+    
+                // ->all() is a wrapper for ->get() and will work the same
+                $results = $reader->all();
+    
+                     foreach($results as $key => $value)
+    
+                        {
+    
+                            //   $result = $reader->select(array('mr_no','mr_subject','mr_date',''mr_received_date'))->get();
+    
+    
+    
+    
+                                foreach ($value as $key => $value1) {
+                                     //value1 = test import mr
+    
+    
+                                    Budgetry::create([
+    
+                                        // 'date' => date("Y-m-d",strtotime($value1->date)),
+                                        'mr_no'=>'value1',
+                                        'mr_subject' => 'value1',
+                                    //    'mr_date' => 'value1',
+                                    //    'mr_received_date' => 'value1',
+    
+                                    ]);
+                                }
                             }
-                        }
-
-
-        });
-
-        return view('mrs.import', compact('results'));
-    }
-*/
+    
+    
+            });
+    
+            return view('mrs.import', compact('results'));
+        }
+    */
     public function import()
     {
-       $file=Input::file("file");
-      //  $file = public_path() . '/import.xlsx';
+        $file=Input::file("file");
+        //  $file = public_path() . '/import.xlsx';
         Excel::load($file, function($reader)
         {
             $results = $reader->get();
             foreach($results as $row):
-                $vlist=MR::create([
+                Budgetry::create([
                     'mr_no'                                                     =>$row->mr_no,
                     'mr_subject'                                                =>$row->mr_subject,
                     'mr_date'                                                   =>date("d-M-Y g:i A",strtotime($row->mr_date)),
@@ -199,7 +195,7 @@ class MRsController extends Controller
                 ]);
             endforeach;
         });
-        return redirect ('mrs');
+        return redirect ('budgetries');
     }
 
 }

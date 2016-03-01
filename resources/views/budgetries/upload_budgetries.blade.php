@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Upload MRs
+    Upload Budgetry MRs
 @endsection
 
 
@@ -13,7 +13,7 @@
                     <div class="panel-heading"><h3><b>Import MRs from excel</b></h3></div>
 
                     <div class="panel-body">
-                        {!! Form::open(['url'=>'mr_s/import','method'=>'PUT', 'files' => TRUE]) !!}
+                        {!! Form::open(['url'=>'budgetry_s/import','method'=>'PUT', 'files' => TRUE]) !!}
                         <div class="field">
                             {!! Form::label('file') !!}
                             {!! Form::file('file') !!}

@@ -99,7 +99,7 @@ class PO extends Model
 
     public function setpoissuedAttribute($date)
     {
-        $this->attributes['po_issued'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_issued']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getpoconfirmationAttribute($date)
@@ -109,7 +109,7 @@ class PO extends Model
 
     public function setpoconfirmationAttribute($date)
     {
-        $this->attributes['po_confirmation'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_confirmation']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -120,7 +120,7 @@ class PO extends Model
 
     public function setpoloadedonideasAttribute($date)
     {
-        $this->attributes['po_loaded_on_ideas'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_loaded_on_ideas']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -131,7 +131,7 @@ class PO extends Model
 
     public function setpoapprovedonideasAttribute($date)
     {
-        $this->attributes['po_approved_on_ideas'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_approved_on_ideas']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -142,7 +142,7 @@ class PO extends Model
 
     public function setpomemotofinAttribute($date)
     {
-        $this->attributes['po_memo_to_fin'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_memo_to_fin']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getpodeliverydateAttribute($date)
@@ -152,7 +152,7 @@ class PO extends Model
 
     public function setpodeliverydateAttribute($date)
     {
-        $this->attributes['po_delivery_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_delivery_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getporeminderdeliverydateAttribute($date)
@@ -162,7 +162,7 @@ class PO extends Model
 
     public function setporeminderdeliverydateAttribute($date)
     {
-        $this->attributes['po_reminder_delivery_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_reminder_delivery_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getpomrreceiveddateAttribute($date)
@@ -172,7 +172,7 @@ class PO extends Model
 
     public function setpomrreceiveddateAttribute($date)
     {
-        $this->attributes['po_mr_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_mr_received_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -184,7 +184,7 @@ class PO extends Model
 
     public function setpomrrmissingdateAttribute($date)
     {
-        $this->attributes['po_mrr_missing_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_mrr_missing_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -195,7 +195,7 @@ class PO extends Model
 
     public function setpomrrrejecteddateAttribute($date)
     {
-        $this->attributes['po_mrr_rejected_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_mrr_rejected_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -206,7 +206,7 @@ class PO extends Model
 
     public function setpoinvoicereceiveddateAttribute($date)
     {
-        $this->attributes['po_invoice_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_invoice_received_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -217,7 +217,7 @@ class PO extends Model
 
     public function setpomrrreceiveddateAttribute($date)
     {
-        $this->attributes['po_mrr_received_date'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_mrr_received_date']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -229,7 +229,7 @@ class PO extends Model
 
     public function setpocoverinvoiceAttribute($date)
     {
-        $this->attributes['po_cover_invoice'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_cover_invoice']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -240,7 +240,7 @@ class PO extends Model
 
     public function setpocompletedAttribute($date)
     {
-        $this->attributes['po_completed'] = Carbon::createFromFormat('d-M-Y g:i A', $date);
+        $this->attributes['po_completed']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
@@ -284,6 +284,8 @@ class PO extends Model
 
         return $this->suppliers()->lists('id')->all();
     }
+
+
 
 
 

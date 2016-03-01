@@ -83,6 +83,18 @@ class Vlist extends Model
         return $this->hasMany('App\PO' ,'po_vlist');
     }
 
+    public function budgetry()
+    {
+        return $this->hasMany('App\Budgetry' ,'budgetry_vlist');
+    }
+
+    public function tender()
+    {
+        return $this->hasMany('App\Tender' ,'tender_vlist');
+    }
+
+
+
 
     /**
      * get a list of tag ids associated with the current vlist

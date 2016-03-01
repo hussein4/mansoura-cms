@@ -95,6 +95,7 @@ desired effect
                        <script type="text/javascript" src="/bower_components/iCheck/icheck.js"></script>
 
                      <!-- Your Page Content Here -->
+
             @yield('main-content')
 
 

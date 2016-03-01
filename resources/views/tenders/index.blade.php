@@ -9,38 +9,38 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3><b>Material's Request</b></h3></div>
+                    <div class="panel-heading"><h3><b>Tender Material's Request</b></h3></div>
 
                     <div class="panel-body">
 
 
 
-                        <mr>
+                       <tender>
 
                             <table id="example" class="table stripe row-border order-column" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>MR Number</th>
-                                    <th>MR Date</th>
-                                    <th>Estimated Cost</th>
+                                    <th>Tender Number</th>
+                                    <th>Tender Date</th>
+
 
 
                                 </tr>
                                 </thead>
-                                @foreach($mr as $m)
+                                @foreach($tender as $t)
                                     <tbody>
                                     <tr>
-                                        <td><a href="{{ action('MRsController@show', [$m->id])  }}">{{ $m->mr_no }}</a></td>
-                                        <td>{{$m->mr_date}}</td>
-                                        <td>{{$m->mr_estimated_cost}}</td>
+                                        <td><a href="{{ action('TendersController@show', [$t->id])  }}">{{ $t->mr_b_no }}</a></td>
+                                        <td>{{$t->mr_b_date}}</td>
+
 
                                     </tr>
                                     </tbody>
                                 @endforeach
 
                             </table>
-                            <a href="mr_s/import">Import Material Request</a>
-                        </mr>
+                            <a href="tender_s/import">Import Material Request</a>
+                        </tender>
 
 
 
@@ -50,6 +50,6 @@
         </div>
     </div>
 
-    {!! $mr->render() !!}
+    {!! $tender->render() !!}
 @endsection
 

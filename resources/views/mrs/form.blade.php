@@ -12,7 +12,7 @@
         <div class="row">
             <div class='col-sm-6'>
 
-{!! Form::input('text','mr_date',$mr->mr_date, ['class'=> 'form-control','id'=>'datetimepicker1']) !!}
+{!! Form::input('text','mr_date',$mr->mr_date, ['class'=> 'form-control','id'=>'datetimepicker21']) !!}
 
             </div>
         </div>
@@ -23,7 +23,7 @@
     {!! Form::label('mr_received_date', 'Received Date:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_received_date',$mr->mr_received_date, ['class'=> 'form-control','id'=>'datetimepicker2']) !!}
+            {!! Form::input('text','mr_received_date',$mr->mr_received_date, ['class'=> 'form-control','id'=>'datetimepicker22']) !!}
         </div>
     </div>
 </div>
@@ -33,7 +33,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_received_by_officer_date',$mr->mr_received_by_officer_date, ['class'=> 'form-control','id'=>'datetimepicker3']) !!}
+            {!! Form::input('text','mr_received_by_officer_date',$mr->mr_received_by_officer_date, ['class'=> 'form-control','id'=>'datetimepicker23']) !!}
         </div>
     </div>
 </div>
@@ -51,10 +51,20 @@
 
 
 <div class="form-group">
+    {!! Form::label('mr_currency', 'Currency:') !!}
+    <div class="row">
+        <div class='col-sm-6'>
+            {!! Form::select('mr_currency',['1'=>'EGP' ,'2'=>'USD' ,'3'=>'Euro' ,'4'=>'Sterling'],$mr->mr_currency, ['class'=> 'form-control','id'=>'currency_list']) !!}
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
     {!! Form::label('mr_checked_on_egpc_site', 'Checked EGPC Site:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_checked_on_egpc_site',$mr->mr_checked_on_egpc_site, ['class'=> 'form-control','id'=>'datetimepicker8']) !!}
+            {!! Form::input('text','mr_checked_on_egpc_site',$mr->mr_checked_on_egpc_site, ['class'=> 'form-control','id'=>'datetimepicker24']) !!}
         </div>
     </div>
 </div>
@@ -63,7 +73,7 @@
     {!! Form::label('mr_rfq', 'RFQ DATE:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_rfq',$mr->mr_rfq, ['class'=> 'form-control','id'=>'datetimepicker9']) !!}
+            {!! Form::input('text','mr_rfq',$mr->mr_rfq, ['class'=> 'form-control','id'=>'datetimepicker25']) !!}
         </div>
     </div>
 </div>
@@ -72,7 +82,7 @@
     {!! Form::label('mr_rfq_closing_date', 'RFQ Closing Date:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_rfq_closing_date',$mr->mr_rfq_closing_date, ['class'=> 'form-control','id'=>'datetimepicker10']) !!}
+            {!! Form::input('text','mr_rfq_closing_date',$mr->mr_rfq_closing_date, ['class'=> 'form-control','id'=>'datetimepicker26']) !!}
         </div>
     </div>
 </div>
@@ -82,7 +92,7 @@
     {!! Form::label('mr_rfq_reminder', 'RFQ Reminder:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_rfq_reminder',$mr->mr_rfq_reminder, ['class'=> 'form-control','id'=>'datetimepicker11']) !!}
+            {!! Form::input('text','mr_rfq_reminder',$mr->mr_rfq_reminder, ['class'=> 'form-control','id'=>'datetimepicker27']) !!}
 
         </div>
     </div>
@@ -93,7 +103,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_offers_open',$mr->mr_offers_open, ['class'=> 'form-control','id'=>'datetimepicker12']) !!}
+            {!! Form::input('text','mr_offers_open',$mr->mr_offers_open, ['class'=> 'form-control','id'=>'datetimepicker28']) !!}
 
 
         </div>
@@ -104,7 +114,7 @@
     {!! Form::label('mr_offers_sent_to_tech_dept', 'Offers sent to Tech Dept:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_sent_to_tech_dept',$mr->mr_offers_sent_to_tech_dept, ['class'=> 'form-control','id'=>'datetimepicker13']) !!}
+            {!! Form::input('text','mr_offers_sent_to_tech_dept',$mr->mr_offers_sent_to_tech_dept, ['class'=> 'form-control','id'=>'datetimepicker29']) !!}
         </div>
     </div>
 </div>
@@ -113,7 +123,7 @@
     {!! Form::label('mr_offers_received_from_tech_dept_closing_date', 'Offers Evaluation by Tech. Dept. Closing Date:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_received_from_tech_dept_closing_date',$mr->mr_offers_received_from_tech_dept_closing_date, ['class'=> 'form-control','id'=>'datetimepicker14']) !!}
+            {!! Form::input('text','mr_offers_received_from_tech_dept_closing_date',$mr->mr_offers_received_from_tech_dept_closing_date, ['class'=> 'form-control','id'=>'datetimepicker30']) !!}
 
         </div>
     </div>
@@ -123,7 +133,7 @@
     {!! Form::label('mr_offers_received_from_tech_dept_reminder', 'Reminder For Offers sent to Tech Dept:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_received_from_tech_dept_reminder',$mr->mr_offers_received_from_tech_dept_reminder, ['class'=> 'form-control','id'=>'datetimepicker24']) !!}
+            {!! Form::input('text','mr_offers_received_from_tech_dept_reminder',$mr->mr_offers_received_from_tech_dept_reminder, ['class'=> 'form-control','id'=>'datetimepicker31']) !!}
 
         </div>
     </div>
@@ -133,7 +143,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_offers_clarifications_sent_to_suppliers',$mr->mr_offers_clarifications_sent_to_suppliers, ['class'=> 'form-control','id'=>'datetimepicker15']) !!}
+            {!! Form::input('text','mr_offers_clarifications_sent_to_suppliers',$mr->mr_offers_clarifications_sent_to_suppliers, ['class'=> 'form-control','id'=>'datetimepicker32']) !!}
 
         </div>
     </div>
@@ -143,7 +153,7 @@
     {!! Form::label('mr_offers_clarifications_closing_date', 'Clarifications Closing Date:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_clarifications_closing_date',$mr->mr_offers_clarifications_closing_date, ['class'=> 'form-control','id'=>'datetimepicker16']) !!}
+            {!! Form::input('text','mr_offers_clarifications_closing_date',$mr->mr_offers_clarifications_closing_date, ['class'=> 'form-control','id'=>'datetimepicker33']) !!}
 
         </div>
     </div>
@@ -153,7 +163,7 @@
     {!! Form::label('mr_offers_clarifications_received_from_supplier_reminder', 'Supplier Reminder Fax:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_clarifications_received_from_supplier_reminder',$mr->mr_offers_clarifications_received_from_supplier_reminder, ['class'=> 'form-control','id'=>'datetimepicker17']) !!}
+            {!! Form::input('text','mr_offers_clarifications_received_from_supplier_reminder',$mr->mr_offers_clarifications_received_from_supplier_reminder, ['class'=> 'form-control','id'=>'datetimepicker34']) !!}
         </div>
     </div>
 </div>
@@ -162,7 +172,7 @@
     {!! Form::label('mr_offers_clarifications_received_from_supplier', 'Clarifications Received from Suppliers:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_clarifications_received_from_supplier',$mr->mr_offers_clarifications_received_from_supplier, ['class'=> 'form-control','id'=>'datetimepicker18']) !!}
+            {!! Form::input('text','mr_offers_clarifications_received_from_supplier',$mr->mr_offers_clarifications_received_from_supplier, ['class'=> 'form-control','id'=>'datetimepicker35']) !!}
         </div>
     </div>
 </div>
@@ -172,7 +182,7 @@
     {!! Form::label('mr_offers_clarifications_sent_to_tech', 'Clarifications sent to Tech. Dept.:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_clarifications_sent_to_tech',$mr->mr_offers_clarifications_sent_to_tech, ['class'=> 'form-control','id'=>'datetimepicker19']) !!}
+            {!! Form::input('text','mr_offers_clarifications_sent_to_tech',$mr->mr_offers_clarifications_sent_to_tech, ['class'=> 'form-control','id'=>'datetimepicker36']) !!}
         </div>
     </div>
 </div>
@@ -181,7 +191,7 @@
     {!! Form::label('mr_sent_for_budget_expansion', 'Budget Expansion Memo:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_sent_for_budget_expansion',$mr->mr_sent_for_budget_expansion, ['class'=> 'form-control','id'=>'datetimepicker20']) !!}
+            {!! Form::input('text','mr_sent_for_budget_expansion',$mr->mr_sent_for_budget_expansion, ['class'=> 'form-control','id'=>'datetimepicker37']) !!}
         </div>
     </div>
 </div>
@@ -190,7 +200,7 @@
     {!! Form::label('mr_sent_for_budget_expansion_reminder', 'Budget Expansion Reminder:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_sent_for_budget_expansion_reminder',$mr->mr_sent_for_budget_expansion_reminder, ['class'=> 'form-control','id'=>'datetimepicker21']) !!}
+            {!! Form::input('text','mr_sent_for_budget_expansion_reminder',$mr->mr_sent_for_budget_expansion_reminder, ['class'=> 'form-control','id'=>'datetimepicker38']) !!}
         </div>
     </div>
 </div>
@@ -199,7 +209,7 @@
     {!! Form::label('mr_offers_evaluation', 'Offers Evaluation:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_offers_evaluation',$mr->mr_offers_evaluation, ['class'=> 'form-control','id'=>'datetimepicker23']) !!}
+            {!! Form::input('text','mr_offers_evaluation',$mr->mr_offers_evaluation, ['class'=> 'form-control','id'=>'datetimepicker39']) !!}
         </div>
     </div>
 </div>

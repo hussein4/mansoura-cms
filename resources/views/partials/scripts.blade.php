@@ -71,12 +71,12 @@
     $(function()
     {
         $('#datetimepicker1').datetimepicker
+
         ({
-
             format: 'DD-MMMM-YYYY hh:00 A',
-
             inline:true,
             sideBySide: true
+
         });
     });
 </script>
@@ -85,13 +85,12 @@
 $(function()
 {
 $('#datetimepicker2').datetimepicker
-({
+    ({
 
-format: 'DD-MMMM-YYYY hh:00 A',
-
-inline:true,
-sideBySide: true
-});
+    format: 'DD-MMMM-YYYY hh:00 A',
+    inline:true,
+    sideBySide: true
+    });
 });
 </script>
 
@@ -102,6 +101,7 @@ sideBySide: true
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
+
 
             inline:true,
             sideBySide: true
@@ -172,6 +172,7 @@ sideBySide: true
             inline:true,
             sideBySide: true
         });
+
     });
 </script>
 <script>
@@ -584,6 +585,7 @@ sideBySide: true
             inline:true,
             sideBySide: true
         });
+
     });
 </script>
 <script>
@@ -1567,6 +1569,43 @@ sideBySide: true
 
 <script type="text/javascript">
     $('#tag_list').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+
+<script type="text/javascript">
+    $('#tag_list_mr_b').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+<script type="text/javascript">
+    $('#tag_list_budgetry').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+<script type="text/javascript">
+    $('#tag_list_tender').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+<script type="text/javascript">
+    $('#mr_list_tender').select2({
         placeholder: 'choose a Tag',
         tags:true,
         data:[

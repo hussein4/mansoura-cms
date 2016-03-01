@@ -49,14 +49,26 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="{{ url('mrs') }}"><i class='fa fa-link'></i> <span>Materials's List</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="{{ url('mrs') }}"><i class='fa fa-link'></i> <span>Materials Request</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
 
                     <li><a href="{{ url('mrs') }}">Material Requests</a></li>
-                    <li><a href="{{ url('mrs/create') }}">Register new a New Material Request</a></li>
+                    <li><a href="{{ url('budgetries/create') }}">Register Budgetry Offers</a></li>
+                    <li><a href="{{ url('mrs/create') }}">Register a new Material Request</a></li>
+
 
                 </ul>
             </li>
+
+            <li class="treeview">
+                <a href="{{ url('tenders') }}"><i class='fa fa-link'></i> <span>Tenders</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+
+                    <li><a href="{{ url('tenders') }}">Tenders</a></li>
+                    <li><a href="{{ url('tenders/create') }}">Register a new Tender </a></li>
+                </ul>
+            </li>
+
             <li class="treeview">
                 <a href="{{ url('pos') }}"><i class='fa fa-link'></i> <span>Purchase Orders</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
