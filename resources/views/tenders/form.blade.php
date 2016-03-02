@@ -1,7 +1,7 @@
 <div class="form-group">
 
-    {!! Form::label('mr_list_tender', 'MR:') !!}
-    {!! Form::select('mr_list_tender[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_list_tender' ,'multiple']) !!}
+    {!! Form::label('mr_tender_list', 'MR:') !!}
+    {!! Form::select('mr_tender_list[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_tender_list' ,'multiple']) !!}
 </div>
 
 
@@ -11,7 +11,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_t_no',$tender->mr_t_no, ['class'=> 'form-control','id'=>'datetimepicker21']) !!}
+            {!! Form::input('text','mr_t_no',$tender->mr_t_no, ['class'=> 'form-control']) !!}
 
         </div>
     </div>
@@ -22,7 +22,7 @@
     {!! Form::label('mr_t_subject', 'Subject:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_t_subject',$tender->mr_t_subject, ['class'=> 'form-control','id'=>'datetimepicker22']) !!}
+            {!! Form::input('text','mr_t_subject',$tender->mr_t_subject, ['class'=> 'form-control']) !!}
         </div>
     </div>
 </div>
@@ -31,17 +31,17 @@
     {!! Form::label('mr_t_identity', 'Identity:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::select('mr_t_identity',['1'=>'Foreign' ,'2'=>'Local' ],$tender->mr_t_identity, ['class'=> 'form-control']) !!}
+            {!! Form::select('mr_t_identity',['1'=>'Foreign' ,'2'=>'Local' ],$tender->mr_t_identity, ['class'=> 'form-control' ,'id'=>'tender_identity']) !!}
         </div>
     </div>
-</div>>
+</div>
 
 <div class="form-group">
     {!! Form::label('mr_t_willing_fax', 'Willing Fax:') !!}
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_t_willing_fax',$tender->mr_t_willing_fax, ['class'=> 'form-control']) !!}
+            {!! Form::input('text','mr_t_willing_fax',$tender->mr_t_willing_fax, ['class'=> 'form-control','id'=>'datetimepicker22']) !!}
 
         </div>
     </div>
@@ -52,7 +52,7 @@
     {!! Form::label('mr_t_willing_fax_closing_date', 'Closing Date For Willing Fax:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_t_willing_fax_closing_date',$tender->mr_t_willing_fax_closing_date, ['class'=> 'form-control']) !!}
+            {!! Form::input('text','mr_t_willing_fax_closing_date',$tender->mr_t_willing_fax_closing_date, ['class'=> 'form-control','id'=>'datetimepicker23']) !!}
 
         </div>
     </div>
@@ -77,15 +77,6 @@
     </div>
 </div>
 
-<div class="form-group">
-    {!! Form::label('mr_rfq_closing_date', 'RFQ Closing Date:') !!}
-    <div class="row">
-        <div class='col-sm-6'>
-            {!! Form::input('text','mr_rfq_closing_date',$tender->mr_rfq_closing_date, ['class'=> 'form-control','id'=>'datetimepicker26']) !!}
-        </div>
-    </div>
-</div>
-
 
 <div class="form-group">
     {!! Form::label('mr_t_tender_criteria_memo', 'Tenders Criteria Memo:') !!}
@@ -101,10 +92,7 @@
     {!! Form::label('mr_t_tender_criteria_memo_reply', 'Reply on Tenders Criteria Memo:') !!}
     <div class="row">
         <div class='col-sm-6'>
-
             {!! Form::input('text','mr_t_tender_criteria_memo_reply',$tender->mr_t_tender_criteria_memo_reply, ['class'=> 'form-control','id'=>'datetimepicker28']) !!}
-
-
         </div>
     </div>
 </div>
@@ -137,6 +125,15 @@
         </div>
     </div>
 </div>
+
+
+<div class="form-group">
+
+    {!! Form::label('suppliers_tender_list', 'Invited Suppliers:') !!}
+    {!! Form::select('suppliers_tender_list[]',$suppliers,null,[ 'class'=>'form-control','id'=> 'suppliers_tender_list' ,'multiple']) !!}
+</div>
+
+
 <div class="form-group">
     {!! Form::label('mr_t_closing_date', 'Tender Closing Date:') !!}
     <div class="row">
@@ -235,10 +232,6 @@
 
 
 
-
-$table->boolean('')->nullable();
-
-
 <div class="form-group">
     {!! Form::label('mr_t_issue_tech_evaluation', 'Tech Evaluation issuance:') !!}
     <div class="row">
@@ -319,31 +312,17 @@ $table->boolean('')->nullable();
 
 
 <div class="form-group">
-    <!--<select class="tag_list" multiple="multiple" data-tags="true  style="width: 50%">   -->
+
     {!! Form::label('tag_list_tender', 'Tags:') !!}
     {!! Form::select('tag_list_tender[]',$tags,null,[ 'class'=>'form-control','id'=> 'tag_list_tender' ,'multiple']) !!}
 </div>
 
 
-<div class="form-group">
-    {!! Form::label('created_at', 'Created On:') !!}
-    {!! Form::input('date','created_on', $tender->created_at , ['class'=> 'form-control']) !!}
-</div>
 
 <div class="form-group">
     {!! Form::submit($submitButtonText , ['class' => 'btn btn-primary form-control' ]) !!}
 </div>
 
-<script type="text/javascript">
 
-    $('#tag_list_mr').select2({
-        placeholder: 'choose a Tag',
-        tags:true,
-        data:[
 
-        ]
-
-    });
-
-</script>
 

@@ -11,6 +11,7 @@ class Tag extends Model
         'name',
 
 
+
 ];
 
 
@@ -25,7 +26,7 @@ class Tag extends Model
 
     public function mr()
     {
-        return $this->belongsToMany('App\MR',"mrs_tag" ,"mr_id")->withTimestamps();
+        return $this->belongsToMany('App\MR',"mrs_tag" ,'tag_id',"mr_id")->withTimestamps();
     }
 
     public function po()
@@ -40,7 +41,7 @@ class Tag extends Model
 
     public function tender()
     {
-        return $this->belongsToMany('App\Tender',"tenders_tag", "tender_id")->withTimestamps();
+        return $this->belongsToMany('App\Tender',"tenders_tag",'tag_id', "tender_id")->withTimestamps();
     }
 
 }

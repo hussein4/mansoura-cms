@@ -1604,8 +1604,18 @@ $('#datetimepicker2').datetimepicker
     });
 </script>
 
+
 <script type="text/javascript">
-    $('#mr_list_tender').select2({
+    $('#mr_tender_list').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+<script type="text/javascript">
+    $('#suppliers_tender_list').select2({
         placeholder: 'choose a Tag',
         tags:true,
         data:[
@@ -1621,6 +1631,18 @@ $('#datetimepicker2').datetimepicker
         ]
     });
 </script>
+
+
+<script type="text/javascript">
+
+    $('#tender_identity').select2({
+        placeholder: 'choose a Tag',
+        data:[
+        ]
+    });
+
+</script>
+
 
 <script>
 $(document).ready(function(){

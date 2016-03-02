@@ -90,8 +90,8 @@ class TendersController extends Controller
     {
         $tender->update($request->all());
         $this->syncTags($tender, $request->input('tag_list_tender'));
-        $this->syncMr($tender, $request->input('mr_list_tender'));
-        $this->syncSuppliers($tender, $request->input('suppliers_list'));
+        $this->syncMr($tender, $request->input('mr_tender_list'));
+        $this->syncSuppliers($tender, $request->input('suppliers_tender_list'));
         return redirect ('tenders');
     }
 
@@ -124,8 +124,8 @@ class TendersController extends Controller
     {
         $tender= Auth::user()->tender()->create($request->all());    //get authenticated user who saved  mr
         $this->syncTags($tender, $request->input('tag_list_tender'));
-        $this->syncMr($tender, $request->input('mr_list_tender'));
-        $this->syncSuppliers($tender, $request->input('suppliers_list'));
+        $this->syncMr($tender, $request->input('mr_tender_list'));
+        $this->syncSuppliers($tender, $request->input('suppliers_tender_list'));
         return $tender;
     }
 

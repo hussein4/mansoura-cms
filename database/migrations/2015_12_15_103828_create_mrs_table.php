@@ -49,14 +49,13 @@ class CreateMrsTable extends Migration
             $table->timestamp('mr_sent_for_budget_expansion')->nullable();
             $table->timestamp('mr_sent_for_budget_expansion_reminder')->nullable();
 
-            //Tender
 
 
 
 
             $table->integer('user_id')->unsigned();
             $table->string('mrpath')->nullable();
-           // $table->integer('vlist_id')->unsigned();
+
 
             $table->timestamps();
 

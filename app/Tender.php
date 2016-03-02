@@ -44,6 +44,8 @@ class Tender extends Model
         'mr_t_finished',
 
 
+
+
     ];
 
 
@@ -160,7 +162,7 @@ class Tender extends Model
 
     public function setmrttendercriteriamemoreplyAttribute($date)
     {
-        $this->attributes['mr_sent_for_budget_expansion_reminder'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+        $this->attributes['mr_t_tender_criteria_memo_reply'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getmrttendercriteriamemoAttribute($date)
@@ -393,14 +395,14 @@ class Tender extends Model
         return $this->belongsToMany('App\Tag' ,'mrs_tag','mr_id')->withTimestamps();
     }
 
-    public function vlist()
+    public function suppliers()
     {
-        return $this->hasMany('App\Vlist')->withTimestamps();
+        return $this->belongsToMany('App\Vlist' , 'tender_vlist','tender_id');
     }
 
     public function mr()
     {
-        return $this->belongsToMany('App\MR' ,'mr_tender','tender_id','mr_id')->withTimestamps();
+        return $this->belongsToMany('App\MR' ,'mr_tender','tender_id','mr_id');
     }
 
 
@@ -413,10 +415,16 @@ class Tender extends Model
         return $this->tags->lists('id')->all();
     }
 
-    public function getMrListtenderAttribute()
+    public function getMrTenderListAttribute()
     {
         return $this->mr->lists('id')->all();
     }
+
+    public function getSuppliersTenderListAttribute()
+    {
+        return $this->suppliers->lists('id')->all();
+    }
+
 
 
 }
