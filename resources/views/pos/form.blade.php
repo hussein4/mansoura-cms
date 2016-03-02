@@ -25,6 +25,87 @@
 
 
 
+<div class="form-group" >
+    {!! Form::label('po_materials_cost', 'Materials Cost:') !!}
+    {!! Form::text('po_materials_cost',null, ['class'=> 'form-control']) !!}
+</div>
+
+
+<div class="form-group" >
+    {!! Form::label('po_freight_cost', 'Freight:') !!}
+    {!! Form::text('po_freight_cost',null, ['class'=> 'form-control']) !!}
+</div>
+
+
+<div class="form-group" >
+    {!! Form::label('po_total_cost', 'Total Purchase Order Cost:') !!}
+    {!! Form::text('po_total_cost',null, ['class'=> 'form-control']) !!}
+</div>
+
+
+
+
+<div class="form-group">
+    {!! Form::label('po_currency', 'Purchase Order Currency:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('po_currency', 'EGP') !!} EGP
+            {!! Form::radio('po_currency', 'USD') !!} USD
+            {!! Form::radio('po_currency', 'Euro') !!} Euro
+            {!! Form::radio('po_currency', 'Sterling') !!} Sterling
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group">
+    {!! Form::label('po_payment_method', 'Delivery Method:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('po_payment_method', 'Net 45') !!} Net 45
+            {!! Form::radio('po_payment_method', 'Net 30') !!} Net 30
+            {!! Form::radio('po_payment_method', 'Cash Aganist Delivery') !!} Cash Aganist Delivery
+            {!! Form::radio('po_payment_method', 'Cash Aganist Documents') !!} Cash Aganist Documents
+            {!! Form::radio('po_payment_method', 'L/C') !!} L/C
+            {!! Form::radio('po_payment_method', 'Advance Payment') !!} Advance Payment
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="form-group">
+    {!! Form::label('po_delivery_method', 'Delivery Method:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('po_delivery_method', 'ExWorks') !!} Ex Works
+            {!! Form::radio('po_delivery_method', 'FCA') !!} FCA
+            {!! Form::radio('po_delivery_method', 'FAS') !!} FAS
+            {!! Form::radio('po_delivery_method', 'FOB') !!} FOB
+            {!! Form::radio('po_delivery_method', 'CFR') !!} CFR
+            {!! Form::radio('po_delivery_method', 'CIF') !!} CIF
+            {!! Form::radio('po_delivery_method', 'CPT') !!} CPT
+            {!! Form::radio('po_delivery_method', 'CIB') !!} CIB
+            {!! Form::radio('po_delivery_method', 'DAP') !!} DAP
+            {!! Form::radio('po_delivery_method', 'DAT') !!} DAT
+            {!! Form::radio('po_delivery_method', 'DDP') !!} DDP
+            {!! Form::radio('po_delivery_method', 'At Mansoura Fields') !!}  Mansoura Fields
+            {!! Form::radio('po_delivery_method', 'Suppliers WareHouse') !!} Supplier's WareHouse
+            {!! Form::radio('po_delivery_method', 'Free Zone') !!} Free Zone
+
+        </div>
+    </div>
+</div>
+
+
+
+
 
 <div class="container">
     <div class="form-group">
@@ -32,7 +113,7 @@
     <div class="row">
         <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker60']) !!}
+{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker81']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -47,7 +128,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_confirmation',$po->po_confirmation, ['class'=> 'form-control','id'=>'datetimepicker61']) !!}
+{!! Form::input('text','po_confirmation',$po->po_confirmation, ['class'=> 'form-control','id'=>'datetimepicker82']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -60,7 +141,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_loaded_on_ideas',$po->po_loaded_on_ideas, ['class'=> 'form-control','id'=>'datetimepicker62']) !!}
+{!! Form::input('text','po_loaded_on_ideas',$po->po_loaded_on_ideas, ['class'=> 'form-control','id'=>'datetimepicker83']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -74,7 +155,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_approved_on_ideas',$po->po_approved_on_ideas, ['class'=> 'form-control','id'=>'datetimepicker63']) !!}
+{!! Form::input('text','po_approved_on_ideas',$po->po_approved_on_ideas, ['class'=> 'form-control','id'=>'datetimepicker84']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -87,7 +168,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_memo_to_fin',$po->po_memo_to_fin, ['class'=> 'form-control','id'=>'datetimepicker64']) !!}
+{!! Form::input('text','po_memo_to_fin',$po->po_memo_to_fin, ['class'=> 'form-control','id'=>'datetimepicker85']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -101,7 +182,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_delivery_date',$po->po_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker65']) !!}
+{!! Form::input('text','po_delivery_date',$po->po_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker86']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -115,7 +196,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_reminder_delivery_date',$po->po_reminder_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker66']) !!}
+{!! Form::input('text','po_reminder_delivery_date',$po->po_reminder_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker87']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -128,7 +209,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_mr_received_date',$po->po_mr_received_date, ['class'=> 'form-control','id'=>'datetimepicker67']) !!}
+{!! Form::input('text','po_mr_received_date',$po->po_mr_received_date, ['class'=> 'form-control','id'=>'datetimepicker88']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -141,7 +222,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_mrr_missing_date',$po->po_mrr_missing_date, ['class'=> 'form-control','id'=>'datetimepicker68']) !!}
+{!! Form::input('text','po_mrr_missing_date',$po->po_mrr_missing_date, ['class'=> 'form-control','id'=>'datetimepicker89']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -154,7 +235,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_mrr_rejected_date',$po->po_mrr_rejected_date, ['class'=> 'form-control','id'=>'datetimepicker69']) !!}
+{!! Form::input('text','po_mrr_rejected_date',$po->po_mrr_rejected_date, ['class'=> 'form-control','id'=>'datetimepicker90']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -167,7 +248,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_mrr_received_date',$po->po_mrr_received_date, ['class'=> 'form-control','id'=>'datetimepicker70']) !!}
+{!! Form::input('text','po_mrr_received_date',$po->po_mrr_received_date, ['class'=> 'form-control','id'=>'datetimepicker91']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -180,7 +261,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_invoice_received_date',$po->po_invoice_received_date, ['class'=> 'form-control','id'=>'datetimepicker71']) !!}
+{!! Form::input('text','po_invoice_received_date',$po->po_invoice_received_date, ['class'=> 'form-control','id'=>'datetimepicker92']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -200,20 +281,7 @@
         <div class="row">
             <div class='col-sm-6'>
    <span class="input-group-addon">
-{!! Form::input('text','po_cover_invoice',$po->po_cover_invoice, ['class'=> 'form-control','id'=>'datetimepicker72']) !!}
-    <span class="glyphicon glyphicon-calendar"></span>
-    </span>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="form-group">
-        {!! Form::label('po_completed', 'Completed:') !!}
-        <div class="row">
-            <div class='col-sm-6'>
-   <span class="input-group-addon">
-{!! Form::input('text','po_completed',$po->po_completed, ['class'=> 'form-control','id'=>'datetimepicker73']) !!}
+{!! Form::input('text','po_cover_invoice',$po->po_cover_invoice, ['class'=> 'form-control','id'=>'datetimepicker93']) !!}
     <span class="glyphicon glyphicon-calendar"></span>
     </span>
             </div>
@@ -222,6 +290,16 @@
 </div>
 
 
+
+<div class="form-group">
+    {!! Form::label('po_completed', 'PO Completed:') !!}
+    <div class="row">
+        <div class='col-sm-6'>
+            {!!Form::radio('po_completed',1) !!} Yes
+            {!! Form::radio('po_completed', 0) !!} No
+        </div>
+    </div>
+</div>
 
 
 

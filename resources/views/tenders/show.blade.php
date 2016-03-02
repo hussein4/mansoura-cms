@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Budgetry Material Request
+    Tenders
 @endsection
 
 
@@ -10,88 +10,182 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Budgetry Material Request : {{ $budgetry->mr_b_no }}</div>
+                    <div class="panel-heading">Tenders : {{ $tender->mr_t_no }}</div>
 
                     <div class="panel-body">
 
 
-                        <budgetry>
+
+                        <tender>
 
                             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                                 <thead>
                                 <tbody>
+
                                 <tr>
-                                    <th>Material Request No.</th>
-                                    <td><b>{{ $budgetry->mr_b_no }} </b> </td>
-                                </tr>
-                                <tr>
-                                    <th>MR Date</th>
-                                    <td>{{ $budgetry->mr_b_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>MR Received Date</th>
-                                    <td>{{ $budgetry->mr_b_received_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>MR Received By Officer Date</th>
-                                    <td>{{ $budgetry->mr_b_received_by_officer_date }}</td>
+                                    <th>MR No.</th>
+                                @foreach ($tender->mr as $m)
+                                    <td><a href=" {{ $m->mr_no }} "><span> {{ $m->mr_no }} </span></a></td>
+                                @endforeach
                                 </tr>
 
                                 <tr>
-                                    <th>MR Budgetry RFQ</th>
-                                    <td>{{ $budgetry->mr_budgetry_rfq }}</td>
+                                    <th>Subject</th>
+                                    <td><b>{{ $tender->mr_t_subject }} </b> </td>
                                 </tr>
                                 <tr>
-                                    <th>MR Budgetry RFQ Closing Date</th>
-                                    <td>{{ $budgetry->mr_rfq_budgetry_closing_date }}</td>
+                                    <th>Identity</th>
+                                    <td>{{ $tender->mr_t_identity }}</td>
                                 </tr>
                                 <tr>
-                                    <th>MR Budgetry RFQ Reminder</th>
-                                    <td>{{ $budgetry->mr_rfq_budgetry_reminder }}</td>
+                                    <th>Estimated Cost</th>
+                                    @foreach ($tender->mr as $m)
+                                        <td>  {{ $m->mr_estimated_cost }} </td>
+                                    @endforeach
                                 </tr>
                                 <tr>
-                                    <th>MR Budgetry Memo</th>
-                                    <td>{{ $budgetry->mr_budgetry_memo }}</td>
+                                    <th>Estimated Cost</th>
+                                    @foreach ($tender->mr as $m)
+                                        <td>  {{ $m->currency }} </td>
+                                    @endforeach
+                                </tr>
+
+
+                                <tr>
+                                    <th>Willing Fax</th>
+                                    <td>{{ $tender->mr_t_willing_fax }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Willing Fax Closing Day</th>
+                                    <td>{{ $tender->mr_t_willing_fax_closing_date }}</td>
                                 </tr>
 
                                 <tr>
-                                    <th>MR Estimated Cost</th>
-                                    <td>{{ $budgetry->mr_b_estimated_cost }}</td>
+                                    <th>Prepare Tender's Draft</th>
+                                    <td>{{ $tender->mr_t_prepare_draft }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Sub Bid-Committee Formation Memo</th>
+                                    <td>{{ $tender->mr_t_sub_bid_committee_formation_memo }}</td>
                                 </tr>
                                 <tr>
-                                    <th>MR Currency</th>
-                                    <td>{{ $budgetry->mr_b_currency }}</td>
+                                    <th>Sending Criteria Memo</th>
+                                    <td>{{ $tender->mr_t_tender_criteria_memo }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Reply on Criteria Memo</th>
+                                    <td>{{ $tender->mr_t_tender_criteria_memo_reply }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Call for Tender Memo</th>
+                                    <td>{{ $tender->mr_t_tender_call_for_tender_memo }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Sent for Budget Expansion  </th>
-                                    <td>{{ $budgetry->mr_sent_for_budget_expansion }}</td>
+                                    <th>Call for Tender Approval</th>
+                                    <td>{{ $tender->mr_t_tender_call_for_tender_signature }}</td>
                                 </tr>
                                 <tr>
-                                    <th>Sent for Budget Expansion Reminder </th>
-                                    <td>{{ $budgetry->mr_sent_for_budget_expansion_reminder }}</td>
+                                    <th>Invitation Fax  </th>
+                                    <td>{{ $tender->mr_t_tender_send_invitation_fax }}</td>
                                 </tr>
+                                <tr>
+                                    <th>Tender Closing Date </th>
+                                    <td>{{ $tender->mr_t_closing_date }}</td>
+                                </tr>
+
+
+
+                                <tr>
+                                    <th>Clarifications sent to Tech. Dept. </th>
+                                    <td>{{ $tender->mr_t_clarifications_sent_to_tech_dept }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Clarifications Received From Tech Dept. </th>
+                                    <td>{{ $tender->mr_t_clarifications_received_from_tech_dept }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Reply on Suppliers Clarifications </th>
+                                    <td>{{ $tender->mr_t_clarifications_reply_fax }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Technical Envelops Opening </th>
+                                    <td>{{ $tender->mr_t_open_tech_envelops }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Tech. Clarifications Received from Tech. Dept. </th>
+                                    <td>{{ $tender->mr_t_received_tech_clarifications_from_tech_dept }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sending Tech Clarifications to Suppliers </th>
+                                    <td>{{ $tender->mr_t_sending_tech_clarifications_to_suppliers }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Receive Suppliers Reply  </th>
+                                    <td>{{ $tender->mr_t_receive_tech_clarifications_reply }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sending Reply to Tech. Dept. </th>
+                                    <td>{{ $tender->mr_t_send_tech_clarifications_reply_to_tech_dept }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Receiving Tech. Evaluation Report </th>
+                                    <td>{{ $tender->mr_t_receive_tech_evaluation_report }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Technical Evaluation Issuance </th>
+                                    <td>{{ $tender->mr_t_issue_tech_evaluation }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Technical Evaluation Signature </th>
+                                    <td>{{ $tender->mr_t_tech_eval_signature }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Commercial Envelops Opening </th>
+                                    <td>{{ $tender->mr_t_open_commercial_offers }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Commercial Evaluation Issuance </th>
+                                    <td>{{ $tender->mr_t_issue_commercial_evaluation }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Commercial Evaluation Signature </th>
+                                    <td>{{ $tender->mr_t_commercial_evaluation_signature }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sending Awarding Fax </th>
+                                    <td>{{ $tender->mr_t_sending_awarding_faxes }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Sending Finance Memo </th>
+                                    <td>{{ $tender->mr_t_sending_fin_memo }}</td>
+                                </tr>
+
+
 
                                 </thead>
 
                                 </tbody>
                             </table>
 
-                            @unless ($budgetry->tags->isEmpty())
+                            @unless ($tender->tags->isEmpty())
 
                                 <h5>Tags:</h5>
                                 <ul>
-                                    @foreach ($budgetry->tags as $tag)
+                                    @foreach ($tender->tags as $tag)
                                         <li><a href=" {{ $tag->name }} "><span> {{ $tag->name }} </span></a></li>
                                     @endforeach
                                 </ul>
                             @endunless
 
-                            <li><a href="{{ action('BudgetriesController@edit', [$budgetry->id])  }}"><i class='fa fa-link'></i> <span>Edit Budgetry MR : {!! $budgetry->mr_b_no !!}</span></a></li>
+                            <li><a href="{{ action('TendersController@edit', [$tender->id])  }}"><i class='fa fa-link'></i> <span>Edit Tender No. : {!! $tender->mr_t_no !!}</span></a></li>
 
 
 
 
-                        </budgetry>
+                        </tender>
 
 
                     </div>

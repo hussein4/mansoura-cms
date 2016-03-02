@@ -21,7 +21,12 @@
                                 <thead>
                                 <tr>
                                     <th>Tender Number</th>
-                                    <th>Tender Date</th>
+                                    <th>Tender Subject</th>
+                                    <th>MR No.</th>
+                                    <th>Estimated Cost</th>
+                                    <th>Currency</th>
+
+
 
 
 
@@ -30,8 +35,17 @@
                                 @foreach($tender as $t)
                                     <tbody>
                                     <tr>
-                                        <td><a href="{{ action('TendersController@show', [$t->id])  }}">{{ $t->mr_b_no }}</a></td>
-                                        <td>{{$t->mr_b_date}}</td>
+                                        <td><a href="{{ action('TendersController@show', [$t->id])  }}">{{ $t->mr_t_no }}</a></td>
+                                        <td>{{$t->mr_t_subject}}</td>
+                                        @foreach($t->mr as $m)
+                                            <td><a href ="{{ $m->mr_no }} "><span>{{ $m->mr_no }}</span></a></td>
+                                            @endforeach
+                                        @foreach($t->mr as $m)
+                                            <td>{{ $m->mr_estimated_cost }}</td>
+                                        @endforeach
+                                        @foreach($t->mr as $m)
+                                            <td>{{ $m->mr_currency }}</td>
+                                        @endforeach
 
 
                                     </tr>
@@ -39,7 +53,7 @@
                                 @endforeach
 
                             </table>
-                            <a href="tender_s/import">Import Material Request</a>
+                            <a href="tender_s/import">Import Tenders</a>
                         </tender>
 
 

@@ -233,15 +233,7 @@ class PO extends Model
     }
 
 
-    public function getpocompletedAttribute($date)
-    {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
-    }
 
-    public function setpocompletedAttribute($date)
-    {
-        $this->attributes['po_completed']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
-    }
 
 
 

@@ -112,9 +112,6 @@ class Tender extends Model
 
 
 
-
-
-
     public function getmrtwillingfaxAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
@@ -135,7 +132,7 @@ class Tender extends Model
         $this->attributes['mr_t_willing_fax_closing_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
-    public function getmr_t_prepare_draftAttribute($date)
+    public function getmrtpreparedraftAttribute($date)
     {
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }

@@ -51,13 +51,40 @@
 
                                     </td>
                                 </tr>
-
+                                                         
 
 
                                 <tr>
                                     <th>PO Date</th>
                                     <td>{{ $po->po_issued }}</td>
                                 </tr>
+
+                                <tr>
+                                    <th>PO Materials Cost</th>
+                                    <td>{{ $po->po_materials_cost }}</td>
+                                </tr>
+                                <tr>
+                                    <th>PO Freight Cost</th>
+                                    <td>{{ $po->po_freight_cost }}</td>
+                                </tr>
+
+                                <tr>
+                                    <th>PO Total Cost</th>
+                                    <td>{{ $po->po_total_cost }}</td>
+                                </tr>
+                                <tr>
+                                    <th>PO Currency</th>
+                                    <td>{{ $po->po_currency }}</td>
+                                </tr>
+                                <tr>
+                                    <th>PO Payment Method</th>
+                                    <td>{{ $po->po_payment_method }}</td>
+                                </tr>
+                                <tr>
+                                    <th>PO Delivery Method</th>
+                                    <td>{{ $po->po_delivery_method }}</td>
+                                </tr>
+
 
                                 <tr>
                                     <th>Supplier Confirmation</th>
