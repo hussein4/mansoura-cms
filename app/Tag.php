@@ -44,4 +44,9 @@ class Tag extends Model
         return $this->belongsToMany('App\Tender',"tenders_tag",'tag_id', "tender_id")->withTimestamps();
     }
 
+    public function material()
+    {
+        return $this->belongsToMany('App\Material',"material_tag",'tag_id', "material_id")->withTimestamps();
+    }
+
 }

@@ -16,6 +16,7 @@ class CreateTendersTable extends Migration
             $table->increments('id');
             $table->char('mr_t_no', 255)->index();
             $table->char('mr_t_subject', 255)->index();
+            $table->string('mr_t_officer')->index();
             $table->char('mr_t_identity', 255);
             $table->timestamp('mr_t_willing_fax')->nullable();
             $table->timestamp('mr_t_willing_fax_closing_date')->nullable();

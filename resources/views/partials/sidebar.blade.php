@@ -40,6 +40,7 @@
             <!-- Optionally, you can add icons to the links -->
             <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
             <li><a href="{{ url('#') }}"><i class='fa fa-link'></i> <span>new link</span></a></li>
+
             <li class="treeview">
                 <a href="{{ url('vlist') }}"><i class='fa fa-link'></i> <span>Supplier's List</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -48,6 +49,17 @@
 
                 </ul>
             </li>
+
+            <li class="treeview">
+                <a href="{{ url('materials') }}"><i class='fa fa-link'></i> <span>Material's List</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+
+                    <li><a href="{{ url('materials') }}">Materials List</a></li>
+                    <li><a href="{{ url('materials/create') }}">Register new Material</a></li>
+
+                </ul>
+            </li>
+
             <li class="treeview">
                 <a href="{{ url('mrs') }}"><i class='fa fa-link'></i> <span>Materials Request</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">

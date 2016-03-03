@@ -69,6 +69,10 @@ class User extends Model implements AuthenticatableContract,
     }
 
 
+    public function material()
+    {
+        return $this->hasMany('App\Material');
+    }
 
 
 }

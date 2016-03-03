@@ -27,6 +27,7 @@ class CreateMrsTable extends Migration
             //MR
             $table->timestamp('mr_date')->nullable();
             $table->timestamp('mr_received_date')->nullable();
+            $table->string('mr_officer')->index();
             $table->timestamp('mr_received_by_officer_date')->nullable();
             $table->timestamp('mr_required_date')->nullable();
             $table->timestamp('mr_checked_on_egpc_site')->nullable();

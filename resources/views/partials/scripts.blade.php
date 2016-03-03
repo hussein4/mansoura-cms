@@ -1568,6 +1568,15 @@ $('#datetimepicker2').datetimepicker
 
 
 <script type="text/javascript">
+    $('#tag_material_list').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+<script type="text/javascript">
     $('#tag_list').select2({
         placeholder: 'choose a Tag',
         tags:true,
@@ -1642,6 +1651,7 @@ $('#datetimepicker2').datetimepicker
     });
 
 </script>
+
 
 
 <script>

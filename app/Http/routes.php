@@ -119,6 +119,14 @@ Route::resource('tenders','TendersController');
 
 
 
+Route::get('material_s/import', function () {
+    return view('materials.upload_materials');
+});
+Route::put('material_s/import','MaterialsController@import');
+
+Route::resource('materials','MaterialsController');
+
+
 Route::get('tags/{tags}', 'TagsController@show');
 
 

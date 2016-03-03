@@ -18,6 +18,7 @@ class CreateBudgetriesTable extends Migration
             $table->char('mr_b_subject', 255)->index();
             $table->timestamp('mr_b_date')->nullable();
             $table->timestamp('mr_b_received_date')->nullable();
+            $table->string('mr_b_officer')->index();
             $table->timestamp('mr_b_received_by_officer_date')->nullable();
 
             $table->timestamp('mr_budgetry_rfq')->nullable();

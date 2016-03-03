@@ -54,8 +54,6 @@
             {!! Form::radio('po_currency', 'Euro') !!} Euro
             {!! Form::radio('po_currency', 'Sterling') !!} Sterling
 
-
-
         </div>
     </div>
 </div>

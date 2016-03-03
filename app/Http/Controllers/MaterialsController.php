@@ -1,27 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\PORequest;
+use App\Http\Requests\MaterialRequest;
 use Illuminate\Http\Request;
-use App\PO;
+use App\Material;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tag;
 use App\MR;
 use App\Vlist;
 
+
 use Carbon\Carbon;
 use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 
-
-class POsController extends Controller
+class MaterialsController extends Controller
 {
 
     public function __construct()
     {
-        $this->middleware('auth', ['except'=> ['index']]);
+        $this->middleware('auth');
     }
 
 
@@ -31,109 +31,102 @@ class POsController extends Controller
      */
     public function index()
     {
-      //  $po = PO::latest('updated_at')->published()->get();
-     $po =PO::orderBy('created_at', 'desc')->paginate(10);
-     return view ('pos.index', compact('po' ));
+        // $material = Material::latest('updated_at')->published()->get();
+       $material =Material::orderBy('created_at', 'desc')->paginate(10);
+        return view ('materials.index', compact('material' ));
     }
 
 
 
     /**
-     * @param PO $po
+     * @param Material$material
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(PO $po)
+    public function show(Material $material)
     {
-        //dd($po->po_issued->format('d-M-Y'));
-        return view('pos.show', compact ('po'));
+        //dd($material->po_issued->format('d-M-Y'));
+        return view('materials.show', compact ('material'));
     }
 
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
-        $mr= MR::lists('mr_no','id')->all();
-        $suppliers = Vlist::lists('vname','id')->all();
-        return view('pos.create',compact('tags' ,'mr','suppliers'));
+
+
+        return view('materials.create',compact('tags' ));
     }
 
     /**
-     * @param CreatePORequest $request
+     * @param CreateMaterialRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(PORequest $request)
+    public function store(MaterialRequest $request)
     {
         //  dd($request->input('tag_list'));
-        $this->createPO($request);
+        $this->createMaterial($request);
 
         //   flash()->success('The Supplier has been Added');
-        flash()->overlay('The PO has been Successfully Added!', 'Good Job');
-        return redirect ('pos');
+        flash()->overlay('The Material has been Successfully Added!', 'Good Job');
+        return redirect ('materials');
     }
 
     /**
-     * @param PO $po
+     * @param Material$material
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit(PO $po)
+    public function edit(Material $material)
     {
         $tags = Tag::lists('name','id')->all();
-        $mr = MR::lists('mr_no','id')->all();
-        $suppliers = Vlist::lists('vname','id')->all();
-        return view('pos.edit',compact('po','tags','mr','suppliers'));
+
+
+        return view('materials.edit',compact('material','tags','mr','suppliers'));
     }
 
     /**
-     * @param PO $po
-     * @param PORequest|Request $request
+     * @param Material$material
+     * @param MaterialRequest|Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @internal param $id
      */
-    public function update(PO $po , PORequest $request)
+    public function update(Material$material , MaterialRequest $request)
     {
-        $po->update($request->all());
+       $material->update($request->all());
 
-        $this->syncTags($po, $request->input('tag_list_po'));
-        $this->syncMr($po, $request->input('mr_list'));
-        $this->syncSuppliers($po, $request->input('suppliers_list'));
-        return redirect ('pos');
+        $this->syncTags($material, $request->input('tag_material_list'));
+
+
+        return redirect ('materials');
     }
 
     /** sync up the list  of tags in database
-     * @param PO $po
+     * @param Material$material
      * @param array $tags
-     * @internal param PORequest $request
+     * @internal param MaterialRequest $request
      */
-    public function syncTags(PO $po , array $tags)
+    public function syncTags(Material$material , array $tags)
     {
-        $po->tags()->sync($tags);
-    }
-
-    public function syncMr(PO $po , array $mr)
-    {
-        $po->mr()->sync($mr);
-    }
-
-    public function syncSuppliers(PO $po , array $suppliers)
-    {
-        $po->suppliers()->sync($suppliers);
+       $material->tags()->sync($tags);
     }
 
 
 
 
 
-    /** save a new PO
-     * @param PORequest $request
+
+
+
+    /** save a new Material
+     * @param MaterialRequest $request
      * @return mixed
      */
-    private function createPO(PORequest $request)
+    private function createMaterial(MaterialRequest $request)
     {
-        $po= Auth::user()->po()->create($request->all());    //get authenticated user who saved  PO
-        $this->syncTags($po, $request->input('tag_list_po'));
-        $this->syncMr($po, $request->input('mr_list'));
-        $this->syncSuppliers($po, $request->input('suppliers_list'));
+       $material= Auth::user()->material()->create($request->all());    //get authenticated user who saved  Material
+        $this->syncTags($material, $request->input('tag_material_list'));
 
-        return $po;
+
+
+        return $material;
     }
 
     /**
@@ -150,7 +143,7 @@ class POsController extends Controller
             $results = $reader->get();
 
             foreach($results as $row):
-               PO::create([
+               Material::create([
                     'po_no'                    =>$row->po_no,
                     'po_subject'               =>$row->po_subject,
                     'po_issued'                =>date("d-M-Y g:i A",strtotime($row->po_issued)),
@@ -176,7 +169,9 @@ class POsController extends Controller
             endforeach;
 
         });
-        return redirect ('pos');
+        return redirect ('materials');
     }
+
+
 
 }

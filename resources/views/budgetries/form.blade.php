@@ -104,10 +104,14 @@
 
 
 <div class="form-group">
-    {!! Form::label('mr_currency', 'Currency:') !!}
+    {!! Form::label('mr_currency', 'Purchase Order Currency:') !!}
     <div class="row">
-        <div class='col-sm-6'>
-            {!! Form::select('mr_currency',['1'=>'EGP' ,'2'=>'USD' ,'3'=>'Euro' ,'4'=>'Sterling'],$budgetry->mr_currency, ['class'=> 'form-control','id'=>'currency_list']) !!}
+        <div class='col-sm-10'>
+            {!! Form::radio('mr_b_currency', 'EGP') !!} EGP
+            {!! Form::radio('mr_b_currency', 'USD') !!} USD
+            {!! Form::radio('mr_b_currency', 'Euro') !!} Euro
+            {!! Form::radio('mr_b_currency', 'Sterling') !!} Sterling
+
         </div>
     </div>
 </div>
