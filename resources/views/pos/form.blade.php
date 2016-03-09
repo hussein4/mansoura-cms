@@ -32,7 +32,7 @@
 
 
 <div class="form-group" >
-    {!! Form::label('po_freight_cost', 'Freight:') !!}
+    {!! Form::label('po_freight_cost', 'Freight Cost:') !!}
     {!! Form::text('po_freight_cost',null, ['class'=> 'form-control']) !!}
 </div>
 
@@ -46,7 +46,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('po_currency', 'Purchase Order Currency:') !!}
+    {!! Form::label('po_currency', 'Purchase Order Currency:', ['class'=>'form-control', 'id'=>'po_currency']) !!}
     <div class="row">
         <div class='col-sm-10'>
             {!! Form::radio('po_currency', 'EGP') !!} EGP
@@ -60,7 +60,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('po_payment_method', 'Delivery Method:') !!}
+    {!! Form::label('po_payment_method', 'Delivery Method:' ,['class'=>'form-control', 'id'=>'po_payment_method']) !!}
     <div class="row">
         <div class='col-sm-10'>
             {!! Form::radio('po_payment_method', 'Net 45') !!} Net 45
@@ -79,7 +79,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('po_delivery_method', 'Delivery Method:') !!}
+    {!! Form::label('po_delivery_method', 'Delivery Method:',['class'=>'form-control', 'id'=>'po_delivery_method']) !!}
     <div class="row">
         <div class='col-sm-10'>
             {!! Form::radio('po_delivery_method', 'ExWorks') !!} Ex Works

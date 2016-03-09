@@ -37,6 +37,7 @@ class PO extends Model
         'po_freight_cost',
         'po_total_cost',
         'po_currency',
+        'po_purchase_method',
         'po_payment_method',
         'po_delivery_method',
         'po_issued',
@@ -58,7 +59,7 @@ class PO extends Model
 
 
        
-        'popath',
+
         'user_id',
 
     ];

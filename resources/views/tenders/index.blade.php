@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3><b>Tender Material's Request</b></h3></div>
+                    <div class="panel-heading"><h3><b>Tenders</b></h3></div>
 
                     <div class="panel-body">
 
@@ -25,6 +25,7 @@
                                     <th>MR No.</th>
                                     <th>Estimated Cost</th>
                                     <th>Currency</th>
+                                    <th>Officer</th>
 
 
 
@@ -36,19 +37,27 @@
                                     <tbody>
                                     <tr>
                                         <td><a href="{{ action('TendersController@show', [$t->id])  }}">{{ $t->mr_t_no }}</a></td>
+
                                         <td>{{$t->mr_t_subject}}</td>
+
                                         @foreach($t->mr as $m)
                                             <td><a href ="{{ $m->mr_no }} "><span>{{ $m->mr_no }}</span></a></td>
-                                            @endforeach
+                                        @endforeach
+
+
                                         @foreach($t->mr as $m)
                                             <td>{{ $m->mr_estimated_cost }}</td>
                                         @endforeach
+
                                         @foreach($t->mr as $m)
                                             <td>{{ $m->mr_currency }}</td>
                                         @endforeach
 
+                                        <td>{{ $t->mr_t_officer  }}</td>
+
 
                                     </tr>
+
                                     </tbody>
                                 @endforeach
 

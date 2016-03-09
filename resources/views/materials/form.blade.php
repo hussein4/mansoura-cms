@@ -13,8 +13,25 @@
 
 <div class="form-group" >
     {!! Form::label('m_unit', 'Material Unit:') !!}
-    {!! Form::text('m_unit',null , ['class'=> 'form-control']) !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('m_unit', 'Ea') !!} Ea
+            {!! Form::radio('m_unit', 'Litre') !!} Litre
+            {!! Form::radio('m_unit', 'Galoon') !!} Galoon
+            {!! Form::radio('m_unit', 'Drum') !!} Drum
+            {!! Form::radio('m_unit', 'inch') !!} inch
+            {!! Form::radio('m_unit', 'Foot') !!} ft
+            {!! Form::radio('m_unit', 'Meter') !!} Meter
+            {!! Form::radio('m_unit', 'Kilo Meter') !!} KM
+            {!! Form::radio('m_unit', 'LB') !!} Libra
+            {!! Form::radio('m_unit', 'KG') !!} KG
+            {!! Form::radio('m_unit', 'Ton') !!} Ton
+
+
 </div>
+        </div>
+    </div>
+
 
 
 <div class="form-group" >
@@ -39,7 +56,7 @@
     {!! Form::text('m_stock',null , ['class'=> 'form-control']) !!}
 </div>
 
-
+<!--
 <div class="form-group" >
     {!! Form::label('m_last_unit_price', 'Material unit Price:') !!}
     {!! Form::text('m_last_unit_price',null , ['class'=> 'form-control']) !!}
@@ -48,9 +65,18 @@
 
 <div class="form-group" >
     {!! Form::label('m_last_unit_price_currency', 'Material unit Price Currency:') !!}
-    {!! Form::text('m_last_unit_price_currency',null , ['class'=> 'form-control']) !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('m_last_unit_price_currency', 'EGP') !!} EGP
+            {!! Form::radio('m_last_unit_price_currency', 'USD') !!} USD
+            {!! Form::radio('m_last_unit_price_currency', 'Euro') !!} Euro
+            {!! Form::radio('m_last_unit_price_currency', 'Sterling') !!} Sterling
+
+        </div>
+    </div>
 </div>
 
+-->
 
 <div class="form-group" >
     {!! Form::label('m_required', 'Material last Quantity Required:') !!}
@@ -61,7 +87,13 @@
 
 <div class="form-group" >
     {!! Form::label('m_identity', 'Material Identity:') !!}
-    {!! Form::text('m_identity',null , ['class'=> 'form-control']) !!}
+    <div class="row">
+    <div class='col-sm-10'>
+        {!! Form::radio('m_identity', 'Expense') !!} Expense
+        {!! Form::radio('m_identity', 'Movable Assets') !!} Movable Assets
+        {!! Form::radio('m_identity', 'Fixed Assets') !!}Fixed Assets
+    </div>
+    </div>
 </div>
 
 

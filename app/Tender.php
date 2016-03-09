@@ -15,6 +15,7 @@ class Tender extends Model
         'mr_t_no',
         'mr_t_subject',
         'mr_t_identity',
+        'mr_t_officer',
         'mr_t_willing_fax',
         'mr_t_willing_fax_closing_date',
         'mr_t_prepare_draft',
@@ -42,6 +43,8 @@ class Tender extends Model
         'mr_t_sending_awarding_faxes',
         'mr_t_sending_fin_memo',
         'mr_t_finished',
+
+        'user_id',
 
 
 
@@ -379,7 +382,7 @@ class Tender extends Model
 
     public function user()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User' ,'tender_user' ,'tender_id');
     }
 
     public function po()

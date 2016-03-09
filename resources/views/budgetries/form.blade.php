@@ -43,6 +43,27 @@
     </div>
 </div>
 
+
+
+<div class="form-group">
+    {!! Form::label('mr_b_officer', 'Officer:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('mr_b_officer', 'Hussein') !!} Hussein
+            {!! Form::radio('mr_b_officer', 'Islam') !!} Islam
+            {!! Form::radio('mr_b_officer', 'Nehal') !!} Nehal
+            {!! Form::radio('mr_b_officer', 'Ahmed') !!} Ahmed
+            {!! Form::radio('mr_b_officer', 'Yasser') !!} Yasser
+            {!! Form::radio('mr_b_officer', 'Amira') !!} Amira
+            {!! Form::radio('mr_b_officer', 'Ayman') !!} Ayman
+            {!! Form::radio('mr_b_officer', 'Mahmoud') !!} Mahmoud
+
+
+
+        </div>
+    </div>
+</div>
+
 <div class="form-group">
     {!! Form::label('mr_b_received_by_officer_date', 'MR Received by Officer Date') !!}
     <div class="row">

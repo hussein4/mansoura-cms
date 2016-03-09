@@ -21,7 +21,12 @@
                                 <thead>
                                 <tr>
                                     <th>MR Number</th>
-                                    <th>MR Date</th>
+                                    <th>MR Received Date</th>
+                                    <th>Officer</th>
+                                    <th>Budgetry Memo to Tech. Dept.</th>
+
+
+
 
 
 
@@ -31,7 +36,12 @@
                                     <tbody>
                                     <tr>
                                         <td><a href="{{ action('BudgetriesController@show', [$b->id])  }}">{{ $b->mr_b_no }}</a></td>
-                                        <td>{{$b->mr_b_date}}</td>
+                                        <td>{{$b->mr_b_received_date}}</td>
+                                        <td>{{$b->mr_b_officer}}</td>
+                                        <td>{{$b->mr_budgetry_memo}}</td>
+
+
+
 
 
                                     </tr>
@@ -39,7 +49,7 @@
                                 @endforeach
 
                             </table>
-                            <a href="budgetry_s/import">Import Material Request</a>
+                            <a href="budgetry_s/import">Import Budgetries Material Request</a>
                         </budgetry>
 
 

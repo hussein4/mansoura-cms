@@ -19,6 +19,8 @@ elixir(function(mix) {
 
     mix.styles ([
         'libs/bootstrap.min.css',
+        'libs/font-awesome.min.css',
+        'libs/ionicons.min.css',
         'libs/select2.min.css',
         'libs/jquery.datetimepicker.css',
         'libs/disqus.css',
@@ -28,6 +30,8 @@ elixir(function(mix) {
     mix.scripts(
         [
             'libs/jquery.js',
+            'libs/respond.min.js',
+            'libs/html5shiv.min.js',
             'libs/select2.min.js',
             'libs/jquery.datetimepicker.full.min.js',
 

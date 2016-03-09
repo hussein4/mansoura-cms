@@ -186,7 +186,10 @@ $('#datetimepicker2').datetimepicker
             inline:true,
             sideBySide: true
         });
+
     });
+
+
 </script>
 <script>
     $(function()
@@ -1215,6 +1218,21 @@ $('#datetimepicker2').datetimepicker
 <script>
     $(function()
     {
+        $('#datetimepicker88').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+
+    $(function()
+    {
         $('#datetimepicker89').datetimepicker
         ({
 
@@ -1604,6 +1622,20 @@ $('#datetimepicker2').datetimepicker
     });
 </script>
 
+
+<script type="text/javascript">
+
+    $('#tag_list_mr').select2({
+        placeholder: 'choose a Tag',
+        tags:true,
+        data:[
+
+        ]
+
+    });
+
+</script>
+
 <script type="text/javascript">
     $('#tag_list_tender').select2({
         placeholder: 'choose a Tag',
@@ -1661,4 +1693,14 @@ $(document).ready(function(){
         radioClass: 'iradio_flat-red'
     });
 });
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        $('po_currency').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
+    });
 </script>

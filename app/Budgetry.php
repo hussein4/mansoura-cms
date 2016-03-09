@@ -18,12 +18,14 @@ class Budgetry extends Model
         'mr_b_currency',
         'mr_b_date',
         'mr_b_received_date',
+        'mr_b_officer',
         'mr_b_received_by_officer_date',
         'mr_budgetry_rfq',
         'mr_rfq_budgetry_closing_date',
         'mr_rfq_budgetry_reminder',
         'mr_budgetry_memo',
         'mr_b_finished',
+        'user_id',
 
     ];
 

@@ -130,91 +130,50 @@ class TendersController extends Controller
     }
 
 
-    /*
-    
-        public function postUploadCsv(Request $request ,$Tender $tender ,$id )
-        {
-            $tender= Auth::user()->mr()->create($request->all());
-    
-            $excelFile = public_path() . '/import.xlsx';
-            //   Excel::load($excelFile, function($reader);
-           // $results = \Excel::load($excelFile, function ($reader)
-             Excel::load($excelFile, function($reader) use ($id) {
-    
-                // Getting all results
-               // $results = $reader->get();
-    
-                // ->all() is a wrapper for ->get() and will work the same
-                $results = $reader->all();
-    
-                     foreach($results as $key => $value)
-    
-                        {
-    
-                            //   $result = $reader->select(array('mr_no','mr_subject','mr_date',''mr_received_date'))->get();
-    
-    
-    
-    
-                                foreach ($value as $key => $value1) {
-                                     //value1 = test import mr
-    
-    
-                                    $Tender::create([
-    
-                                        // 'date' => date("Y-m-d",strtotime($value1->date)),
-                                        'mr_no'=>'value1',
-                                        'mr_subject' => 'value1',
-                                    //    'mr_date' => 'value1',
-                                    //    'mr_received_date' => 'value1',
-    
-                                    ]);
-                                }
-                            }
-    
-    
-            });
-    
-            return view('$tenders.import', compact('results'));
-        }
-    */
+
     public function import()
     {
         $file=Input::file("file");
-        //  $file = public_path() . '/import.xlsx';
+
         Excel::load($file, function($reader)
         {
             $results = $reader->get();
             foreach($results as $row):
                 Tender::create([
-                    'mr_no'                                                     =>$row->mr_no,
-                    'mr_subject'                                                =>$row->mr_subject,
-                    'mr_date'                                                   =>date("d-M-Y g:i A",strtotime($row->mr_date)),
-                    'mr_received_date'                                          =>date("d-M-Y g:i A",strtotime($row->mr_received_date)),
-                    'mr_received_by_officer_date'                               =>date("d-M-Y g:i A",strtotime($row->mr_received_by_officer_date)),
-                    'mr_estimated_cost'                                         =>date("d-M-Y g:i A",strtotime($row->mr_estimated_cost)),
-                    'mr_budgetry_rfq'                                           =>date("d-M-Y g:i A",strtotime($row->mr_budgetry_rfq)),
-                    'mr_rfq_budgetry_closing_date'                              =>date("d-M-Y g:i A",strtotime($row->mr_rfq_budgetry_closing_date)),
-                    'mr_rfq_budgetry_reminder'                                  =>date("d-M-Y g:i A",strtotime($row->mr_rfq_budgetry_reminder)),
-                    'mr_budgetry_memo'                                          =>date("d-M-Y g:i A",strtotime($row->mr_budgetry_memo)),
-                    'mr_checked_on_egpc_site'                                   =>date("d-M-Y g:i A",strtotime($row->mr_checked_on_egpc_site)),
-                    'mr_rfq'                                                    =>date("d-M-Y g:i A",strtotime($row->mr_rfq)),
-                    'mr_rfq_closing_date'                                       =>date("d-M-Y g:i A",strtotime($row->mr_rfq_closing_date)),
-                    'mr_rfq_reminder'                                           =>date("d-M-Y g:i A",strtotime($row->mr_rfq_reminder)),
-                    'mr_offers_open'                                            =>date("d-M-Y g:i A",strtotime($row->mr_offers_open)),
-                    'mr_offers_sent_to_tech_dept'                               =>date("d-M-Y g:i A",strtotime($row->mr_offers_sent_to_tech_dept)),
-                    'mr_offers_received_from_tech_dept_closing_date'            =>date("d-M-Y g:i A",strtotime($row->mr_offers_received_from_tech_dept_closing_date)),
-                    'mr_offers_received_from_tech_dept_reminder'                =>date("d-M-Y g:i A",strtotime($row->mr_offers_received_from_tech_dept_reminder)),
-                    'mr_offers_clarifications_sent_to_suppliers'                =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_sent_to_suppliers)),
-                    'mr_offers_clarifications_closing_date'                     =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_closing_date)),
-                    'mr_offers_clarifications_received_from_supplier'           =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_received_from_supplier)),
-                    'mr_offers_clarifications_received_from_supplier_reminder'  =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_received_from_supplier_reminder)),
-                    'mr_offers_clarifications_sent_to_tech'                     =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_sent_to_tech)),
-                    'mr_offers_evaluation'                                      =>date("d-M-Y g:i A",strtotime($row->mr_offers_evaluation)),
-                    'mr_sent_for_budget_expansion'                              =>date("d-M-Y g:i A",strtotime($row->mr_sent_for_budget_expansion)),
-                    'mr_sent_for_budget_expansion_reminder'                     =>date("d-M-Y g:i A",strtotime($row->mr_sent_for_budget_expansion_reminder)),
-                    'user_id'                                                   =>Auth::user()->id,
-                    'mrpath'                                                    =>$row->mrpath
+                    'mr_t_no'                                          =>$row->mr_t_no,
+                    'mr_t_subject'                                     =>$row->mr_t_subject,
+                    'mr_t_identity'                                    =>$row->mr_t_identity,
+                    'mr_t_officer'                                     =>$row->mr_t_officer,
+                    'mr_t_willing_fax'                                 =>date("d-M-Y g:i A",strtotime($row->mr_t_willing_fax)),
+                    'mr_t_willing_fax_closing_date'                    =>date("d-M-Y g:i A",strtotime($row->mr_t_willing_fax_closing_date)),
+                    'mr_t_prepare_draft'                               =>date("d-M-Y g:i A",strtotime($row->mr_t_prepare_draft)),
+                    'mr_t_sub_bid_committee_formation_memo'            =>date("d-M-Y g:i A",strtotime($row->mr_t_sub_bid_committee_formation_memo)),
+                    'mr_t_tender_criteria_memo'                        =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_criteria_memo)),
+                    'mr_t_tender_criteria_memo_reply'                  =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_criteria_memo_reply)),
+                    'mr_t_tender_call_for_tender_memo'                 =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_call_for_tender_memo)),
+                    'mr_t_tender_call_for_tender_signature'            =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_call_for_tender_signature)),
+                    'mr_t_tender_send_invitation_fax'                  =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_send_invitation_fax)),
+                    'mr_t_closing_date'                                =>date("d-M-Y g:i A",strtotime($row->mr_t_closing_date)),
+                    'mr_t_clarifications_sent_to_tech_dept'            =>date("d-M-Y g:i A",strtotime($row->mmr_t_clarifications_sent_to_tech_dept)),
+                    'mr_t_clarifications_received_from_tech_dept'      =>date("d-M-Y g:i A",strtotime($row->mr_t_clarifications_received_from_tech_dept)),
+                    'mr_t_clarifications_reply_fax'                    =>date("d-M-Y g:i A",strtotime($row->mr_t_clarifications_reply_fax)),
+                    'mr_t_open_tech_envelops'                          =>date("d-M-Y g:i A",strtotime($row->mr_t_open_tech_envelops)),
+                    'mr_t_received_tech_clarifications_from_tech_dept' =>date("d-M-Y g:i A",strtotime($row->mr_t_received_tech_clarifications_from_tech_dept)),
+                    'mr_t_sending_tech_clarifications_to_suppliers'    =>date("d-M-Y g:i A",strtotime($row->mr_t_sending_tech_clarifications_to_suppliers)),
+                    'mr_t_receive_tech_clarifications_reply'           =>date("d-M-Y g:i A",strtotime($row->mr_t_receive_tech_clarifications_reply)),
+                    'mr_t_send_tech_clarifications_reply_to_tech_dept' =>date("d-M-Y g:i A",strtotime($row->mr_t_send_tech_clarifications_reply_to_tech_dept)),
+                    'mr_t_receive_tech_evaluation_report'              =>date("d-M-Y g:i A",strtotime($row->mr_t_receive_tech_evaluation_report)),
+                    'mr_t_issue_tech_evaluation'                       =>date("d-M-Y g:i A",strtotime($row->mr_t_issue_tech_evaluation)),
+                    'mr_t_tech_eval_signature'                         =>date("d-M-Y g:i A",strtotime($row->mr_t_tech_eval_signature)),
+                    'mr_t_open_commercial_offers'                      =>date("d-M-Y g:i A",strtotime($row->mr_t_open_commercial_offers)),
+                    'mr_t_issue_commercial_evaluation'                 =>date("d-M-Y g:i A",strtotime($row->mr_t_issue_commercial_evaluation)),
+                    'mr_t_commercial_evaluation_signature'             =>date("d-M-Y g:i A",strtotime($row->mr_t_commercial_evaluation_signature)),
+                    'mr_t_sending_awarding_faxes'                      =>date("d-M-Y g:i A",strtotime($row->mr_t_sending_awarding_faxes)),
+                    'mr_t_sending_fin_memo'                            =>date("d-M-Y g:i A",strtotime($row->mr_t_sending_fin_memo)),
+                    'mr_t_finished'                                    =>$row->mr_t_finished,
+
+                    'user_id'                                          =>Auth::user()->id,
+
                 ]);
             endforeach;
         });

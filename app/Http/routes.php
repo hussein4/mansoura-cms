@@ -76,7 +76,7 @@ Route::get('vlist/{vlist}/eval','VlistsController@average', function($id)
 
 
 Route::get('budgetry_s/import', function () {
-    return view('budgetries.upload_mrs');
+    return view('budgetries.upload_budgetries');
 });
 
 Route::put('budgetry_s/import','BudgetriesController@import');
@@ -110,9 +110,9 @@ Route::resource('pos','POsController');
 
 
 Route::get('tender_s/import', function () {
-    return view('tenders.upload_pos');
+    return view('tenders.upload_tenders');
 });
-Route::put('tender_s/import','POsController@import');
+Route::put('tender_s/import','TendersController@import');
 
 Route::resource('tenders','TendersController');
 

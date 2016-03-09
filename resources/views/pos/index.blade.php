@@ -25,6 +25,9 @@
                                     <th>Supplier</th>
                                     <th>PO issuance</th>
                                     <th>Estimated Delivery </th>
+                                    <th>Total Cost </th>
+                                    <th>Currency </th>
+
 
 
                                 </tr>
@@ -55,6 +58,9 @@
 
                                         <td>{{ $p->po_issued }}</td>
                                         <td>{{ $p->po_delivery_date }}</td>
+                                        <td>{{ $p->po_total_cost }}</td>
+                                        <td>{{ $p->po_currency }}</td>
+
 
                                     </tr>
                                     </tbody>

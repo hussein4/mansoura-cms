@@ -46,14 +46,20 @@
                                 </tr>
 
                                 <tr>
-                                    <th>Material Unit Price</th>
-                                    <td>{{ $material->m_last_unit_price }}</td>
+                                    <th>Material Identity</th>
+                                    <td>{{ $material->m_identity }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Material Usage</th>
+                                    <td>{{ $material->m_usage }}</td>
                                 </tr>
 
+
                                 <tr>
-                                    <th>Material Unit Price Currency</th>
-                                    <td>{{ $material->m_last_unit_price_currency }}</td>
+                                    <th>Remarks</th>
+                                    <td>{{ $material->m_remarks }}</td>
                                 </tr>
+
 
                                 </thead>
 
@@ -71,7 +77,7 @@
                             @endunless
 
 
-                            <li><a href=" {{ action('MaterialsController@edit', [$material->id]) }} "><i class='fa fa-link'></i> <span>Edit Material : {!! $materialaterial->po_no !!}</span></a></li>
+                            <li><a href=" {{ action('MaterialsController@edit', [$material->id]) }} "><i class='fa fa-link'></i> <span>Edit Material : {!! $material->m_code !!}</span></a></li>
                         </material>
 
 

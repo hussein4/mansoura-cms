@@ -34,6 +34,11 @@
                                     <td><b>{{ $tender->mr_t_subject }} </b> </td>
                                 </tr>
                                 <tr>
+                                    <th>Officer</th>
+                                    <td><b>{{ $tender->mr_t_officer }} </b> </td>
+                                </tr>
+
+                                <tr>
                                     <th>Identity</th>
                                     <td>{{ $tender->mr_t_identity }}</td>
                                 </tr>
@@ -43,8 +48,9 @@
                                         <td>  {{ $m->mr_estimated_cost }} </td>
                                     @endforeach
                                 </tr>
+
                                 <tr>
-                                    <th>Estimated Cost</th>
+                                    <th>Currency</th>
                                     @foreach ($tender->mr as $m)
                                         <td>  {{ $m->currency }} </td>
                                     @endforeach

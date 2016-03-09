@@ -61,14 +61,17 @@
             </li>
 
             <li class="treeview">
+                <a href="{{ url('Budgetries') }}"><i class='fa fa-link'></i> <span>Budgetry Materials Request</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('budgetries') }}">Budgetry Material Requests</a></li>
+                    <li><a href="{{ url('budgetries/create') }}">Register Budgetry Offers</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
                 <a href="{{ url('mrs') }}"><i class='fa fa-link'></i> <span>Materials Request</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-
                     <li><a href="{{ url('mrs') }}">Material Requests</a></li>
-                    <li><a href="{{ url('budgetries/create') }}">Register Budgetry Offers</a></li>
                     <li><a href="{{ url('mrs/create') }}">Register a new Material Request</a></li>
-
-
                 </ul>
             </li>
 

@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="field">
-                            {!! Form::submit('Save', ['class' => 'btn btn-success']) !!}
+                            {!! Form::submit('Submit', ['class' => 'btn btn-success']) !!}
                         </div>
                         {!! Form::close() !!}
                     </div>

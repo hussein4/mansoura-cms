@@ -18,6 +18,7 @@ class MR extends Model
         'mr_subject',
         'mr_received_date',
         'mr_required_date',
+        'mr_officer',
         'mr_received_by_officer_date',
         'mr_estimated_cost',
         'mr_currency',
@@ -85,7 +86,11 @@ class MR extends Model
          
     ];
 
-
+    public static function fixNull($date)
+    {
+        $date = (is_null($date) || empty($date) || strlen($date) < 1 ? NULL : $date);
+        return $date;
+    }
     /**
      * @param $query
      */
@@ -119,22 +124,33 @@ class MR extends Model
 
     public function getmrbdateAttribute($date)
     {
+        if (is_null($date))
+            return null;
+        else
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
     public function setmrbdateAttribute($date)
     {
-        $this->attributes['mr_b_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+
+        $this->attributes['mr_b_date'] = $date ? Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+
     }
    
     public function getmrbreceiveddateAttribute($date)
     {
+        if (is_null($date))
+            return null;
+        else
         return Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
     public function setmrbreceiveddateAttribute($date)
     {
+        $this->attributes['mr_b_received_date'] = $date;
+        $this->fixNull('mr_b_received_date');
         $this->attributes['mr_b_received_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+
     }
 
     public function getmrbreceivedbyofficerdateAttribute($date)

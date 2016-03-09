@@ -23,6 +23,8 @@
                                     <th>MR Number</th>
                                     <th>MR Date</th>
                                     <th>Estimated Cost</th>
+                                    <th>Officer</th>
+                                    
 
 
                                 </tr>
@@ -33,6 +35,7 @@
                                         <td><a href="{{ action('MRsController@show', [$m->id])  }}">{{ $m->mr_no }}</a></td>
                                         <td>{{$m->mr_date}}</td>
                                         <td>{{$m->mr_estimated_cost}}</td>
+                                        <td>{{$m->mr_officer}}</td>
 
                                     </tr>
                                     </tbody>

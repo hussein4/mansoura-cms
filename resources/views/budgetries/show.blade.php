@@ -33,6 +33,10 @@
                                     <td>{{ $budgetry->mr_b_received_date }}</td>
                                 </tr>
                                 <tr>
+                                    <th>MR Officer</th>
+                                    <td>{{ $budgetry->mr_b_officer }}</td>
+                                </tr>
+                                <tr>
                                     <th>MR Received By Officer Date</th>
                                     <td>{{ $budgetry->mr_b_received_by_officer_date }}</td>
                                 </tr>

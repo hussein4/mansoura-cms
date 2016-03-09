@@ -33,6 +33,11 @@
                                     <td>{{ $mr->mr_received_date }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Officer</th>
+                                    <td><b>{{ $mr->mr_officer }} </b> </td>
+                                </tr>
+
+                                <tr>
                                     <th>MR Received By Officer Date</th>
                                     <td>{{ $mr->mr_received_by_officer_date }}</td>
                                 </tr>

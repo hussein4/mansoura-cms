@@ -36,6 +36,18 @@
     </div>
 </div>
 
+
+<div class="form-group">
+    {!! Form::label('mr_t_officer', 'Officer:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('mr_t_officer', 'Hussein') !!} Hussein
+            {!! Form::radio('mr_t_officer', 'Islam') !!} Islam
+            {!! Form::radio('mr_t_officer', 'Nehal') !!} Nehal
+        </div>
+    </div>
+</div>
+
 <div class="form-group">
     {!! Form::label('mr_t_willing_fax', 'Willing Fax:') !!}
     <div class="row">

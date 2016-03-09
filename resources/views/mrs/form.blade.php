@@ -12,7 +12,7 @@
         <div class="row">
             <div class='col-sm-6'>
 
-{!! Form::input('text','mr_date',$mr->mr_date, ['class'=> 'form-control','id'=>'datetimepicker21']) !!}
+{!! Form::input('text','mr_date',null, ['class'=> 'form-control','id'=>'datetimepicker21']) !!}
 
             </div>
         </div>
@@ -23,10 +23,29 @@
     {!! Form::label('mr_received_date', 'Received Date:') !!}
     <div class="row">
         <div class='col-sm-6'>
-            {!! Form::input('text','mr_received_date',$mr->mr_received_date, ['class'=> 'form-control','id'=>'datetimepicker22']) !!}
+            {!! Form::input('text','mr_received_date',null, ['class'=> 'form-control','id'=>'datetimepicker22']) !!}
         </div>
     </div>
 </div>
+
+
+
+<div class="form-group">
+    {!! Form::label('mr_officer', 'Officer:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('mr_officer', 'Hussein') !!} Hussein
+            {!! Form::radio('mr_officer', 'Islam') !!} Islam
+            {!! Form::radio('mr_officer', 'Nehal') !!} Nehal
+            {!! Form::radio('mr_officer', 'Ahmed') !!} Ahmed
+            {!! Form::radio('mr_officer', 'Yasser') !!} Yasser
+            {!! Form::radio('mr_officer', 'Amira') !!} Amira
+            {!! Form::radio('mr_officer', 'Ayman') !!} Ayman
+            {!! Form::radio('mr_officer', 'Mahmoud') !!} Mahmoud
+             </div>
+    </div>
+</div>
+
 
 <div class="form-group">
     {!! Form::label('mr_received_by_officer_date', 'Received by Officer :') !!}
@@ -50,11 +69,16 @@
 </div>
 
 
+
 <div class="form-group">
     {!! Form::label('mr_currency', 'Currency:') !!}
     <div class="row">
-        <div class='col-sm-6'>
-            {!! Form::select('mr_currency',['1'=>'EGP' ,'2'=>'USD' ,'3'=>'Euro' ,'4'=>'Sterling'],$mr->mr_currency, ['class'=> 'form-control','id'=>'currency_list']) !!}
+        <div class='col-sm-10'>
+            {!! Form::radio('mr_currency', 'EGP') !!} EGP
+            {!! Form::radio('mr_currency', 'USD') !!} USD
+            {!! Form::radio('mr_currency', 'Euro') !!} Euro
+            {!! Form::radio('mr_currency', 'Sterling') !!} Sterling
+
         </div>
     </div>
 </div>
@@ -218,31 +242,15 @@
 
 
 <div class="form-group">
-    <!--<select class="tag_list" multiple="multiple" data-tags="true  style="width: 50%">   -->
+
     {!! Form::label('tag_list_mr', 'Tags:') !!}
     {!! Form::select('tag_list_mr[]',$tags,null,[ 'class'=>'form-control','id'=> 'tag_list_mr' ,'multiple']) !!}
 </div>
 
 
-<div class="form-group">
-    {!! Form::label('created_at', 'Created On:') !!}
-    {!! Form::input('date','created_on', $mr->created_at , ['class'=> 'form-control']) !!}
-</div>
 
 <div class="form-group">
     {!! Form::submit($submitButtonText , ['class' => 'btn btn-primary form-control' ]) !!}
 </div>
 
-<script type="text/javascript">
-
-    $('#tag_list_mr').select2({
-        placeholder: 'choose a Tag',
-        tags:true,
-        data:[
-
-        ]
-
-    });
-
-</script>
 
