@@ -14,6 +14,11 @@ use App\Tag;
 
 use Carbon\Carbon;
 use Auth;
+use Illuminate\Support\Facades\Input;
+use Maatwebsite\Excel\Facades\Excel;
+use Session;
+
+
 
 class MRsController extends Controller
 {
@@ -39,8 +44,14 @@ class MRsController extends Controller
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
+
         return view('mrs.create',compact('tags'));
+        dd($tags);
+      //  return view('mrs.create_b',compact('tags'));
     }
+
+
+
 
     /**
      * @param CreateMRRequest $request
@@ -48,7 +59,8 @@ class MRsController extends Controller
      */
     public function store(MRRequest $request)
     {
-        //  dd($request->input('tag_list'));
+         // dd($request->input('tag_list'));
+     //   $this->fixNull($request);
         $this->createMR($request);
 
         //   flash()->success('The Supplier has been Added');
@@ -73,6 +85,7 @@ class MRsController extends Controller
      */
     public function update(MR $mr , MRRequest $request)
     {
+
         $mr->update($request->all());
         $this->syncTags($mr, $request->input('tag_list_mr'));
 
@@ -96,7 +109,58 @@ class MRsController extends Controller
     private function createMR(MRRequest $request)
     {
         $mr= Auth::user()->mr()->create($request->all());    //get authenticated user who saved  mr
+       // $this->fixNull($request);
         $this->syncTags($mr, $request->input('tag_list_mr'));
         return $mr;
     }
+
+
+    public function import()
+    {
+       $file=Input::file("file");
+
+        Excel::load($file, function($reader)
+        {
+            $results = $reader->get();
+            foreach($results as $row):
+               MR::create([
+                    'mr_no'                                                     =>$row->mr_no,
+                    'mr_subject'                                                =>$row->mr_subject,
+                    'mr_date'                                                   =>date("d-M-Y g:i A",strtotime($row->mr_date)),
+                    'mr_received_date'                                          =>date("d-M-Y g:i A",strtotime($row->mr_received_date)),
+                    'mr_officer'                                                =>$row->mr_officer,
+                    'mr_received_by_officer_date'                               =>date("d-M-Y g:i A",strtotime($row->mr_received_by_officer_date)),
+                    'mr_estimated_cost'                                         =>date("d-M-Y g:i A",strtotime($row->mr_estimated_cost)),
+
+                    'mr_checked_on_egpc_site'                                   =>date("d-M-Y g:i A",strtotime($row->mr_checked_on_egpc_site)),
+                    'mr_rfq'                                                    =>date("d-M-Y g:i A",strtotime($row->mr_rfq)),
+                    'mr_rfq_closing_date'                                       =>date("d-M-Y g:i A",strtotime($row->mr_rfq_closing_date)),
+                    'mr_rfq_reminder'                                           =>date("d-M-Y g:i A",strtotime($row->mr_rfq_reminder)),
+                    'mr_offers_open'                                            =>date("d-M-Y g:i A",strtotime($row->mr_offers_open)),
+                    'mr_offers_sent_to_tech_dept'                               =>date("d-M-Y g:i A",strtotime($row->mr_offers_sent_to_tech_dept)),
+                    'mr_offers_received_from_tech_dept_closing_date'            =>date("d-M-Y g:i A",strtotime($row->mr_offers_received_from_tech_dept_closing_date)),
+                    'mr_offers_received_from_tech_dept_reminder'                =>date("d-M-Y g:i A",strtotime($row->mr_offers_received_from_tech_dept_reminder)),
+                    'mr_offers_clarifications_sent_to_suppliers'                =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_sent_to_suppliers)),
+                    'mr_offers_clarifications_closing_date'                     =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_closing_date)),
+                    'mr_offers_clarifications_received_from_supplier'           =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_received_from_supplier)),
+                    'mr_offers_clarifications_received_from_supplier_reminder'  =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_received_from_supplier_reminder)),
+                    'mr_offers_clarifications_sent_to_tech'                     =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_sent_to_tech)),
+                    'mr_offers_evaluation'                                      =>date("d-M-Y g:i A",strtotime($row->mr_offers_evaluation)),
+                    'mr_sent_for_budget_expansion'                              =>date("d-M-Y g:i A",strtotime($row->mr_sent_for_budget_expansion)),
+                    'mr_sent_for_budget_expansion_reminder'                     =>date("d-M-Y g:i A",strtotime($row->mr_sent_for_budget_expansion_reminder)),
+                    'user_id'                                                   =>Auth::user()->id,
+                    'mrpath'                                                    =>$row->mrpath
+                ]);
+            endforeach;
+        });
+        return redirect ('mrs');
+    }
+
+    public static function fixNull($tonl)
+    {
+        $tonl = (is_null($tonl) || empty($tonl) || strlen($tonl) < 1 ? NULL : $tonl);
+        return $tonl;
+    }
+
+
 }
