@@ -12,6 +12,7 @@
 */
 
 use App\Http\Controllers\VlistsController;
+use App\Tag;
 use App\Vlist;
 use Illuminate\Http\Request;
 use App\Contracts\Search;
@@ -21,7 +22,7 @@ use Maatwebsite\Excel\Facades\Excel;
 Route::get('/', function (Search $search ,Request $request) {
 
     $results = $search->index('getstarted_actors')
-               ->get($request->name);
+        ->get($request->name);
     return view('welcome', compact('results'));
 });
 
@@ -32,12 +33,21 @@ Route::get('/search', function (Search $search ,Request $request) {
     return view('search', compact('results'));
 });
 
-Route::resource('vlist','VlistsController');
+
+
+
 
 
 Route::get('/vlist/{id}/export' , 'VlistsController@export');
 
 Route::post('/vlist/{id}/file' , 'VlistsController@post_upload');
+
+Route::get('v_list/import', function () {
+    return view('vlist.upload_vlist');
+});
+Route::put('v_list/import','VlistsController@import');
+
+Route::resource('vlist','VlistsController');
 
 
 /*
@@ -65,10 +75,56 @@ Route::get('vlist/{vlist}/eval','VlistsController@average', function($id)
 // route to process the form
 
 
+Route::get('budgetry_s/import', function () {
+    return view('budgetries.upload_budgetries');
+});
+
+Route::put('budgetry_s/import','BudgetriesController@import');
+
+Route::resource('budgetries','BudgetriesController');
+
+
+
+
+
+Route::get('mr_s/import', function () {
+    return view('mrs.upload_mrs');
+});
+
+Route::put('mr_s/import','MRsController@import');
 
 Route::resource('mrs','MRsController');
+
+
+
+
+
+Route::get('po_s/import', function () {
+    return view('pos.upload_pos');
+});
+Route::put('po_s/import','POsController@import');
+
 Route::resource('pos','POsController');
 
+
+
+
+Route::get('tender_s/import', function () {
+    return view('tenders.upload_tenders');
+});
+Route::put('tender_s/import','TendersController@import');
+
+Route::resource('tenders','TendersController');
+
+
+
+
+Route::get('material_s/import', function () {
+    return view('materials.upload_materials');
+});
+Route::put('material_s/import','MaterialsController@import');
+
+Route::resource('materials','MaterialsController');
 
 
 Route::get('tags/{tags}', 'TagsController@show');
@@ -78,5 +134,4 @@ Route::get('tags/{tags}', 'TagsController@show');
 Route::controllers([
     'auth'=>'Auth\AuthController',
     'password'=>'Auth\PasswordController',
-    ]);
-
+]);
