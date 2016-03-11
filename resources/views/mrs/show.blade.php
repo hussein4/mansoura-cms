@@ -33,6 +33,11 @@
                                     <td>{{ $mr->mr_received_date }}</td>
                                 </tr>
                                 <tr>
+                                    <th>Officer</th>
+                                    <td><b>{{ $mr->mr_officer }} </b> </td>
+                                </tr>
+
+                                <tr>
                                     <th>MR Received By Officer Date</th>
                                     <td>{{ $mr->mr_received_by_officer_date }}</td>
                                 </tr>
@@ -40,22 +45,8 @@
                                     <th>MR Estimated Cost</th>
                                     <td>{{ $mr->mr_estimated_cost }}</td>
                                 </tr>
-                                <tr>
-                                    <th>MR Budgetry RFQ</th>
-                                    <td>{{ $mr->mr_budgetry_rfq }}</td>
-                                </tr>
-                                <tr>
-                                    <th>MR Budgetry RFQ Closing Date</th>
-                                    <td>{{ $mr->mr_rfq_budgetry_closing_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>MR Budgetry RFQ Reminder</th>
-                                    <td>{{ $mr->mr_rfq_budgetry_reminder }}</td>
-                                </tr>
-                                <tr>
-                                    <th>MR Budgetry Memo</th>
-                                    <td>{{ $mr->mr_budgetry_memo }}</td>
-                                </tr>
+
+
                                 <tr>
                                     <th>MR RFQ </th>
                                     <td>{{ $mr->mr_rfq }}</td>
