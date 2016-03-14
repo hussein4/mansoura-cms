@@ -124,10 +124,8 @@ class MR extends Model
 
     public function getmrbdateAttribute($date)
     {
-        if (is_null($date))
-            return null;
-        else
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrbdateAttribute($date)
@@ -139,23 +137,21 @@ class MR extends Model
    
     public function getmrbreceiveddateAttribute($date)
     {
-        if (is_null($date))
-            return null;
-        else
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrbreceiveddateAttribute($date)
     {
-        $this->attributes['mr_b_received_date'] = $date;
-        $this->fixNull('mr_b_received_date');
+                
         $this->attributes['mr_b_received_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
 
     }
 
     public function getmrbreceivedbyofficerdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrbreceivedbyofficerdateAttribute($date)
@@ -170,7 +166,8 @@ class MR extends Model
 
     public function getmrbudgetryrfqAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrbudgetryrfqAttribute($date)
@@ -181,7 +178,8 @@ class MR extends Model
 
     public function getmrrfqbudgetryclosingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrrfqbudgetryclosingdateAttribute($date)
@@ -192,7 +190,8 @@ class MR extends Model
 
     public function getmrrfqbudgetryreminderAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrrfqbudgetryreminderAttribute($date)
@@ -204,7 +203,8 @@ class MR extends Model
 
     public function getmrbudgetrymemoAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrbudgetrymemoAttribute($date)
@@ -216,7 +216,8 @@ class MR extends Model
 
     public function getmrdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrdateAttribute($date)
@@ -226,7 +227,8 @@ class MR extends Model
 
     public function getmrreceiveddateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrreceiveddateAttribute($date)
@@ -237,7 +239,8 @@ class MR extends Model
 
     public function getmrreceivedbyofficerdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrreceivedbyofficerdateAttribute($date)
@@ -250,7 +253,8 @@ class MR extends Model
 
     public function getmrcheckedonegpcsiteAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrcheckedonegpcsiteAttribute($date)
@@ -261,7 +265,8 @@ class MR extends Model
 
     public function getmrrfqAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
     }
 
     public function setmrrfqAttribute($date)
@@ -272,7 +277,7 @@ class MR extends Model
 
     public function getmrrfqclosingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrrfqclosingdateAttribute($date)
@@ -284,7 +289,7 @@ class MR extends Model
 
     public function getmrrfqreminderAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrrfqreminderAttribute($date)
@@ -295,7 +300,7 @@ class MR extends Model
 
     public function getmroffersopenAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersopenAttribute($date)
@@ -306,7 +311,7 @@ class MR extends Model
 
     public function getmrofferssenttotechdeptAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrofferssenttotechdeptAttribute($date)
@@ -317,7 +322,7 @@ class MR extends Model
 
     public function getmroffersreceivedfromtechdeptclosingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersreceivedfromtechdeptclosingdateAttribute($date)
@@ -328,7 +333,7 @@ class MR extends Model
 
     public function getmroffersreceivedfromtechdeptreminderAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersreceivedfromtechdeptreminderAttribute($date)
@@ -339,7 +344,7 @@ class MR extends Model
 
     public function getmroffersclarificationssenttosuppliersAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersclarificationssenttosuppliersAttribute($date)
@@ -351,7 +356,7 @@ class MR extends Model
 
     public function getmroffersclarificationsclosingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersclarificationsclosingdateAttribute($date)
@@ -362,7 +367,7 @@ class MR extends Model
 
     public function getmroffersclarificationsreceivedfromsupplierreminderAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersclarificationsreceivedfromsupplierreminderAttribute($date)
@@ -373,7 +378,7 @@ class MR extends Model
 
     public function getmroffersclarificationsreceivedfromsupplierAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersclarificationsreceivedfromsupplierAttribute($date)
@@ -385,7 +390,7 @@ class MR extends Model
 
     public function getmroffersclarificationssenttotechAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersclarificationssenttotechAttribute($date)
@@ -396,7 +401,7 @@ class MR extends Model
 
     public function getmroffersevaluationAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmroffersevaluationAttribute($date)
@@ -407,7 +412,7 @@ class MR extends Model
 
     public function getmrsentforbudgetexpansionAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrsentforbudgetexpansionAttribute($date)
@@ -418,7 +423,7 @@ class MR extends Model
 
     public function getmrsentforbudgetexpansionreminderAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrsentforbudgetexpansionreminderAttribute($date)
@@ -434,7 +439,7 @@ class MR extends Model
 
     public function getmrtwillingfaxAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtwillingfaxAttribute($date)
@@ -444,7 +449,7 @@ class MR extends Model
 
     public function getmrtwillingfaxclosingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtwillingfaxclosingdateAttribute($date)
@@ -454,7 +459,7 @@ class MR extends Model
 
     public function getmr_t_prepare_draftAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtpreparedraftAttribute($date)
@@ -464,7 +469,7 @@ class MR extends Model
 
     public function getmrtsubbidcommitteeformationmemoAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtsubbidcommitteeformationmemoAttribute($date)
@@ -474,7 +479,7 @@ class MR extends Model
 
     public function getmrttendercriteriamemoreplyAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrttendercriteriamemoreplyAttribute($date)
@@ -484,7 +489,7 @@ class MR extends Model
 
     public function getmrttendercriteriamemoAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrttendercriteriamemoAttribute($date)
@@ -494,7 +499,7 @@ class MR extends Model
 
     public function getmrttendercallfortendermemoAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrttendercallfortendermemoAttribute($date)
@@ -504,7 +509,7 @@ class MR extends Model
 
     public function getmrttendercallfortendersignatureAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrttendercallfortendersignatureAttribute($date)
@@ -514,7 +519,7 @@ class MR extends Model
 
     public function getmrttendersendinvitationfaxAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrttendersendinvitationfaxAttribute($date)
@@ -524,7 +529,7 @@ class MR extends Model
 
     public function getmrtclarificationssenttotechdeptAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtclarificationssenttotechdeptAttribute($date)
@@ -534,7 +539,7 @@ class MR extends Model
 
     public function getmrtclosingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtclosingdateAttribute($date)
@@ -544,7 +549,7 @@ class MR extends Model
 
     public function getmrtclarificationsreceivedfromtechdeptAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtclarificationsreceivedfromtechdeptAttribute($date)
@@ -554,7 +559,7 @@ class MR extends Model
 
     public function getmrtclarificationsreplyfaxAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtclarificationsreplyfaxAttribute($date)
@@ -564,7 +569,7 @@ class MR extends Model
 
     public function getmrtopentechenvelopsAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtopentechenvelopsAttribute($date)
@@ -575,7 +580,7 @@ class MR extends Model
 
     public function getmrtreceivedtechclarificationsfromtechdeptAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtreceivedtechclarificationsfromtechdeptAttribute($date)
@@ -585,7 +590,7 @@ class MR extends Model
 
     public function getmrtsendingtechclarificationstosuppliersAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtsendingtechclarificationstosuppliersAttribute($date)
@@ -595,7 +600,7 @@ class MR extends Model
 
     public function getmrtreceivetechclarificationsreplyAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtreceivetechclarificationsreplyAttribute($date)
@@ -605,7 +610,7 @@ class MR extends Model
 
     public function getmrtsendtechclarificationsreplytotechdeptAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtsendtechclarificationsreplytotechdeptAttribute($date)
@@ -615,7 +620,7 @@ class MR extends Model
 
     public function getmrtreceivetechevaluationreportAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtreceivetechevaluationreportAttribute($date)
@@ -625,7 +630,7 @@ class MR extends Model
 
     public function getmrtissuetechevaluationAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtissuetechevaluationAttribute($date)
@@ -635,7 +640,7 @@ class MR extends Model
 
     public function getmrttechevalsignatureAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrttechevalsignatureAttribute($date)
@@ -645,7 +650,7 @@ class MR extends Model
 
     public function getmrtopencommercialoffersAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtopencommercialoffersAttribute($date)
@@ -655,7 +660,7 @@ class MR extends Model
 
     public function getmrtissuecommercialevaluationAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtissuecommercialevaluationAttribute($date)
@@ -665,7 +670,7 @@ class MR extends Model
     
      public function getmrtcommercialevaluationsignatureAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtcommercialevaluationsignatureAttribute($date)
@@ -675,7 +680,7 @@ class MR extends Model
 
  public function getmrtsendingawardingfaxesAttribute($date)
 {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtsendingawardingfaxesAttribute($date)
@@ -685,7 +690,7 @@ $this->attributes['mr_t_sending_awarding_faxes']= $date ?Carbon::createFromForma
     
      public function getmrtsendingfinmemoAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+                return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null; 
     }
 
     public function setmrtsendingfinmemoAttribute($date)

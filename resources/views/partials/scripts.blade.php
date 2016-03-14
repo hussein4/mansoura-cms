@@ -47,7 +47,7 @@
   -->
 <script>
     $('#flash-overlay-modal').modal();
-   // $('div.alert').not('.alert-important').delay(3000).slideUp(300);   //for success message
+    // $('div.alert').not('.alert-important').delay(3000).slideUp(300);   //for success message
 </script>
 
 <!--
@@ -73,8 +73,10 @@
         $('#datetimepicker1').datetimepicker
 
         ({
+
             format: 'DD-MMMM-YYYY hh:00 A',
             inline:true,
+            useCurrent: false,
             sideBySide: true
 
         });
@@ -82,16 +84,17 @@
 </script>
 
 <script>
-$(function()
-{
-$('#datetimepicker2').datetimepicker
-    ({
+    $(function()
+    {
+        $('#datetimepicker2').datetimepicker
+        ({
 
-    format: 'DD-MMMM-YYYY hh:00 A',
-    inline:true,
-    sideBySide: true
+            format: 'DD-MMMM-YYYY hh:00 A',
+            inline:true,
+            useCurrent: false,
+            sideBySide: true
+        });
     });
-});
 </script>
 
 <script>
@@ -102,7 +105,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -115,7 +118,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -128,7 +131,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -142,7 +145,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -155,7 +158,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -168,7 +171,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -182,7 +185,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -198,7 +201,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -211,7 +214,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -224,7 +227,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -237,7 +240,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -251,7 +254,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -265,7 +268,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -278,7 +281,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -291,7 +294,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -304,7 +307,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -317,7 +320,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -330,7 +333,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -343,7 +346,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -357,7 +360,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -371,7 +374,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -386,7 +389,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -401,7 +404,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -415,7 +418,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -428,7 +431,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -441,7 +444,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -454,7 +457,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -467,7 +470,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -480,7 +483,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -493,7 +496,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -506,7 +509,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -519,7 +522,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -532,7 +535,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -545,7 +548,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -558,7 +561,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -571,7 +574,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -584,7 +587,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -598,7 +601,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -611,7 +614,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -624,7 +627,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -637,7 +640,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -650,7 +653,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -663,7 +666,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -676,7 +679,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -689,7 +692,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -702,7 +705,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -715,7 +718,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -728,7 +731,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -754,7 +757,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -767,7 +770,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -780,7 +783,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -793,7 +796,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -806,7 +809,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -819,7 +822,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -832,7 +835,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -845,7 +848,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -858,7 +861,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -871,7 +874,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -884,7 +887,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -897,7 +900,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -910,7 +913,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -923,7 +926,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -936,7 +939,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -949,7 +952,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -962,7 +965,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -975,7 +978,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -988,7 +991,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1001,7 +1004,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1014,7 +1017,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1027,7 +1030,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1040,7 +1043,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1053,7 +1056,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1066,7 +1069,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1079,7 +1082,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1092,7 +1095,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1105,7 +1108,7 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1118,7 +1121,8 @@ $('#datetimepicker2').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1132,6 +1136,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1145,6 +1150,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1158,6 +1164,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1171,6 +1178,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1184,6 +1192,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1197,6 +1206,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1210,6 +1220,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1223,6 +1234,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1238,6 +1250,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1251,6 +1264,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1264,6 +1278,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1277,6 +1292,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1290,6 +1306,7 @@ $('#datetimepicker2').datetimepicker
 
             format: 'DD-MMMM-YYYY hh:00 A',
 
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1687,12 +1704,12 @@ $('#datetimepicker2').datetimepicker
 
 
 <script>
-$(document).ready(function(){
-    $('input').iCheck({
-        checkboxClass: 'icheckbox_flat-red',
-        radioClass: 'iradio_flat-red'
+    $(document).ready(function(){
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_flat-red',
+            radioClass: 'iradio_flat-red'
+        });
     });
-});
 </script>
 
 

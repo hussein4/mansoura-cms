@@ -58,7 +58,7 @@ class PO extends Model
         'po_completed',
 
 
-       
+
 
         'user_id',
 
@@ -76,7 +76,7 @@ class PO extends Model
 
     public function setCreatedatAttribute($date)
     {
-      $this->attributes['created_at']=Carbon::parse($date);
+        $this->attributes['created_at']=Carbon::parse($date);
 
     }
 
@@ -95,28 +95,32 @@ class PO extends Model
 
     public function getpoissuedAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpoissuedAttribute($date)
     {
-        $this->attributes['po_issued']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+        $this->attributes['po_issued']= $date ? Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
     public function getpoconfirmationAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        //$value == "0000-00-00 00:00:00" ? "0000-00-00 00:00:00" : $value;
+//        var_dump($date);
+//        var_dump(!empty($date)?'ok':'not');
+//        var_dump(Carbon::parse($date)->format('d-M-Y g:i A')); die;
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpoconfirmationAttribute($date)
     {
-        $this->attributes['po_confirmation']= $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+        $this->attributes['po_confirmation']= $date ? Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 
     public function getpoloadedonideasAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpoloadedonideasAttribute($date)
@@ -127,7 +131,7 @@ class PO extends Model
 
     public function getpoapprovedonideasAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpoapprovedonideasAttribute($date)
@@ -138,7 +142,7 @@ class PO extends Model
 
     public function getpomemotofinAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpomemotofinAttribute($date)
@@ -148,7 +152,7 @@ class PO extends Model
 
     public function getpodeliverydateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpodeliverydateAttribute($date)
@@ -158,7 +162,7 @@ class PO extends Model
 
     public function getporeminderdeliverydateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setporeminderdeliverydateAttribute($date)
@@ -168,7 +172,7 @@ class PO extends Model
 
     public function getpomrreceiveddateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpomrreceiveddateAttribute($date)
@@ -180,7 +184,7 @@ class PO extends Model
 
     public function getpomrrmissingdateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpomrrmissingdateAttribute($date)
@@ -191,7 +195,7 @@ class PO extends Model
 
     public function getpomrrrejecteddateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpomrrrejecteddateAttribute($date)
@@ -202,7 +206,7 @@ class PO extends Model
 
     public function getpoinvoicereceiveddateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpoinvoicereceiveddateAttribute($date)
@@ -213,7 +217,7 @@ class PO extends Model
 
     public function getpomrrreceiveddateAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpomrrreceiveddateAttribute($date)
@@ -225,7 +229,7 @@ class PO extends Model
 
     public function getpocoverinvoiceAttribute($date)
     {
-        return Carbon::parse($date)->format('d-M-Y g:i A');
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
     }
 
     public function setpocoverinvoiceAttribute($date)

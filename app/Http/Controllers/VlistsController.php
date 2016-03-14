@@ -16,9 +16,10 @@ use Carbon\Carbon;
 use Auth;
 
 
+
 use Maatwebsite\Excel\Facades\Excel;
 
-
+ini_set('max_execution_time', 0);
 
 
 class VlistsController extends Controller {
@@ -273,11 +274,12 @@ class VlistsController extends Controller {
     {
         $file=Input::file("file");
 
-        Excel::load($file, function($reader)
+      // Excel::load($file, function($reader)
+            Excel::load($file)->chunk(100, function($reader)
         {
             $results = $reader->get();
             foreach($results as $row):
-                $vlist=Vlist::create([
+               Vlist::create([
                     'vname'           =>$row->vname,
                     'vservice'        =>$row->vservice,
                     'vphone'          =>$row->vphone,

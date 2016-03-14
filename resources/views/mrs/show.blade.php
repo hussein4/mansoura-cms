@@ -46,71 +46,114 @@
                                     <td>{{ $mr->mr_estimated_cost }}</td>
                                 </tr>
 
-
+                                @if(isset($mr->mr_rfq))
                                 <tr>
                                     <th>MR RFQ </th>
                                     <td>{{ $mr->mr_rfq }}</td>
                                 </tr>
+                                @endif
+
+                               @if(isset($mr->mr_rfq_closing_date))
                                 <tr>
                                     <th>MR RFQ Closing Date</th>
                                     <td>{{ $mr->mr_rfq_closing_date }}</td>
                                 </tr>
+                               @endif
+
+                                @if(isset($mr->mr_rfq_reminder))
                                 <tr>
                                     <th>MR RFQ Reminder</th>
                                     <td>{{ $mr->mr_rfq_reminder }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_offers_open))
                                 <tr>
                                     <th>Offers Opening</th>
                                     <td>{{ $mr->mr_offers_open }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_offers_sent_to_tech_dept))
                                 <tr>
                                     <th>Offers Sent to Tech. Dept.</th>
                                     <td>{{ $mr->mr_offers_sent_to_tech_dept }}</td>
                                 </tr>
+                                @endif
+
+
+                                @if(isset($mr->mr_offers_received_from_tech_dept_closing_date))
                                 <tr>
                                     <th>Offers Received from Tech. Dept. Closing Date</th>
                                     <td>{{ $mr->mr_offers_received_from_tech_dept_closing_date }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_offers_received_from_tech_dept_reminder))
                                 <tr>
                                     <th>Reminder sent to Tech Dept. </th>
                                     <td>{{ $mr->mr_offers_received_from_tech_dept_reminder }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_offers_clarifications_sent_to_suppliers))
                                 <tr>
                                     <th>Clarifications Sent to Suppliers </th>
                                     <td>{{ $mr->mr_offers_clarifications_sent_to_suppliers }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_offers_clarifications_closing_date))
                                 <tr>
                                     <th>Clarifications Sent to Suppliers Closing Date </th>
                                     <td>{{ $mr->mr_offers_clarifications_closing_date }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_offers_clarifications_received_from_supplier_reminder))
                                 <tr>
                                     <th>Clarifications to be Received From Suppliers Reminder </th>
                                     <td>{{ $mr->mr_offers_clarifications_received_from_supplier_reminder }}</td>
                                 </tr>
+                                @endif
 
 
+                                @if(isset($mr->mr_offers_clarifications_received_from_supplier))
                                 <tr>
                                     <th>Clarifications Received From Suppliers  </th>
                                     <td>{{ $mr->mr_offers_clarifications_received_from_supplier }}</td>
                                 </tr>
+                                @endif
 
 
+                                @if(isset($mr->mr_offers_clarifications_sent_to_tech))
                                 <tr>
                                     <th>Clarifications Sent to Tech. Dept.  </th>
                                     <td>{{ $mr->mr_offers_clarifications_sent_to_tech }}</td>
                                 </tr>
+                                @endif
+
+
+                                @if(isset($mr->mr_offers_evaluation))
                                 <tr>
                                     <th>Offers Evaluation  </th>
                                     <td>{{ $mr->mr_offers_evaluation }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_sent_for_budget_expansion))
                                 <tr>
                                     <th>Sent for Budget Expansion  </th>
                                     <td>{{ $mr->mr_sent_for_budget_expansion }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_sent_for_budget_expansion))
                                 <tr>
                                     <th>Sent for Budget Expansion Reminder </th>
                                     <td>{{ $mr->mr_sent_for_budget_expansion_reminder }}</td>
                                 </tr>
+                                @endif
 
                                 </thead>
 

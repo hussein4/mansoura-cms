@@ -18,7 +18,7 @@
                         <po>
 
                             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                                <thead>
+                            <thead>
                                 <tbody>
                                 <tr>
                                     <th>PO Number</th>
@@ -30,16 +30,16 @@
                                 </tr>
 
 
-                                    <tr>
+                                <tr>
                                     <th>Mr. No.:</th>
-                                        <td>
-                                    <ul>
-                                        @foreach ($po->mr as $mrs)
-                                            <li> {{ $mrs->mr_no }}</li>
-                                        @endforeach
-                                    </ul>
-                                        </td>
-                                    </tr>
+                                    <td>
+                                        <ul>
+                                            @foreach ($po->mr as $mrs)
+                                                <li> {{ $mrs->mr_no }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                </tr>
                                 <tr>
                                     <th>Supplier</th>
                                     <td>
@@ -51,8 +51,6 @@
 
                                     </td>
                                 </tr>
-
-
 
                                 <tr>
                                     <th>PO Date</th>
@@ -86,65 +84,94 @@
                                 </tr>
 
 
-                                <tr>
-                                    <th>Supplier Confirmation</th>
-                                    <td>{{ $po->po_confirmation }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Loaded On Ideas</th>
-                                    <td>{{ $po->po_loaded_on_ideas }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Approved On Ideas</th>
-                                    <td>{{ $po->po_approved_on_ideas }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Memo To Finance </th>
-                                    <td>{{ $po->po_memo_to_fin }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Delivery Date </th>
-                                    <td>{{ $po->po_delivery_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Reminder For Delivery Date </th>
-                                    <td>{{ $po->po_reminder_delivery_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Materials Received Date </th>
-                                    <td>{{ $po->po_mr_received_date }}</td>
-                                </tr>
+                                @if(isset($po->po_confirmation))
+                                    <tr>
+                                        <th>Supplier Confirmation</th>
+                                        <td>{{ $po->po_confirmation }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_loaded_on_ideas))
+                                    <tr>
+                                        <th>Loaded On Ideas</th>
+                                        <td>{{ $po->po_loaded_on_ideas }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_approved_on_ideas))
+                                    <tr>
+                                        <th>Approved On Ideas</th>
+                                        <td>{{ $po->po_approved_on_ideas }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_memo_to_fin))
+                                    <tr>
+                                        <th>Memo To Finance </th>
+                                        <td>{{ $po->po_memo_to_fin }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_delivery_date))
+                                    <tr>
+                                        <th>Delivery Date </th>
+                                        <td>{{ $po->po_delivery_date }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_reminder_delivery_date))
+                                    <tr>
+                                        <th>Reminder For Delivery Date </th>
+                                        <td>{{ $po->po_reminder_delivery_date }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_mr_received_date))
+                                    <tr>
+                                        <th>Materials Received Date </th>
+                                        <td>{{ $po->po_mr_received_date }}</td>
+                                    </tr>
+                                @endif
 
-                                <tr>
-                                    <th>Fax for Missing Materials Date </th>
-                                    <td>{{ $po->po_mrr_missing_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Materials Received Report Date </th>
-                                    <td>{{ $po->po_mrr_received_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Fax for Rejected Materials Date </th>
-                                    <td>{{ $po->po_mrr_rejected_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Materials Invoice Date </th>
-                                    <td>{{ $po->po_invoice_received_date }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Penalty to be Applied </th>
-                                    <td>{{ $po->po_penalty }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Invoice Cover </th>
-                                    <td>{{ $po->po_cover_invoice }}</td>
-                                </tr>
-                                <tr>
-                                    <th>PO Completion </th>
-                                    <td>{{ $po->po_completed }}</td>
-                                </tr>
+                                @if(isset($po->po_mrr_missing_date))
+                                    <tr>
+                                        <th>Fax for Missing Materials Date </th>
+                                        <td>{{ $po->po_mrr_missing_date }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_mrr_received_date))
+                                    <tr>
+                                        <th>Materials Received Report Date </th>
+                                        <td>{{ $po->po_mrr_received_date }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_mrr_rejected_date))
+                                    <tr>
+                                        <th>Fax for Rejected Materials Date </th>
+                                        <td>{{ $po->po_mrr_rejected_date }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_invoice_received_date))
+                                    <tr>
+                                        <th>Materials Invoice Date </th>
+                                        <td>{{ $po->po_invoice_received_date }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_penalty) && !empty($po->po_penalty))
+                                    <tr>
+                                        <th>Penalty to be Applied </th>
+                                        <td>{{ $po->po_penalty }}</td>
+                                    </tr>
+                                @endif
 
-                                </thead>
+                                @if(isset($po->po_cover_invoice))
+                                    <tr>
+                                        <th>Invoice Cover </th>
+                                        <td>{{ $po->po_cover_invoice }}</td>
+                                    </tr>
+                                @endif
+                                @if(isset($po->po_completed))
+                                    <tr>
+                                        <th>PO Completion </th>
+                                        <td>{{ $po->po_completed }}</td>
+                                    </tr>
+                                @endif
+
+                            </thead>
 
                                 </tbody>
                             </table>

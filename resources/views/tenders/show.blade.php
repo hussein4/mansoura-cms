@@ -56,118 +56,187 @@
                                     @endforeach
                                 </tr>
 
-
+                                @if(isset($tender->mr_t_willing_fax))
                                 <tr>
                                     <th>Willing Fax</th>
                                     <td>{{ $tender->mr_t_willing_fax }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_willing_fax_closing_date))
                                 <tr>
                                     <th>Willing Fax Closing Day</th>
                                     <td>{{ $tender->mr_t_willing_fax_closing_date }}</td>
                                 </tr>
+                                @endif
 
+                                @if(isset($tender->mr_t_prepare_draft))
                                 <tr>
                                     <th>Prepare Tender's Draft</th>
                                     <td>{{ $tender->mr_t_prepare_draft }}</td>
                                 </tr>
+                                @endif
 
+                                @if(isset($tender->mr_t_sub_bid_committee_formation_memo))
                                 <tr>
                                     <th>Sub Bid-Committee Formation Memo</th>
                                     <td>{{ $tender->mr_t_sub_bid_committee_formation_memo }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_tender_criteria_memo))
                                 <tr>
                                     <th>Sending Criteria Memo</th>
                                     <td>{{ $tender->mr_t_tender_criteria_memo }}</td>
                                 </tr>
+                                @endif
 
+                                @if(isset($tender->mr_t_tender_criteria_memo_reply))
                                 <tr>
                                     <th>Reply on Criteria Memo</th>
                                     <td>{{ $tender->mr_t_tender_criteria_memo_reply }}</td>
                                 </tr>
+                                @endif
 
+                                @if(isset($tender->mr_t_tender_call_for_tender_memo))
                                 <tr>
                                     <th>Call for Tender Memo</th>
                                     <td>{{ $tender->mr_t_tender_call_for_tender_memo }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_tender_call_for_tender_signature))
                                 <tr>
                                     <th>Call for Tender Approval</th>
                                     <td>{{ $tender->mr_t_tender_call_for_tender_signature }}</td>
                                 </tr>
-                                <tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_tender_send_invitation_fax))
+                                    <tr>
                                     <th>Invitation Fax  </th>
                                     <td>{{ $tender->mr_t_tender_send_invitation_fax }}</td>
                                 </tr>
-                                <tr>
+                                @endif
+
+                                    @if(isset($tender->mr_t_closing_date))
+                                                               <tr>
                                     <th>Tender Closing Date </th>
                                     <td>{{ $tender->mr_t_closing_date }}</td>
                                 </tr>
+                                    @endif
 
 
-
+                                @if(isset($tender->mr_t_clarifications_sent_to_tech_dept))
                                 <tr>
                                     <th>Clarifications sent to Tech. Dept. </th>
                                     <td>{{ $tender->mr_t_clarifications_sent_to_tech_dept }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_clarifications_received_from_tech_dept))
                                 <tr>
                                     <th>Clarifications Received From Tech Dept. </th>
                                     <td>{{ $tender->mr_t_clarifications_received_from_tech_dept }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_clarifications_reply_fax))
                                 <tr>
                                     <th>Reply on Suppliers Clarifications </th>
                                     <td>{{ $tender->mr_t_clarifications_reply_fax }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_open_tech_envelops))
                                 <tr>
                                     <th>Technical Envelops Opening </th>
                                     <td>{{ $tender->mr_t_open_tech_envelops }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_received_tech_clarifications_from_tech_dept))
                                 <tr>
                                     <th>Tech. Clarifications Received from Tech. Dept. </th>
                                     <td>{{ $tender->mr_t_received_tech_clarifications_from_tech_dept }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_sending_tech_clarifications_to_suppliers))
                                 <tr>
                                     <th>Sending Tech Clarifications to Suppliers </th>
                                     <td>{{ $tender->mr_t_sending_tech_clarifications_to_suppliers }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_receive_tech_clarifications_reply))
                                 <tr>
                                     <th>Receive Suppliers Reply  </th>
                                     <td>{{ $tender->mr_t_receive_tech_clarifications_reply }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_send_tech_clarifications_reply_to_tech_dept))
                                 <tr>
                                     <th>Sending Reply to Tech. Dept. </th>
                                     <td>{{ $tender->mr_t_send_tech_clarifications_reply_to_tech_dept }}</td>
                                 </tr>
+                                @endif
+                                @if(isset($tender->mr_t_receive_tech_evaluation_report))
                                 <tr>
                                     <th>Receiving Tech. Evaluation Report </th>
                                     <td>{{ $tender->mr_t_receive_tech_evaluation_report }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_issue_tech_evaluation))
                                 <tr>
                                     <th>Technical Evaluation Issuance </th>
                                     <td>{{ $tender->mr_t_issue_tech_evaluation }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_tech_eval_signature))
                                 <tr>
                                     <th>Technical Evaluation Signature </th>
                                     <td>{{ $tender->mr_t_tech_eval_signature }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_open_commercial_offers))
                                 <tr>
                                     <th>Commercial Envelops Opening </th>
                                     <td>{{ $tender->mr_t_open_commercial_offers }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_issue_commercial_evaluation))
                                 <tr>
                                     <th>Commercial Evaluation Issuance </th>
                                     <td>{{ $tender->mr_t_issue_commercial_evaluation }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_commercial_evaluation_signature))
                                 <tr>
                                     <th>Commercial Evaluation Signature </th>
                                     <td>{{ $tender->mr_t_commercial_evaluation_signature }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_sending_awarding_faxes))
                                 <tr>
                                     <th>Sending Awarding Fax </th>
                                     <td>{{ $tender->mr_t_sending_awarding_faxes }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($tender->mr_t_sending_fin_memo))
                                 <tr>
                                     <th>Sending Finance Memo </th>
                                     <td>{{ $tender->mr_t_sending_fin_memo }}</td>
                                 </tr>
+                                @endif
 
 
 
