@@ -6,8 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/register1.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -33,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="register.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+      <file leaf-file-name="reset.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50769234" vertical-offset="1150" max-vertical-offset="1860">
-              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.2923077" vertical-offset="840" max-vertical-offset="1780">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -56,7 +55,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_03_03_094924_create_budgetry_material_pivot_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_03_095001_create_material_tag_pivot_table.php" />
         <option value="$PROJECT_DIR$/resources/views/materials/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/materials/upload_materials.blade.php" />
@@ -107,6 +105,7 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/register1.blade.php" />
       </list>
     </option>
   </component>
@@ -990,7 +989,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458027132180</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="disable register">
+      <created>1458039122493</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1458039122493</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1042,7 +1047,8 @@
     <MESSAGE value="composer.lock" />
     <MESSAGE value="removing generator" />
     <MESSAGE value="composer update" />
-    <option name="LAST_COMMIT_MESSAGE" value="composer update" />
+    <MESSAGE value="disable register" />
+    <option name="LAST_COMMIT_MESSAGE" value="disable register" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1078,20 +1084,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/sidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75384617" vertical-offset="810" max-vertical-offset="2120">
-          <caret line="65" column="67" selection-start-line="65" selection-start-column="67" selection-end-line="65" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27149323" vertical-offset="240" max-vertical-offset="1340">
-          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/htmlheader.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50769234" vertical-offset="110" max-vertical-offset="1060">
@@ -1584,9 +1576,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/auth.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1448733288077" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6" vertical-offset="770" max-vertical-offset="1720">
+        <state vertical-scroll-proportion="0.2" vertical-offset="1030" max-vertical-offset="1720">
           <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
           <folding>
             <marker date="1458039096969" expanded="true" signature="-1:-1" placeholder="..." />
@@ -1614,39 +1616,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/password.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2923077" vertical-offset="840" max-vertical-offset="1780">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5692308" vertical-offset="650" max-vertical-offset="1560">
+          <caret line="51" column="61" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
           <folding>
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1448733288105" expanded="true" signature="-1:-1" placeholder="{&quot;checkboxClass&quot;: 'icheckbox_square-blue'...}" />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1448733288093" expanded="true" signature="-1:-1" placeholder="{&quot;checkboxClass&quot;: 'icheckbox_square-blue'...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/register1.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50769234" vertical-offset="1150" max-vertical-offset="1860">
-          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6923077" vertical-offset="1210" max-vertical-offset="1860">
+          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
+          <folding>
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458040567225" expanded="true" signature="-1:-1" placeholder="{&quot;checkboxClass&quot;: 'icheckbox_square-blue'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/reset.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2923077" vertical-offset="840" max-vertical-offset="1780">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -26,8 +26,8 @@
 
         <div class="register-box-body">
             <p class="login-box-msg">Register a new membership</p>
-            <form action="{{ url('/auth/register') }}" method="post">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <form action="{ url('/auth/register') }}" method="post">
+                <input type="hidden" name="_token" value="{ csrf_token() }}">
                 <div class="form-group has-feedback">
                     <input type="text" class="form-control" placeholder="Full name" name="name" value="{{ old('name') }}"/>
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
