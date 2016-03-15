@@ -1,3 +1,4 @@
+<!--
 @extends('auth.auth')
 
 @section('htmlheader_title')
@@ -70,6 +71,7 @@
     </div><!-- /.register-box -->
 
     @include('auth.scripts')
+
 
     <script>
         $(function () {
