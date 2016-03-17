@@ -16,6 +16,7 @@ class CreatePosTable extends Migration
             $table->increments('id');
             $table->char('po_no', 255)->index();
             $table->char('po_subject', 255)->index();
+
             $table->integer('po_materials_cost');
             $table->integer('po_freight_cost')->nullable();
             $table->integer('po_total_cost');

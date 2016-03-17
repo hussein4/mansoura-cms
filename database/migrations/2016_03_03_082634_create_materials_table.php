@@ -15,11 +15,13 @@ class CreateMaterialsTable extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->increments('id');
             $table->string('m_code')->index()->nullable();
+            $table->string('m_mesc')->index()->nullable();
             $table->string('m_description')->index()->nullable();
             $table->string('m_unit')->nullable();
             $table->integer('m_consumption')->nullable();
             $table->integer('m_last_unit_price')->nullable();
             $table->string('m_last_unit_price_currency')->nullable();
+            $table->integer('m_unit_price_conv_rate')->nullable();
             $table->integer('m_max')->nullable();
             $table->integer('m_min')->nullable();
             $table->string('m_remarks')->nullable();
@@ -28,6 +30,10 @@ class CreateMaterialsTable extends Migration
             $table->string('m_usage')->nullable();
             $table->string('m_requesting_dept')->nullable();
             $table->string('m_identity')->nullable();
+            $table->string('m_company')->nullable();
+            $table->string('m_location')->nullable();
+            $table->integer('m_reorder')->nullable();
+            $table->timestamp('m_last_update_date')->nullable();
 
 
             $table->timestamps();

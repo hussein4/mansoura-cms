@@ -29,6 +29,11 @@ class Material extends Model
         'm_usage',
         'm_requesting_dept',
         'm_identity',
+        'm_company',
+        'm_location',
+        'm_reorder',
+        'm_last_update_date',
+        'm_mesc'
 
     ];
 
