@@ -16,6 +16,7 @@ class MR extends Model
         'mr_no',
         'mr_date',
         'mr_subject',
+        'mr_identity',
         'mr_received_date',
         'mr_required_date',
         'mr_officer',
