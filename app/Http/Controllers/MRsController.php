@@ -156,11 +156,7 @@ class MRsController extends Controller
         return redirect ('mrs');
     }
 
-    public static function fixNull($tonl)
-    {
-        $tonl = (is_null($tonl) || empty($tonl) || strlen($tonl) < 1 ? NULL : $tonl);
-        return $tonl;
-    }
+
 
 
 }
