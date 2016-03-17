@@ -16,9 +16,10 @@ class CreateMrsTable extends Migration
             $table->increments('id');
             $table->char('mr_no',255)->index();
             $table->char('mr_subject', 255)->index();
+            $table->char('mr_identity', 255)->index();
 
 
-            //Budgetry MR
+
 
 
             $table->integer('mr_estimated_cost')->nullable();
