@@ -151,6 +151,7 @@ return [
         'Laracasts\Flash\FlashServiceProvider',
         App\Providers\ViewComposerServiceProvider::class,
         'Maatwebsite\Excel\ExcelServiceProvider',
+        'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 
     ],
 

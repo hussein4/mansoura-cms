@@ -4,8 +4,22 @@ namespace App;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
 
+
+
+class Post extends Model implements SluggableInterface
+{
+    use SluggableTrait;
+
+    protected $sluggable = [
+        'build_from' => 'vname',
+        'save_to'    => 'slug',
+    ];
+
+}
 class Vlist extends Model
 {
     protected $table = 'vlist';
