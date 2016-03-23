@@ -1,6 +1,6 @@
 
 <div class="form-group">
-    {!! Form::label('mr_b_no', 'MR NO') !!}
+    {!! Form::label('mr_b_no', 'Budgetry MR NO') !!}
     <div class="row">
         <div class='col-sm-6'>
 
