@@ -32,7 +32,7 @@
                                 @foreach($mr as $m)
                                     <tbody>
                                     <tr>
-                                        <td><a href="{{ action('MRsController@show', [$m->mr_no])  }}">{{ $m->mr_no }}</a></td>
+                                        <td><a href="{{ action('MRsController@show', [$m->slug])  }}">{{ $m->mr_no }}</a></td>
                                         <td>{{$m->mr_date}}</td>
                                         <td>{{$m->mr_estimated_cost}}</td>
                                         <td>{{$m->mr_officer}}</td>

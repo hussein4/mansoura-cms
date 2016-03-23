@@ -35,7 +35,7 @@
                                 @foreach($budgetry as $b)
                                     <tbody>
                                     <tr>
-                                        <td><a href="{{ action('BudgetriesController@show', [$b->id])  }}">{{ $b->mr_b_no }}</a></td>
+                                        <td><a href="{{ action('BudgetriesController@show', [$b->slug])  }}">{{ $b->mr_b_no }}</a></td>
                                         <td>{{$b->mr_b_received_date}}</td>
                                         <td>{{$b->mr_b_officer}}</td>
                                         <td>{{$b->mr_budgetry_memo}}</td>

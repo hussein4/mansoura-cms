@@ -36,7 +36,7 @@
                                     <tbody>
                                     <tr>
 
-                                        <td><a href=" {{ action('MaterialsController@show', [$m->m_code])  }} " > {{ $m->m_code }} </a></td>
+                                        <td><a href=" {{ action('MaterialsController@show', [$m->slug])  }} " > {{ $m->m_code }} </a></td>
                                         <td>{{ $m->m_description }}</td>
                                         <td>{{ $m->m_unit }}</td>
                                         <td>{{ $m->m_stock }}</td>
