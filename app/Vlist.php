@@ -10,7 +10,7 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
 
 
 
-class Post extends Model implements SluggableInterface
+class Vlist extends Model implements SluggableInterface
 {
     use SluggableTrait;
 
@@ -19,9 +19,9 @@ class Post extends Model implements SluggableInterface
         'save_to'    => 'slug',
     ];
 
-}
-class Vlist extends Model
-{
+//}
+//class Vlist extends Model
+//{
     protected $table = 'vlist';
 
     protected $fillable = [
@@ -41,6 +41,8 @@ class Vlist extends Model
         'user_id',
         'created_on' ,
         'created_at',
+        'slug',
+
 
 
     ];

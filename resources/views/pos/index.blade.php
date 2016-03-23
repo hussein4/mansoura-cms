@@ -36,7 +36,7 @@
                                     <tbody>
                                     <tr>
 
-                                <td><a href=" {{ action('POsController@show', [$p->id])  }} " > {{ $p->po_no }} </a></td>
+                                <td><a href=" {{ action('POsController@show', [$p->po_no])  }} " > {{ $p->po_no }} </a></td>
                                         <td>{{ $p->po_subject }}</td>
 
 

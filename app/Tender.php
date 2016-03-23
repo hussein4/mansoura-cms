@@ -4,9 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Tender extends Model
+class Tender extends Model implements SluggableInterface
 {
+
+    use SluggableTrait;
+    protected $sluggable = [
+        'build_from' => 'mr_t_no',
+        'save_to'    => 'slug',
+    ];
+
+
     protected $table = 'tenders';
     protected $dateFormat = 'd-M-Y g:i A';
 
@@ -43,6 +53,7 @@ class Tender extends Model
         'mr_t_sending_awarding_faxes',
         'mr_t_sending_fin_memo',
         'mr_t_finished',
+        'slug',
 
         'user_id',
 

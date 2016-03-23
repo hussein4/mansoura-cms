@@ -4,9 +4,19 @@ namespace App;
 use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class MR extends Model
+class MR extends Model  implements SluggableInterface
 {
+
+    use SluggableTrait;
+
+    protected $sluggable = [
+        'build_from' => 'mr_no',
+        'save_to'    => 'slug',
+    ];
+
     protected $table = 'mrs';
   protected $dateFormat = 'd-M-Y g:i A';
     
@@ -23,6 +33,7 @@ class MR extends Model
         'mr_received_by_officer_date',
         'mr_estimated_cost',
         'mr_currency',
+
        
 
 
@@ -45,8 +56,9 @@ class MR extends Model
         'mr_sent_for_budget_expansion_reminder',
 
 
-        
+        'slug',
         'mrpath',
+
         'user_id',
 
 

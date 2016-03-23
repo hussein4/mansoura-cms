@@ -3,9 +3,19 @@
 namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class PO extends Model
+
+class PO extends Model implements SluggableInterface
 {
+
+    use SluggableTrait;
+    protected $sluggable = [
+        'build_from' => 'po_no',
+        'save_to'    => 'slug',
+    ];
+
     protected $table = 'pos';
     protected $dateFormat = 'd-M-Y g:i A';
 
@@ -56,6 +66,7 @@ class PO extends Model
         'po_cover_invoice',
 
         'po_completed',
+        'slug',
 
 
 

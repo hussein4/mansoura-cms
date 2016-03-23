@@ -3,9 +3,20 @@
 namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Material extends Model
+class Material extends Model  implements SluggableInterface
 {
+
+    use SluggableTrait;
+
+    protected $sluggable = [
+        'build_from' => 'm_code',
+        'save_to'    => 'slug',
+    ];
+
+
     protected $table = 'materials';
     protected $dateFormat = 'd-M-Y g:i A';
    
@@ -33,7 +44,8 @@ class Material extends Model
         'm_location',
         'm_reorder',
         'm_last_update_date',
-        'm_mesc'
+        'm_mesc',
+        'slug',
 
     ];
 

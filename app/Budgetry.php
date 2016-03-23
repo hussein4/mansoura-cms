@@ -4,9 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Budgetry extends Model
+class Budgetry extends Model implements SluggableInterface
 {
+    use SluggableTrait;
+
+    protected $sluggable = [
+        'build_from' => 'mr_b_no',
+        'save_to'    => 'slug',
+    ];
+
     protected $table = 'budgetries';
     protected $dateFormat = 'd-M-Y g:i A';
 
@@ -25,6 +34,7 @@ class Budgetry extends Model
         'mr_rfq_budgetry_reminder',
         'mr_budgetry_memo',
         'mr_b_finished',
+        'slug',
         'user_id',
 
     ];
