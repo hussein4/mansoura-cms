@@ -5,20 +5,13 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Budgetry.php" afterPath="$PROJECT_DIR$/app/Budgetry.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MR.php" afterPath="$PROJECT_DIR$/app/MR.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Material.php" afterPath="$PROJECT_DIR$/app/Material.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PO.php" afterPath="$PROJECT_DIR$/app/PO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tag.php" afterPath="$PROJECT_DIR$/app/Tag.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tender.php" afterPath="$PROJECT_DIR$/app/Tender.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Vlist.php" afterPath="$PROJECT_DIR$/app/Vlist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/app.php" afterPath="$PROJECT_DIR$/bootstrap/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/materials/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/materials/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/mrs/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/mrs/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pos/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/pos/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/vlist/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/vlist/index.blade.php" />
+    <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_23_092411_add_slug_to_mrs_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_23_092445_add_slug_to_pos_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_23_092500_add_slug_to_tags_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_23_092512_add_slug_to_tenders_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_23_092530_add_slug_to_budgetries_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_03_23_092553_add_slug_to_materials_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -44,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/tenders/index.blade.php">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43076923" vertical-offset="480" max-vertical-offset="1680">
-              <caret line="38" column="101" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
+            <state vertical-scroll-proportion="0.30165914" vertical-offset="0" max-vertical-offset="720">
+              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -102,7 +95,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Vlist.php" />
         <option value="$PROJECT_DIR$/bootstrap/app.php" />
@@ -118,6 +110,7 @@
         <option value="$PROJECT_DIR$/resources/views/mrs/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pos/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tenders/index.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -1043,11 +1036,17 @@
       <option name="project" value="LOCAL" />
       <updated>1458719292551</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Adding Slug">
+      <created>1458719325081</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1458719325081</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="27" width="1374" height="745" extended-state="6" />
+    <frame x="-4" y="27" width="1374" height="745" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1276,13 +1275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27149323" vertical-offset="0" max-vertical-offset="720">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Kernel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
@@ -1371,6 +1363,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7586727" vertical-offset="237" max-vertical-offset="1140">
           <caret line="46" column="2" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1820,8 +1813,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tenders/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43076923" vertical-offset="480" max-vertical-offset="1680">
+        <state vertical-scroll-proportion="1.1692308" vertical-offset="0" max-vertical-offset="1680">
           <caret line="38" column="101" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
+          <folding>
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458719269021" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30165914" vertical-offset="0" max-vertical-offset="720">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
         </state>
       </provider>
