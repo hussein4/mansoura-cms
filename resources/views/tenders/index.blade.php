@@ -36,7 +36,7 @@
                                 @foreach($tender as $t)
                                     <tbody>
                                     <tr>
-                                        <td><a href="{{ action('TendersController@show', [$t->id])  }}">{{ $t->mr_t_no }}</a></td>
+                                        <td><a href="{{ action('TendersController@show', [$t->mr_t_no])  }}">{{ $t->mr_t_no }}</a></td>
 
                                         <td>{{$t->mr_t_subject}}</td>
 
