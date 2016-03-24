@@ -69,7 +69,6 @@
 </div>
 
 
-
 <div class="form-group">
     {!! Form::label('mr_currency', 'Currency:') !!}
     <div class="row">
@@ -81,6 +80,14 @@
 
         </div>
     </div>
+</div>
+
+
+
+<div class="form-group">
+
+    {!! Form::label('material_mr_list', 'Materials Description:') !!}
+    {!! Form::select('material_mr_list[]',$materials,null,[ 'class'=>'form-control','id'=> 'material_mr_list' ,'multiple']) !!}
 </div>
 
 

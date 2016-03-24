@@ -382,6 +382,11 @@ class MR extends Model  implements SluggableInterface
         return $this->hasMany('App\Tender' ,'mr_tender' ,'mr_id')->withTimestamps();
     }
 
+    public function materials()
+    {
+        return $this->hasMany('App\Material' ,'material_mr' ,'mr_id')->withTimestamps();
+    }
+
 
 
     /**
@@ -390,6 +395,11 @@ class MR extends Model  implements SluggableInterface
     public function getTagListmrAttribute()
     {
         return $this->tags->lists('id')->all();
+    }
+
+    public function getMaterialMrListAttribute()
+    {
+        return $this->materials->lists('id')->all();
     }
 
 }

@@ -1654,6 +1654,18 @@
 </script>
 
 <script type="text/javascript">
+
+    $('#material_mr_list').select2({
+        placeholder: 'choose Materials Description',
+        tags:true,
+        data:[
+        ]
+    });
+
+</script>
+
+
+<script type="text/javascript">
     $('#tag_list_tender').select2({
         placeholder: 'choose a Tag',
         tags:true,

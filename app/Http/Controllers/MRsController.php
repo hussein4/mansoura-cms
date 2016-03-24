@@ -44,14 +44,10 @@ class MRsController extends Controller
     public function create()
     {
         $tags= Tag::lists('name','id')->all();
+        $materials = Material::lists('m_description','id')->all();
+        return view('mrs.create',compact('tags','materials'));
 
-        return view('mrs.create',compact('tags'));
-        dd($tags);
-      //  return view('mrs.create_b',compact('tags'));
     }
-
-
-
 
     /**
      * @param CreateMRRequest $request
@@ -59,10 +55,7 @@ class MRsController extends Controller
      */
     public function store(MRRequest $request)
     {
-         // dd($request->input('tag_list'));
-     //   $this->fixNull($request);
         $this->createMR($request);
-
         //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Material Request has been Successfully Added!', 'Good Job');
         return redirect ('mrs');
@@ -75,7 +68,8 @@ class MRsController extends Controller
     public function edit(MR $mr)
     {
         $tags = Tag::lists('name','id')->all();
-        return view('mrs.edit',compact('mr','tags'));
+        $materials = Material::lists('m_description','id')->all();
+        return view('mrs.edit',compact('mr','tags','materials'));
     }
 
     /**
@@ -85,10 +79,9 @@ class MRsController extends Controller
      */
     public function update(MR $mr , MRRequest $request)
     {
-
         $mr->update($request->all());
         $this->syncTags($mr, $request->input('tag_list_mr'));
-
+        $this->syncMaterials($mr , $request->input('material_mr_list'));
         return redirect ('mrs');
     }
 
@@ -102,6 +95,11 @@ class MRsController extends Controller
         $mr->tags()->sync($tags);
     }
 
+    public function syncMaterials(MR $mr , array $materials)
+    {
+        $mr->materials()->sync($materials);
+    }
+
     /** save a new mr
      * @param MRRequest $request
      * @return mixed
@@ -109,7 +107,7 @@ class MRsController extends Controller
     private function createMR(MRRequest $request)
     {
         $mr= Auth::user()->mr()->create($request->all());    //get authenticated user who saved  mr
-       // $this->fixNull($request);
+        $this->syncMaterials($mr , $request->input('material_mr_list'));
         $this->syncTags($mr, $request->input('tag_list_mr'));
         return $mr;
     }
@@ -151,6 +149,8 @@ class MRsController extends Controller
                     'user_id'                                                   =>Auth::user()->id,
                     'mrpath'                                                    =>$row->mrpath
                 ]);
+
+
             endforeach;
         });
         return redirect ('mrs');

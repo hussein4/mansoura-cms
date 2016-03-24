@@ -98,6 +98,7 @@ class Material extends Model  implements SluggableInterface
     }
 
 
+
     public function getTagMaterialListAttribute()
     {
         return $this->tags->lists('id')->all();
