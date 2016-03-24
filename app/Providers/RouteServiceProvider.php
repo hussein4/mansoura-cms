@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Budgetry;
+use App\Material;
 use App\MR;
 use App\PO;
 use App\Tag;
@@ -47,6 +48,23 @@ class RouteServiceProvider extends ServiceProvider
                 $vname = 'slug'; // This is the name of the column you wish to search
 
                 return Vlist::where($vname , '=', $id)->first(); //  find the name to id association
+            }
+            //   return \App\Vlist::published()->findOrFail($id);
+
+        });
+
+        $router->bind('materials',function($id)
+        {
+            if (is_numeric($id))
+            {
+                $material = Material::find($id);
+                return $material;
+            }
+            else
+            {
+                $material = 'slug'; // This is the name of the column you wish to search
+
+                return Material::where($material , '=', $id)->first(); //  find the name to id association
             }
             //   return \App\Vlist::published()->findOrFail($id);
 

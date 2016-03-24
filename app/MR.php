@@ -384,7 +384,7 @@ class MR extends Model  implements SluggableInterface
 
     public function materials()
     {
-        return $this->hasMany('App\Material' ,'material_mr' ,'mr_id')->withTimestamps();
+        return $this->belongsToMany('App\Material', 'material_mr','mr_id','material_id');
     }
 
 

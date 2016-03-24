@@ -46,6 +46,25 @@
                                     <td>{{ $mr->mr_estimated_cost }}</td>
                                 </tr>
 
+                                @unless ($mr->materials->isEmpty())
+
+
+                                    <th>Material Description / Part Number</th>
+                                    <ul>
+
+                                        @foreach ($mr->materials as $material)
+                                         <tr>
+                                            <td>
+                                            <li><a href=" {{ $material->slug }} "><span> {{ $material->m_description }} / {{ $material->m_code }}</span></a></li>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+
+                                    </ul>
+
+                                @endunless
+
+
                                 @if(isset($mr->mr_rfq))
                                 <tr>
                                     <th>MR RFQ </th>

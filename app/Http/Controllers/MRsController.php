@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MRRequest;
 use App\MR;
 use App\Tag;
+use App\Material;
 
 
 use Carbon\Carbon;
@@ -107,8 +108,8 @@ class MRsController extends Controller
     private function createMR(MRRequest $request)
     {
         $mr= Auth::user()->mr()->create($request->all());    //get authenticated user who saved  mr
-        $this->syncMaterials($mr , $request->input('material_mr_list'));
         $this->syncTags($mr, $request->input('tag_list_mr'));
+        $this->syncMaterials($mr , $request->input('material_mr_list'));
         return $mr;
     }
 

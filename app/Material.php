@@ -12,7 +12,7 @@ class Material extends Model  implements SluggableInterface
     use SluggableTrait;
 
     protected $sluggable = [
-        'build_from' => 'm_code',
+        'build_from' => 'm_description',
         'save_to'    => 'slug',
     ];
 
@@ -82,7 +82,7 @@ class Material extends Model  implements SluggableInterface
 
     public function mr()
     {
-        return $this->hasMany('App\MR' );
+        return $this->belongstoMany('App\MR')->withTimestamps();
     }
 
 
