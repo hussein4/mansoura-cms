@@ -11,12 +11,14 @@ use App\MR;
 use App\Vlist;
 
 use Carbon\Carbon;
-//use Auth;
-use Illuminate\Support\Facades\Auth;
+use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
-//set_time_limit(0);
-//ini_set('max_execution_time', 180);
+use Session;
+
+
+
+
 
 class POsController extends Controller
 {
@@ -33,9 +35,9 @@ class POsController extends Controller
      */
     public function index()
     {
-      //  $po = PO::latest('updated_at')->published()->get();
-     $po =PO::orderBy('created_at', 'desc')->paginate(10);
-     return view ('pos.index', compact('po' ));
+        //  $po = PO::latest('updated_at')->published()->get();
+        $po =PO::orderBy('created_at', 'desc')->paginate(10);
+        return view ('pos.index', compact('po' ));
     }
 
 
@@ -147,51 +149,33 @@ class POsController extends Controller
     {
         $file=Input::file("file");
 
-     // Excel::filter('chunk')->load($file)->chunk(100, function($reader)
-      //  Excel::load($file)->chunk(100, function($reader)
-       Excel::load($file, function($reader)
-
+        Excel::filter('chunk')->load($file)->chunk(250, function ($reader)
         {
-            $results = $reader->ignoreEmpty()->get();
-
+            $results = $reader->get();
             foreach($results as $row):
-               PO::create([
+                PO::create([
                     'po_no'                    =>$row->po_no,
                     'po_subject'               =>$row->po_subject,
-                    'po_issued'                =>date("d-M-Y g:i A",strtotime($row->po_issued)),
-                    'po_materials_cost'        =>$row->po_materials_cost,
-                    'po_freight_cost'          =>$row->po_freight_cost,
-                    'po_total_cost'            =>$row->po_total_cost,
-                    'po_currency'              =>$row->po_currency,
-                    'po_purchase_method'       =>$row->po_purchase_method,
-                    'po_payment_method'        =>$row->po_payment_method,
-                    'po_delivery_method'       =>$row->po_delivery_method,
-                    'po_confirmation'          =>date("d-M-Y g:i A",strtotime($row->po_confirmation)),
-                    'po_loaded_on_ideas'       =>date("d-M-Y g:i A",strtotime($row->po_loaded_on_ideas)),
-                    'po_approved_on_ideas'     =>date("d-M-Y g:i A",strtotime($row->po_approved_on_ideas)),
-                    'po_memo_to_fin'           =>date("d-M-Y g:i A",strtotime($row->po_memo_to_fin)),
-                    'po_delivery_date'         =>date("d-M-Y g:i A",strtotime($row->po_delivery_date)),
-                    'po_reminder_delivery_date'=>date("d-M-Y g:i A",strtotime($row->po_reminder_delivery_date)),
-                    'po_mr_received_date'      =>date("d-M-Y g:i A",strtotime($row->po_mr_received_date)),
-                    'po_mrr_received_date'     =>date("d-M-Y g:i A",strtotime($row->po_mrr_received_date)),
-                    'po_mrr_missing_date'      =>date("d-M-Y g:i A",strtotime($row->po_mrr_missing_date)),
-                    'po_mrr_rejected_date'     =>date("d-M-Y g:i A",strtotime($row->po_mrr_rejected_date)),
-                    'po_invoice_received_date' =>date("d-M-Y g:i A",strtotime($row->po_invoice_received_date)),
+                    'po_issued'                =>$row->po_issued,
+                    'po_confirmation'          =>$row->po_confirmation,
+                    'po_loaded_on_ideas'       =>$row->po_loaded_on_ideas,
+                    'po_approved_on_ideas'     =>$row->po_approved_on_ideas,
+                    'po_memo_to_fin'           =>$row->po_memo_to_fin,
+                    'po_delivery_date'         =>$row->po_delivery_date,
+                    'po_reminder_delivery_date'=>$row->po_reminder_delivery_date,
+                    'po_mr_received_date'      =>$row->po_mr_received_date,
+                    'po_mrr_received_date'     =>$row->po_mrr_received_date,
+                    'po_mrr_missing_date'      =>$row->po_mrr_missing_date,
+                    'po_mrr_rejected_date'     =>$row->po_mrr_rejected_date,
+                    'po_invoice_received_date' =>$row->po_invoice_received_date,
                     'po_penalty'               =>$row->po_penalty,
-                    'po_cover_invoice'         =>date("d-M-Y g:i A",strtotime($row->po_cover_invoice)),
-                    'po_completed'             =>date("d-M-Y g:i A",strtotime($row->po_completed)),
-
+                    'po_cover_invoice'         =>$row->po_cover_invoice,
+                    'po_completed'             =>$row->po_completed,
+                    'popath'                   =>$row->popath,
                     'user_id'                  =>Auth::user()->id
-
                 ]);
-
             endforeach;
-
         });
-      //  return redirect ('pos');
-        return redirect ('pos')->withInput(Input::except('file'));
-           // ->withErrors($validator)
-
+        return redirect ('pos');
     }
-
 }

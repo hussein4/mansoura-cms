@@ -1,8 +1,13 @@
 
 
 <div class="form-group" >
-    {!! Form::label('m_code', 'Material Code:') !!}
+    {!! Form::label('m_code', 'Material Part No.:') !!}
     {!! Form::text('m_code',null , ['class'=> 'form-control']) !!}
+</div>
+
+<div class="form-group" >
+    {!! Form::label('m_mesc', 'M.E.S.C.:') !!}
+    {!! Form::text('m_mesc',null , ['class'=> 'form-control']) !!}
 </div>
 
 
@@ -16,12 +21,21 @@
     <div class="row">
         <div class='col-sm-10'>
             {!! Form::radio('m_unit', 'Ea') !!} Ea
+            {!! Form::radio('m_unit', 'JT') !!} JT
+            {!! Form::radio('m_unit', 'PC') !!} PC
+            {!! Form::radio('m_unit', 'ASSY') !!} ASSY
+            {!! Form::radio('m_unit', 'SET') !!} SET
+            {!! Form::radio('m_unit', 'BOX') !!} BOX
+            {!! Form::radio('m_unit', 'KIT') !!} KIT
+            {!! Form::radio('m_unit', 'CAN') !!} CAN
+            {!! Form::radio('m_unit', 'PACK') !!} PACK
             {!! Form::radio('m_unit', 'Litre') !!} Litre
             {!! Form::radio('m_unit', 'Galoon') !!} Galoon
             {!! Form::radio('m_unit', 'Drum') !!} Drum
             {!! Form::radio('m_unit', 'inch') !!} inch
-            {!! Form::radio('m_unit', 'Foot') !!} ft
-            {!! Form::radio('m_unit', 'Meter') !!} Meter
+            {!! Form::radio('m_unit', 'Ft') !!} ft
+            {!! Form::radio('m_unit', 'MT') !!} MT
+            {!! Form::radio('m_unit', 'REEL') !!} REEL
             {!! Form::radio('m_unit', 'Kilo Meter') !!} KM
             {!! Form::radio('m_unit', 'LB') !!} Libra
             {!! Form::radio('m_unit', 'KG') !!} KG
@@ -98,6 +112,20 @@
 
 
 <div class="form-group" >
+    {!! Form::label('m_company', 'Company:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('m_company', '51') !!} 51
+            {!! Form::radio('m_company', '52') !!} 52
+            {!! Form::radio('m_company', '53') !!} 53
+            {!! Form::radio('m_company', '54') !!} 54
+
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group" >
     {!! Form::label('m_usage', 'Material Usage:') !!}
     {!! Form::text('m_usage',null , ['class'=> 'form-control']) !!}
 </div>
@@ -107,6 +135,8 @@
     {!! Form::label('m_requesting_dept', 'Material Requesting Dept.:') !!}
     {!! Form::text('m_requesting_dept',null , ['class'=> 'form-control']) !!}
 </div>
+
+
 
 <div class="form-group" >
     {!! Form::label('m_remarks', 'Material Remarks.:') !!}

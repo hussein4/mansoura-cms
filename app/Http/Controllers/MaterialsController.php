@@ -138,31 +138,34 @@ class MaterialsController extends Controller
     {
         $file=Input::file("file");
 
-        Excel::load($file, function($reader)
+        Excel::filter('chunk')->load($file)->chunk(10, function ($reader)
         {
             $results = $reader->get();
 
             foreach($results as $row):
                Material::create([
-                    'po_no'                    =>$row->po_no,
-                    'po_subject'               =>$row->po_subject,
-                    'po_issued'                =>date("d-M-Y g:i A",strtotime($row->po_issued)),
-                    'po_confirmation'          =>date("d-M-Y g:i A",strtotime($row->po_confirmation)),
-                    'po_loaded_on_ideas'       =>date("d-M-Y g:i A",strtotime($row->po_loaded_on_ideas)),
-                    'po_approved_on_ideas'     =>date("d-M-Y g:i A",strtotime($row->po_approved_on_ideas)),
-                    'po_memo_to_fin'           =>date("d-M-Y g:i A",strtotime($row->po_memo_to_fin)),
-                    'po_delivery_date'         =>date("d-M-Y g:i A",strtotime($row->po_delivery_date)),
-                    'po_reminder_delivery_date'=>date("d-M-Y g:i A",strtotime($row->po_reminder_delivery_date)),
-                    'po_mr_received_date'      =>date("d-M-Y g:i A",strtotime($row->po_mr_received_date)),
-                    'po_mrr_received_date'     =>date("d-M-Y g:i A",strtotime($row->po_mrr_received_date)),
-                    'po_mrr_missing_date'      =>date("d-M-Y g:i A",strtotime($row->po_mrr_missing_date)),
-                    'po_mrr_rejected_date'     =>date("d-M-Y g:i A",strtotime($row->po_mrr_rejected_date)),
-                    'po_invoice_received_date' =>date("d-M-Y g:i A",strtotime($row->po_invoice_received_date)),
-                    'po_penalty'               =>$row->po_penalty,
-                    'po_cover_invoice'         =>date("d-M-Y g:i A",strtotime($row->po_cover_invoice)),
-                    'po_completed'             =>date("d-M-Y g:i A",strtotime($row->po_completed)),
-                    'popath'                   =>$row->popath,
-                    'user_id'                  =>Auth::user()->id
+                   'm_code'                    =>$row->m_code,
+                   'm_description'             =>$row->m_description,
+                   'm_unit'                    =>$row->m_unit,
+                   'm_consumption'             =>$row->m_consumption,
+                   'm_last_unit_price'         =>$row->m_last_unit_price,
+                   'm_last_unit_price_currency'=>$row->m_last_unit_price_currency,
+                   'm_max'                     =>$row->m_max,
+                   'm_min'                     =>$row->m_min,
+                   'm_remarks'                 =>$row->m_remarks,
+                   'm_required'                =>$row->m_required,
+                   'm_stock'                   =>$row->m_stock,
+                   'm_usage'                   =>$row->m_usage,
+                   'm_requesting_dept'         =>$row->m_requesting_dept,
+                   'm_identity'                =>$row->m_identity,
+                   'm_company'                 =>$row->m_company,
+                   'm_location'                =>$row->m_location,
+                   'm_reorder'                 =>$row->m_reorder,
+                   'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
+                   'm_mesc'                    =>$row->m_mesc,
+                   'user_id'                   =>Auth::user()->id
+
+
 
 
                 ]);

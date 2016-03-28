@@ -46,6 +46,7 @@ class Material extends Model  implements SluggableInterface
         'm_last_update_date',
         'm_mesc',
         'slug',
+        'user_id',
 
     ];
 
