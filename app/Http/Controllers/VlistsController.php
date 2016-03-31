@@ -255,6 +255,8 @@ class VlistsController extends Controller {
                 //  $sheet->setCellValue('D8', $data);
 
                 //  $sheet->fromArray($data);
+
+
                 $sheet->fromArray($data,null,'A1',false,false)->prependRow(array(
                         'Name', 'Service', 'Phone', 'Mobile', 'Email',
                         'Contact Person', 'Address', 'EGPC No', 'Capital Limit' , 'Grade' , 'Remarks'
@@ -266,9 +268,14 @@ class VlistsController extends Controller {
 
 
 
+
             });
         })->download('xlsx');
     }
+
+
+
+
 
     public function import()
     {

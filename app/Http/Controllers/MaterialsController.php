@@ -16,6 +16,7 @@ use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 
+
 class MaterialsController extends Controller
 {
 
@@ -138,8 +139,12 @@ class MaterialsController extends Controller
     {
         $file=Input::file("file");
 
-        Excel::filter('chunk')->load($file)->chunk(10, function ($reader)
+         Excel::filter('chunk')->load($file)->chunk(10,
+
+
+        function ($reader)
         {
+
             $results = $reader->get();
 
             foreach($results as $row):
@@ -172,7 +177,7 @@ class MaterialsController extends Controller
             endforeach;
 
         });
-        return redirect ('materials');
+        return redirect ('materials' );
     }
 
 
