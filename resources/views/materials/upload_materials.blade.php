@@ -14,6 +14,7 @@
                     <div class="panel-body">
                         {!! Form::open(['url'=>'material_s/import','method'=>'PUT', 'files' => TRUE]) !!}
                         <div class="field">
+                            {{ Form::token() }}
                             {!! Form::label('file') !!}
                             {!! Form::file('file') !!}
                         </div>
