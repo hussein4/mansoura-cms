@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VlistsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VlistsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -33,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Material.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Material.php">
+      <file leaf-file-name="MaterialsController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94537175" vertical-offset="277" max-vertical-offset="2500">
-              <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.78328174" vertical-offset="2514" max-vertical-offset="3500">
+              <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -631,7 +630,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="1" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1234,44 +1233,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
+    <entry file="file://$PROJECT_DIR$/app/Material.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.643963" vertical-offset="0" max-vertical-offset="3500">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.15326253" vertical-offset="1001" max-vertical-offset="2500">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
           <folding>
-            <marker date="1459508229713" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param CreateMaterialRequest $request ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param MaterialRequest $request ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder=" @param int $howMany ..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459508229713" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459158622052" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder=" @param $date ..." />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder=" get created on attribute ..." />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459158622052" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Material.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94537175" vertical-offset="277" max-vertical-offset="2500">
-          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.78328174" vertical-offset="2514" max-vertical-offset="3500">
+          <caret line="164" column="19" selection-start-line="164" selection-start-column="19" selection-end-line="164" selection-end-column="19" />
           <folding />
         </state>
       </provider>
