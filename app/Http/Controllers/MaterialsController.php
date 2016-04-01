@@ -164,8 +164,8 @@ class MaterialsController extends Controller
                 //   'm_company'                 =>$row->m_company,
                  //  'm_location'                =>$row->m_location,
                  //  'm_reorder'                 =>$row->m_reorder,
-                   'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
-                   'm_mesc'                    =>$row->m_mesc,
+                 //  'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
+                  // 'm_mesc'                    =>$row->m_mesc,
                    'user_id'                   =>Auth::user()->id
 
 
