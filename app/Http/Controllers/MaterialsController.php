@@ -135,7 +135,7 @@ class MaterialsController extends Controller
      * @return mixed
      */
 
-    public function import()
+    protected function import()
     {
         $file=Input::file("file");
         //Excel::load($file)->chunk(10, function ($reader)
