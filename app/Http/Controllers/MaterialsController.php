@@ -176,7 +176,7 @@ class MaterialsController extends Controller
             endforeach;
 
         });
-        return redirect ('materials' );
+    //    return redirect ('materials' );
     }
 
 
