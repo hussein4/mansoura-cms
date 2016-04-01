@@ -15,7 +15,8 @@ class Material extends Model  implements SluggableInterface
         'build_from' => 'm_description',
         'save_to'    => 'slug',
     ];
-
+    
+    public $timestamps = false;
 
     protected $table = 'materials';
     protected $dateFormat = 'd-M-Y g:i A';
