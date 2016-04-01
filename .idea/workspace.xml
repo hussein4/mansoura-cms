@@ -6,9 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/VlistsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/VlistsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/materials/upload_materials.blade.php" afterPath="$PROJECT_DIR$/resources/views/materials/upload_materials.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -34,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="upload_materials.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/materials/upload_materials.blade.php">
+      <file leaf-file-name="Queue.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Queue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49535602" vertical-offset="40" max-vertical-offset="740">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.8497724" vertical-offset="1140" max-vertical-offset="3780">
+              <caret line="91" column="3" selection-start-line="91" selection-start-column="3" selection-end-line="91" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -71,7 +70,6 @@
         <option value="$PROJECT_DIR$/resources/views/tenders/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pos/show.blade.php" />
         <option value="$PROJECT_DIR$/composer.lock" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register1.blade.php" />
@@ -108,6 +106,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/VlistsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" />
         <option value="$PROJECT_DIR$/resources/views/materials/upload_materials.blade.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -157,6 +156,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -186,6 +186,132 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="maatwebsite" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="excel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Illuminate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel-with-admin-lte" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="framework" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Illuminate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Queue" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,7 +469,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -351,7 +476,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="queue.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Queue/Queue.php&#10;SyncQueue.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php&#10;app&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/bootstrap/app.php&#10;datab&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/database.php&#10;app.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/app.php&#10;config&#9;null&#9;null&#10;provider&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Providers/ViewComposerServiceProvider.php&#10;Arr.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Support/Arr.php&#10;rout&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/routes.php&#10;rou&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/routes.php&#10;import.xl&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/public/import.xlsx&#10;mr&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/MR.php&#10;help&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/symfony/console/Helper/Helper.php&#10;ro&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/routes.php&#10;helper.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/symfony/console/Helper/Helper.php&#10;g&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/gulpfile.js&#10;ca&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;ser&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/services.php&#10;carbon.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;route&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Providers/RouteServiceProvider.php&#10;sho&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/show.blade.php&#10;fo&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/form.blade.php&#10;plu&#9;ACTION&#9;WelcomeScreen.Plugins&#10;v&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Vlist.php&#10;vlis&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/Controllers/VlistController.php&#10;form&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/form.blade.php&#10;select2.min.css&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/public/plugins/select2/select2.min.css&#10;f&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/form.blade.php&#10;ta&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Tag.php&#10;message.blad&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laracasts/flash/src/views/message.blade.php&#10;gu&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/gulpfile.js&#10;in&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/index.blade.php&#10;elixir&#9;null&#9;null&#10;view&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/view.php" />
+    <property name="SearchEverywhereHistoryKey" value="app.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/app.php&#10;Que&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Queue/Queue.php&#10;queue.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Queue/Queue.php&#10;SyncQueue.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Queue/SyncQueue.php&#10;app&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/bootstrap/app.php&#10;datab&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/database.php&#10;config&#9;null&#9;null&#10;provider&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Providers/ViewComposerServiceProvider.php&#10;Arr.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laravel/framework/src/Illuminate/Support/Arr.php&#10;rout&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/routes.php&#10;rou&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/routes.php&#10;import.xl&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/public/import.xlsx&#10;mr&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/MR.php&#10;help&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/symfony/console/Helper/Helper.php&#10;ro&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/routes.php&#10;helper.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/symfony/console/Helper/Helper.php&#10;g&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/gulpfile.js&#10;ca&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;ser&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/services.php&#10;carbon.php&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/nesbot/carbon/src/Carbon/Carbon.php&#10;route&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Providers/RouteServiceProvider.php&#10;sho&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/show.blade.php&#10;fo&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/form.blade.php&#10;plu&#9;ACTION&#9;WelcomeScreen.Plugins&#10;v&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Vlist.php&#10;vlis&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Http/Controllers/VlistController.php&#10;form&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/form.blade.php&#10;select2.min.css&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/public/plugins/select2/select2.min.css&#10;f&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/form.blade.php&#10;ta&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/app/Tag.php&#10;message.blad&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/vendor/laracasts/flash/src/views/message.blade.php&#10;gu&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/gulpfile.js&#10;in&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/resources/views/vlist/index.blade.php&#10;elixir&#9;null&#9;null&#10;view&#9;FILE&#9;file:///home/seif/Homestead/Code/laravel-with-admin-lte/config/view.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/css/libs/select2.min.css" />
     <property name="FullScreen" value="false" />
     <property name="recentsLimit" value="5" />
@@ -618,34 +743,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/vlist/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2560">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/vlist/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6923077" vertical-offset="1750" max-vertical-offset="2400">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/vlist/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53846157" vertical-offset="390" max-vertical-offset="1580">
-          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Budgetry.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.83076924" vertical-offset="120" max-vertical-offset="3840">
@@ -920,13 +1017,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Queue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33634993" vertical-offset="917" max-vertical-offset="3780">
-          <caret line="63" column="6" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/maatwebsite/excel/docs/import/chunk.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1100">
@@ -949,13 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6656347" vertical-offset="2710" max-vertical-offset="3560">
-          <caret line="170" column="11" selection-start-line="170" selection-start-column="11" selection-end-line="170" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/BudgetryRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
@@ -972,8 +1055,126 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/materials/upload_materials.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49535602" vertical-offset="40" max-vertical-offset="740">
+        <state vertical-scroll-proportion="0.55727553" vertical-offset="0" max-vertical-offset="740">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5975232" vertical-offset="1714" max-vertical-offset="3560">
+          <caret line="118" column="27" selection-start-line="118" selection-start-column="27" selection-end-line="118" selection-end-column="27" />
+          <folding>
+            <marker date="1459253156280" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param CreateMaterialRequest $request ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param Material$material ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param MaterialRequest $request ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder=" @param int $howMany ..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459253156280" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/maatwebsite/excel/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21671827" vertical-offset="180" max-vertical-offset="1140">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="38" />
+          <folding>
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;maatwebsite/excel&quot;...}" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;Maatwebsite.nl&quot;...}" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{&quot;php&quot;: &quot;&gt;=5.5&quot;...}" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{&quot;phpseclib/phpseclib&quot;: &quot;~1.0&quot;...}" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{&quot;illuminate/http&quot;: &quot;5.0.*|5.1.*|5.2.*&quot;...}" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1458026944246" expanded="true" signature="-1:-1" placeholder="{&quot;Maatwebsite\\Excel\\&quot;: &quot;src/&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.29126215" vertical-offset="180" max-vertical-offset="85600">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4552352" vertical-offset="0" max-vertical-offset="1360">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;laravel/laravel&quot;...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{&quot;php&quot;: &quot;&gt;=5.5.9&quot;...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{&quot;fzaninotto/faker&quot;: &quot;~1.4&quot;...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{&quot;App\\&quot;: &quot;app/&quot;...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="[...]" />
+            <marker date="1459462666925" expanded="true" signature="-1:-1" placeholder="{&quot;preferred-install&quot;: &quot;dist&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.00607" vertical-offset="1981" max-vertical-offset="4380">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1458562381265" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Queue/Queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8497724" vertical-offset="1140" max-vertical-offset="3780">
+          <caret line="91" column="3" selection-start-line="91" selection-start-column="3" selection-end-line="91" selection-end-column="3" />
           <folding />
         </state>
       </provider>
