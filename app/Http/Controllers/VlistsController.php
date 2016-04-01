@@ -282,7 +282,7 @@ class VlistsController extends Controller {
         $file=Input::file("file");
 
       // Excel::load($file, function($reader)
-            Excel::load($file)->chunk(100, function($reader)
+        Excel::filter('chunk' )->load($file, function ($reader)
         {
             $results = $reader->get();
             foreach($results as $row):
