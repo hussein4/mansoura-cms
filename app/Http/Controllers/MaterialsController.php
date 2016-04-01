@@ -146,6 +146,7 @@ class MaterialsController extends Controller
             $results = $reader->get();
 
             foreach($results as $row):
+                echo $row->m_code."<br />";
                Material::create([
                    'm_code'                    =>$row->m_code,
                    'm_description'             =>$row->m_description,
