@@ -149,7 +149,7 @@ class MaterialsController extends Controller
                 echo $row->m_code."<br />";
                Material::create([
                    'm_code'                    =>$row->m_code,
-                   'm_description'             =>$row->m_description,
+                 /*  'm_description'             =>$row->m_description,
                    'm_unit'                    =>$row->m_unit,
                    'm_consumption'             =>$row->m_consumption,
                    'm_last_unit_price'         =>$row->m_last_unit_price,
@@ -167,7 +167,7 @@ class MaterialsController extends Controller
                  //  'm_reorder'                 =>$row->m_reorder,
                  //  'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
                   // 'm_mesc'                    =>$row->m_mesc,
-                   'user_id'                   =>Auth::user()->id
+                   'user_id'                   =>Auth::user()->id */
 
 
 
