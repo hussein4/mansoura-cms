@@ -144,7 +144,7 @@ class MaterialsController extends Controller
         {
 
             $results = $reader->get();
-
+print_r($results);
             foreach($results as $row):
                 echo $row->m_code."<br />";
                Material::create([
