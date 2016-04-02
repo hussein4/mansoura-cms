@@ -139,12 +139,12 @@ class MaterialsController extends Controller
     {
         $file=Input::file("file");
         //Excel::load($file)->chunk(10, function ($reader)
-       // Excel::filter('chunk')->load($file, function ($reader)
-       Excel::filter('chunk')->load($file)->chunk(250, function($results)
+      Excel::filter('chunk')->load($file, function ($reader)
+      // Excel::filter('chunk')->load($file)->chunk(250, function($results)
        {
 
             $results = $reader->get();
-        print_r($results);
+         print_r($results);
             foreach($results as $row):
                 echo $row->m_code."<br />";
                Material::create([
