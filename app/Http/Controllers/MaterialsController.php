@@ -145,7 +145,7 @@ class MaterialsController extends Controller
        {
 
            //    Excel::load($file, function($reader)
-        {
+
             $reader->ignoreEmpty();
             $results = $reader->get();
          print_r($results);
