@@ -43,11 +43,7 @@
                                 <tr>
                                     <th>Supplier</th>
                                     <td>
-                                        <ul>
-                                            @foreach ($po->suppliers as $supplier)
-                                                <li> {{ $supplier->vname }}</li>
-                                            @endforeach
-                                        </ul>
+                                                 {{ $supplier->vname }}
 
                                     </td>
                                 </tr>
