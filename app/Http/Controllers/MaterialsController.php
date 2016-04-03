@@ -135,13 +135,16 @@ class MaterialsController extends Controller
      * @return mixed
      */
 
-    public function import()
+    protected function import()
     {
         $file=Input::file("file");
-        Excel::load($file)->chunk(10, function ($reader)
 
+      // Excel::filter('chunk')->load($file, function ($reader)
+        Excel::filter('chunk')->load($file)->chunk(20, function($reader)
+
+           //    Excel::load($file, function($reader)
         {
-
+            $reader->ignoreEmpty();
             $results = $reader->get();
 
             foreach($results as $row):
@@ -160,15 +163,12 @@ class MaterialsController extends Controller
                    'm_usage'                   =>$row->m_usage,
                    'm_requesting_dept'         =>$row->m_requesting_dept,
                    'm_identity'                =>$row->m_identity,
-                //   'm_company'                 =>$row->m_company,
-                 //  'm_location'                =>$row->m_location,
-                 //  'm_reorder'                 =>$row->m_reorder,
+                   'm_company'                 =>$row->m_company,
+                   'm_location'                =>$row->m_location,
+                   'm_reorder'                 =>$row->m_reorder,
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
                    'm_mesc'                    =>$row->m_mesc,
                    'user_id'                   =>Auth::user()->id
-
-
-
 
                 ]);
             endforeach;
