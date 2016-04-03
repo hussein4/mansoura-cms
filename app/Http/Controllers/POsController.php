@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tag;
 use App\MR;
+use App\Material;
 use App\Vlist;
 
 use Carbon\Carbon;
@@ -56,8 +57,9 @@ class POsController extends Controller
     {
         $tags= Tag::lists('name','id')->all();
         $mr= MR::lists('mr_no','id')->all();
+        $material = Material::lists('m_description','id')->all();
         $suppliers = Vlist::lists('vname','id')->all();
-        return view('pos.create',compact('tags' ,'mr','suppliers'));
+        return view('pos.create',compact('tags' ,'mr','material','suppliers'));
     }
 
     /**
@@ -82,8 +84,9 @@ class POsController extends Controller
     {
         $tags = Tag::lists('name','id')->all();
         $mr = MR::lists('mr_no','id')->all();
+        $material = Material::lists('m_description','id')->all();
         $suppliers = Vlist::lists('vname','id')->all();
-        return view('pos.edit',compact('po','tags','mr','suppliers'));
+        return view('pos.edit',compact('tags' ,'mr','material','suppliers'));
     }
 
     /**
@@ -98,6 +101,7 @@ class POsController extends Controller
 
         $this->syncTags($po, $request->input('tag_list_po'));
         $this->syncMr($po, $request->input('mr_list'));
+        $this->syncMaterial($po, $request->input('material_list'));
         $this->syncSuppliers($po, $request->input('suppliers_list'));
         return redirect ('pos');
     }
@@ -115,6 +119,11 @@ class POsController extends Controller
     public function syncMr(PO $po , array $mr)
     {
         $po->mr()->sync($mr);
+    }
+
+    public function syncMaterial(PO $po , array $material)
+    {
+        $po->material()->sync($material);
     }
 
     public function syncSuppliers(PO $po , array $suppliers)
@@ -135,6 +144,7 @@ class POsController extends Controller
         $po= Auth::user()->po()->create($request->all());    //get authenticated user who saved  PO
         $this->syncTags($po, $request->input('tag_list_po'));
         $this->syncMr($po, $request->input('mr_list'));
+        $this->syncMaterial($po, $request->input('material_list'));
         $this->syncSuppliers($po, $request->input('suppliers_list'));
 
         return $po;

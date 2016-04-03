@@ -87,6 +87,11 @@ class Material extends Model  implements SluggableInterface
         return $this->belongstoMany('App\MR')->withTimestamps();
     }
 
+    public function po()
+    {
+        return $this->belongstoMany('App\PO')->withTimestamps();
+    }
+
 
     public function tags()
     {

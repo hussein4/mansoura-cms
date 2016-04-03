@@ -148,9 +148,9 @@ class MaterialsController extends Controller
 
             $reader->ignoreEmpty();
             $results = $reader->get();
-         print_r($results);
+       print_r($results);
             foreach($results as $row):
-                echo $row->m_code."<br />";
+               echo $row->m_code."<br />";
                Material::create([
                    'm_code'                    =>$row->m_code,
                  /*  'm_description'             =>$row->m_description,
@@ -186,7 +186,7 @@ class MaterialsController extends Controller
             endforeach;
 
         });
-    //    return redirect ('materials' );
+    //   return redirect ('materials' );
     }
 
 

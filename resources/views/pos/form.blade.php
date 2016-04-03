@@ -52,7 +52,7 @@
             {!! Form::radio('po_currency', 'EGP') !!} EGP
             {!! Form::radio('po_currency', 'USD') !!} USD
             {!! Form::radio('po_currency', 'Euro') !!} Euro
-            {!! Form::radio('po_currency', 'Sterling') !!} Sterling
+            {!! Form::radio('po_currency', 'GBP') !!} POUND
 
         </div>
     </div>
@@ -117,6 +117,13 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div class="form-group">
+
+    {!! Form::label('material_list', 'Items') !!}
+    {!! Form::select('material_list[]',$material,null,[ 'class'=>'form-control','id'=> 'material_list','multiple' ]) !!}
 </div>
 
 

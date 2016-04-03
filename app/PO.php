@@ -251,9 +251,6 @@ class PO extends Model implements SluggableInterface
 
 
 
-
-
-
     public function user()
     {
         return $this->belongsTo('App\User');
@@ -262,6 +259,11 @@ class PO extends Model implements SluggableInterface
     public function mr()
     {
         return $this->belongsToMany('App\MR' ,'mr_po','po_id','mr_id');
+    }
+
+    public function material()
+    {
+        return $this->belongsToMany('App\Material' ,'material_po','po_id','material_id');
     }
 
 
@@ -292,6 +294,14 @@ class PO extends Model implements SluggableInterface
 
         return $this->suppliers()->lists('id')->all();
     }
+
+
+    public function getMaterialListAttribute()
+    {
+
+        return $this->material()->lists('id')->all();
+    }
+
 
 
 
