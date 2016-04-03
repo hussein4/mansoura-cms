@@ -83,6 +83,23 @@
                                     <td>{{ $po->po_delivery_method }}</td>
                                 </tr>
 
+                                @unless ($po->material->isEmpty())
+
+
+                                    <th>Material Description / Part Number</th>
+                                    <ul>
+
+                                        @foreach ($po->material as $materials)
+                                            <tr>
+                                                <td>
+                                                    <li><a href=" {{ $materials->slug }} "><span> {{ $materials->m_description }} / {{ $materials->m_code }}</span></a></li>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+
+                                    </ul>
+
+                                @endunless
 
                                 @if(isset($po->po_confirmation))
                                     <tr>

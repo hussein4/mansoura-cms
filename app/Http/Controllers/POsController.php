@@ -86,7 +86,7 @@ class POsController extends Controller
         $mr = MR::lists('mr_no','id')->all();
         $material = Material::lists('m_description','id')->all();
         $suppliers = Vlist::lists('vname','id')->all();
-        return view('pos.edit',compact('tags' ,'mr','material','suppliers'));
+        return view('pos.edit',compact('tags' ,'mr','po','material','suppliers'));
     }
 
     /**
