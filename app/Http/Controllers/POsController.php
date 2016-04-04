@@ -176,14 +176,14 @@ class POsController extends Controller {
 
     public function exportExcel( PO $po )
     {
-        return view('pos.pos_excel_template', compact('po'));
-//        Excel::create( 'pos_report', function($excel) use($po){
-//
-//            $excel->sheet( 'pos_report', function($sheet) use ($po){
-//
-//                $sheet->loadView( 'pos.pos_excel_template' )->with('po', $po);
-//            } );
-//        } )->export('xlsx');
+//        return view('pos.pos_excel_template', compact('po'));
+        Excel::create( 'pos_report', function($excel) use($po){
+
+            $excel->sheet( 'pos_report', function($sheet) use ($po){
+
+                $sheet->loadView( 'pos.pos_excel_template' )->with('po', $po);
+            } );
+        } )->export('xlsx');
     }
 
 }
