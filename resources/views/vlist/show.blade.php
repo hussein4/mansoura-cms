@@ -18,68 +18,87 @@
 
                             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                                 <thead>
-                                <tbody>
+                            <tbody>
                                 <tr>
                                     <th>Supplier</th>
                                     <td>{{ $vlist->vname }}</td>
-                                    </tr>
+                                </tr>
                                 <tr>
                                     <th>Service</th>
                                     <td>{{ $vlist->vservice }}</td>
-                                    </tr>
+                                </tr>
 
 
                                 <tr>
                                     <th>Phone</th>
                                     <td>{{ $vlist->vphone   }}</td>
-
                                 </tr>
+
+                                <tr>
+                                    <th>Fax</th>
+                                    <td>{{ $vlist->vfax   }}</td>
+                                </tr>
+
+
+                                @if(isset($vlist->vmobile) && !empty($vlist->vmobile))
                                 <tr>
                                     <th>Mobile</th>
                                     <td>{{  $vlist->vmobile }}</td>
 
                                 </tr>
+                                @endif
+
+                                @if(isset($vlist->vemail) && !empty($vlist->vemail))
                                 <tr>
                                     <th>E-mail</th>
                                     <td>{{  $vlist->vemail  }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($vlist->vcontactperson) && !empty($vlist->vcontactperson))
                                 <tr>
                                     <th>Contact Person</th>
                                     <td>{{  $vlist->vcontactperson }}</td>
-
                                 </tr>
+                                @endif
+
+
                                 <tr>
                                     <th>Address</th>
                                     <td>{{   $vlist->vaddress }}</td>
                                 </tr>
+
+                                @if(isset($vlist->vegpcno) && !empty($vlist->vegpcno))
                                 <tr>
                                     <th>EGPC No.</th>
                                     <td>{{ $vlist->vegpcno }}</td>
                                 </tr>
+                                @endif
 
+                                @if(isset($vlist->vcapitallimit) && !empty($vlist->vegpcno))
                                 <tr>
                                     <th>Capital Limit</th>
                                     <td>{{  $vlist->vcapitallimit  }}</td>
                                 </tr>
-                                    <th>Grade</th>
+                                @endif
+
+                                <th>Grade</th>
                                     <td>{{ $vlist->vgrade }}</td>
                                 </tr>
+
+                                @if(isset($vlist->vremarks) && !empty($vlist->vremarks)) )
                                 <tr>
                                     <th>Remarks</th>
                                     <td>{{ $vlist->vremarks }}</td>
                                 </tr>
-                                <tr>
-                                    <th>Documents</th>
-                                    <td><a href=" {{ '/docs/' }}{{ $vlist->vpath }} "> <span>Documents </span></a></td>
-                                </tr>
-                                <tr>
-                                    <th>Updated At</th>
-                                    <td>{{  $vlist->updated_at }}</td>
-                                 </tr>
-                                </thead>
+                                @endif
+
+
+
+
 
                                 </tbody>
-
+                                </thead>
                             </table>
 
                              @unless ($vlist->tags->isEmpty())
