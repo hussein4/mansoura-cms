@@ -140,9 +140,11 @@ class MaterialsController extends Controller
         $file=Input::file("file");
 
         //Excel::load($file)->chunk(10, function ($reader)
-      Excel::filter('chunk')->load($file, function ($reader)
+      
+      Excel::load($file)->chunk(200, function ($results) {
+      //Excel::filter('chunk')->load($file, function ($reader)
       // Excel::filter('chunk')->load($file)->chunk(250, function($results)
-       {
+     //  {
 
            //    Excel::load($file, function($reader)
 
