@@ -14,20 +14,23 @@ use App\Http\Controllers\Controller;
 //use Request;
 use Carbon\Carbon;
 use Auth;
+use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+
 
 
 
 use Maatwebsite\Excel\Facades\Excel;
 
-ini_set('max_execution_time', 0);
+
 
 
 class VlistsController extends Controller {
 
+
+
     /**
      * Create a New Vlist instance
      */
-
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
@@ -282,7 +285,8 @@ class VlistsController extends Controller {
         $file=Input::file("file");
 
       // Excel::load($file, function($reader)
-        Excel::filter('chunk' )->load($file, function ($reader)
+       // Excel::filter('chunk' )->load($file, function ($reader)
+            Excel::filter('chunk')->load($file)->chunk(10,function($reader)
         {
             $results = $reader->get();
             foreach($results as $row):
