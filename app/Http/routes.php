@@ -103,6 +103,7 @@ Route::get('po_s/import', function () {
     return view('pos.upload_pos');
 });
 Route::put('po_s/import','POsController@import');
+Route::get('po_s/exportExcel/{pos}','POsController@exportExcel');
 
 Route::resource('pos','POsController');
 
