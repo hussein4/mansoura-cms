@@ -93,7 +93,7 @@ Route::get('mr_s/import', function () {
 
 Route::put('mr_s/import','MRsController@import');
 
-Route::get('po_s/exportExcel/{pos}','POsController@exportExcel');
+
 
 Route::resource('mrs','MRsController');
 

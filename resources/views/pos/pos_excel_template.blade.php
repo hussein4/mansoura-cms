@@ -53,7 +53,7 @@
         <table>
             <tr><th>With reference to our Contract # </th></tr>
             <tr><th>Please supply the below Materials described with the following terms and conditions:</th></tr>
-            <tr><th>Please state our purshase order no. in all your invoices</th></tr>
+            <tr><th>Please state our purchase order no. in all your invoices</th></tr>
         </table>
 
         <table class="table-border">
