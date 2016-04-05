@@ -180,7 +180,10 @@ class POsController extends Controller {
         Excel::create( 'pos_report', function($excel) use($po){
 
             $excel->sheet( 'pos_report', function($sheet) use ($po){
-
+                $sheet->mergeCells('A1:E1');
+                $sheet->mergeCells('A9:E9');
+                $sheet->mergeCells('A10:E10');
+                $sheet->mergeCells('A11:E11');
                 $sheet->loadView( 'pos.pos_excel_template' )->with('po', $po);
             } );
         } )->export('xlsx');
