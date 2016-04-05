@@ -70,7 +70,7 @@
     {!! Form::text('m_stock',null , ['class'=> 'form-control']) !!}
 </div>
 
-<!--
+
 <div class="form-group" >
     {!! Form::label('m_last_unit_price', 'Material unit Price:') !!}
     {!! Form::text('m_last_unit_price',null , ['class'=> 'form-control']) !!}
@@ -84,13 +84,13 @@
             {!! Form::radio('m_last_unit_price_currency', 'EGP') !!} EGP
             {!! Form::radio('m_last_unit_price_currency', 'USD') !!} USD
             {!! Form::radio('m_last_unit_price_currency', 'Euro') !!} Euro
-            {!! Form::radio('m_last_unit_price_currency', 'Sterling') !!} Sterling
+            {!! Form::radio('m_last_unit_price_currency', 'GBP') !!} Pound
 
         </div>
     </div>
 </div>
 
--->
+
 
 <div class="form-group" >
     {!! Form::label('m_required', 'Material last Quantity Required:') !!}

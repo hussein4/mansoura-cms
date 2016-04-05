@@ -60,7 +60,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('po_payment_method', 'Delivery Method:' ,['class'=>'form-control', 'id'=>'po_payment_method']) !!}
+    {!! Form::label('po_payment_method', 'Payment Method:' ,['class'=>'form-control', 'id'=>'po_payment_method']) !!}
     <div class="row">
         <div class='col-sm-10'>
             {!! Form::radio('po_payment_method', 'Net 45') !!} Net 45

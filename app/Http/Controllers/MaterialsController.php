@@ -141,21 +141,21 @@ class MaterialsController extends Controller
 
         //Excel::load($file)->chunk(10, function ($reader)
       
-      Excel::load($file)->chunk(200, function ($results) {
+      Excel::load($file)->chunk(200, function ($reader) {
       //Excel::filter('chunk')->load($file, function ($reader)
       // Excel::filter('chunk')->load($file)->chunk(250, function($results)
      //  {
 
            //    Excel::load($file, function($reader)
 
-            $reader->ignoreEmpty();
+
             $results = $reader->get();
-       print_r($results);
+
             foreach($results as $row):
                echo $row->m_code."<br />";
                Material::create([
                    'm_code'                    =>$row->m_code,
-                 /*  'm_description'             =>$row->m_description,
+                   'm_description'             =>$row->m_description,
                    'm_unit'                    =>$row->m_unit,
                    'm_consumption'             =>$row->m_consumption,
                    'm_last_unit_price'         =>$row->m_last_unit_price,
@@ -173,12 +173,12 @@ class MaterialsController extends Controller
                    'm_reorder'                 =>$row->m_reorder,
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
                    'm_mesc'                    =>$row->m_mesc,
-                   'user_id'                   =>Auth::user()->id
-                //   'm_company'                 =>$row->m_company,
-                 //  'm_location'                =>$row->m_location,
-                 //  'm_reorder'                 =>$row->m_reorder,
-                 //  'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
-                  // 'm_mesc'                    =>$row->m_mesc, */
+                   'user_id'                   =>Auth::user()->id,
+                   'm_company'                 =>$row->m_company,
+                   'm_location'                =>$row->m_location,
+                   'm_reorder'                 =>$row->m_reorder,
+                   'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
+                   'm_mesc'                    =>$row->m_mesc,
                    'user_id'                   =>Auth::user()->id,
                    'slug'                        =>Auth::user()->id
                    
@@ -188,7 +188,7 @@ class MaterialsController extends Controller
             endforeach;
 
         });
-    //   return redirect ('materials' );
+      return redirect ('materials' );
     }
 
 

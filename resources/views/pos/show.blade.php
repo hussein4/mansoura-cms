@@ -204,7 +204,7 @@
                             @endunless
 
 
-
+                            <li><a href=" {{ action('POsController@exportExcel', [$po->id]) }} "><i class='fa fa-link'></i> <span>Export Purchase Order : {!! $po->po_no !!}</span></a></li>
 
                             <li><a href=" {{ action('POsController@edit', [$po->id]) }} "><i class='fa fa-link'></i> <span>Edit Purchase Order : {!! $po->po_no !!}</span></a></li>
                         </po>

@@ -21,14 +21,14 @@ use Maatwebsite\Excel\Facades\Excel;
 
 Route::get('/', function (Search $search ,Request $request) {
 
-    $results = $search->index('getstarted_actors')
+    $results = $search->index('mrs')
         ->get($request->name);
     return view('welcome', compact('results'));
 });
 
-Route::get('/search', function (Search $search ,Request $request) {
+Route::get('/search/vlist', function (Search $search ,Request $request) {
 
-    $results = $search->index('getstarted_actors')
+    $results = $search->index('vlist')
         ->get($request->name);
     return view('search', compact('results'));
 });
@@ -92,6 +92,8 @@ Route::get('mr_s/import', function () {
 });
 
 Route::put('mr_s/import','MRsController@import');
+
+
 
 Route::resource('mrs','MRsController');
 
