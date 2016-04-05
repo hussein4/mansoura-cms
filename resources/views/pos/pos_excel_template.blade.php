@@ -20,7 +20,7 @@
     <body class="page">
         <table>
             <tbody>
-                <tr style="color:rgb(51,51,153);"><th><h2>PURCHASE ORDER</h2></th></tr>
+                <tr style="color:rgb(51,51,153);"><th colspan="9">PURCHASE ORDER</th></tr>
                 <tr style="color:rgb(51,51,153);"><th><h3>NO.</h3></th><th><h3>{{$po->po_no}}</h3></th></tr>
             </tbody>
         </table>
@@ -39,7 +39,7 @@
             <tr>
                 <th>Address</th><td>{{$supplier->vaddress}}</td>
                 <td></td>
-                <th>P.O. Date:</th><td>{{$po->po_date}}</td>
+                <th>P.O. Date:</th><td>{{$po->po_issued}}</td>
             </tr>
             @endforeach
             <tr>
@@ -88,22 +88,27 @@
                 <th>UNIT PRICE</th>
                 <th>TOTAL PRICE</th>
             </tr>
+            <?php $i=1?>
+            <?php $total_price=0?>
             @foreach($po->material as $material)
+            <?php $unit_price = $material->m_required * $material->m_last_unit_price?>
             <tr>
-                <td>{{$material->id}}</td>
+                <td>{{$i}}</td>
                 <td>{{$material->m_mesc}}</td>
                 <td>{{$material->m_description}}</td>
                 <td>{{$material->m_required}}</td>
                 <td>{{$material->m_unit}}</td>
                 <td></td>
                 <td>{{$material->m_last_unit_price}}</td>
-                <td></td>
+                <td>{{$unit_price}}</td>
             </tr>
+            <?php $i++?>
+            <?php $total_price += $unit_price?>
             @endforeach
             <tr>
                 <td colspan="6"></td>
                 <th>SUB-TOTAL</th>
-                <td>0.00</td>
+                <td>{{$total_price}}</td>
             </tr>
             <tr>
                 <td colspan="6"></td>
@@ -164,6 +169,7 @@
         <table class="table-border-bottom">
             <tr>
                 <th>P.O. NUMBER: </th>
+                <td>{{$po->po_no}}</td>
             </tr>
             <tr></tr>
             <tr>
