@@ -180,7 +180,23 @@ class POsController extends Controller {
         Excel::create( 'pos_report', function($excel) use($po){
 
             $excel->sheet( 'pos_report', function($sheet) use ($po){
+                $sheet->row(1, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#FFFFFF');
+                    $row->setAlignment('center');
+
+                    $row->setValignment('middle');
+                    $row->setFontSize(16);
+
+
+                });
+                $sheet->row(2, function($row) {
+                    // call cell manipulation methods
+                    $row->setBackground('#FFFFFF');
+                });
+              //  $sheet->setAllBorders('thick');
                 $sheet->mergeCells('A1:E1');
+                $sheet->mergeCells('A2:B2');
                 $sheet->mergeCells('A9:E9');
                 $sheet->mergeCells('A10:E10');
                 $sheet->mergeCells('A11:E11');
