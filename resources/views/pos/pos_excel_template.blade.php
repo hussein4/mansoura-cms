@@ -5,6 +5,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style>
+
+
             .table-border tr{
                 border-right: 1px solid #000000;
                 border-top: 4px solid #000000;
@@ -15,14 +17,20 @@
             .table-border-bottom tr{
                 border-bottom: 2px solid #000000;
             }
+
+            .table-border-top tr{
+                border-top: 2px solid #000000;
+            }
         </style>
     </head>
     <body class="page">
-        <table>
+        <table >
             <tbody>
-                <tr style="color:rgb(51,51,153);">
-                    <th colspan="8" align="center">PURCHASE ORDER</th></tr>
-                <tr style="color:rgb(51,51,153);" align="center" ><th colspan="4" align="right"  ><h3>NO.:</h3></th><th align="center" ><h3>{{$po->po_no}}</h3></th></tr>
+                <tr style="color:rgb(51,51,153);background-color: #9a9a9a; font-weight: 400; ">
+                    <th colspan="8" align="center"  >PURCHASE ORDER</th></tr>
+                <tr style="color:rgb(51,51,153);" align="center" >
+                    <th colspan="4" align="right"  ><h3>NO.:</h3></th>
+                    <th align="center" ><h3>{{$po->po_no}}</h3></th></tr>
             </tbody>
         </table>
         <table>
@@ -52,14 +60,14 @@
             </tr>
         </table>
         <table>
-            <tr><th colspan="8">With reference to our Contract # </th></tr>
+            <tr><th colspan="8">With reference to our Quotation no......... dated ....... and your offer  dated ........ </th></tr>
             <tr><th colspan="8" >Please supply the below Materials described with the following terms and conditions:</th></tr>
             <tr><th colspan="8">Please state our purchase order no. in all your invoices</th></tr>
         </table>
 
         <table class="table-border">
             <thead>
-                <tr style="color:rgb(51,51,153);">
+                <tr style="color:rgb(51,51,153); background-color: #9a9a9a;">
                     <th colspan="2" align="center" bgcolor="#9a9a9a"> PAYMENT TERM</th>
                     <th colspan="3" align="center" bgcolor="#9a9a9a">DELIVERY TIME</th>
                     <th align="center" >DELIVERY TERM</th>
@@ -69,113 +77,128 @@
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="2">{{$po->po_payment_method}}</td>
-                    <td>{{$po->po_delivery_date}}</td>
-                    <td>{{$po->po_delivery_method}}</td>
+                    <td colspan="2" align="center" >{{$po->po_payment_method}}</td>
+                    <td colspan="3" align="center" >{{$po->po_delivery_date}}</td>
+
+                    <td align="center" >{{$po->po_delivery_method}}</td>
                     <td></td>
-                    <td>{{$po->po_currency}}</td>
+                    <td align="center">{{$po->po_currency}}</td>
                 </tr>
             </tbody>
         </table>
 
         <table class="table-border">
-            <tr style="color:rgb(51,51,153);">
-                <th>ITEM</th>
-                <th>M.E.S.C.</th>
-                <th>DESCRIPTION</th>
-                <th>QTY</th>
-                <th>UNIT</th>
-                <th>REC.</th>
-                <th>UNIT PRICE</th>
-                <th>TOTAL PRICE</th>
+            <tr style="color:rgb(51,51,153); background-color: #9a9a9a;">
+                <th align="center">ITEM</th>
+                <th align="center" >M.E.S.C.</th>
+                <th align="center" >DESCRIPTION</th>
+                <th align="center">QTY</th>
+                <th align="center">UNIT</th>
+                <th align="center">REC.</th>
+                <th align="center">UNIT PRICE</th>
+                <th align="center">TOTAL PRICE</th>
             </tr>
             <?php $i=1?>
             <?php $total_price=0?>
             @foreach($po->material as $material)
             <?php $unit_price = $material->m_required * $material->m_last_unit_price?>
             <tr>
-                <td>{{$i}}</td>
-                <td>{{$material->m_mesc}}</td>
-                <td>{{$material->m_description}}</td>
-                <td>{{$material->m_required}}</td>
-                <td>{{$material->m_unit}}</td>
+                <td align="center" align="center">{{$i}}</td>
+                <td align="center" align="center" >{{$material->m_mesc}}</td>
+                <td align="center" align="center">{{$material->m_description}}</td>
+                <td align="center" align="center" >{{$material->m_required}}</td>
+                <td align="center" align="center">{{$material->m_unit}}</td>
                 <td></td>
-                <td>{{$material->m_last_unit_price}}</td>
-                <td>{{$unit_price}}</td>
+                <td align="center" align="center" >{{$material->m_last_unit_price}}</td>
+                <td align="center" align="center" >{{$unit_price}}</td>
             </tr>
             <?php $i++?>
             <?php $total_price += $unit_price?>
             @endforeach
             <tr>
                 <td colspan="6"></td>
-                <th>SUB-TOTAL</th>
-                <td>{{$total_price}}</td>
+                <th align="center" >SUB-TOTAL</th>
+                <td align="center">{{$total_price}}</td>
             </tr>
             <tr>
                 <td colspan="6"></td>
-                <th>FREIGHT</th>
-                <td>{{$po->po_freight_cost}}</td>
+                <th align="center" >FREIGHT</th>
+                <td align="center">{{$po->po_freight_cost}}</td>
             </tr>
             <tr>
                 <td colspan="6"></td>
-                <th>OTHER</th>
-                <td>-</td>
+                <th align="center">OTHER</th>
+                <td align="center">-</td>
             </tr>
             <tr>
                 <td colspan="6"></td>
 
-                <th>TOTAL</th>
-                <td>{{$po->po_total_cost}}</td>
+                <th align="center" >TOTAL</th>
+                <td align="center" >{{$po->po_total_cost}}</td>
             </tr>
         </table>
         
         <table>
             <tr>
                 <th colspan="3" >Prepared and Checked:</th>
-                <td colspan="6"></td>
-                <th>Approved:</th>
+                <td colspan="2"></td>
+                <th align="center" >Approved:</th>
             </tr>
-            <tr></tr>
-            <tr></tr>
+            <tr></tr><tr></tr><tr></tr>
+
+
+                <tr>
+                    <th colspan="2" align="center"></th>
+
+                    <td colspan="4"></td>
+
+                    <th colspan="2" align="center" >Inas Ahmed Hafez </th>
+                </tr>
+
+
+
             <tr>
-                <td colspan="7"></td>
-                <th>Materials & Services Gen. Mgr.</th>
+                <td colspan="6"></td>
+                <th colspan="2" align="center" >Materials , Services & Stock Control </th>
+             </tr>
+            <tr>
+                <td colspan="6"></td>
+                <th colspan="2" align="center">General Mgr.</th>
             </tr>
         </table>
         
         <table class="table-border">
-            <tr style="color:rgb(51,51,153);">
-                <th>M.R. No.</th>
-                <th>REQUISITIONER</th>
-                <th>CHARGE</th>
-                <th>USED FOR</th>
-                <th></th>
-                <th>RECEIVED</th>
-                <th>APPROVED</th>
+            <tr style="color:rgb(51,51,153); background-color: #9a9a9a;">
+                <th align="center">M.R. No.</th>
+                <th align="center">REQUISITIONER</th>
+                <th colspan="2" align="center" >CHARGE</th>
+                <th colspan="2" align="center">USED FOR</th>
+                <th align="center" >RECEIVED</th>
+                <th align="center" >APPROVED</th>
             </tr>
             @foreach($po->material as $material)
             <tr>
-                <td>{{$po->mr()->first()->mr_no}}</td>
-                <td>{{$material->m_requesting_dept}}</td>
-                <td></td>
-                <td>{{$material->m_usage}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td align="center">{{$po->mr()->first()->mr_no}}</td>
+                <td align="center">{{$material->m_requesting_dept}}</td>
+                <td colspan="2" align="center" >DMWBEL</td>
+                <td colspan="2" align="center" >{{$material->m_usage}}</td>
+                <td align="center" ></td>
+                <td align="center"></td>
+                <td align="center"></td>
             </tr>
             @endforeach
         </table>
         
-        <table class="table-border-bottom">
-            <tr>
-                <th colspan="2" >P.O. NUMBER: </th>
+        <table >
+            <tr style="color:rgb(51,51,153); background-color: #9a9a9a;">
+                <th colspan="2" align="right">P.O. NUMBER: </th>
                 <td align ="left">{{$po->po_no}}</td>
             </tr>
-            <tr></tr>
-            <tr>
-                <th colspan="3" >GENERAL TERMS</th>
-            </tr>
         </table>
+
+            <tr tr style="color:rgb(51,51,153); background-color: #9a9a9a;">
+                <th colspan="3" align="center" >General Terms & Conditions</th>
+            </tr>
+
     </body>
 </html>

@@ -36,9 +36,17 @@
       <file leaf-file-name="pos_excel_template.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/pos/pos_excel_template.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5356037" vertical-offset="974" max-vertical-offset="3720">
-              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
-              <folding />
+            <state vertical-scroll-proportion="0.24767801" vertical-offset="420" max-vertical-offset="4180">
+              <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#thead#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#table#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#table#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#table#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,6 +164,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -520,7 +529,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1143,6 +1151,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/POsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5665635" vertical-offset="2994" max-vertical-offset="3640">
+          <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
+          <folding>
+            <marker date="1459969515166" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param CreatePORequest $request ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param PORequest $request ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder=" @param int $howMany ..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1459969515166" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6661608" vertical-offset="1501" max-vertical-offset="2640">
@@ -1175,59 +1226,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/POsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5263158" vertical-offset="3094" max-vertical-offset="4340">
-          <caret line="217" column="2" selection-start-line="217" selection-start-column="2" selection-end-line="217" selection-end-column="2" />
-          <folding>
-            <marker date="1459946787041" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param CreatePORequest $request ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param PO $po ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param PORequest $request ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder=" @param int $howMany ..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1459946787041" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pos/pos_excel_template.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5356037" vertical-offset="974" max-vertical-offset="3720">
-          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
-          <folding />
+        <state vertical-scroll-proportion="0.24767801" vertical-offset="420" max-vertical-offset="4180">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#tbody#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#thead#0;n#table#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#table#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
