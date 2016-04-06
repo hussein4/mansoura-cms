@@ -20,55 +20,56 @@
     <body class="page">
         <table>
             <tbody>
-                <tr style="color:rgb(51,51,153);"><th colspan="9">PURCHASE ORDER</th></tr>
-                <tr style="color:rgb(51,51,153);"><th><h3>NO.</h3></th><th><h3>{{$po->po_no}}</h3></th></tr>
+                <tr style="color:rgb(51,51,153);">
+                    <th colspan="8" align="center">PURCHASE ORDER</th></tr>
+                <tr style="color:rgb(51,51,153);" align="center" ><th colspan="4" align="right"  ><h3>NO.:</h3></th><th align="center" ><h3>{{$po->po_no}}</h3></th></tr>
             </tbody>
         </table>
         <table>
             @foreach($po->suppliers as $supplier)
             <tr>
-                <th>To:</th><td>{{$supplier->vname}}</td>
-                <td></td>
-                <th>Tel:</th><td>{{$supplier->vphone}}</td>
+                <th align="right">To:</th><td colspan="3">{{$supplier->vname}}</td>
+                <td></td><td></td>
+                <th align="right">Tel:</th><td align="left">{{$supplier->vphone}}</td>
             </tr>
             <tr>
-                <th>Attn.</th><td>{{$supplier->vcontactperson}}</td>
-                <td></td>
-                <th>Fax:</th><td>{{$supplier->vfax}}</td>
+                <th align="right">Attn.:</th><td colspan="3">{{$supplier->vcontactperson}}</td>
+                <td></td><td></td>
+                <th align="right">Fax:</th><td align="left">{{$supplier->vfax}}</td>
             </tr>
             <tr>
-                <th>Address</th><td>{{$supplier->vaddress}}</td>
-                <td></td>
-                <th>P.O. Date:</th><td>{{$po->po_issued}}</td>
+                <th align="right" >Address:</th><td colspan="3">{{$supplier->vaddress}}</td>
+                <td></td><td></td>
+                <th align="right">P.O. Date:</th><td>{{$po->po_issued}}</td>
             </tr>
             @endforeach
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <th>No. Of Pages:</th>
-                <td>1</td>
+                <td></td><td></td><td></td><td></td> <td></td> <td></td>
+
+
+                <th align="right">No. Of Pages:</th>
+                <td align="left">2</td>
             </tr>
         </table>
         <table>
-            <tr><th>With reference to our Contract # </th></tr>
-            <tr><th>Please supply the below Materials described with the following terms and conditions:</th></tr>
-            <tr><th>Please state our purchase order no. in all your invoices</th></tr>
+            <tr><th colspan="8">With reference to our Contract # </th></tr>
+            <tr><th colspan="8" >Please supply the below Materials described with the following terms and conditions:</th></tr>
+            <tr><th colspan="8">Please state our purchase order no. in all your invoices</th></tr>
         </table>
 
         <table class="table-border">
             <thead>
-                <tr>
-                    <th>PAYMENT TERM</th>
-                    <th>DELIVERY TIME</th>
-                    <th>DELIVERY TERM</th>
-                    <th>SHIPPED VIA</th>
-                    <th>CURRENCY</th>
+                <tr style="color:rgb(51,51,153);">
+                    <th colspan="2" align="center" bgcolor="#9a9a9a"> PAYMENT TERM</th>
+                    <th colspan="3" align="center" bgcolor="#9a9a9a">DELIVERY TIME</th>
+                    <th align="center" >DELIVERY TERM</th>
+                    <th align="center" >SHIPPED VIA</th>
+                    <th align="center" >CURRENCY</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$po->po_payment_method}}</td>
+                    <td colspan="2">{{$po->po_payment_method}}</td>
                     <td>{{$po->po_delivery_date}}</td>
                     <td>{{$po->po_delivery_method}}</td>
                     <td></td>
@@ -78,7 +79,7 @@
         </table>
 
         <table class="table-border">
-            <tr>
+            <tr style="color:rgb(51,51,153);">
                 <th>ITEM</th>
                 <th>M.E.S.C.</th>
                 <th>DESCRIPTION</th>
@@ -121,8 +122,8 @@
                 <td>-</td>
             </tr>
             <tr>
-                <td colspan="2"></td>
-                <td></td>
+                <td colspan="6"></td>
+
                 <th>TOTAL</th>
                 <td>{{$po->po_total_cost}}</td>
             </tr>
@@ -130,7 +131,7 @@
         
         <table>
             <tr>
-                <th>Prepared and Checked:</th>
+                <th colspan="3" >Prepared and Checked:</th>
                 <td colspan="6"></td>
                 <th>Approved:</th>
             </tr>
@@ -143,7 +144,7 @@
         </table>
         
         <table class="table-border">
-            <tr>
+            <tr style="color:rgb(51,51,153);">
                 <th>M.R. No.</th>
                 <th>REQUISITIONER</th>
                 <th>CHARGE</th>
@@ -168,12 +169,12 @@
         
         <table class="table-border-bottom">
             <tr>
-                <th>P.O. NUMBER: </th>
-                <td>{{$po->po_no}}</td>
+                <th colspan="2" >P.O. NUMBER: </th>
+                <td align ="left">{{$po->po_no}}</td>
             </tr>
             <tr></tr>
             <tr>
-                <th>GENERAL TERMS</th>
+                <th colspan="3" >GENERAL TERMS</th>
             </tr>
         </table>
     </body>

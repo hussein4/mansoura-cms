@@ -179,27 +179,43 @@ class POsController extends Controller {
 //        return view('pos.pos_excel_template', compact('po'));
         Excel::create( 'pos_report', function($excel) use($po){
 
+
             $excel->sheet( 'pos_report', function($sheet) use ($po){
+              //  $sheet->mergeCells('A1:E1');
+                $sheet->getDefaultStyle()
+
+                    ->getAlignment()
+                    ->setHorizontal(\PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
                 $sheet->row(1, function($row) {
                     // call cell manipulation methods
                     $row->setBackground('#FFFFFF');
                     $row->setAlignment('center');
 
                     $row->setValignment('middle');
-                    $row->setFontSize(16);
-
+                    $row->setFontSize(24);
 
                 });
-                $sheet->row(2, function($row) {
-                    // call cell manipulation methods
-                    $row->setBackground('#FFFFFF');
+
+                $sheet->cells('A13:H13', function($cells) {
+                    $cells->setBorder('thin', 'thin', 'thin', 'thin');
                 });
+                $sheet->cells('A14:H14', function($cells) {
+                    $cells->setBorder('thin', 'thin', 'thin', 'thin');
+                });
+
+
+
+
+
               //  $sheet->setAllBorders('thick');
-                $sheet->mergeCells('A1:E1');
+/*
                 $sheet->mergeCells('A2:B2');
                 $sheet->mergeCells('A9:E9');
                 $sheet->mergeCells('A10:E10');
                 $sheet->mergeCells('A11:E11');
+              //  $sheet->mergeCells('A13:B13');
+*/
                 $sheet->loadView( 'pos.pos_excel_template' )->with('po', $po);
             } );
         } )->export('xlsx');
