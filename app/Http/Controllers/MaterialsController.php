@@ -16,6 +16,7 @@ use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 
+ini_set('max_execution_time', 0);
 
 class MaterialsController extends Controller
 {

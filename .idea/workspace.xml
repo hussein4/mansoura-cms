@@ -6,8 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TendersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TendersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tenders/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/tenders/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -36,9 +35,11 @@
       <file leaf-file-name="MaterialsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.628483" vertical-offset="3094" max-vertical-offset="3740">
-              <caret line="188" column="4" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="-2.9721363" vertical-offset="2280" max-vertical-offset="4020">
+              <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+              <folding>
+                <element signature="e#39#77#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2430,9 +2431,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MaterialsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.628483" vertical-offset="3094" max-vertical-offset="3740">
-          <caret line="188" column="4" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="4" />
-          <folding />
+        <state vertical-scroll-proportion="-2.9721363" vertical-offset="2280" max-vertical-offset="4020">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="e#39#77#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
