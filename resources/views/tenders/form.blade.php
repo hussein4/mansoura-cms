@@ -1,9 +1,12 @@
 <div class="form-group">
 
     {!! Form::label('mr_tender_list', 'MR:') !!}
+    <div class="row">
+        <div class='col-sm-6'>
     {!! Form::select('mr_tender_list[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_tender_list' ,'multiple']) !!}
 </div>
-
+    </div>
+    </div>
 
 
 <div class="form-group">

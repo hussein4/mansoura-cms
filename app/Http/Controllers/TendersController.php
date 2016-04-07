@@ -61,10 +61,9 @@ class TendersController extends Controller
      */
     public function store(TenderRequest $request)
     {
-        // dd($request->input('tag_list'));
+
         $this->createTender($request);
 
-        //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Material Request has been Successfully Added!', 'Good Job');
         return redirect ('tenders');
     }
