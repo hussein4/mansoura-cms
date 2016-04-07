@@ -137,20 +137,16 @@ class MaterialsController extends Controller
 
     protected function import()
     {
-        $file=Input::file("file");
+        $file = Input::file("file");
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
 
-        //Excel::load($file)->chunk(10, function ($reader)
-      
-      Excel::load($file)->chunk(200, function ($reader) {
-      //Excel::filter('chunk')->load($file, function ($reader)
-      // Excel::filter('chunk')->load($file)->chunk(250, function($results)
-     //  {
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-           //    Excel::load($file, function($reader)
-
-
-            $results = $reader->get();
-
+      Excel::load($uploadedFileLocation)->chunk(200, function ($results) {
+        
             foreach($results as $row):
                echo $row->m_code."<br />";
                Material::create([
@@ -188,6 +184,8 @@ class MaterialsController extends Controller
             endforeach;
 
         });
+
+      \Storage::delete($storageRelativeLocation);
       return redirect ('materials' );
     }
 
