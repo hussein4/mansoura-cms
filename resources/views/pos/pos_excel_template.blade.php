@@ -21,6 +21,7 @@
             .table-border-top tr{
                 border-top: 2px solid #000000;
             }
+
         </style>
     </head>
     <body class="page">
@@ -148,7 +149,7 @@
 
 
                 <tr>
-                    <th colspan="2" align="center"></th>
+                    <th  colspan="2" align="center"  ></th>
 
                     <td colspan="4"></td>
 

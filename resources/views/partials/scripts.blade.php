@@ -65,6 +65,9 @@
 <!-- from  21-50 datetimepicker quotation   -->
 <!-- from  51-80 datetimepicker Tender   -->
 <!-- from  81-100 datetimepicker PO   -->
+<!-- from  120-140 datetimepicker Material   -->
+
+
 
 
 <script>
@@ -1599,6 +1602,19 @@
     });
 </script>
 
+<script>
+    $(function()
+    {
+        $('#datetimepicker120').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
 
 
 

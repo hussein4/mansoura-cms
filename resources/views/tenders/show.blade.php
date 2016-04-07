@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Tenders : {{ $tender->mr_t_no }}</div>
+                    <div class="panel-heading"><h3><b>Tenders :</b> {{ $tender->mr_t_no }} </h3></div>
 
                     <div class="panel-body">
 
