@@ -113,10 +113,6 @@ class MaterialsController extends Controller
 
 
 
-
-
-
-
     /** save a new Material
      * @param MaterialRequest $request
      * @return mixed
@@ -146,10 +142,10 @@ class MaterialsController extends Controller
         $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-      Excel::load($uploadedFileLocation)->chunk(200, function ($results) {
+      Excel::load($uploadedFileLocation)->chunk(100, function ($results) {
         
             foreach($results as $row):
-               echo $row->m_code."<br />";
+               echo $row->m_description."<br />";
                Material::create([
                    'm_code'                    =>$row->m_code,
                    'm_description'             =>$row->m_description,
@@ -175,7 +171,7 @@ class MaterialsController extends Controller
                    'm_location'                =>$row->m_location,
                    'm_reorder'                 =>$row->m_reorder,
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
-                   'm_mesc'                    =>$row->m_mesc,
+                   
                    'user_id'                   =>Auth::user()->id,
                    'slug'                        =>Auth::user()->id
                    
