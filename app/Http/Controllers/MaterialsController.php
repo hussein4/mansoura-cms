@@ -15,6 +15,7 @@ use Carbon\Carbon;
 use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
+use Storage;
 
 ini_set('max_execution_time', 0);
 
@@ -142,7 +143,7 @@ class MaterialsController extends Controller
         $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-      Excel::load($uploadedFileLocation)->chunk(100, function ($results) {
+      Excel::load($uploadedFileLocation)->chunk(500, function ($results) {
         
             foreach($results as $row):
                echo $row->m_description."<br />";
@@ -171,7 +172,7 @@ class MaterialsController extends Controller
                    'm_location'                =>$row->m_location,
                    'm_reorder'                 =>$row->m_reorder,
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
-                   
+
                    'user_id'                   =>Auth::user()->id,
                    'slug'                        =>Auth::user()->id
                    
