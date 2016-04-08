@@ -10,6 +10,20 @@
     {!! Form::text('po_subject',null, ['class'=> 'form-control']) !!}
 </div>
 
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_issued', 'PO DATE:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker81']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="form-group">
 
@@ -44,7 +58,6 @@
 
 
 
-
 <div class="form-group">
     {!! Form::label('po_currency', 'Purchase Order Currency:', ['class'=>'form-control', 'id'=>'po_currency']) !!}
     <div class="row">
@@ -76,6 +89,19 @@
 </div>
 
 
+<div class="container">
+    <div class="form-group">
+        {!! Form::label('po_delivery_date', 'Delivery Date:') !!}
+        <div class="row">
+            <div class='col-sm-6'>
+   <span class="input-group-addon">
+{!! Form::input('text','po_delivery_date',$po->po_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker86']) !!}
+    <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <div class="form-group">
@@ -105,19 +131,6 @@
 
 
 
-<div class="container">
-    <div class="form-group">
-    {!! Form::label('po_issued', 'PO DATE:') !!}
-    <div class="row">
-        <div class='col-sm-6'>
-   <span class="input-group-addon">
-{!! Form::input('text','po_issued',$po->po_issued, ['class'=> 'form-control','id'=>'datetimepicker81']) !!}
-    <span class="glyphicon glyphicon-calendar"></span>
-    </span>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="form-group">
@@ -181,19 +194,6 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="form-group">
-        {!! Form::label('po_delivery_date', 'Delivery Date:') !!}
-        <div class="row">
-            <div class='col-sm-6'>
-   <span class="input-group-addon">
-{!! Form::input('text','po_delivery_date',$po->po_delivery_date, ['class'=> 'form-control','id'=>'datetimepicker86']) !!}
-    <span class="glyphicon glyphicon-calendar"></span>
-    </span>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container">
     <div class="form-group">

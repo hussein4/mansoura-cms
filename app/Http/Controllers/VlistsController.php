@@ -14,7 +14,7 @@ use App\Http\Controllers\Controller;
 //use Request;
 use Carbon\Carbon;
 use Auth;
-use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+
 
 
 
@@ -76,7 +76,6 @@ class VlistsController extends Controller {
 
         $this->createVlist($request);
 
-        //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Supplier has been Successfully Added!', 'Good Job');
 
         return redirect('vlist');
@@ -127,10 +126,7 @@ class VlistsController extends Controller {
         $this->syncTags($vlist, $request->input('tag_list'));
         return view('vlist.eval', compact('vlist', 'tag_list'));
 
-
     }
-
-
 
     /** sync up the list  of tags in querybase
      * @param Vlist $vlist
@@ -150,29 +146,6 @@ class VlistsController extends Controller {
      */
     private function createVlist(VlistRequest $request)
     {
-        /*
-
-           $vlist= Auth::user()->vlist();
-        // $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4, 0, PHP_ROUND_HALF_UP);
-            $average =['quality','delivery','bidbond','desc'];
-
-
-         //  $vlist =Vlist::all();
-            $vlist->vgrade = array_sum($request->average) / 4;
-            dd($request);
-         //  $vlist->vgrade=$average;
-
-            $vlist= Auth::user()->vlist()->create($request->all());
-
-           // $vlist->create($request->all());
-
-           // $vlist= Auth::user()->vlist()->create($request->all());
-
-            //  $vlist= Auth::user()->vlist()->create($request->all());    //get authenticated user who saved  vlist
-            //  $vlist->vgrade = array_sum($request->average) / 4;
-              $this->syncTags($vlist, $request->input('tag_list'));
-            return $vlist;
-        */
         $average = round(($request->get('quality') + $request->get('delivery')+ $request->get('desc')+ $request->get('bidbond')) / 4);
         $vlist = new Vlist;
         $vlist->fill($request->all());
@@ -190,32 +163,7 @@ class VlistsController extends Controller {
 
         return redirect('/vlist');
     }
-    /*
-        public function export( Request $request, Vlist $vlist )
-        {
 
-            $this->authorize('export', $vlist);
-
-
-
-                $filename = 'test';
-                Excel::create($filename, function ($excel) use ($vlist)
-                {
-                    // Set the title
-                    $excel->setTitle('Supplier Details');
-                    $excel->setCreator('Hussein')
-                        ->setCompany('Mansoura');
-                    $excel->sheet('Sheet 1', function ($sheet) use ($vlist)
-                    {
-
-                        $sheet->cell('A4', function($cell) {
-                            $cell->setValue('test');
-                        });
-
-                    });
-                })->export('xlsx');
-            }
-    */
 
 
 
@@ -267,10 +215,6 @@ class VlistsController extends Controller {
                     )
 
                 );
-
-
-
-
 
             });
         })->download('xlsx');

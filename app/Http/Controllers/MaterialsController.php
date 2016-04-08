@@ -35,7 +35,7 @@ class MaterialsController extends Controller
     public function index()
     {
         // $material = Material::latest('updated_at')->published()->get();
-       $material =Material::orderBy('created_at', 'desc')->paginate(10);
+       $material =Material::orderBy('updated_at', 'desc')->paginate(10);
         return view ('materials.index', compact('material' ));
     }
 
@@ -65,10 +65,9 @@ class MaterialsController extends Controller
      */
     public function store(MaterialRequest $request)
     {
-        //  dd($request->input('tag_list'));
+
         $this->createMaterial($request);
 
-        //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Material has been Successfully Added!', 'Good Job');
         return redirect ('materials');
     }
@@ -82,7 +81,7 @@ class MaterialsController extends Controller
         $tags = Tag::lists('name','id')->all();
 
 
-        return view('materials.edit',compact('material','tags','mr','suppliers'));
+        return view('materials.edit',compact('material','tags'));
     }
 
     /**
@@ -91,7 +90,7 @@ class MaterialsController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @internal param $id
      */
-    public function update(Material$material , MaterialRequest $request)
+    public function update(Material $material , MaterialRequest $request)
     {
        $material->update($request->all());
 
@@ -106,7 +105,7 @@ class MaterialsController extends Controller
      * @param array $tags
      * @internal param MaterialRequest $request
      */
-    public function syncTags(Material$material , array $tags)
+    public function syncTags(Material $material , array $tags)
     {
        $material->tags()->sync($tags);
     }
@@ -122,8 +121,6 @@ class MaterialsController extends Controller
     {
        $material= Auth::user()->material()->create($request->all());    //get authenticated user who saved  Material
         $this->syncTags($material, $request->input('tag_material_list'));
-
-
 
         return $material;
     }

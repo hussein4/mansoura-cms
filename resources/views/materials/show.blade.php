@@ -171,7 +171,7 @@
                             @endunless
 
 
-                            <li><a href=" {{ action('MaterialsController@edit', [$material->id]) }} "><i class='fa fa-link'></i> <span>Edit Material : {!! $material->m_code !!}</span></a></li>
+                            <li><a href=" {{ action('MaterialsController@edit', [$material->id]) }} "><i class='fa fa-link'></i> <span>Edit Material : {!! $material->m_description !!}</span></a></li>
                         </material>
 
 

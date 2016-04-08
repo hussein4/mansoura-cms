@@ -174,9 +174,10 @@
                                 </tr>
                                 @endif
 
+                                </tbody>
                                 </thead>
 
-                                </tbody>
+
                             </table>
 
                             @unless ($mr->tags->isEmpty())
