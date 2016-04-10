@@ -5,7 +5,7 @@ use App\Http\Requests\VlistRequest;
 use App\Tag;
 use App\Vlist;
 use Gate;
-use Illuminate\Support\Facades\Input;
+
 //use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Http\Request;
 
@@ -13,13 +13,13 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 //use Request;
 use Carbon\Carbon;
+
 use Auth;
-
-
-
-
-
+use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
+use Session;
+
+
 
 
 
@@ -221,6 +221,19 @@ class VlistsController extends Controller {
     }
 
 
+    public function exportSupplier( Vlist $vlist )
+    {
+        Excel::create( $vlist->vname, function($excel) use($vlist){
+            $excel->setTitle('Supplier Details');
+            $excel->setCreator('Hussein')
+                ->setCompany('Mansoura');
+
+            $excel->sheet( $vlist->vname, function($sheet) use ($vlist){
+
+                $sheet->loadView( 'vlist.supplier_excel_template' )->with('vlist', $vlist);
+            } );
+        } )->export('xlsx');
+    }
 
 
 

@@ -30,7 +30,7 @@ class VlistRequest extends Request
             'vfax' => 'required',
             'vphone'=> 'required',
             'vaddress'=> 'required',
-            'created_on'=> 'required|date'
+
 
         ];
     }

@@ -102,7 +102,7 @@
                                                 <td>
                                                     <li>  <a href=" {{ action('MaterialsController@show', [$materials->slug]) }} " > <span> {{ $materials->m_code }} </span></a></li>
                                                 </td>
-                                            
+
                                             </tr>
                                         @endforeach
 

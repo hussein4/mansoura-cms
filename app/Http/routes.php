@@ -37,7 +37,7 @@ Route::get('/search/vlist', function (Search $search ,Request $request) {
 
 
 
-
+Route::get('/vlist/{vlist}/exportsupplier' , 'VlistsController@exportSupplier');
 Route::get('/vlist/{id}/export' , 'VlistsController@export');
 
 Route::post('/vlist/{id}/file' , 'VlistsController@post_upload');

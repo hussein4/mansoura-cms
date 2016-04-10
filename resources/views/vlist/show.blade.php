@@ -7,22 +7,19 @@
 
 @section('main-content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Supplier : {{ $vlist->vname }}</div>
+       <div class="row">
+         <div class="col-md-10 col-md-offset-1">
+           <div class="panel panel-default">
+            <div class="panel-heading"><h3><b>Supplier :</b> {{ $vlist->vname }} </h3></div>
 
                     <div class="panel-body">
 
                         <vlist>
 
-                            <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
-                                <thead>
+                          <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
+                          <thead>
                             <tbody>
-                                <tr>
-                                    <th>Supplier</th>
-                                    <td>{{ $vlist->vname }}</td>
-                                </tr>
+
                                 <tr>
                                     <th>Service</th>
                                     <td>{{ $vlist->vservice }}</td>
@@ -93,6 +90,11 @@
                                 </tr>
                                 @endif
 
+                              <tr>
+                                  <th>Updated At:</th>
+                                  <td>{{ $vlist->updated_at }}</td>
+                              </tr>
+
 
 
 
@@ -105,7 +107,9 @@
                             <h5>Tags:</h5>
                             <ul>
                                 @foreach ($vlist->tags as $tag)
-                                    <li> {{ $tag->name }}</li>
+                                 <li>  <a href=" {{ action('TagsController@show', [$tag->slug]) }} " > <span> {{ $tag->name }} </span></a></li>
+
+
                                     @endforeach
                             </ul>
                             @endunless
@@ -113,14 +117,14 @@
 
 
            <li><a href="{{ action('VlistsController@edit', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Edit Supplier : {!! $vlist->vname !!}</span></a></li>
-           <li><a href="{{ action('VlistsController@export', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Export Supplier : {!! $vlist->vname !!}</span></a></li>
+           <li><a href="{{ action('VlistsController@exportSupplier', [$vlist->id])  }}"><i class='fa fa-link'></i> <span>Export Supplier : {!! $vlist->vname !!}</span></a></li>
 
-                            <div class = "form-control">
+
                                 {!! Form::open(['method'=>'DELETE' , 'action'=> ['VlistsController@destroy',$vlist->id ]]) !!}
                                 {!! Form::submit('Delete Supplier',['class'=> 'btn btn-danger ']) !!}
 
                                 {!! Form::close() !!}
-                            </div>
+
                         </vlist>
 
 
