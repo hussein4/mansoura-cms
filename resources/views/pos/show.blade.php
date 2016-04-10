@@ -208,7 +208,8 @@
                                 <h5>Tags:</h5>
                                 <ul>
                                     @foreach ($po->tags as $tag)
-                                        <li> {{ $tag->name }}</li>
+                                        <li>  <a href=" {{ action('TagsController@show', [$tag->slug]) }} " > <span> {{ $tag->name }} </span></a></li>
+
                                     @endforeach
                                 </ul>
                             @endunless

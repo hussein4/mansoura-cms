@@ -239,10 +239,10 @@
                                 @endif
 
 
-
+                                </tbody>
                                 </thead>
 
-                                </tbody>
+
                             </table>
 
                             @unless ($tender->tags->isEmpty())
