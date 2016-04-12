@@ -146,8 +146,7 @@ class MaterialsController extends Controller
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
       Excel::load($uploadedFileLocation)->chunk(200, function ($results) {
-        
-            foreach($results as $row):
+            foreach($results as $row){
                echo $row->m_code."<br />";
                Material::create([
                    'm_code'                    =>$row->m_code,
@@ -181,7 +180,7 @@ class MaterialsController extends Controller
                    
 
                 ]);
-            endforeach;
+            }
 
         });
 

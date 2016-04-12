@@ -116,48 +116,64 @@ class MRsController extends Controller
 
     public function import()
     {
-       $file=Input::file("file");
+        $file = Input::file("file");
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
 
-        Excel::load($file, function($reader)
+
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
+
+        Excel::selectSheets('Required')->load($uploadedFileLocation)->byConfig("excel.import.sheets", function($sheet) use ($uploadedFileLocation)
         {
-            $results = $reader->get();
-            foreach($results as $row):
-               MR::create([
-                    'mr_no'                                                     =>$row->mr_no,
-                    'mr_subject'                                                =>$row->mr_subject,
-                    'mr_date'                                                   =>date("d-M-Y g:i A",strtotime($row->mr_date)),
-                    'mr_received_date'                                          =>date("d-M-Y g:i A",strtotime($row->mr_received_date)),
-                    'mr_officer'                                                =>$row->mr_officer,
-                    'mr_received_by_officer_date'                               =>date("d-M-Y g:i A",strtotime($row->mr_received_by_officer_date)),
-                    'mr_estimated_cost'                                         =>date("d-M-Y g:i A",strtotime($row->mr_estimated_cost)),
-
-                    'mr_checked_on_egpc_site'                                   =>date("d-M-Y g:i A",strtotime($row->mr_checked_on_egpc_site)),
-                    'mr_rfq'                                                    =>date("d-M-Y g:i A",strtotime($row->mr_rfq)),
-                    'mr_rfq_closing_date'                                       =>date("d-M-Y g:i A",strtotime($row->mr_rfq_closing_date)),
-                    'mr_rfq_reminder'                                           =>date("d-M-Y g:i A",strtotime($row->mr_rfq_reminder)),
-                    'mr_offers_open'                                            =>date("d-M-Y g:i A",strtotime($row->mr_offers_open)),
-                    'mr_offers_sent_to_tech_dept'                               =>date("d-M-Y g:i A",strtotime($row->mr_offers_sent_to_tech_dept)),
-                    'mr_offers_received_from_tech_dept_closing_date'            =>date("d-M-Y g:i A",strtotime($row->mr_offers_received_from_tech_dept_closing_date)),
-                    'mr_offers_received_from_tech_dept_reminder'                =>date("d-M-Y g:i A",strtotime($row->mr_offers_received_from_tech_dept_reminder)),
-                    'mr_offers_clarifications_sent_to_suppliers'                =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_sent_to_suppliers)),
-                    'mr_offers_clarifications_closing_date'                     =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_closing_date)),
-                    'mr_offers_clarifications_received_from_supplier'           =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_received_from_supplier)),
-                    'mr_offers_clarifications_received_from_supplier_reminder'  =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_received_from_supplier_reminder)),
-                    'mr_offers_clarifications_sent_to_tech'                     =>date("d-M-Y g:i A",strtotime($row->mr_offers_clarifications_sent_to_tech)),
-                    'mr_offers_evaluation'                                      =>date("d-M-Y g:i A",strtotime($row->mr_offers_evaluation)),
-                    'mr_sent_for_budget_expansion'                              =>date("d-M-Y g:i A",strtotime($row->mr_sent_for_budget_expansion)),
-                    'mr_sent_for_budget_expansion_reminder'                     =>date("d-M-Y g:i A",strtotime($row->mr_sent_for_budget_expansion_reminder)),
-                    'user_id'                                                   =>Auth::user()->id,
-                    'mrpath'                                                    =>$row->mrpath
-                ]);
-
-
-            endforeach;
+            $mr_no = $sheet->mr_no;
+            $mr_date = date('m-d-Y', \PHPExcel_Shared_Date::ExcelToPHP($sheet->mr_date));
+            $mr_date = Carbon::createFromFormat('m-d-Y', $mr_date)->format('d-M-Y g:i A');
+            $mr_requesting_dept = $sheet->mr_requesting_dept;
+            $mr_estimated_cost = $sheet->mr_estimated_cost;
+            $mr_subject = $sheet->mr_subject;
+            $mr_data = compact("mr_no","mr_date","mr_requesting_dept","mr_estimated_cost","mr_subject");
+            $mr = Auth::user()->mr()->create($mr_data);
+            $this->storeMRMaterialsListFromFile($mr,$uploadedFileLocation);
         });
+
         return redirect ('mrs');
     }
 
+    protected function storeMRMaterialsListFromFile(MR $mr, $file)
+    {
+        Excel::selectSheets('Required')->load($file, function($reader) use ($mr)
+        {
+          foreach ($reader as $result) {
+            $maxDataCol = $result->getActiveSheet()->getHighestDataColumn();
+            $maxDataRow = $result->getActiveSheet()->getHighestDataRow() - 8;
+            $result_array = $result->getActiveSheet()->rangeToArray('A9:'.$maxDataCol.$maxDataRow, true, true, true);
 
+            $materials = [];
+            foreach ($result_array as $row) {
+              $m_required = $row[1];
+              $m_unit = $row[2];
+              $m_description = $row[3];
+              $m_code = $row[7];
+              $m_consumption = $row[9];
+              $m_stock = $row[10];
+              $m_mesc = $row[11];
+              $m_max = $row[17];
+              $m_min = $row[18];
+              $m_remarks = $row[19];
+              $user_id = Auth::user()->id;
+              $slug = Auth::user()->id;
+
+              $material = Material::create(compact("m_required","m_unit","m_description","m_code","m_consumption","m_stock","m_mesc","m_max","m_min", "user_id", "slug"));
+              $materials[] = $material->id;
+            }
+            $this->syncMaterials($mr, $materials);
+            break;
+          }
+        });
+
+    }
 
 
 }

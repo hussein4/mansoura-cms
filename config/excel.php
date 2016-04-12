@@ -509,10 +509,13 @@ return array(
             |
             */
 
-            'test' => array(
+            'Required' => array(
 
-                'firstname' => 'A2'
-
+                'mr_no' => 'N2',
+                'mr_date' => 'N3',
+                'mr_requesting_dept' => 'C3',
+                'mr_estimated_cost' => 'O5',
+                'mr_subject' => 'D8',
             )
 
         )
