@@ -749,7 +749,7 @@
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });

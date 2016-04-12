@@ -20,23 +20,23 @@
                             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                                 <thead>
                                 <tbody>
-
+                                @unless ($tag->vlist->isEmpty())
                                 <tr>
                                     <th colspan="2">Suppliers</th>
 
                                 </tr>
 
-
                                 @foreach ($tag->vlist as $suppliers)
                                     <tr>
-
                                         <td>
                                             <li>  <a href=" {{ action('VlistsController@show', [$suppliers->slug]) }} " > <span> {{ $suppliers->vname }} </span></a></li>
                                         </td>
 
                                     </tr>
                                 @endforeach
+                                @endunless
 
+                                @unless ($tag->material->isEmpty())
                                 <tr>
                                     <th colspan="2">Material</th>
 
@@ -45,14 +45,15 @@
 
                                 @foreach ($tag->material as $materials)
                                     <tr>
-
                                         <td>
                                             <li>  <a href=" {{ action('MaterialsController@show', [$materials->slug]) }} " > <span> {{ $materials->m_description }} </span></a></li>
                                         </td>
 
                                     </tr>
                                 @endforeach
+                                @endunless
 
+                                @unless ($tag->budgetry->isEmpty())
                                 <tr>
                                     <th colspan="2">Budgetry Material Request.</th>
 
@@ -62,10 +63,13 @@
                                         <td>
                                             <li>  <a href=" {{ action('BudgetriesController@show', [$b->slug]) }} " > <span> {{ $b->mr_b_no }} </span></a></li>
                                         </td>
-
                                     </tr>
 
                                 @endforeach
+
+                                @endunless
+
+                                @unless ($tag->mr->isEmpty())
                                 <tr>
                                     <th colspan="2">Material Request No.</th>
 
@@ -79,34 +83,37 @@
                                     </tr>
 
                                 @endforeach
+                                @endunless
 
 
+                                @unless ($tag->tender->isEmpty())
                                 <tr>
                                     <th colspan="2">Tender No.</th>
                                 </tr>
 
                                 @foreach ($tag->tender as $tenders)
                                     <tr>
-
                                         <td>
                                             <li>  <a href=" {{ action('TendersController@show', [$tenders->slug]) }} " > <span> {{ $tenders->mr_t_no }} </span></a></li>
                                         </td>
                                     </tr>
                                 @endforeach
+                                @endunless
 
 
+                                @unless ($tag->po->isEmpty())
                                 <tr>
                                     <th colspan="2">Purchase Order No.</th>
                                 </tr>
 
                                 @foreach ($tag->po as $pos)
                                     <tr>
-
                                         <td>
                                             <li>  <a href=" {{ action('POsController@show', [$pos->slug]) }} " > <span> {{ $pos->po_no }} </span></a></li>
                                         </td>
                                     </tr>
                                 @endforeach
+                                    @endunless
 
 
 

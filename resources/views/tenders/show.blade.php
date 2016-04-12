@@ -25,14 +25,16 @@
                                 <tr>
                                     <th>MR No.</th>
                                 @foreach ($tender->mr as $m)
-                                    <td><a href=" {{ $m->mr_no }} "><span> {{ $m->mr_no }} </span></a></td>
-                                @endforeach
+                                        <td><a href=" {{ action('MRsController@show', [$m->slug]) }} " ><span>{{ $m->mr_no }} </span></a>
+
+                                    @endforeach
                                 </tr>
 
                                 <tr>
                                     <th>Subject</th>
                                     <td><b>{{ $tender->mr_t_subject }} </b> </td>
                                 </tr>
+
                                 <tr>
                                     <th>Officer</th>
                                     <td><b>{{ $tender->mr_t_officer }} </b> </td>
@@ -52,7 +54,7 @@
                                 <tr>
                                     <th>Currency</th>
                                     @foreach ($tender->mr as $m)
-                                        <td>  {{ $m->currency }} </td>
+                                        <td>  {{ $m->mr_currency }} </td>
                                     @endforeach
                                 </tr>
 

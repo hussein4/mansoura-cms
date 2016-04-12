@@ -47,6 +47,11 @@
             {!! Form::radio('mr_t_officer', 'Hussein') !!} Hussein
             {!! Form::radio('mr_t_officer', 'Islam') !!} Islam
             {!! Form::radio('mr_t_officer', 'Nehal') !!} Nehal
+            {!! Form::radio('mr_t_officer', 'Ahmed') !!} Ahmed
+            {!! Form::radio('mr_t_officer', 'Yasser') !!} Yasser
+            {!! Form::radio('mr_t_officer', 'Amira') !!} Amira
+            {!! Form::radio('mr_t_officer', 'Ayman') !!} Ayman
+            {!! Form::radio('mr_t_officer', 'Mahmoud') !!} Mahmoud
         </div>
     </div>
 </div>

@@ -59,10 +59,8 @@ class POsController extends Controller {
      */
     public function store( PORequest $request )
     {
-        //  dd($request->input('tag_list'));
-        $this->createPO( $request );
 
-        //   flash()->success('The Supplier has been Added');
+        $this->createPO( $request );
         flash()->overlay( 'The PO has been Successfully Added!', 'Good Job' );
         return redirect( 'pos' );
     }
