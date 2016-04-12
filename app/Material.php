@@ -22,8 +22,7 @@ class Material extends Model  implements SluggableInterface
     protected $dateFormat = 'd-M-Y g:i A';
    
     protected $dates =[
-        
-
+        'm_last_update_date',
     ];
 
     protected $fillable = [
@@ -72,6 +71,19 @@ class Material extends Model  implements SluggableInterface
     public function getCreatedatAttribute($date)
     {
         return  Carbon::parse($date)->format('d-M-Y g:i A');
+    }
+
+
+
+    public function getmlastupdatedateAttribute($date)
+    {
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+
+    }
+
+    public function setmlastupdatedateAttribute($date)
+    {
+        $this->attributes['m_last_update_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
     }
 
 

@@ -15,7 +15,9 @@ use Carbon\Carbon;
 use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
+use Storage;
 
+ini_set('max_execution_time', 0);
 
 class MaterialsController extends Controller
 {
@@ -33,7 +35,7 @@ class MaterialsController extends Controller
     public function index()
     {
         // $material = Material::latest('updated_at')->published()->get();
-       $material =Material::orderBy('created_at', 'desc')->paginate(10);
+       $material =Material::orderBy('updated_at', 'desc')->paginate(10);
         return view ('materials.index', compact('material' ));
     }
 
@@ -63,10 +65,9 @@ class MaterialsController extends Controller
      */
     public function store(MaterialRequest $request)
     {
-        //  dd($request->input('tag_list'));
+
         $this->createMaterial($request);
 
-        //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Material has been Successfully Added!', 'Good Job');
         return redirect ('materials');
     }
@@ -80,7 +81,7 @@ class MaterialsController extends Controller
         $tags = Tag::lists('name','id')->all();
 
 
-        return view('materials.edit',compact('material','tags','mr','suppliers'));
+        return view('materials.edit',compact('material','tags'));
     }
 
     /**
@@ -89,7 +90,7 @@ class MaterialsController extends Controller
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @internal param $id
      */
-    public function update(Material$material , MaterialRequest $request)
+    public function update(Material $material , MaterialRequest $request)
     {
        $material->update($request->all());
 
@@ -104,14 +105,10 @@ class MaterialsController extends Controller
      * @param array $tags
      * @internal param MaterialRequest $request
      */
-    public function syncTags(Material$material , array $tags)
+    public function syncTags(Material $material , array $tags)
     {
        $material->tags()->sync($tags);
     }
-
-
-
-
 
 
 
@@ -124,8 +121,6 @@ class MaterialsController extends Controller
     {
        $material= Auth::user()->material()->create($request->all());    //get authenticated user who saved  Material
         $this->syncTags($material, $request->input('tag_material_list'));
-
-
 
         return $material;
     }
@@ -145,7 +140,7 @@ class MaterialsController extends Controller
         $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-      Excel::load($uploadedFileLocation)->chunk(200, function ($results) {
+      Excel::load($uploadedFileLocation)->chunk(500, function ($results) {
             foreach($results as $row){
                echo $row->m_code."<br />";
                Material::create([
@@ -173,7 +168,7 @@ class MaterialsController extends Controller
                    'm_location'                =>$row->m_location,
                    'm_reorder'                 =>$row->m_reorder,
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
-                   'm_mesc'                    =>$row->m_mesc,
+
                    'user_id'                   =>Auth::user()->id,
                    'slug'                        =>Auth::user()->id
                    

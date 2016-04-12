@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Tenders : {{ $tender->mr_t_no }}</div>
+                    <div class="panel-heading"><h3><b>Tenders :</b> {{ $tender->mr_t_no }} </h3></div>
 
                     <div class="panel-body">
 
@@ -25,14 +25,16 @@
                                 <tr>
                                     <th>MR No.</th>
                                 @foreach ($tender->mr as $m)
-                                    <td><a href=" {{ $m->mr_no }} "><span> {{ $m->mr_no }} </span></a></td>
-                                @endforeach
+                                        <td><a href=" {{ action('MRsController@show', [$m->slug]) }} " ><span>{{ $m->mr_no }} </span></a>
+
+                                    @endforeach
                                 </tr>
 
                                 <tr>
                                     <th>Subject</th>
                                     <td><b>{{ $tender->mr_t_subject }} </b> </td>
                                 </tr>
+
                                 <tr>
                                     <th>Officer</th>
                                     <td><b>{{ $tender->mr_t_officer }} </b> </td>
@@ -52,7 +54,7 @@
                                 <tr>
                                     <th>Currency</th>
                                     @foreach ($tender->mr as $m)
-                                        <td>  {{ $m->currency }} </td>
+                                        <td>  {{ $m->mr_currency }} </td>
                                     @endforeach
                                 </tr>
 
@@ -239,10 +241,10 @@
                                 @endif
 
 
-
+                                </tbody>
                                 </thead>
 
-                                </tbody>
+
                             </table>
 
                             @unless ($tender->tags->isEmpty())

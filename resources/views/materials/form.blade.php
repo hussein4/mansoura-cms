@@ -72,6 +72,11 @@
 
 
 <div class="form-group" >
+    {!! Form::label('m_reorder', 'Reorder quantity:') !!}
+    {!! Form::text('m_reorder',null , ['class'=> 'form-control']) !!}
+</div>
+
+<div class="form-group" >
     {!! Form::label('m_last_unit_price', 'Material unit Price:') !!}
     {!! Form::text('m_last_unit_price',null , ['class'=> 'form-control']) !!}
 </div>
@@ -88,6 +93,12 @@
 
         </div>
     </div>
+</div>
+
+
+<div class="form-group" >
+    {!! Form::label('m_unit_price_conv_rate', 'Unit Price Conversion rate:') !!}
+    {!! Form::text('m_unit_price_conv_rate',null , ['class'=> 'form-control']) !!}
 </div>
 
 
@@ -115,10 +126,25 @@
     {!! Form::label('m_company', 'Company:') !!}
     <div class="row">
         <div class='col-sm-10'>
-            {!! Form::radio('m_company', '51') !!} 51
-            {!! Form::radio('m_company', '52') !!} 52
-            {!! Form::radio('m_company', '53') !!} 53
-            {!! Form::radio('m_company', '54') !!} 54
+            {!! Form::radio('m_company', '51') !!} 51 Qantara
+            {!! Form::radio('m_company', '52') !!} 52 Mansoura
+            {!! Form::radio('m_company', '53') !!} 53 MANS W/H
+            {!! Form::radio('m_company', '54') !!} 54 Rawda
+
+        </div>
+    </div>
+</div>
+
+
+<div class="form-group" >
+    {!! Form::label('m_requesting_dept', 'Material Requesting Dept.:') !!}
+    <div class="row">
+        <div class='col-sm-10'>
+            {!! Form::radio('m_requesting_dept', 'Operations') !!} Operations
+            {!! Form::radio('m_requesting_dept', 'Projects') !!} Projects
+            {!! Form::radio('m_requesting_dept', 'Admin') !!} Admin
+            {!! Form::radio('m_requesting_dept', 'IT') !!} IT
+            {!! Form::radio('m_requesting_dept', 'EXP') !!} EXP
 
         </div>
     </div>
@@ -131,12 +157,6 @@
 </div>
 
 
-<div class="form-group" >
-    {!! Form::label('m_requesting_dept', 'Material Requesting Dept.:') !!}
-    {!! Form::text('m_requesting_dept',null , ['class'=> 'form-control']) !!}
-</div>
-
-
 
 <div class="form-group" >
     {!! Form::label('m_remarks', 'Material Remarks.:') !!}
@@ -144,6 +164,16 @@
 </div>
 
 
+<div class="form-group">
+    {!! Form::label('m_last_update_date', 'Last Update:') !!}
+    <div class="row">
+        <div class='col-sm-6'>
+
+            {!! Form::input('text','m_last_update_date',null, ['class'=> 'form-control','id'=>'datetimepicker120']) !!}
+
+        </div>
+    </div>
+</div>
 
 
 <div class="form-group">

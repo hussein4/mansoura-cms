@@ -65,6 +65,11 @@
 <!-- from  21-50 datetimepicker quotation   -->
 <!-- from  51-80 datetimepicker Tender   -->
 <!-- from  81-100 datetimepicker PO   -->
+<!-- from  120-140 datetimepicker Material   -->
+<!-- from  151-160 datetimepicker Vlist   -->
+
+
+
 
 
 <script>
@@ -744,7 +749,7 @@
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1589,6 +1594,35 @@
     $(function()
     {
         $('#datetimepicker114').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker120').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker151').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',

@@ -111,10 +111,6 @@
 </div>
 
 
-<div class="form-group">
-    {!! Form::label('created_on', 'Created On:') !!}
-    {!! Form::input('date','created_on', $vlist->created_on , ['class'=> 'form-control']) !!}
-</div>
 
 
 <div class="form-group">

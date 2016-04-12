@@ -19,16 +19,14 @@
                             <table id="example" class="table stripe row-border order-column" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Material Code</th>
                                     <th>Material Description</th>
+                                    <th>Material Part No.</th>
+                                    <th>Material M.E.S.C</th>
                                     <th>Material Unit</th>
                                     <th>Material Stock</th>
                                     <th>Material Min</th>
                                     <th>Material Max</th>
                                     <th>Material  Unit Price </th>
-                                    <th>Material  Unit Currency </th>
-                                    
-
 
                                 </tr>
                                 </thead>
@@ -36,16 +34,15 @@
                                     <tbody>
                                     <tr>
 
-                                        <td><a href=" {{ action('MaterialsController@show', [$m->slug])  }} " > {{ $m->m_description }} </a></td>
-                                        <td>{{ $m->m_description }}</td>
+                                        <td><a href=" {{ action('MaterialsController@show', [$m->slug])  }}"> {{ $m->m_description }} </a></td>
+                                        <td>{{ $m->m_code }}</td>
+                                        <td>{{ $m->m_mesc }}</td>
                                         <td>{{ $m->m_unit }}</td>
                                         <td>{{ $m->m_stock }}</td>
                                         <td>{{ $m->m_min }}</td>
                                         <td>{{ $m->m_max }}</td>
-                                        <td>{{ $m->m_last_unit_price }}</td>
-                                        <td>{{ $m->m_last_unit_price_currency }}</td>
-
-
+                                        <td>{{ $m->m_last_unit_price }} {{ $m->m_last_unit_price_currency }} </td>
+                                        <td></td>
 
                                     </tr>
                                     </tbody>

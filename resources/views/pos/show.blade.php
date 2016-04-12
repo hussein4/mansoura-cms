@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Purchase Order : {{ $po->po_no }}</div>
+                    <div class="panel-heading"><h3><b>Purchase Order :</b> {{ $po->po_no }} </h3></div>
 
                     <div class="panel-body">
 
@@ -35,17 +35,20 @@
                                     <td>
                                         <ul>
                                             @foreach ($po->mr as $mrs)
-                                                <li> {{ $mrs->mr_no }}</li>
+
+                                              <a href=" {{ action('MRsController@show', [$mrs->slug]) }} " ><span>{{ $mrs->mr_no }} </span></a>
+
                                             @endforeach
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Supplier</th>
+                                    <th>Awarded Supplier</th>
                                     <td>
                                         <ul>
                                             @foreach ($po->suppliers as $supplier)
-                                                <li> {{ $supplier->vname }}</li>
+                                           <a href=" {{ action('VlistsController@show', [$supplier->slug]) }} " ><span>{{ $supplier->vname }} </span></a>
+
                                             @endforeach
                                         </ul>
 
@@ -86,14 +89,20 @@
                                 @unless ($po->material->isEmpty())
 
 
-                                    <th>Material Description / Part Number</th>
+                                    <th >Material Description</th>
+                                    <th >Part Number</th>
                                     <ul>
 
                                         @foreach ($po->material as $materials)
                                             <tr>
+
                                                 <td>
-                                                    <li><a href=" {{ $materials->slug }} "><span> {{ $materials->m_description }} / {{ $materials->m_code }}</span></a></li>
+                                                <li>  <a href=" {{ action('MaterialsController@show', [$materials->slug]) }} " > <span> {{ $materials->m_description }} </span></a></li>
                                                 </td>
+                                                <td>
+                                                    <li>  <a href=" {{ action('MaterialsController@show', [$materials->slug]) }} " > <span> {{ $materials->m_code }} </span></a></li>
+                                                </td>
+
                                             </tr>
                                         @endforeach
 
@@ -181,16 +190,17 @@
                                         <td>{{ $po->po_cover_invoice }}</td>
                                     </tr>
                                 @endif
-                                @if(isset($po->po_completed))
+                                @if(isset($po->po_completed) && !empty ($po->po_completed))
                                     <tr>
                                         <th>PO Completion </th>
                                         <td>{{ $po->po_completed }}</td>
                                     </tr>
                                 @endif
 
+                                </tbody>
                             </thead>
 
-                                </tbody>
+
                             </table>
 
                             @unless ($po->tags->isEmpty())
@@ -198,7 +208,8 @@
                                 <h5>Tags:</h5>
                                 <ul>
                                     @foreach ($po->tags as $tag)
-                                        <li> {{ $tag->name }}</li>
+                                        <li>  <a href=" {{ action('TagsController@show', [$tag->slug]) }} " > <span> {{ $tag->name }} </span></a></li>
+
                                     @endforeach
                                 </ul>
                             @endunless

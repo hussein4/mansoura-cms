@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Material Request : {{ $mr->mr_no }}</div>
+                    <div class="panel-heading"><h3><b>Material Request No.:</b> {{ $mr->mr_no }} </h3></div>
 
                     <div class="panel-body">
 
@@ -20,10 +20,7 @@
                             <table id="example" class="table table-striped table-bordered" width="100%" cellspacing="0">
                                 <thead>
                                 <tbody>
-                                <tr>
-                                    <th>Material Request No.</th>
-                                    <td><b>{{ $mr->mr_no }} </b> </td>
-                                </tr>
+
                                 <tr>
                                     <th>MR Date</th>
                                     <td>{{ $mr->mr_date }}</td>
@@ -45,19 +42,24 @@
                                     <th>MR Estimated Cost</th>
                                     <td>{{ $mr->mr_estimated_cost }}</td>
                                 </tr>
-
                                 @unless ($mr->materials->isEmpty())
 
 
-                                    <th>Material Description / Part Number</th>
+                                    <th >Material Description</th>
+                                    <th >Part Number</th>
                                     <ul>
 
                                         @foreach ($mr->materials as $material)
-                                         <tr>
-                                            <td>
-                                            <li><a href=" {{ $material->slug }} "><span> {{ $material->m_description }} / {{ $material->m_code }}</span></a></li>
-                                            </td>
-                                        </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <li>  <a href=" {{ action('MaterialsController@show', [$material->slug]) }} " > <span> {{ $material->m_description }} </span></a></li>
+                                                </td>
+                                                <td>
+                                                    <li>  <a href=" {{ action('MaterialsController@show', [$material->slug]) }} " > <span> {{ $material->m_code }} </span></a></li>
+                                                </td>
+
+                                            </tr>
                                         @endforeach
 
                                     </ul>
@@ -174,9 +176,10 @@
                                 </tr>
                                 @endif
 
+                                </tbody>
                                 </thead>
 
-                                </tbody>
+
                             </table>
 
                             @unless ($mr->tags->isEmpty())
@@ -184,7 +187,8 @@
                                 <h5>Tags:</h5>
                                 <ul>
                                     @foreach ($mr->tags as $tag)
-                                        <li><a href=" {{ $tag->name }} "><span> {{ $tag->name }} </span></a></li>
+                                        <li>  <a href=" {{ action('TagsController@show', [$tag->slug]) }} " > <span> {{ $tag->name }} </span></a></li>
+
                                     @endforeach
                                 </ul>
                             @endunless

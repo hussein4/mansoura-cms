@@ -57,7 +57,7 @@ class MRsController extends Controller
     public function store(MRRequest $request)
     {
         $this->createMR($request);
-        //   flash()->success('The Supplier has been Added');
+
         flash()->overlay('The Material Request has been Successfully Added!', 'Good Job');
         return redirect ('mrs');
     }

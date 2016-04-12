@@ -62,11 +62,9 @@ class RouteServiceProvider extends ServiceProvider
             }
             else
             {
-                $material = 'slug'; // This is the name of the column you wish to search
-
-                return Material::where($material , '=', $id)->first(); //  find the name to id association
+                $name = 'slug'; // This is the name of the column you wish to search
+                return Material::where($name , '=', $id)->first(); //  find the name to id association
             }
-            //   return \App\Vlist::published()->findOrFail($id);
 
         });
 
@@ -81,7 +79,6 @@ class RouteServiceProvider extends ServiceProvider
             else
             {
                 $name = 'slug'; // This is the name of the column you wish to search
-
                 return MR::where($name , '=', $id)->first(); //  find the name to id association
             }
           //  return MR::published()->findOrFail($id);
@@ -97,7 +94,6 @@ class RouteServiceProvider extends ServiceProvider
             else
             {
                 $name = 'slug'; // This is the name of the column you wish to search
-
                 return PO::where($name , '=', $id)->first(); //  find the name to id association
             }
 
