@@ -128,8 +128,8 @@ class MRsController extends Controller
         Excel::selectSheets('Required')->load($uploadedFileLocation)->byConfig("excel.import.sheets", function($sheet) use ($uploadedFileLocation)
         {
             $mr_no = $sheet->mr_no;
-            $mr_date = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($sheet->mr_date));
-            $mr_date = Carbon::createFromFormat('m-d-Y', $mr_date)->format('d-M-Y g:i A');
+            // $mr_date = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($sheet->mr_date));
+            $mr_date = Carbon::createFromFormat('d-m-Y', $sheet->mr_date)->format('d-M-Y g:i A');
             $mr_requesting_dept = $sheet->mr_requesting_dept;
             $mr_estimated_cost = $sheet->mr_estimated_cost;
             $mr_subject = $sheet->mr_subject;
