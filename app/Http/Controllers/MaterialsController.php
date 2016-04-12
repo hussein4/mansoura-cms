@@ -169,9 +169,7 @@ class MaterialsController extends Controller
                    'm_reorder'                 =>$row->m_reorder,
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
 
-                   'user_id'                   =>Auth::user()->id,
-                   'slug'                        =>Auth::user()->id
-                   
+                   'user_id'                   =>Auth::user()->id                   
                    
 
                 ]);
