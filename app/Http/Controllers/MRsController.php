@@ -165,7 +165,7 @@ class MRsController extends Controller
               $user_id = Auth::user()->id;
               $slug = Auth::user()->id;
 
-              $material = Material::updateOrCreate(compact("m_required","m_unit","m_description","m_code","m_consumption","m_stock","m_mesc","m_max","m_min", "user_id", "slug"));
+              $material = Material::updateOrCreate(compact("m_code"),compact("m_required","m_unit","m_description","m_code","m_consumption","m_stock","m_mesc","m_max","m_min", "user_id", "slug"));
               $materials[] = $material->id;
             }
             $this->syncMaterials($mr, $materials);
