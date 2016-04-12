@@ -24,7 +24,7 @@
 
                     <div class="results">
                         <div v-for="user in users">
-                            <h2>@{{ user.name }}</h2>
+                            <h2>@{{ mr_no }}</h2>
                         </div>
                     </div>
                     <script src="http://code.jquery.com/jquery.js"> </script>
