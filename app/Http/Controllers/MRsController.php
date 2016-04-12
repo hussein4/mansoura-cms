@@ -128,7 +128,7 @@ class MRsController extends Controller
         Excel::selectSheets('Required')->load($uploadedFileLocation)->byConfig("excel.import.sheets", function($sheet) use ($uploadedFileLocation)
         {
             $mr_no = $sheet->mr_no;
-            $mr_date = date('m-d-Y', \PHPExcel_Shared_Date::ExcelToPHP($sheet->mr_date));
+            $mr_date = date('d-m-Y', \PHPExcel_Shared_Date::ExcelToPHP($sheet->mr_date));
             $mr_date = Carbon::createFromFormat('m-d-Y', $mr_date)->format('d-M-Y g:i A');
             $mr_requesting_dept = $sheet->mr_requesting_dept;
             $mr_estimated_cost = $sheet->mr_estimated_cost;
@@ -165,7 +165,7 @@ class MRsController extends Controller
               $user_id = Auth::user()->id;
               $slug = Auth::user()->id;
 
-              $material = Material::create(compact("m_required","m_unit","m_description","m_code","m_consumption","m_stock","m_mesc","m_max","m_min", "user_id", "slug"));
+              $material = Material::updateOrCreate(compact("m_required","m_unit","m_description","m_code","m_consumption","m_stock","m_mesc","m_max","m_min", "user_id", "slug"));
               $materials[] = $material->id;
             }
             $this->syncMaterials($mr, $materials);
