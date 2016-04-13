@@ -5,7 +5,9 @@
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug" />
+    <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="laravel-with-admin-lte.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -32,8 +34,8 @@
       <file leaf-file-name="RouteServiceProvider.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.3076923" vertical-offset="1500" max-vertical-offset="3400">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2769231" vertical-offset="1500" max-vertical-offset="3400">
+              <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -153,7 +155,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -540,6 +541,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -730,7 +732,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="27" width="1374" height="745" extended-state="6" />
+    <frame x="-4" y="27" width="1374" height="745" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1167,31 +1169,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5538462" vertical-offset="1200" max-vertical-offset="3080">
           <caret line="93" column="50" selection-start-line="93" selection-start-column="50" selection-end-line="93" selection-end-column="50" />
-          <folding>
-            <marker date="1460486606353" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder=" @param CreateMRRequest $request ..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder=" @param MR $mr ..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder=" @param $id ..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder=" @param MR $mr ..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder=" @param MRRequest $request ..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606353" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1199,38 +1176,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6621418" vertical-offset="1501" max-vertical-offset="2640">
           <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding>
-            <marker date="1460486606405" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460486606405" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/RouteServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.3076923" vertical-offset="1500" max-vertical-offset="3400">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2769231" vertical-offset="1500" max-vertical-offset="3400">
+          <caret line="92" column="13" selection-start-line="92" selection-start-column="13" selection-end-line="92" selection-end-column="13" />
           <folding />
         </state>
       </provider>
