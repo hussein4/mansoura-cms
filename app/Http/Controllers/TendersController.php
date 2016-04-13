@@ -119,50 +119,35 @@ class TendersController extends Controller
 
     public function import()
     {
-        $file=Input::file("file");
+        $file = Input::file("file");
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
 
-        Excel::load($file, function($reader)
-        {
-            $results = $reader->get();
-            foreach($results as $row):
-                Tender::create([
-                    'mr_t_no'                                          =>$row->mr_t_no,
-                    'mr_t_subject'                                     =>$row->mr_t_subject,
-                    'mr_t_identity'                                    =>$row->mr_t_identity,
-                    'mr_t_officer'                                     =>$row->mr_t_officer,
-                    'mr_t_willing_fax'                                 =>date("d-M-Y g:i A",strtotime($row->mr_t_willing_fax)),
-                    'mr_t_willing_fax_closing_date'                    =>date("d-M-Y g:i A",strtotime($row->mr_t_willing_fax_closing_date)),
-                    'mr_t_prepare_draft'                               =>date("d-M-Y g:i A",strtotime($row->mr_t_prepare_draft)),
-                    'mr_t_sub_bid_committee_formation_memo'            =>date("d-M-Y g:i A",strtotime($row->mr_t_sub_bid_committee_formation_memo)),
-                    'mr_t_tender_criteria_memo'                        =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_criteria_memo)),
-                    'mr_t_tender_criteria_memo_reply'                  =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_criteria_memo_reply)),
-                    'mr_t_tender_call_for_tender_memo'                 =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_call_for_tender_memo)),
-                    'mr_t_tender_call_for_tender_signature'            =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_call_for_tender_signature)),
-                    'mr_t_tender_send_invitation_fax'                  =>date("d-M-Y g:i A",strtotime($row->mr_t_tender_send_invitation_fax)),
-                    'mr_t_closing_date'                                =>date("d-M-Y g:i A",strtotime($row->mr_t_closing_date)),
-                    'mr_t_clarifications_sent_to_tech_dept'            =>date("d-M-Y g:i A",strtotime($row->mmr_t_clarifications_sent_to_tech_dept)),
-                    'mr_t_clarifications_received_from_tech_dept'      =>date("d-M-Y g:i A",strtotime($row->mr_t_clarifications_received_from_tech_dept)),
-                    'mr_t_clarifications_reply_fax'                    =>date("d-M-Y g:i A",strtotime($row->mr_t_clarifications_reply_fax)),
-                    'mr_t_open_tech_envelops'                          =>date("d-M-Y g:i A",strtotime($row->mr_t_open_tech_envelops)),
-                    'mr_t_received_tech_clarifications_from_tech_dept' =>date("d-M-Y g:i A",strtotime($row->mr_t_received_tech_clarifications_from_tech_dept)),
-                    'mr_t_sending_tech_clarifications_to_suppliers'    =>date("d-M-Y g:i A",strtotime($row->mr_t_sending_tech_clarifications_to_suppliers)),
-                    'mr_t_receive_tech_clarifications_reply'           =>date("d-M-Y g:i A",strtotime($row->mr_t_receive_tech_clarifications_reply)),
-                    'mr_t_send_tech_clarifications_reply_to_tech_dept' =>date("d-M-Y g:i A",strtotime($row->mr_t_send_tech_clarifications_reply_to_tech_dept)),
-                    'mr_t_receive_tech_evaluation_report'              =>date("d-M-Y g:i A",strtotime($row->mr_t_receive_tech_evaluation_report)),
-                    'mr_t_issue_tech_evaluation'                       =>date("d-M-Y g:i A",strtotime($row->mr_t_issue_tech_evaluation)),
-                    'mr_t_tech_eval_signature'                         =>date("d-M-Y g:i A",strtotime($row->mr_t_tech_eval_signature)),
-                    'mr_t_open_commercial_offers'                      =>date("d-M-Y g:i A",strtotime($row->mr_t_open_commercial_offers)),
-                    'mr_t_issue_commercial_evaluation'                 =>date("d-M-Y g:i A",strtotime($row->mr_t_issue_commercial_evaluation)),
-                    'mr_t_commercial_evaluation_signature'             =>date("d-M-Y g:i A",strtotime($row->mr_t_commercial_evaluation_signature)),
-                    'mr_t_sending_awarding_faxes'                      =>date("d-M-Y g:i A",strtotime($row->mr_t_sending_awarding_faxes)),
-                    'mr_t_sending_fin_memo'                            =>date("d-M-Y g:i A",strtotime($row->mr_t_sending_fin_memo)),
-                    'mr_t_finished'                                    =>$row->mr_t_finished,
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-                    'user_id'                                          =>Auth::user()->id,
+      Excel::selectSheets('Sheet8')->load($uploadedFileLocation)->chunk(500, function ($results) {
+            foreach($results as $row){
+                $tender_data = [
+                    'mr_t_no'                                          =>   $row->mr_t_no,
+                    'mr_t_subject'                                     =>   $row->mr_t_subject,
+                    'mr_t_identity'                                    =>   $row->mr_t_identity,
+                    'mr_t_officer'                                     =>   $row->mr_t_officer,
+                    'mr_t_tender_send_invitation_fax'                  =>   date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tender_send_invitation_fax)),
+                    'mr_t_closing_date'                                =>   date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_closing_date)),
+                    'mr_t_open_tech_envelops'                          =>   date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_tech_envelops)),
+                    'mr_t_tech_eval_signature'                         =>   date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tech_eval_signature)),
+                    'mr_t_open_commercial_offers'                      =>   date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_commercial_offers)),
+                    'mr_t_commercial_evaluation_signature'             =>   date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_commercial_evaluation_signature)),
 
-                ]);
-            endforeach;
+                    'user_id'                                          =>   Auth::user()->id,
+                ];
+               echo $row->mr_t_no."<br />";
+                Tender::create($tender_data);
+            }
         });
+        \Storage::delete($storageRelativeLocation);
         return redirect ('tenders');
     }
 
