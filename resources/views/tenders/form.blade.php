@@ -1,9 +1,12 @@
 <div class="form-group">
 
     {!! Form::label('mr_tender_list', 'MR:') !!}
+    <div class="row">
+        <div class='col-sm-6'>
     {!! Form::select('mr_tender_list[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_tender_list' ,'multiple']) !!}
 </div>
-
+    </div>
+    </div>
 
 
 <div class="form-group">
@@ -44,6 +47,11 @@
             {!! Form::radio('mr_t_officer', 'Hussein') !!} Hussein
             {!! Form::radio('mr_t_officer', 'Islam') !!} Islam
             {!! Form::radio('mr_t_officer', 'Nehal') !!} Nehal
+            {!! Form::radio('mr_t_officer', 'Ahmed') !!} Ahmed
+            {!! Form::radio('mr_t_officer', 'Yasser') !!} Yasser
+            {!! Form::radio('mr_t_officer', 'Amira') !!} Amira
+            {!! Form::radio('mr_t_officer', 'Ayman') !!} Ayman
+            {!! Form::radio('mr_t_officer', 'Mahmoud') !!} Mahmoud
         </div>
     </div>
 </div>

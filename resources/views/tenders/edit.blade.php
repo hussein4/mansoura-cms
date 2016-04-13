@@ -17,9 +17,11 @@
                     <div class="panel-body">
 
 
-                        {!! Form::model($tender =new \App\Tender, ['url' => 'tenders' ]) !!}
 
-                        @include('tenders.form', ['submitButtonText' =>'Add New Tender Request'])
+                        {!! Form::model($tender,['method' => 'PATCH' , 'action' => ['TendersController@update',$tender->id]]) !!}
+
+
+                        @include('tenders.form', ['submitButtonText' =>'Update Tender '])
 
                         {!! Form::close() !!}
 

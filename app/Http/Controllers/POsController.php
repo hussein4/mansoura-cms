@@ -59,10 +59,8 @@ class POsController extends Controller {
      */
     public function store( PORequest $request )
     {
-        //  dd($request->input('tag_list'));
-        $this->createPO( $request );
 
-        //   flash()->success('The Supplier has been Added');
+        $this->createPO( $request );
         flash()->overlay( 'The PO has been Successfully Added!', 'Good Job' );
         return redirect( 'pos' );
     }
@@ -143,11 +141,19 @@ class POsController extends Controller {
      */
     public function import()
     {
-        $file = Input::file( "file" );
+        $file = Input::file("file");
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
 
-        Excel::filter( 'chunk' )->load( $file )->chunk( 250, function ($reader) {
-            $results = $reader->get();
-            foreach ( $results as $row ):
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
+
+
+        Excel::load($uploadedFileLocation)->chunk(500, function ($results) {
+
+            foreach($results as $row):
+                echo $row->po_no."<br />";
                 PO::create( [
                     'po_no'                     => $row->po_no,
                     'po_subject'                => $row->po_subject,
@@ -171,6 +177,7 @@ class POsController extends Controller {
                 ] );
             endforeach;
         } );
+        \Storage::delete($storageRelativeLocation);
         return redirect( 'pos' );
     }
 

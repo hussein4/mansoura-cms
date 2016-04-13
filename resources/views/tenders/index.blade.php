@@ -24,7 +24,7 @@
                                     <th>Tender Subject</th>
                                     <th>MR No.</th>
                                     <th>Estimated Cost</th>
-                                    <th>Currency</th>
+
                                     <th>Officer</th>
 
 
@@ -40,18 +40,20 @@
 
                                         <td>{{$t->mr_t_subject}}</td>
 
+
                                         @foreach($t->mr as $m)
-                                            <td><a href ="{{ $m->mr_no }} "><span>{{ $m->mr_no }}</span></a></td>
-                                        @endforeach
+
+                                        <td><a href=" {{ action('MRsController@show', [$m->slug]) }} " ><span>{{ $m->mr_no }} </span></a>
+                                     </td>
+                                      @endforeach
+
+
 
 
                                         @foreach($t->mr as $m)
-                                            <td>{{ $m->mr_estimated_cost }}</td>
+                                            <td>{{ $m->mr_estimated_cost }} {{ $m->mr_currency }}</td>
                                         @endforeach
 
-                                        @foreach($t->mr as $m)
-                                            <td>{{ $m->mr_currency }}</td>
-                                        @endforeach
 
                                         <td>{{ $t->mr_t_officer  }}</td>
 

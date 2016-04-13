@@ -57,10 +57,9 @@ class BudgetriesController extends Controller
      */
     public function store(BudgetryRequest $request)
     {
-        // dd($request->input('tag_list'));
+
         $this->createBudgetry($request);
 
-        //   flash()->success('The Supplier has been Added');
         flash()->overlay('The Budgetry Request has been Successfully Added!', 'Good Job');
         return redirect ('budgetries');
     }

@@ -23,7 +23,7 @@
                                         <th>Service</th>
                                         <th>Grade</th>
                                         <th>Remarks</th>
-                                        <th>slug</th>
+
                                     </tr>
                                     </thead>
                 @foreach($vlist as $list)
@@ -36,7 +36,7 @@
                                  <td>{{$list->vservice}}</td>
                                  <td>{{$list->vgrade}}</td>
                                  <td>{{$list->vremarks}}</td>
-                               <td>{{$list->slug}}</td>
+
                                    <td>
                                        <form action="/vlist/{{ $list->id }}" method="POST">
                                            {{ csrf_field() }}

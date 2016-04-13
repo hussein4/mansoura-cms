@@ -21,35 +21,35 @@
                                 <thead>
                                 <tbody>
 
-                                @if(isset($material->m_code))
+                                @if(isset($material->m_code) && !empty($material->m_code) )
                                 <tr>
                                     <th>Material Part No.</th>
                                     <td>{{ $material->m_code }}</td>
                                 </tr>
                                 @endif
 
-                                @if(isset($material->m_mesc))
+                                @if(isset($material->m_mesc) && !empty($material->m_mesc) )
                                     <tr>
                                         <th>Material M.E.S.C</th>
                                         <td>{{ $material->m_mesc }}</td>
                                     </tr>
                                 @endif
 
-                                @if(isset($material->m_unit))
+                                @if(isset($material->m_unit) && !empty ($material->m_unit) )
                                 <tr>
-                                    <th>Material Unit</th>
+                                    <th>Material Unit </th>
                                     <td>{{ $material->m_unit }}</td>
                                 </tr>
                                 @endif
 
-                                @if(isset($material->m_stock))
+                                @if(isset($material->m_stock) && !empty($material->m_stock) )
                                 <tr>
                                     <th>Material Stock</th>
                                     <td>{{ $material->m_stock }}</td>
                                 </tr>
                                 @endif
 
-                                @if(isset($material->m_min))
+                                @if(isset($material->m_min) )
                                 <tr>
                                     <th>Material minimum Stock</th>
                                     <td>{{ $material->m_min }}</td>
@@ -79,7 +79,7 @@
                                 @endif
 
 
-                                @if(isset($material->m_required))
+                                @if(isset($material->m_required) && !empty($material->m_required))
                                     <tr>
                                         <th>Material Last Required Quantity</th>
                                         <td>{{ $material->m_required }}</td>
@@ -132,7 +132,7 @@
 
                                 @if(isset($material->m_company))
                                     <tr>
-                                        <th>Material Usage</th>
+                                        <th>Company</th>
                                         <td>{{ $material->m_company }}</td>
                                     </tr>
                                 @endif
@@ -165,13 +165,14 @@
                                 <h5>Tags:</h5>
                                 <ul>
                                     @foreach ($material->tags as $tag)
-                                        <li> {{ $tag->name }}</li>
+                                        <li>  <a href=" {{ action('TagsController@show', [$tag->slug]) }} " > <span> {{ $tag->name }} </span></a></li>
+
                                     @endforeach
                                 </ul>
                             @endunless
 
 
-                            <li><a href=" {{ action('MaterialsController@edit', [$material->id]) }} "><i class='fa fa-link'></i> <span>Edit Material : {!! $material->m_code !!}</span></a></li>
+                            <li><a href=" {{ action('MaterialsController@edit', [$material->id]) }} "><i class='fa fa-link'></i> <span>Edit Material : {!! $material->m_description !!}</span></a></li>
                         </material>
 
 

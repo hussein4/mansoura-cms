@@ -12,9 +12,7 @@ class TagsController extends Controller
 {
     public function show(Tag $tag)
     {
-       $vlist= $tag->vlist()->published()->get();
 
-        return view ('vlist.index',compact('vlist'));
-
+        return view ('tags.show',compact('tag'));
     }
 }

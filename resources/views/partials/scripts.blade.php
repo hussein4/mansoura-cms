@@ -66,6 +66,8 @@
 <!-- from  51-80 datetimepicker Tender   -->
 <!-- from  81-100 datetimepicker PO   -->
 <!-- from  120-140 datetimepicker Material   -->
+<!-- from  151-160 datetimepicker Vlist   -->
+
 
 
 
@@ -747,7 +749,7 @@
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
+            useCurrent: false,
             inline:true,
             sideBySide: true
         });
@@ -1615,6 +1617,22 @@
         });
     });
 </script>
+
+
+<script>
+    $(function()
+    {
+        $('#datetimepicker151').datetimepicker
+        ({
+
+            format: 'DD-MMMM-YYYY hh:00 A',
+
+            inline:true,
+            sideBySide: true
+        });
+    });
+</script>
+
 
 
 

@@ -19,10 +19,9 @@ class Vlist extends Model implements SluggableInterface
         'save_to'    => 'slug',
     ];
 
-//}
-//class Vlist extends Model
-//{
     protected $table = 'vlist';
+
+    protected $dateFormat = 'd-M-Y g:i A';
 
     protected $fillable = [
         'vname',
@@ -39,37 +38,66 @@ class Vlist extends Model implements SluggableInterface
         'vgrade',
         'vpath',
         'user_id',
-        'created_on' ,
-        'created_at',
+
+
         'slug',
 
 
 
     ];
 
-    protected $dates = ['created_on','=>','date(Y-m-d H:i:s)'];
+    protected $dates = [
+
+        'created_on',
+        'updated_on',
+
+    ];
 
 
     public function scopePublished($query)
     {
-         $query->where('created_on','<=',Carbon::now());
+        $query->where('created_at','<=',Carbon::now());
     }
 
-    public function setCreatedonAttribute($date)
+
+    public function getCreatedatAttribute($date)
     {
-        $this->attributes['created_on']=Carbon::parse($date);
+        return  Carbon::parse($date)->format('d-M-Y g:i A');
     }
 
-    /**
-     * get created on attribute
-     * @param $date
-     * @return string
-     */
-    public function getCreatedonAttribute($date)
+    public function setCreatedatAttribute($date)
     {
-       return  Carbon::parse($date)->format('Y-m-d');
+        $this->attributes['created_at']=Carbon::parse($date);
+
     }
 
+
+    public function getUpdatedatAttribute($date)
+    {
+        return  Carbon::parse($date)->format('d-M-Y g:i A');
+
+
+    }
+
+    public function setUpdatedatAttribute($date)
+    {
+        $this->attributes['updated_at']=Carbon::parse($date);
+    }
+
+
+
+/*
+
+    public function getupdatedatAttribute($date)
+    {
+        return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
+    }
+
+    public function setupdatedatAttribute($date)
+    {
+        $this->attributes['updated_at']= $date ? Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+    }
+*/
 
     /**
      * vlist is owned by a user

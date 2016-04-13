@@ -85,8 +85,8 @@
                                 <h5>Tags:</h5>
                                 <ul>
                                     @foreach ($budgetry->tags as $tag)
-                                        <li><a href=" {{ $tag->name }} "><span> {{ $tag->name }} </span></a></li>
-                                    @endforeach
+                                        <li>  <a href=" {{ action('TagsController@show', [$tag->slug]) }} " > <span> {{ $tag->name }} </span></a></li>
+                                         @endforeach
                                 </ul>
                             @endunless
 

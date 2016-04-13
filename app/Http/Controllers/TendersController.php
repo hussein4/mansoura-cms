@@ -17,6 +17,7 @@ use App\Tender;
 
 use Carbon\Carbon;
 use Auth;
+
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
@@ -48,31 +49,20 @@ class TendersController extends Controller
         $mr= MR::lists('mr_no','id')->all();
         $suppliers = Vlist::lists('vname','id')->all();
         return view('tenders.create',compact('tags','mr','suppliers'));
-
-        //  return view('$tenders.create_b',compact('tags'));
-    }
+            }
 
 
 
 
-    /**
-     * @param Create$TenderRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
     public function store(TenderRequest $request)
     {
-        // dd($request->input('tag_list'));
-        $this->createTender($request);
 
-        //   flash()->success('The Supplier has been Added');
+        $this->createTender($request);
         flash()->overlay('The Material Request has been Successfully Added!', 'Good Job');
         return redirect ('tenders');
     }
 
-    /**
-     * @param $Tender $tender
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
     public function edit(Tender $tender)
     {
         $tags = Tag::lists('name','id')->all();
@@ -81,11 +71,7 @@ class TendersController extends Controller
         return view('tenders.edit',compact('tender','tags','mr','suppliers'));
     }
 
-    /**
-     * @param $id
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
+
     public function update(Tender $tender , TenderRequest $request)
     {
         $tender->update($request->all());
@@ -116,9 +102,9 @@ class TendersController extends Controller
         $tender->suppliers()->sync($suppliers);
     }
 
-    /** save a new mr
-     * @param $TenderRequest $request
-     * @return mixed
+    /** save a new tender
+     * @param TenderRequest $request
+     * @return
      */
     private function createTender(TenderRequest $request)
     {

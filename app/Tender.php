@@ -403,7 +403,7 @@ class Tender extends Model implements SluggableInterface
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag' ,'mrs_tag','mr_id')->withTimestamps();
+        return $this->belongsToMany('App\Tag' ,'tag_tender','tender_id')->withTimestamps();
     }
 
     public function suppliers()
