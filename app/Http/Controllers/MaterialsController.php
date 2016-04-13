@@ -170,11 +170,8 @@ class MaterialsController extends Controller
                    'm_last_update_date'        =>date("d-M-Y g:i A",strtotime($row->m_last_update_date)),
 
                    'user_id'                   =>Auth::user()->id                   
-                   
-
                 ]);
             }
-
         });
 
       \Storage::delete($storageRelativeLocation);
