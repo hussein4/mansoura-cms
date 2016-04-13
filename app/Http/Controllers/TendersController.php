@@ -127,7 +127,7 @@ class TendersController extends Controller
         $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-      Excel::selectSheets('Sheet8')->load($uploadedFileLocation)->chunk(500, function ($results) {
+      Excel::load($uploadedFileLocation)->chunk(500, function ($results) {
             foreach($results as $row){
                 $tender_data = [
                     'mr_t_no'                                          =>   $row->mr_t_no,

@@ -29,8 +29,6 @@
 
 
 
-
-
                                 </tr>
                                 </thead>
                                 @foreach($tender as $t)
@@ -40,19 +38,19 @@
 
                                         <td>{{$t->mr_t_subject}}</td>
 
-
+                                        <td>
                                         @foreach($t->mr as $m)
+                                        <a href=" {{ action('MRsController@show', [$m->slug]) }} " ><span>{{ $m->mr_no }} </span></a>
+                                            @endforeach
+                                        </td>
 
-                                        <td><a href=" {{ action('MRsController@show', [$m->slug]) }} " ><span>{{ $m->mr_no }} </span></a>
-                                     </td>
-                                      @endforeach
+                                            <td>
+                                                @foreach($t->mr as $m)
 
+                                                {{ $m->mr_estimated_cost }} {{ $m->mr_currency }}
+                                                @endforeach
 
-
-
-                                        @foreach($t->mr as $m)
-                                            <td>{{ $m->mr_estimated_cost }} {{ $m->mr_currency }}</td>
-                                        @endforeach
+                                            </td>
 
 
                                         <td>{{ $t->mr_t_officer  }}</td>
