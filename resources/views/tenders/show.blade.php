@@ -258,6 +258,8 @@
                             @endunless
 
                             <li><a href="{{ action('TendersController@edit', [$tender->id])  }}"><i class='fa fa-link'></i> <span>Edit Tender No. : {!! $tender->mr_t_no !!}</span></a></li>
+                            <li><a href="{{ action('TendersController@exportTender', [$tender->id]) }}"><i class='fa fa-link'></i> <span>Export Tender : {!! $tender->mr_t_no !!}</span></a></li>
+
 
 
 

@@ -144,12 +144,61 @@ class TendersController extends Controller
                     'user_id'                                          =>   Auth::user()->id,
                 ];
                echo $row->mr_t_no."<br />";
-                Tender::create($tender_data);
+                $tender=Tender::updateOrCreate(compact("tender_data"));
+
             }
+
+
         });
+
+        $this->storeMRTenderListFromFile($tender,$uploadedFileLocation);
         \Storage::delete($storageRelativeLocation);
         return redirect ('tenders');
     }
+
+    protected function storeMRTenderListFromFile(Tender $tender, $file)
+    {
+        Excel::selectSheets('Required')->load($file, function($reader) use ($tender)
+        {
+
+            foreach ($reader as $result) {
+                $result_array = $result->getActiveSheet();
+                $mrs = [];
+                foreach ($result_array as $row) {
+                    $mr_no = $row[1];
+
+                    $user_id = Auth::user()->id;
+
+                    $mr = MR::updateOrCreate(compact("mr_no", "user_id"));
+                    $mrs[] = $mr->id;
+                }
+                $this->syncMr($mr, $mrs);
+                break;
+            }
+        });
+
+    }
+
+
+
+
+
+    public function exportTender( Tender $tenders )
+    {
+        Excel::create( $tenders->mr_t_no, function($excel) use($tenders)
+        {
+            $excel->setTitle('Tender Details');
+            $excel->setCreator('Hussein')
+                ->setCompany('Mansoura');
+
+            $excel->sheet( $tenders->mr_t_no, function($sheet) use ($tenders)
+            {
+
+                $sheet->loadView( 'tenders.tenders_excel_template' )->with('tenders', $tenders);
+            } );
+        } )->export('xlsx');
+    }
+
 
 
 

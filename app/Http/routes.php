@@ -14,6 +14,7 @@
 use App\Http\Controllers\VlistsController;
 use App\Tag;
 use App\Vlist;
+
 use Illuminate\Http\Request;
 use App\Contracts\Search;
 use Maatwebsite\Excel\Facades\Excel;
@@ -50,29 +51,6 @@ Route::put('v_list/import','VlistsController@import');
 Route::resource('vlist','VlistsController');
 
 
-/*
-
-Route::get('vlist/{id}/eval', array('as' => 'vlist.eval', function($id)
-{
-    // return our view and Nerd information
-
-    return View('vlist.eval') // pulls app/views/nerd-edit.blade.php
-   ->with('vlist', \App\Vlist::find($id))
-     ->with('tags', \App\Tag::find($id));
-}));
-
-
-
-Route::get('vlist/{vlist}/eval','VlistsController@average');
-
-/*
-Route::get('vlist/{vlist}/eval','VlistsController@average', function($id)
-{
-    return View('vlist.eval')
-        ->with('vlist', \App\Vlist::find($id));
-});
-*/
-// route to process the form
 
 
 Route::get('budgetry_s/import', function () {
@@ -111,11 +89,13 @@ Route::resource('pos','POsController');
 
 
 
+Route::get('tenders/{tenders}/exporttender','TendersController@exportTender');
 
 Route::get('tender_s/import', function () {
     return view('tenders.upload_tenders');
 });
 Route::put('tender_s/import','TendersController@import');
+
 
 Route::resource('tenders','TendersController');
 

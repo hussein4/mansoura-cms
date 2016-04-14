@@ -62,7 +62,11 @@
                                 @endforeach
 
                             </table>
-                            <a href="tender_s/import">Import Tenders</a>
+                            <li><a href="tender_s/import">Import Tenders</a></li>
+
+                           <li><a href="tender_s/exportTender">Export Tenders</a></li>
+
+
                         </tender>
 
 
