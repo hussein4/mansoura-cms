@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/tenders/tenders_excel_template.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TendersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TendersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tenders/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tenders/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tenders/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/tenders/show.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -700,7 +694,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="27" width="1374" height="745" extended-state="6" />
+    <frame x="-4" y="27" width="1374" height="745" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
