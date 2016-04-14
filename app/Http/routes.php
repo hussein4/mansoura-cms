@@ -88,7 +88,7 @@ Route::get('po_s/exportExcel/{pos}','POsController@exportExcel');
 Route::resource('pos','POsController');
 
 
-
+Route::get('tenders/exportall','TendersController@exportAll');
 Route::get('tenders/{tenders}/exporttender','TendersController@exportTender');
 
 Route::get('tender_s/import', function () {

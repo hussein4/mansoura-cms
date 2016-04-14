@@ -63,11 +63,14 @@
 
                             </table>
                             <li><a href="tender_s/import">Import Tenders</a></li>
+                           <li><a href="{{ action('TendersController@exportAll') }}"><i class='fa fa-link'></i> <span>Export Tenders</span></a></li>
 
-                           <li><a href="tender_s/exportTender">Export Tenders</a></li>
 
 
-                        </tender>
+
+
+
+                       </tender>
 
 
 

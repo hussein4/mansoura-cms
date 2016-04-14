@@ -144,14 +144,14 @@ class TendersController extends Controller
                     'user_id'                                          =>   Auth::user()->id,
                 ];
                echo $row->mr_t_no."<br />";
-                $tender=Tender::updateOrCreate(compact("tender_data"));
+               Tender::updateOrCreate(compact("tender_data"));
 
             }
 
 
         });
 
-        $this->storeMRTenderListFromFile($tender,$uploadedFileLocation);
+
         \Storage::delete($storageRelativeLocation);
         return redirect ('tenders');
     }
@@ -199,6 +199,40 @@ class TendersController extends Controller
         } )->export('xlsx');
     }
 
+
+    public function exportAll(){
+
+        Excel::create('Tenders', function($excel) {
+
+            $excel->sheet('Tenders', function($sheet) {
+                $tenders = Tender::all();
+
+                $arr =array();
+                foreach($tenders as $tender) {
+                    foreach($tender->mr as $m)
+
+
+                    {
+                        $data =  array($m->mr_no, $m->mr_estimated_cost, $m->mr_currency,
+                            $tender->mr_t_no, $tender->mr_t_subject, $tender->mr_t_identity,
+                            $tender->mr_t_officer
+                             );
+                        array_push($arr, $data);
+                    }
+                }
+
+                //set the titles
+                $sheet->fromArray($arr,null,'A1',false,false)->prependRow(array(
+                    'Mr No.', 'MR Estimated Cost', 'Mr Currency',
+                   'Tender No', 'Tender Subject', 'Identity', 'Officer'
+                    )
+
+                );
+
+            });
+
+        })->export('xls');
+    }
 
 
 
