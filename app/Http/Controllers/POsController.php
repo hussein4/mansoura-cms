@@ -181,7 +181,9 @@ class POsController extends Controller {
         return redirect( 'pos' );
     }
 
-    public function exportExcel( PO $po )
+    public function exportExcel()
+
+
     {
         Excel::create( 'po', function($excel) use($po){
 
@@ -193,4 +195,83 @@ class POsController extends Controller {
         } )->export('xlsx');
     }
 
+    public function exportAll(  )
+   /*
+    {
+        Excel::create( 'po', function($excel) {
+        //  foreach($excel as $row):
+            $po=PO::all()->toArray();
+/*
+            $po_issued=Carbon::createFromFormat('YYYY-m-d H:i:s',$po->po_issued);
+              $po_no=$po->po_no;
+            dd($po->po_issued);
+
+        array_push($po ,array(
+            $po_issued->copy()->format('YYYY-m-d H:i:s'),
+            $po_no->po_no,
+
+
+        ));
+        // $po = PO::all()->toArray();
+
+/*
+                $po = [
+                    'po_no' =>   $row->po_no,
+                    'po_subject'   ,
+                    'po_issued'     ,
+                    'po_confirmation'      ,
+                    'po_loaded_on_ideas'     ,
+                    'po_approved_on_ideas'   ,
+                    'po_memo_to_fin'        ,
+                    'po_delivery_date'         ,
+                    'po_reminder_delivery_date',
+                    'po_mr_received_date'   ,
+                    'po_mrr_received_date'   ,
+                    'po_mrr_missing_date'    ,
+                    'po_mrr_rejected_date'   ,
+                    'po_invoice_received_date'  ,
+                    'po_penalty'    ,
+                    'po_cover_invoice'   ,
+                    'po_completed' ,
+                    'popath'   ,
+                    'user_id'
+                ];
+*/
+            //   endforeach;
+/*
+            $excel->sheet( 'po', function($sheet) use ($po){
+              $sheet->fromArray($po,null,'A1',true);
+
+
+
+                $sheet->loadView( 'pos.pos_all_template' )->with('po',$po);
+            } );
+        } )->export('xlsx');
+    }
+*/
+        {
+            Excel::create('Purchase Orders', function($excel)
+            {
+                $excel->sheet('POs', function($sheet)
+                {
+                    $data = PO::all();
+
+                    $pos = [];
+
+                    foreach ($data as $key => $value)
+                    {
+                      //  foreach($key->mr as $m)
+
+                            $po['po_no'] = $value['po_no'];
+                            $po['po_issued'] = $value['po_issued'];
+                        //    $m['mr_no'] = $value['mr_no'];
+
+                            $pos[] = $po;
+                    }
+
+
+                    $sheet->loadView( 'pos.pos_all_template' )->with('pos',$pos);
+                });
+            })->download('xlsx');
+        }
 }

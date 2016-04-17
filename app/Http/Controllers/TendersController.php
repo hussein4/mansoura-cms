@@ -200,34 +200,72 @@ class TendersController extends Controller
     }
 
 
-    public function exportAll(){
+    public function exportAll(Tender $tenders){
 
-        Excel::create('Tenders', function($excel) {
+        Excel::create('Tender', function($excel) use($tenders){
+            $excel->setTitle('Tenders');
 
-            $excel->sheet('Tenders', function($sheet) {
+            $excel->sheet('Tenders', function($sheet) use ($tenders)
+            {
                 $tenders = Tender::all();
+
+/*
+                $sheet->loadView( 'tenders.excel_all_tenders' )->with('tenders',$tenders);
+            } );
+        } )->export('xlsx');
+    }
+*/
 
                 $arr =array();
                 foreach($tenders as $tender) {
                     foreach($tender->mr as $m)
-
+                        foreach($tender->suppliers as $supplier)
 
                     {
                         $data =  array($m->mr_no, $m->mr_estimated_cost, $m->mr_currency,
                             $tender->mr_t_no, $tender->mr_t_subject, $tender->mr_t_identity,
-                            $tender->mr_t_officer
+                            $tender->mr_t_officer,$supplier->vname,$tender->mr_t_send_invitation_fax,
+                            $tender->mr_t_closing_date,$tender->mr_t_open_tech_envelops,
+                            $tender->mr_t_tech_eval_signature,$tender->mr_t_open_commercial_offers,
+                            $tender->mr_t_commercial_evaluation_signature
+
                              );
                         array_push($arr, $data);
                     }
                 }
 
+
                 //set the titles
                 $sheet->fromArray($arr,null,'A1',false,false)->prependRow(array(
                     'Mr No.', 'MR Estimated Cost', 'Mr Currency',
-                   'Tender No', 'Tender Subject', 'Identity', 'Officer'
+                   'Tender No', 'Tender Subject', 'Identity', 'Officer',
+                        'Invited Suppliers','Invitation Faxes','Closing Date',
+                    'Technical Opening','Technical Evaluation','Commercial Opening',
+                    'Commercial Evaluation'
+
                     )
 
+
                 );
+
+                $sheet->setHeight(1, 20);
+                $sheet->setAutoSize(true);
+                $sheet->setBorder('A1:N15', 'thin');
+
+                $sheet->cells('A1:N300', function($cells) {
+
+                    $cells->setAlignment('center');
+
+                });
+                $sheet->cells('A1:N1', function($cells) {
+
+                    $cells->setFontColor('#0000FF');
+                    $cells->setBackground('#A9A9A9');
+                    $cells->setFontSize(14);
+                    $cells->setFontWeight('bold');
+                    $cells->setAlignment('center');
+
+                });
 
             });
 

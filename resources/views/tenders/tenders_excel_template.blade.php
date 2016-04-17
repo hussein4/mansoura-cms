@@ -39,49 +39,6 @@
     </tbody>
 </table>
 <table class="table-border">
-<!--
-        <tr>
-            <th align="center">MR No.</th>
-
-            <th align="center">MR Received</th>
-
-            <th align="center">Tender No.</th>
-
-            <th align="center">Subject</th>
-
-            <th align="center">Identity</th>
-
-            <th align="center">officer</th>
-
-            <th align="center">Issuance Date</th>
-
-            <th align="center">Closing Date</th>
-
-            <th align="center">Invited Vendors</th>
-
-            <th align="center">Technical Opening</th>
-
-            <th align="center">Technical Evaluation</th>
-
-            <th align="center">Commercial Evaluation</th>
-
-            <th align="center">Awarded Bidder</th>
-
-            <th align="center">P.O Number</th>
-
-            <th align="center">P.O Issuance </th>
-
-            <th align="center">P.O Cost </th>
-
-            <th align="center">P.O Promised Delivery </th>
-
-            <th align="center">Actual Delivery </th>
-
-            <th align="center">Remarks </th>
-
-
-       </tr>
--->
 
     @foreach($tenders->mr as $m)
         <tr>
