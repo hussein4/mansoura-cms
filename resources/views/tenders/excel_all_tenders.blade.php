@@ -38,7 +38,8 @@
 </table>
 
 <table class ="table-border">
-    <tr>
+    <tr style="color:rgb(19, 54, 153);background-color: #9a9a9a" align="center">
+
         <th align="center">MR No.</th>
 
         <th align="center">MR Received</th>
@@ -61,37 +62,47 @@
 
         <th align="center">Technical Evaluation</th>
 
+        <th align="center">Commercial Opening</th>
         <th align="center">Commercial Evaluation</th>
 
-        <th align="center">Awarded Bidder</th>
+        <th align="center">Sending Awarding</th>
 
-        <th align="center">P.O Number</th>
+        <th align="center">Sending Finance Memo</th>
 
-        <th align="center">P.O Issuance </th>
+        <th align="center">Tender Finished</th>
 
-        <th align="center">P.O Cost </th>
-
-        <th align="center">P.O Promised Delivery </th>
-
-        <th align="center">Actual Delivery </th>
-
-        <th align="center">Remarks </th>
 
 
     </tr>
+    @foreach($tenders as $tender)
+    @foreach($tender->mr as $m)
+            @foreach($tender->suppliers as $s)
 
-    @foreach($tenders->mrs as $m)
     <tr>
         <td align="center">{{ $m->mr_no }}</td>
         <td align="center">{{ $m->mr_received_date }}</td>
-        <td >{{ $tenders->mr_t_no }}</td>
-        <td >{{ $tenders->mr_t_subject }}</td>
+        <td >{{ $tender->mr_t_no }}</td>
+        <td >{{ $tender->mr_t_subject }}</td>
+        <td >{{ $tender->mr_t_identity }}</td>
+        <td >{{ $tender->mr_t_officer }}</td>
+        <td >{{ $tender->mr_t_tender_send_invitation_fax }}</td>
+        <td >{{ $tender->mr_t_closing_date}}</td>
+        <td >{{ $s->vname}}</td>
+        <td >{{ $tender->mr_t_open_tech_envelops}}</td>
+        <td >{{ $tender->mr_t_tech_eval_signature}}</td>
+        <td >{{ $tender->mr_t_open_commercial_offers}}</td>
+        <td >{{ $tender->mr_t_commercial_evaluation_signature}}</td>
+        <td >{{ $tender->mr_t_sending_awarding_faxes}}</td>
+        <td >{{ $tender->mr_t_sending_fin_memo}}</td>
+        <td >{{ $tender->mr_t_finished}}</td>
+
+
 
 
     </tr>
          @endforeach
-
-
+    @endforeach
+    @endforeach
 
 
 

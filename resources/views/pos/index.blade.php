@@ -70,7 +70,7 @@
 
                             </table>
                             <a href="po_s/import">Import Purchase Orders</a>
-                            <li><a href=" {{ action('POsController@exportAll') }} "><i class='fa fa-link'></i> <span>Export ALL Purchase Orders </span></a></li>
+                            <li><a href=" {{ action('POsController@exportAll') }} "><i class='fa fa-link'></i> <span>Export All Purchase Orders </span></a></li>
 
                         </po>
 

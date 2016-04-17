@@ -31,31 +31,72 @@
     <tbody>
 
     <tr style="color:rgb(51,51,153);background-color: #9a9a9a; font-weight: 400; ">
-        <th colspan="8" align="center"  >PURCHASE ORDER</th></tr>
-    <tr style="color:rgb(51,51,153);" align="center" >
+        <th colspan="18" align="center"  >PURCHASE ORDERS</th>
+    </tr>
+
 
 
     </tbody>
 </table>
 <table class = 'table-border'>
 
-<tr >
-    <th>MR No.</th>
-    <th >PURCHASE ORDER No.</th>
-    <th >Purchase Order Date</th>
+<tr style="color:rgb(19, 54, 153);background-color: #9a9a9a" align="center">
+    <th align="center">MR No.</th>
+    <th align="center" >P.O No.</th>
+    <th align="center">Subject</th>
+    <th align="center">P.O Date</th>
+    <th align="center">Awarded Supplier</th>
+    <th align="center">P.O Total Cost</th>
+    <th align="center">P.O Currency</th>
+    <th align="center">Purchase Method</th>
+    <th align="center">Payment Method</th>
+    <th align="center">Delivery Method</th>
+    <th align="center">Delivery Date</th>
+    <th align="center">Loaded on Ideas</th>
+    <th align="center">Actual Receive Date</th>
+    <th align="center">Material Receive Report</th>
+    <th align="center">Invoice Received Date</th>
+    <th align="center">Penalty</th>
+    <th align="center">Cover Invoice</th>
+    <th align="center">Completed</th>
 
-</tr>
-@foreach($pos as $po)
+    </tr>
 
-<tr style="color:rgb(51,51,153);" align="center" >
+@foreach($pos as $p)
+@foreach($p->mr as $m)
+@foreach($p->suppliers as $s)
+
+<tr style="color:rgb(0, 0, 0);" align="center" >
+
+    <th align="center" > {{ $m['mr_no'] }} </th>
+    <th align="center" > {{ $p['po_no'] }} </th>
+    <th align="center" > {{ $p['po_subject'] }} </th>
+    <th align="center" >{{ $p['po_issued'] }} </th>
+    <th align="center" >{{ $s['vname'] }} </th>
+    <th align="center" >{{ $p['po_total_cost'] }} </th>
+    <th align="center" >{{ $p['po_currency'] }} </th>
+    <th align="center" >{{ $p['po_purchase_method'] }} </th>
+    <th align="center" >{{ $p['po_payment_method'] }} </th>
+    <th align="center" >{{ $p['po_delivery_method'] }} </th>
+    <th align="center" >{{ $p['po_delivery_date'] }} </th>
+    <th align="center" >{{ $p['po_loaded_on_ideas'] }} </th>
+    <th align="center" >{{ $p['po_mr_received_date'] }} </th>
+    <th align="center" >{{ $p['po_mrr_received_date'] }} </th>
+    <th align="center" >{{ $p['po_invoice_received_date'] }} </th>
+    <th align="center" >{{ $p['po_penalty'] }} </th>
+    <th align="center" >{{ $p['po_cover_invoice'] }} </th>
+    <th align="center" >{{ $p['po_completed'] }} </th>
 
 
-<th align="center" > {{ $po['po_no'] }} </th>
-    <th align="center" >{{ $po['po_issued'] }} </th>
+
+
 
 
 </tr>
 @endforeach
+@endforeach
+@endforeach
+
 
 
 
