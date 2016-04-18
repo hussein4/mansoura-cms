@@ -280,6 +280,11 @@ class PO extends Model implements SluggableInterface
     }
 
 
+    public function tenders()
+    {
+        return $this->belongsToMany('App\Tender','po_tender' ,'po_id','tender_id');
+    }
+
     public function getTagListpoAttribute()
     {
         return $this->tags->lists('id')->all();
@@ -303,6 +308,13 @@ class PO extends Model implements SluggableInterface
         return $this->material()->lists('id')->all();
     }
 
+
+
+    public function getTendersListAttribute()
+    {
+
+        return $this->tenders()->lists('id')->all();
+    }
 
 
 

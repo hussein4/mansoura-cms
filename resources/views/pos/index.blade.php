@@ -22,11 +22,12 @@
                                     <th>PO Number</th>
                                     <th>Subject</th>
                                     <th>MR No.</th>
-                                    <th>Supplier</th>
+                                    <th>Tender No.</th>
+                                    <th>Awarded Supplier</th>
                                     <th>PO issuance</th>
                                     <th>Estimated Delivery </th>
                                     <th>Total Cost </th>
-                                    <th>Currency </th>
+
 
 
 
@@ -43,23 +44,36 @@
                                         <td>
                                             <ul>
                                                 @foreach ($p->mr as $mrs)
-                                                    <li> {{ $mrs->mr_no }}</li>
+                                                    <li><a href=" {{ action('MRsController@show', [$mrs->slug])  }} " >{{ $mrs->mr_no }}</a></li>
+
                                                 @endforeach
                                             </ul>
                                         </td>
 
+
+                                        <td>
+                                            <ul>
+                                                @foreach ($p->tenders as $tender)
+                                                    <li><a href=" {{ action('TendersController@show', [$tender->slug])  }} " >{{ $tender->mr_t_no }}</a></li>
+
+                                                @endforeach
+                                            </ul>
+                                        </td>
+
+
                                         <td>
                                             <ul>
                                                 @foreach ($p->suppliers as $supplier)
-                                                    <li> {{ $supplier->vname }}</li>
+                                                    <li> <a href="{{ action('VlistsController@show', [$supplier->slug])  }}">{{ $supplier->vname }}</a></li>
+                                                    </li>
                                                 @endforeach
                                             </ul>
                                         </td>
 
                                         <td>{{ $p->po_issued }}</td>
                                         <td>{{ $p->po_delivery_date }}</td>
-                                        <td>{{ $p->po_total_cost }}</td>
-                                        <td>{{ $p->po_currency }}</td>
+                                        <td>{{ $p->po_total_cost }} {{ $p->po_currency }} </td>
+
 
 
                                     </tr>

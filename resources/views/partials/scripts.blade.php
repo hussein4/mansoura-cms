@@ -1721,8 +1721,16 @@
 
 
 <script type="text/javascript">
+    $('#tenders_list').select2({
+        placeholder: 'choose Tender No.',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+<script type="text/javascript">
     $('#mr_tender_list').select2({
-        placeholder: 'choose a Tag',
+        placeholder: 'Choose MR. No.',
         tags:true,
         data:[
         ]

@@ -31,9 +31,17 @@
     {!! Form::select('mr_list[]',$mr,null,[ 'class'=>'form-control','id'=> 'mr_list' ,'multiple']) !!}
 </div>
 
+
 <div class="form-group">
 
-    {!! Form::label('suppliers_list', 'Supplier') !!}
+    {!! Form::label('tenders_list', 'Tender No.:') !!}
+    {!! Form::select('tenders_list[]',$tenders,null,[ 'class'=>'form-control','id'=> 'tenders_list' ,'multiple']) !!}
+</div>
+
+
+<div class="form-group">
+
+    {!! Form::label('suppliers_list', 'Awarded Supplier') !!}
     {!! Form::select('suppliers_list[]',$suppliers,null,[ 'class'=>'form-control','id'=> 'suppliers_list','multiple' ]) !!}
 </div>
 

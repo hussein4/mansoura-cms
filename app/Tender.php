@@ -398,7 +398,7 @@ class Tender extends Model implements SluggableInterface
 
     public function po()
     {
-        return $this->hasMany('App\PO')->withTimestamps();
+        return $this->belongsToMany('App\PO','po_tender','tender_id')->withTimestamps();
     }
 
     public function tags()
@@ -436,6 +436,10 @@ class Tender extends Model implements SluggableInterface
         return $this->suppliers->lists('id')->all();
     }
 
+    public function getPoTenderListAttribute()
+    {
+        return $this->po->lists('id')->all();
+    }
 
 
 }

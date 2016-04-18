@@ -34,5 +34,10 @@ class AppServiceProvider extends ServiceProvider
                   new Client($config['app_id'] ,$config['api_key'])
               );
         });
+
+        if ($this->app->environment() == 'local') {
+            $this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+        }
     }
+
 }

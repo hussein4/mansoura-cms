@@ -91,11 +91,12 @@ Route::resource('pos','POsController');
 
 Route::get('tenders/exportall','TendersController@exportAll');
 Route::get('tenders/{tenders}/exporttender','TendersController@exportTender');
+//Route::get('tenders/{tenders}/exporttender','TendersController@exportTender');
 
 Route::get('tender_s/import', function () {
     return view('tenders.upload_tenders');
 });
-Route::put('tender_s/import','TendersController@import');
+Route::put('tender_s/import','TendersController@ImportAllTender');
 
 
 Route::resource('tenders','TendersController');

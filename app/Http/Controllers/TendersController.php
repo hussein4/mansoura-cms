@@ -13,6 +13,7 @@ use App\Http\Requests\TenderRequest;
 
 use App\Tag;
 use App\Tender;
+use App\PO;
 
 
 use Carbon\Carbon;
@@ -48,7 +49,8 @@ class TendersController extends Controller
         $tags= Tag::lists('name','id')->all();
         $mr= MR::lists('mr_no','id')->all();
         $suppliers = Vlist::lists('vname','id')->all();
-        return view('tenders.create',compact('tags','mr','suppliers'));
+        $po = PO::lists('po_no','id')->all();
+        return view('tenders.create',compact('tags','mr','suppliers','po'));
             }
 
 
@@ -68,7 +70,9 @@ class TendersController extends Controller
         $tags = Tag::lists('name','id')->all();
         $mr= MR::lists('mr_no','id')->all();
         $suppliers = Vlist::lists('vname','id')->all();
-        return view('tenders.edit',compact('tender','tags','mr','suppliers'));
+        $po = PO::lists('po_no','id')->all();
+
+        return view('tenders.edit',compact('tender','tags','mr','suppliers','po'));
     }
 
 
@@ -78,6 +82,7 @@ class TendersController extends Controller
         $this->syncTags($tender, $request->input('tag_list_tender'));
         $this->syncMr($tender, $request->input('mr_tender_list'));
         $this->syncSuppliers($tender, $request->input('suppliers_tender_list'));
+        $this->syncPo($tender,$request->input('po_tender_list'));
         return redirect ('tenders');
     }
 
@@ -102,6 +107,11 @@ class TendersController extends Controller
         $tender->suppliers()->sync($suppliers);
     }
 
+    public function syncPo(Tender $tender , array $po)
+    {
+        $tender->po()->sync($po);
+    }
+
     /** save a new tender
      * @param TenderRequest $request
      * @return
@@ -112,6 +122,8 @@ class TendersController extends Controller
         $this->syncTags($tender, $request->input('tag_list_tender'));
         $this->syncMr($tender, $request->input('mr_tender_list'));
         $this->syncSuppliers($tender, $request->input('suppliers_tender_list'));
+        $this->syncPo($tender,$request->input('po_tender_list'));
+
         return $tender;
     }
 
@@ -148,7 +160,6 @@ class TendersController extends Controller
 
             }
 
-
         });
 
 
@@ -156,23 +167,77 @@ class TendersController extends Controller
         return redirect ('tenders');
     }
 
-    protected function storeMRTenderListFromFile(Tender $tender, $file)
+    public function ImportAllTender()
     {
-        Excel::selectSheets('Required')->load($file, function($reader) use ($tender)
+        $file = Input::file("file");
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
+
+
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
+
+        Excel::load($uploadedFileLocation)->chunk(500, function ($results) use ($uploadedFileLocation)
+        {
+            foreach($results as $row)
+
+            {
+
+
+                    $mr_t_no = $row->mr_t_no;
+                    $mr_t_subject = $row->mr_t_subject;
+                    $mr_t_identity = $row->mr_t_identity;
+                    $mr_t_officer = $row->mr_t_officer;
+                    $mr_t_tender_send_invitation_fax = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tender_send_invitation_fax));
+                    $mr_t_closing_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_closing_date));
+                    $mr_t_open_tech_envelops = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_tech_envelops));
+                    $mr_t_tech_eval_signature = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tech_eval_signature));
+                    $mr_t_open_commercial_offers = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_commercial_offers));
+                    $mr_t_commercial_evaluation_signature = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_commercial_evaluation_signature));
+                    // $user_id                            = Auth::user()->id;
+                    $tender_data = compact('mr_t_no', 'mr_t_subject', 'mr_t_identity', 'mr_t_officer',
+                        'mr_t_tender_send_invitation_fax', 'mr_t_closing_date', 'mr_t_open_tech_envelops',
+                        'mr_t_tech_eval_signature', 'mr_t_open_commercial_offers', 'mr_t_commercial_evaluation_signature');
+
+                    $tender = Auth::user()->tender()->updateOrCreate($tender_data);
+                    $this->storeMRListFromFile($tender, $uploadedFileLocation);
+                    echo $row->mr_t_no . "<br />";
+                }
+
+        });
+        return redirect ('tenders');
+    }
+
+
+    protected function storeMRListFromFile(Tender $tender, $file)
+    {
+        Excel::load($file, function($reader) use ($tender)
         {
 
-            foreach ($reader as $result) {
-                $result_array = $result->getActiveSheet();
-                $mrs = [];
-                foreach ($result_array as $row) {
-                    $mr_no = $row[1];
 
+            foreach ($reader as $result) {
+                /*
+                $maxDataCol = $result->getActiveSheet()->getHighestDataColumn();
+                $maxDataRow = $result->getActiveSheet()->getHighestDataRow() ;
+
+                $result_array = $result->getActiveSheet()->rangeToArray('A1:'.$maxDataCol.$maxDataRow, true, true, true);
+               */
+                $mrs = [];
+                foreach ($result as $row) {
+
+
+                    $mr_no= $row[1];
+
+                   // $mr_received_date =$row->mr_received_date;
                     $user_id = Auth::user()->id;
 
-                    $mr = MR::updateOrCreate(compact("mr_no", "user_id"));
+                    $mr = MR::updateOrCreate(compact('mr_no',"user_id"));
                     $mrs[] = $mr->id;
+                    dd($mr_no);
                 }
-                $this->syncMr($mr, $mrs);
+                $this->syncMr($tender, $mrs);
+
                 break;
             }
         });

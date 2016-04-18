@@ -31,7 +31,7 @@
 
 
                                 <tr>
-                                    <th>Mr. No.:</th>
+                                    <th>Mr. No.</th>
                                     <td>
                                         <ul>
                                             @foreach ($po->mr as $mrs)
@@ -42,6 +42,21 @@
                                         </ul>
                                     </td>
                                 </tr>
+
+
+                                <tr>
+                                    <th>Tender No.</th>
+                                    <td>
+                                        <ul>
+                                            @foreach ($po->tenders as $tender)
+
+                                                <a href=" {{ action('TendersController@show', [$tender->slug]) }} " ><span>{{ $tender->mr_t_no }} </span></a>
+
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                </tr>
+
                                 <tr>
                                     <th>Awarded Supplier</th>
                                     <td>

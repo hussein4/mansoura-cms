@@ -11,6 +11,7 @@ use App\Tag;
 use App\MR;
 use App\Material;
 use App\Vlist;
+use App\Tender;
 use Carbon\Carbon;
 use Auth;
 use Illuminate\Support\Facades\Input;
@@ -50,7 +51,8 @@ class POsController extends Controller {
         $mr        = MR::lists( 'mr_no', 'id' )->all();
         $material  = Material::lists( 'm_description', 'id' )->all();
         $suppliers = Vlist::lists( 'vname', 'id' )->all();
-        return view( 'pos.create', compact( 'tags', 'mr', 'material', 'suppliers' ) );
+        $tenders =   Tender::lists('mr_t_no','id')->all();
+        return view( 'pos.create', compact( 'tags', 'mr', 'material', 'suppliers','tenders' ) );
     }
 
     /**
@@ -75,7 +77,9 @@ class POsController extends Controller {
         $mr        = MR::lists( 'mr_no', 'id' )->all();
         $material  = Material::lists( 'm_description', 'id' )->all();
         $suppliers = Vlist::lists( 'vname', 'id' )->all();
-        return view( 'pos.edit', compact( 'tags', 'mr', 'po', 'material', 'suppliers' ) );
+        $tenders =   Tender::lists('mr_t_no','id')->all();
+
+        return view( 'pos.edit', compact( 'tags', 'mr', 'po', 'material', 'suppliers','tenders' ) );
     }
 
     /**
@@ -92,6 +96,8 @@ class POsController extends Controller {
         $this->syncMr( $po, $request->input( 'mr_list' ) );
         $this->syncMaterial( $po, $request->input( 'material_list' ) );
         $this->syncSuppliers( $po, $request->input( 'suppliers_list' ) );
+        $this->syncTenders( $po, $request->input( 'tenders_list' ) );
+
         return redirect( 'pos' );
     }
 
@@ -120,6 +126,12 @@ class POsController extends Controller {
         $po->suppliers()->sync( $suppliers );
     }
 
+    public function syncTenders( PO $po, array $tenders )
+    {
+        $po->tenders()->sync( $tenders );
+    }
+
+
     /** save a new PO
      * @param PORequest $request
      * @return mixed
@@ -131,6 +143,8 @@ class POsController extends Controller {
         $this->syncMr( $po, $request->input( 'mr_list' ) );
         $this->syncMaterial( $po, $request->input( 'material_list' ) );
         $this->syncSuppliers( $po, $request->input( 'suppliers_list' ) );
+        $this->syncTenders( $po, $request->input( 'tenders_list' ) );
+
 
         return $po;
     }
