@@ -181,69 +181,52 @@ class TendersController extends Controller
         Excel::load($uploadedFileLocation)->chunk(500, function ($results) use ($uploadedFileLocation)
         {
             foreach($results as $row)
-
             {
+                $mr_t_no = $row->mr_t_no;
+                $mr_t_subject = $row->mr_t_subject;
+                $mr_t_identity = $row->mr_t_identity;
+                $mr_t_officer = $row->mr_t_officer;
+                $mr_t_tender_send_invitation_fax = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tender_send_invitation_fax));
+                $mr_t_closing_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_closing_date));
+                $mr_t_open_tech_envelops = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_tech_envelops));
+                $mr_t_tech_eval_signature = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tech_eval_signature));
+                $mr_t_open_commercial_offers = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_commercial_offers));
+                $mr_t_commercial_evaluation_signature = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_commercial_evaluation_signature));
+                // $user_id                            = Auth::user()->id;
+                $tender_data = compact('mr_t_no', 'mr_t_subject', 'mr_t_identity', 'mr_t_officer',
+                    'mr_t_tender_send_invitation_fax', 'mr_t_closing_date', 'mr_t_open_tech_envelops',
+                    'mr_t_tech_eval_signature', 'mr_t_open_commercial_offers', 'mr_t_commercial_evaluation_signature');
 
-
-                    $mr_t_no = $row->mr_t_no;
-                    $mr_t_subject = $row->mr_t_subject;
-                    $mr_t_identity = $row->mr_t_identity;
-                    $mr_t_officer = $row->mr_t_officer;
-                    $mr_t_tender_send_invitation_fax = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tender_send_invitation_fax));
-                    $mr_t_closing_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_closing_date));
-                    $mr_t_open_tech_envelops = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_tech_envelops));
-                    $mr_t_tech_eval_signature = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_tech_eval_signature));
-                    $mr_t_open_commercial_offers = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_open_commercial_offers));
-                    $mr_t_commercial_evaluation_signature = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_t_commercial_evaluation_signature));
-                    // $user_id                            = Auth::user()->id;
-                    $tender_data = compact('mr_t_no', 'mr_t_subject', 'mr_t_identity', 'mr_t_officer',
-                        'mr_t_tender_send_invitation_fax', 'mr_t_closing_date', 'mr_t_open_tech_envelops',
-                        'mr_t_tech_eval_signature', 'mr_t_open_commercial_offers', 'mr_t_commercial_evaluation_signature');
-
-                    $tender = Auth::user()->tender()->updateOrCreate($tender_data);
-                    $this->storeMRListFromFile($tender, $uploadedFileLocation);
-                    echo $row->mr_t_no . "<br />";
-                }
-
+                $tender = Auth::user()->tender()->updateOrCreate($tender_data);
+                $this->storeMRAndPOListsFromFile($tender, $results);
+            }
         });
+
         return redirect ('tenders');
     }
 
 
-    protected function storeMRListFromFile(Tender $tender, $file)
+    protected function storeMRAndPOListsFromFile(Tender $tender, $results)
     {
-        Excel::load($file, function($reader) use ($tender)
-        {
+        $user_id = Auth::user()->id;
+        $mrs = [];
+        $pos = [];
 
+        foreach ($results as $row) {
+            if($tender->mr_t_no == $row->mr_t_no){
+                $mr_no = $row->mr_no;
+                $mr = MR::updateOrCreate(compact('mr_no',"user_id"));
+                $mrs[] = $mr->id;
 
-            foreach ($reader as $result) {
-                /*
-                $maxDataCol = $result->getActiveSheet()->getHighestDataColumn();
-                $maxDataRow = $result->getActiveSheet()->getHighestDataRow() ;
-
-                $result_array = $result->getActiveSheet()->rangeToArray('A1:'.$maxDataCol.$maxDataRow, true, true, true);
-               */
-                $mrs = [];
-                foreach ($result as $row) {
-
-
-                    $mr_no= $row[1];
-
-                   // $mr_received_date =$row->mr_received_date;
-                    $user_id = Auth::user()->id;
-
-                    $mr = MR::updateOrCreate(compact('mr_no',"user_id"));
-                    $mrs[] = $mr->id;
-                    dd($mr_no);
-                }
-                $this->syncMr($tender, $mrs);
-
-                break;
+                $po_no = $row->po_no;
+                $po = PO::updateOrCreate(compact('po_no',"user_id"));
+                $pos[] = $po->id;
             }
-        });
+        }
 
+        $this->syncMr($tender, $mrs);
+        $this->syncPo($tender, $pos);
     }
-
 
 
     public function exportTender( Tender $tenders )
