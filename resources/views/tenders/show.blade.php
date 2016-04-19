@@ -240,6 +240,17 @@
                                 </tr>
                                 @endif
 
+                                @unless ($tender->po->isEmpty())
+                                <tr>
+                                    <th>PO No.</th>
+                                    @foreach ($tender->po as $p)
+                                        <td><a href=" {{ action('POsController@show', [$p->slug]) }} " ><span>{{ $p->po_no }} </span></a>
+
+                                    @endforeach
+                                </tr>
+                                    @endunless
+
+
 
                                 </tbody>
                                 </thead>

@@ -319,6 +319,12 @@
 </div>
 
 
+<div class="form-group">
+
+    {!! Form::label('po_tender_list', 'Purchase Order No:') !!}
+    {!! Form::select('po_tender_list[]',$po,null,[ 'class'=>'form-control','id'=> 'po_tender_list' ,'multiple']) !!}
+</div>
+
 
 
 <div class="form-group">

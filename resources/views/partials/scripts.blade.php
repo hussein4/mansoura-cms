@@ -1739,16 +1739,27 @@
 
 <script type="text/javascript">
     $('#suppliers_tender_list').select2({
-        placeholder: 'choose a Tag',
+        placeholder: 'choose a Supplier',
         tags:true,
         data:[
         ]
     });
 </script>
 
+
+<script type="text/javascript">
+    $('#po_tender_list').select2({
+        placeholder: 'choose a PO',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+
 <script type="text/javascript">
     $('#currency_list').select2({
-        placeholder: 'choose a currency',
+        placeholder: 'Choose a currency',
 
         data:[
         ]

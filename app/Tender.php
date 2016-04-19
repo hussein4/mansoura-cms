@@ -398,7 +398,7 @@ class Tender extends Model implements SluggableInterface
 
     public function po()
     {
-        return $this->belongsToMany('App\PO','po_tender','tender_id')->withTimestamps();
+        return $this->belongsToMany('App\PO','po_tender','tender_id','po_id')->withTimestamps();
     }
 
     public function tags()
