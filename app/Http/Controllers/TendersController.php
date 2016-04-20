@@ -181,6 +181,7 @@ class TendersController extends Controller
 
         Excel::load($uploadedFileLocation)->chunk(50, function ($results) use ($uploadedFileLocation)
         {
+            $user = Auth::user();
             foreach($results as $row)
             {
                 $mr_t_no = $row->mr_t_no;
@@ -198,8 +199,11 @@ class TendersController extends Controller
                     'mr_t_tender_send_invitation_fax', 'mr_t_closing_date', 'mr_t_open_tech_envelops',
                     'mr_t_tech_eval_signature', 'mr_t_open_commercial_offers', 'mr_t_commercial_evaluation_signature');
 
-                $tender = Auth::user()->tender()->updateOrCreate($tender_data);
+                $tender = $user->tender()->updateOrCreate($tender_data);
                 $this->storeMRAndPOListsFromFile($tender, $results);
+
+                $vname = $row->vname;
+                $user->vlist()->updateOrCreate(compact('vname'));
             }
         });
 
@@ -216,11 +220,16 @@ class TendersController extends Controller
         foreach ($results as $row) {
             if($tender->mr_t_no == $row->mr_t_no){
                 $mr_no = $row->mr_no;
-                $mr = MR::updateOrCreate(compact('mr_no',"user_id"));
+                $mr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_received_date));
+                $mr = MR::updateOrCreate(compact('mr_no', 'mr_received_date', 'user_id'));
                 $mrs[] = $mr->id;
 
                 $po_no = $row->po_no;
-                $po = PO::updateOrCreate(compact('po_no',"user_id"));
+                $po_issued = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_issued));
+                $po_total_cost = intval($row->po_total_cost);
+                $po_delivery_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_delivey_date));
+                $po_mrr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_mrr_received));
+                $po = PO::updateOrCreate(compact('po_no', 'user_id', 'po_issued', 'po_total_cost', 'po_delivery_date', 'po_mrr_received_date'));
                 $pos[] = $po->id;
             }
         }
