@@ -30,9 +30,11 @@ Route::get('/', function (Search $search ,Request $request) {
 Route::get('/search/vlist', function (Search $search ,Request $request) {
 
     $results = $search->index('vlist')
-        ->get($request->name);
+        ->get($request->supplier);
+
     return view('search', compact('results'));
 });
+
 
 
 

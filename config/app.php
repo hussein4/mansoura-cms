@@ -152,9 +152,11 @@ return [
         App\Providers\ViewComposerServiceProvider::class,
 
         'Maatwebsite\Excel\ExcelServiceProvider',
-
-
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class
+
+
 
 
 

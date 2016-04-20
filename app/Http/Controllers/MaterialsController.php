@@ -17,10 +17,32 @@ use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Storage;
 
+use Illuminate\Database\Eloquent\Model;
+use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+
 ini_set('max_execution_time', 0);
 
 class MaterialsController extends Controller
 {
+
+    use AlgoliaEloquentTrait;
+    public $indices = ['materials'];
+    public $algoliaSettings = [
+        'attributesToIndex' => [
+            'id',
+            'm_code',
+            'm_description',
+            'm_mesc'
+
+
+        ],
+        'customRanking' => [
+            'desc(popularity)',
+            'asc(name)',
+        ],
+    ];
+
+
 
     public function __construct()
     {

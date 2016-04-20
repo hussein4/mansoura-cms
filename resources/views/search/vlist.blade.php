@@ -22,9 +22,13 @@
                                                                   v-on:keyup="search | key 'enter'">
                                                    debounce="500">     -->
 
+                    <input type ="text"  v-model ="query" v-on:keyup="search | key 'enter'">
+
                     <div class="results">
-                        <div v-for="user in users">
-                            <h2>@{{ user.name }}</h2>
+                        <div v-for="supplier in suppliers">
+                            <h2>@{{ supplier.vname }}</h2>
+                            <h2>@{{ supplier.name }}</h2>
+
                         </div>
                     </div>
                     <script src="http://code.jquery.com/jquery.js"> </script>
@@ -40,7 +44,7 @@
 
                             data: {
                                 query: '',
-                                users: []
+                                suppliers: []
                             },
 
                             ready: function() {
@@ -56,8 +60,8 @@
                                                 suggestion: function(hit) {
                                                     return (
                                                     '<div>' +
-                                                    '<h3 class = "name" >'+ hit._highlightResult.name.value + '</h3>' +
-                                                    '<h4 class= "alternative_name">' + hit._highlightResult.name.value + '</h4>'
+                                                    '<h3 class = "supplier" >'+ hit._highlightResult.supplier.value + '</h3>' +
+                                                    '<h4 class= "alternative_name">' + hit._highlightResult.supplier.value + '</h4>'
                                                     )
                                                 }
                                             }
@@ -75,7 +79,7 @@
 
                                     this.index.search(this.query, function (error, results) {
 
-                                        this.users = results.hits;
+                                        this.suppliers = results.hits;
 
                                     }.bind(this));
                                 }

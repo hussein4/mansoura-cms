@@ -22,6 +22,7 @@ use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
+ini_set('max_execution_time', 0);
 class TendersController extends Controller
 {
 
@@ -178,7 +179,7 @@ class TendersController extends Controller
         $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-        Excel::load($uploadedFileLocation)->chunk(500, function ($results) use ($uploadedFileLocation)
+        Excel::load($uploadedFileLocation)->chunk(50, function ($results) use ($uploadedFileLocation)
         {
             foreach($results as $row)
             {
