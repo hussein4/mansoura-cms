@@ -27,15 +27,26 @@ Route::get('/', function (Search $search ,Request $request) {
     return view('welcome', compact('results'));
 });
 
-Route::get('/search/vlist', function (Search $search ,Request $request) {
+Route::get('/search/supplier', function (Search $search ,Request $request ) {
 
-    $results = $search->index('vlist')
-        ->get($request->supplier);
 
-    return view('search', compact('results'));
+    $results= $search->index('suppliers')
+        ->get($request->name);
+       
+    return view ('search.supplier',compact('results'));
+
 });
 
 
+Route::get('/search/materials', function (Search $search , Request $request ){
+
+
+   $results= $search->index('getstarted_actors')
+       ->get($request->name);
+
+    return view ('search.materials',compact('results'));
+
+});
 
 
 

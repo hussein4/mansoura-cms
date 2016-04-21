@@ -49,7 +49,18 @@ class MaterialsController extends Controller
         $this->middleware('auth');
     }
 
+    public function search(Search $search, Request $request)
+    {
 
+        $material = Material::with('materials');
+
+     //   $material = Material::updateOrCreate()->all();
+        $material->pushToIndex();
+        $results = $search->index('materials')->get($request->query);
+        dd($request->query);
+        //dd($results);
+        return view('search.materials', compact('results'));
+    }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

@@ -17,7 +17,8 @@ class AlgoliaSearch implements Search
 
     public function index($index)
   {
-     return $this->index = $this->client->initIndex($index);
+      $this->index = $this->client->initIndex($index);
+      return $this;
 
   }
 
