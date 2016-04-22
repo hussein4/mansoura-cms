@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Storage;
 
-use Illuminate\Database\Eloquent\Model;
-use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
+//use Illuminate\Database\Eloquent\Model;
+//use AlgoliaSearch\Laravel\AlgoliaEloquentTrait;
 
 ini_set('max_execution_time', 0);
 
