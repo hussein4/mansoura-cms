@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array(
 
         /*
          * Laravel Framework Service Providers...
@@ -154,15 +154,10 @@ return [
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 
-        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class
+        AlgoliaSearch\Laravel\AlgoliaServiceProvider::class,
 
 
-
-
-
-
-
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------

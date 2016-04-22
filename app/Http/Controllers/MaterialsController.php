@@ -24,7 +24,7 @@ ini_set('max_execution_time', 0);
 
 class MaterialsController extends Controller
 {
-
+/*
     use AlgoliaEloquentTrait;
     public $indices = ['materials'];
     public $algoliaSettings = [
@@ -42,7 +42,7 @@ class MaterialsController extends Controller
         ],
     ];
 
-
+*/
 
     public function __construct()
     {
