@@ -32,7 +32,7 @@ Route::get('/search/supplier', function (Search $search ,Request $request ) {
 
     $results= $search->index('suppliers')
         ->get($request->name);
-       
+
     return view ('search.supplier',compact('results'));
 
 });
