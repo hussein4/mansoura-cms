@@ -42,6 +42,7 @@
 
     <link href="{{ asset('/css/all.css') }}" rel="stylesheet" type="text/css" > </link>
 
+   <!--smart Search    -->
 
 
 </head>

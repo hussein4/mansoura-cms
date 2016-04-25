@@ -33,7 +33,14 @@ class MRsController extends Controller
     public function index()
     {
        // $mr = MR::latest('updated_at')->published()->get();
-        $mr =MR::orderBy('created_at', 'desc')->paginate(10);
+
+        $search = \Request::get('search');
+        $mr = MR::where('mr_no', 'like', '%' . $search . '%')
+            ->orWhere("mr_subject", 'like', '%' . $search . '%')
+            ->orderBy('mr_no')
+            ->paginate(10);
+
+      //  $mr =MR::orderBy('created_at', 'desc')->paginate(10);
         return view ('mrs.index', compact('mr' ));
     }
 

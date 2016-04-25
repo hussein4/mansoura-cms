@@ -61,6 +61,8 @@ Route::get('v_list/import', function () {
 });
 Route::put('v_list/import','VlistsController@import');
 
+
+
 Route::resource('vlist','VlistsController');
 
 
@@ -127,7 +129,7 @@ Route::resource('materials','MaterialsController');
 
 Route::get('tags/{tags}', 'TagsController@show');
 
-
+Route::get('/query', 'SearchController@index');
 
 Route::controllers([
     'auth'=>'Auth\AuthController',

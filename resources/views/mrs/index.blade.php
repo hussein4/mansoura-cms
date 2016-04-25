@@ -40,6 +40,7 @@
                                     </tr>
                                     </tbody>
                                 @endforeach
+                                @include('partials.search',['url'=>'mrs','link'=>'mrs'])
 
                             </table>
                             <a href="mr_s/import">Import Material Request</a>

@@ -15,6 +15,7 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 
 use Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
@@ -39,10 +40,28 @@ class VlistsController extends Controller {
 
     public function index()
     {
-        //  $vlist = Vlist::latest('updated_at')->published()->get();
-        $vlist = Vlist::orderBy('created_at', 'desc')->paginate(10);
-        return view('vlist.index', compact('vlist'));
+        /*
+        {
+            //  $vlist = Vlist::latest('updated_at')->published()->get();
+            $vlist = Vlist::orderBy('created_at', 'desc')->paginate(10);
+            return view('vlist.index', compact('vlist'));
+        }
+        */
+
+            $search = \Request::get('search'); //<-- we use global request to get the param of URI
+
+            $vlist = Vlist::where('vname', 'like', '%' . $search . '%')
+                ->orWhere("vservice", 'like', '%' . $search . '%')
+                ->orWhere("vgrade", 'like', '%' . $search . '%')
+                ->orWhere("vremarks", 'like', '%' . $search . '%')
+                ->orderBy('vservice')
+                ->paginate(10);
+
+            return view('vlist.index', compact('vlist'));
+
     }
+
+
 
     public function show(Vlist $vlist)
     {
@@ -263,6 +282,8 @@ class VlistsController extends Controller {
         });
         return redirect('vlist');
     }
+
+
 
 
 

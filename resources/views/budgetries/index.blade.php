@@ -47,6 +47,7 @@
                                     </tr>
                                     </tbody>
                                 @endforeach
+                                @include('partials.search',['url'=>'budgetries','link'=>'budgetries'])
 
                             </table>
                             <a href="budgetry_s/import">Import Budgetries Material Request</a>

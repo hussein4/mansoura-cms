@@ -93,6 +93,10 @@ desired effect
 
                         <link rel="stylesheet" href="/bower_components/iCheck/skins/flat/red.css" />
                        <script type="text/javascript" src="/bower_components/iCheck/icheck.js"></script>
+     <link rel="stylesheet" href="/vendor/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+
+
+     <script type="text/javascript" src="/vendor/selectize/js/standalone/selectize.min.js"></script>
 
                      <!-- Your Page Content Here -->
 

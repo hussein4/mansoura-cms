@@ -48,18 +48,20 @@
 
 
 
-                               </td>
+
                            </tr>
+
 
 
 
                                 </tbody>
                  @endforeach
-                              </table>
+                                    @include('partials.search',['url'=>'vlist','link'=>'vlist'])
+
+                                </table>
 
 
                     <li><a href="v_list/import">Import Suppliers List</a></li>
-
 
 
                 </vlist>
@@ -69,5 +71,7 @@
 </div>
 </div>
 </div>
+
     {!! $vlist->render() !!}
+
 @endsection

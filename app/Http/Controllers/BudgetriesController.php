@@ -31,8 +31,14 @@ class BudgetriesController extends Controller
 
     public function index()
     {
+        $search = \Request::get('search');
+        $budgetry = Budgetry::where('mr_b_no', 'like', '%' . $search . '%')
+            ->orWhere("mr_b_subject", 'like', '%' . $search . '%')
+            ->orWhere("slug", 'like', '%' . $search . '%')
+            ->orderBy('mr_b_no')
+            ->paginate(10);
 
-       $budgetry =Budgetry::orderBy('created_at', 'desc')->paginate(10);
+     //  $budgetry =Budgetry::orderBy('created_at', 'desc')->paginate(10);
         return view ('budgetries.index', compact('budgetry' ));
     }
 

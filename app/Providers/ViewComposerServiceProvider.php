@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\MR;
+use App\PO;
+use App\Tender;
 use App\Vlist;
 use Illuminate\Support\ServiceProvider;
 
@@ -35,6 +38,9 @@ class ViewComposerServiceProvider extends ServiceProvider
         view()->composer('home', function($view)
         {
             $view->with('latest', Vlist::latest()->first());
+            $view->with('latest', MR::latest()->first());
+            $view->with('latest', Tender::latest()->first());
+            $view->with('latest', PO::latest()->first());
         });
     }
 }

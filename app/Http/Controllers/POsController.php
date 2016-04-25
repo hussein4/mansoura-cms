@@ -31,7 +31,13 @@ class POsController extends Controller {
     public function index()
     {
         //  $po = PO::latest('updated_at')->published()->get();
-        $po = PO::orderBy( 'created_at', 'desc' )->paginate( 10 );
+        $search = \Request::get('search');
+        $po = PO::where('po_no', 'like', '%' . $search . '%')
+            ->orWhere("po_subject", 'like', '%' . $search . '%')
+            ->orWhere("slug", 'like', '%' . $search . '%')
+            ->orderBy('po_no')
+            ->paginate(10);
+      //  $po = PO::orderBy( 'created_at', 'desc' )->paginate( 10 );
         return view( 'pos.index', compact( 'po' ) );
     }
 

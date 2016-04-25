@@ -60,6 +60,7 @@
 
                                     </tbody>
                                 @endforeach
+                                @include('partials.search',['url'=>'tenders','link'=>'tenders'])
 
                             </table>
                             <li><a href="tender_s/import">Import Tenders</a></li>

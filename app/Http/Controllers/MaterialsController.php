@@ -68,7 +68,14 @@ class MaterialsController extends Controller
     public function index()
     {
         // $material = Material::latest('updated_at')->published()->get();
-       $material =Material::orderBy('updated_at', 'desc')->paginate(10);
+        $search = \Request::get('search');
+        $material = Material::where('m_code', 'like', '%' . $search . '%')
+            ->orWhere("m_mesc", 'like', '%' . $search . '%')
+            ->orWhere("slug", 'like', '%' . $search . '%')
+            ->orderBy('m_description')
+            ->paginate(10);
+
+     //  $material =Material::orderBy('updated_at', 'desc')->paginate(10);
         return view ('materials.index', compact('material' ));
     }
 

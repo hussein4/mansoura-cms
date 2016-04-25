@@ -49,6 +49,8 @@
 
 
                                 @endforeach
+                                @include('partials.search',['url'=>'materials','link'=>'materials'])
+
 
                             </table>
                             <a href="material_s/import">Import Material(s) </a>

@@ -81,6 +81,7 @@
 
 
                             @endforeach
+                                @include('partials.search',['url'=>'pos','link'=>'pos'])
 
                             </table>
                             <a href="po_s/import">Import Purchase Orders</a>

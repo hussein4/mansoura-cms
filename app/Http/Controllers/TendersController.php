@@ -35,8 +35,14 @@ class TendersController extends Controller
 
     public function index()
     {
+        $search = \Request::get('search');
+        $tender = Tender::where('mr_t_no', 'like', '%' . $search . '%')
+            ->orWhere("mr_t_subject", 'like', '%' . $search . '%')
+            ->orWhere("slug", 'like', '%' . $search . '%')
+            ->orderBy('mr_t_no')
+            ->paginate(10);
         // $tender = $Tender::latest('updated_at')->published()->get();
-        $tender =Tender::orderBy('created_at', 'desc')->paginate(10);
+     //   $tender =Tender::orderBy('created_at', 'desc')->paginate(10);
         return view ('tenders.index', compact('tender' ));
     }
 

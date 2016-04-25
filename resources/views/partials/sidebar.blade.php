@@ -16,19 +16,20 @@
             </div>
         </div>
 
-        <!-- search form (Optional) -->
+        <!-- search form (Optional)
 
-        <form action="search" method="get" class="sidebar-form">
+        <form action="query" method="get" class="sidebar-form">
             <div class="input-group">
-                <input type="text" name="search" v-model = "query" v-on:keyup="search" class="form-control" placeholder="Search..."/>
+                <input type="text" name="q" v-model = "query" v-on:keyup="search" class="form-control" placeholder="Search..."/>
               <span class="input-group-btn">
            <!--     <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
              -->
-                  <button type='submit' name='query' id='typeahead' class="btn btn-flat"><a href="{{ url('search') }}"><i class="fa fa-search"></i></a></button>
+        <!--
+                  <button type='submit' name='q'value="query" id='searchbox' class="btn btn-flat"><a href="{{ url('/query') }}"><i class="fa fa-search"></i></a></button>
               </span>
             </div>
         </form>
-        <!-- /.search form -->
+                <!-- /.search form -->
 
 
 
