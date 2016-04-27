@@ -87,6 +87,12 @@ Route::get('mr_s/import', function () {
 Route::put('mr_s/import','MRsController@import');
 
 
+Route::get('mr_all/importall', function () {
+    return view('mrs.import_all');
+});
+Route::put('mr_all/importall','MRsController@ImportAllMRs');
+
+
 
 Route::resource('mrs','MRsController');
 

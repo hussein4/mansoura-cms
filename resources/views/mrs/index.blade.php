@@ -43,7 +43,10 @@
                                 @include('partials.search',['url'=>'mrs','link'=>'mrs'])
 
                             </table>
-                            <a href="mr_s/import">Import Material Request</a>
+                            <ul>
+                            <li><a href="mr_s/import">Import Material Request</a></li>
+                            <li><a href="mr_all/importall">Import All Materials Requests</a></li>
+                            </ul>
                         </mr>
 
 

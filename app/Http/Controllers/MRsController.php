@@ -181,5 +181,79 @@ class MRsController extends Controller
 
     }
 
+    public function ImportAllMRs()
+    {
+        $file = Input::file("file");
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
+
+
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
+
+        Excel::load($uploadedFileLocation)->chunk(50, function ($results) use ($uploadedFileLocation)
+        {
+            $user = Auth::user();
+            foreach($results as $row)
+            {
+                $mr_no = $row->mr_no;
+                $mr_date = $row->mr_date;
+                $mr_received_date = $row->mr_received_date;
+                $mr_officer = $row->mr_officer;
+                $mr_received_by_officer_date = $row->mr_received_by_officer_date;
+                $mr_subject = $row->mr_subject;
+
+                $mr_t_identity = $row->mr_t_identity;
+                $mr_rfq = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_rfq));
+                $mr_rfq_closing_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_rfq_closing_date));
+
+                $mr_data = compact('mr_no','mr_date','mr_received_date','mr_officer','mr_received_by_officer_date', 'mr_subject', 'mr_t_identity', 'mr_rfq',
+                    'mr_rfq_closing_date'
+                     );
+dd($mr_data);
+                $mr = $user->mr()->updateOrCreate($mr_data);
+                $this->storePOListsFromFile($mr, $results);
+
+
+            }
+        });
+
+        return redirect ('mrs');
+    }
+
+
+    protected function storePOListsFromFile(MR $mr, $results)
+    {
+        $user_id = Auth::user()->id;
+
+        $pos = [];
+
+        foreach ($results as $row) {
+            if($mr->mr_no == $row->mr_no){
+
+
+                $po_no = $row->po_no;
+                $po_purchase_method = $row->po_purchase_method;
+                $po_issued = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_issued));
+                $po_total_cost = intval($row->po_total_cost);
+                $po_delivery_method = $row->po_delivery_method;
+                $po_delivery_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_delivey_date));
+                $po_mrr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_mrr_received));
+                $po = PO::updateOrCreate(compact('po_no','po_purchase_method', 'user_id', 'po_issued', 'po_total_cost','po_delivery_method', 'po_delivery_date', 'po_mrr_received_date'));
+                $pos[] = $po->id;
+            }
+        }
+
+        $this->syncPo($mr, $pos);
+    }
+
+
+
+
+
+
+
+
 
 }
