@@ -248,10 +248,11 @@ class MRsController extends Controller
                 $po_purchase_method = $row->po_purchase_method;
                 $po_issued = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_issued));
                 $po_total_cost = intval($row->po_total_cost);
+                $po_currency = $row->po_currency;
                 $po_delivery_method = $row->po_delivery_method;
                 $po_delivery_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_delivey_date));
                 $po_mrr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_mrr_received));
-                $po = PO::updateOrCreate(compact('po_no','po_purchase_method', 'user_id', 'po_issued', 'po_total_cost','po_delivery_method', 'po_delivery_date', 'po_mrr_received_date'));
+                $po = PO::updateOrCreate(compact('po_no','po_purchase_method', 'user_id', 'po_issued', 'po_total_cost','po_currency','po_delivery_method', 'po_delivery_date', 'po_mrr_received_date'));
                 $pos[] = $po->id;
             }
         }

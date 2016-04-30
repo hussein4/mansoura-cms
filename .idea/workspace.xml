@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MR.php" afterPath="$PROJECT_DIR$/app/MR.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -38,11 +30,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.83063513">
       <split-first>
         <leaf>
-          <file leaf-file-name="2016_02_29_125552_create_tenders_table.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php">
+          <file leaf-file-name="MRsController.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MRsController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.51534736" vertical-offset="681" max-vertical-offset="1600">
-                  <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+                <state vertical-scroll-proportion="1.355412" vertical-offset="3921" max-vertical-offset="5220">
+                  <caret line="254" column="131" selection-start-line="254" selection-start-column="131" selection-end-line="254" selection-end-column="131" />
                   <folding />
                 </state>
               </provider>
@@ -119,7 +111,6 @@
         <option value="$PROJECT_DIR$/resources/views/mrs/import_all.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/PO.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" />
         <option value="$PROJECT_DIR$/app/MR.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
@@ -128,6 +119,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" />
       </list>
     </option>
   </component>
@@ -288,24 +280,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel-with-admin-lte" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="laravel-with-admin-lte" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -410,7 +384,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1366" height="737" extended-state="1" />
+    <frame x="0" y="31" width="1366" height="737" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -731,52 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MRsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.450727" vertical-offset="3501" max-vertical-offset="5200">
-          <caret line="205" column="18" selection-start-line="205" selection-start-column="18" selection-end-line="205" selection-end-column="18" />
-          <folding>
-            <marker date="1462016478919" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param CreateMRRequest $request ..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param MR $mr ..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param $id ..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param MR $mr ..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param MRRequest $request ..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/MR.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22617124" vertical-offset="7020" max-vertical-offset="8280">
@@ -921,27 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53797466" vertical-offset="480" max-vertical-offset="1740">
-          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
-          <folding>
-            <marker date="1462017515859" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
-            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_21_085755_create_tags_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5815832" vertical-offset="360" max-vertical-offset="1560">
@@ -1077,6 +984,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.51534736" vertical-offset="681" max-vertical-offset="1600">
           <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <marker date="1462018018095" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462018018095" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.443038" vertical-offset="240" max-vertical-offset="1740">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <marker date="1462017515859" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MRsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.355412" vertical-offset="3921" max-vertical-offset="5220">
+          <caret line="254" column="131" selection-start-line="254" selection-start-column="131" selection-end-line="254" selection-end-column="131" />
           <folding />
         </state>
       </provider>
