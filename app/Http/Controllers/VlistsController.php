@@ -260,11 +260,21 @@ class VlistsController extends Controller {
     {
         $file=Input::file("file");
 
-        Excel::filter('chunk')->load($file)->chunk(10,function($reader)
+        $destinationPath = storage_path('app/uploads');
+        $fileName = $file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
+
+
+        $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
+        $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
+
+        Excel::load($uploadedFileLocation)->chunk(40, function ($results) use ($uploadedFileLocation)
         {
-            $results = $reader->get();
-            foreach($results as $row):
-               Vlist::create([
+
+            foreach($results as $row)
+            {
+                echo $row->vname."<br />";
+                Vlist::updateOrCreate([
                     'vname'           =>$row->vname,
                     'vservice'        =>$row->vservice,
                     'vphone'          =>$row->vphone,
@@ -277,9 +287,12 @@ class VlistsController extends Controller {
                     'vgrade'          =>$row->vgrade,
                     'vremarks'        =>$row->vremarks,
                     'user_id'        =>Auth::user()->id
+
                 ]);
-            endforeach;
+            }
         });
+        \Storage::delete($storageRelativeLocation);
+
         return redirect('vlist');
     }
 

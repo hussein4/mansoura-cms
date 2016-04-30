@@ -203,7 +203,7 @@ class MRsController extends Controller
         $uploadedFileLocation = storage_path('app/uploads') . '/' . $file->getClientOriginalName();
         $storageRelativeLocation = 'uploads' . '/' . $file->getClientOriginalName();
 
-        Excel::load($uploadedFileLocation)->chunk(50, function ($results) use ($uploadedFileLocation)
+        Excel::load($uploadedFileLocation)->chunk(20, function ($results) use ($uploadedFileLocation)
         {
             $user = Auth::user();
             foreach($results as $row)
@@ -222,8 +222,12 @@ class MRsController extends Controller
                 $mr_data = compact('mr_no','mr_date','mr_received_date','mr_officer','mr_received_by_officer_date', 'mr_subject',  'mr_rfq',
                     'mr_rfq_closing_date'
                      );
+
+
                 echo $row->mr_no."<br />";
-                $mr = $user->mr()->updateOrCreate($mr_data);
+
+                    $mr = $user->mr()->updateOrCreate($mr_data);
+
                 $this->storePOListsFromFile($mr, $results);
 
 
