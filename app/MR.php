@@ -137,11 +137,13 @@ class MR extends Model  implements SluggableInterface
     {
         return ($date != "0000-00-00 00:00:00" && !is_null($date)) ? Carbon::parse($date)->format('d-M-Y g:i A') : null;
 
+
     }
 
     public function setmrdateAttribute($date)
     {
         $this->attributes['mr_date'] = $date ?Carbon::createFromFormat('d-M-Y g:i A', $date)->toDateString() : null;
+
     }
 
     public function getmrreceiveddateAttribute($date)
