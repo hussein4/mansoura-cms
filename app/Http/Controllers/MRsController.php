@@ -215,11 +215,11 @@ class MRsController extends Controller
                 $mr_received_by_officer_date = $row->mr_received_by_officer_date;
                 $mr_subject = $row->mr_subject;
 
-                $mr_t_identity = $row->mr_t_identity;
+
                 $mr_rfq = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_rfq));
                 $mr_rfq_closing_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_rfq_closing_date));
 
-                $mr_data = compact('mr_no','mr_date','mr_received_date','mr_officer','mr_received_by_officer_date', 'mr_subject', 'mr_t_identity', 'mr_rfq',
+                $mr_data = compact('mr_no','mr_date','mr_received_date','mr_officer','mr_received_by_officer_date', 'mr_subject',  'mr_rfq',
                     'mr_rfq_closing_date'
                      );
 
