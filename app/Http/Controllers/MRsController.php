@@ -222,7 +222,7 @@ class MRsController extends Controller
                 $mr_data = compact('mr_no','mr_date','mr_received_date','mr_officer','mr_received_by_officer_date', 'mr_subject',  'mr_rfq',
                     'mr_rfq_closing_date'
                      );
-
+                echo $row->mr_no."<br />";
                 $mr = $user->mr()->updateOrCreate($mr_data);
                 $this->storePOListsFromFile($mr, $results);
 
