@@ -285,6 +285,8 @@ class PO extends Model implements SluggableInterface
         return $this->belongsToMany('App\Tender','po_tender' ,'po_id','tender_id');
     }
 
+
+
     public function getTagListpoAttribute()
     {
         return $this->tags->lists('id')->all();

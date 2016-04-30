@@ -11,6 +11,7 @@ use App\Http\Requests\MRRequest;
 use App\MR;
 use App\Tag;
 use App\Material;
+use App\PO;
 
 
 use Carbon\Carbon;
@@ -18,6 +19,7 @@ use Auth;
 use Illuminate\Support\Facades\Input;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
+//ini_set('max_execution_time', 0);
 
 
 
@@ -53,7 +55,8 @@ class MRsController extends Controller
     {
         $tags= Tag::lists('name','id')->all();
         $materials = Material::lists('m_description','id')->all();
-        return view('mrs.create',compact('tags','materials'));
+        $po=PO::lists('po_no','id')->all();
+        return view('mrs.create',compact('tags','materials','po'));
 
     }
 
@@ -77,7 +80,8 @@ class MRsController extends Controller
     {
         $tags = Tag::lists('name','id')->all();
         $materials = Material::lists('m_description','id')->all();
-        return view('mrs.edit',compact('mr','tags','materials'));
+        $po= PO::lists('po_no','id')->all();
+        return view('mrs.edit',compact('mr','tags','materials','po'));
     }
 
     /**
@@ -90,6 +94,7 @@ class MRsController extends Controller
         $mr->update($request->all());
         $this->syncTags($mr, $request->input('tag_list_mr'));
         $this->syncMaterials($mr , $request->input('material_mr_list'));
+        $this->SyncPO($mr,$request->input('po_mr_list'));
         return redirect ('mrs');
     }
 
@@ -108,6 +113,11 @@ class MRsController extends Controller
         $mr->materials()->sync($materials);
     }
 
+    public function syncPO(MR $mr , array $po)
+    {
+        $mr->po()->sync($po);
+    }
+
     /** save a new mr
      * @param MRRequest $request
      * @return mixed
@@ -117,6 +127,7 @@ class MRsController extends Controller
         $mr= Auth::user()->mr()->create($request->all());    //get authenticated user who saved  mr
         $this->syncTags($mr, $request->input('tag_list_mr'));
         $this->syncMaterials($mr , $request->input('material_mr_list'));
+        $this->SyncPO($mr,$request->input('po_mr_list'));
         return $mr;
     }
 
@@ -211,7 +222,7 @@ class MRsController extends Controller
                 $mr_data = compact('mr_no','mr_date','mr_received_date','mr_officer','mr_received_by_officer_date', 'mr_subject', 'mr_t_identity', 'mr_rfq',
                     'mr_rfq_closing_date'
                      );
-dd($mr_data);
+
                 $mr = $user->mr()->updateOrCreate($mr_data);
                 $this->storePOListsFromFile($mr, $results);
 

@@ -364,7 +364,7 @@ class MR extends Model  implements SluggableInterface
 
     public function po()
     {
-        return $this->hasMany('App\PO')->withTimestamps();
+        return $this->hasMany('App\PO','mr_po','mr_id')->withTimestamps();
     }
 
     public function tags()
@@ -400,6 +400,11 @@ class MR extends Model  implements SluggableInterface
     public function getMaterialMrListAttribute()
     {
         return $this->materials->lists('id')->all();
+    }
+
+    public function getPoMrListAttribute()
+    {
+        return $this->po->lists('id')->all();
     }
 
 }
