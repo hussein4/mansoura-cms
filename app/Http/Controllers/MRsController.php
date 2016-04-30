@@ -209,10 +209,10 @@ class MRsController extends Controller
             foreach($results as $row)
             {
                 $mr_no = $row->mr_no;
-                $mr_date = $row->mr_date;
-                $mr_received_date = $row->mr_received_date;
+                $mr_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_date));
+                $mr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_received_date));
                 $mr_officer = $row->mr_officer;
-                $mr_received_by_officer_date = $row->mr_received_by_officer_date;
+                $mr_received_by_officer_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_received_by_officer_date));
                 $mr_subject = $row->mr_subject;
 
 

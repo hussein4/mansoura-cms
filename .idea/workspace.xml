@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcadd1e-0c80-4eca-bcd0-0e9448087f74" name="Default" comment="Adding Slug">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/MR.php" afterPath="$PROJECT_DIR$/app/MR.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/PO.php" afterPath="$PROJECT_DIR$/app/PO.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel-with-admin-lte.iws" />
@@ -29,17 +35,15 @@
     <favorites_list name="laravel-with-admin-lte" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49663866">
+    <splitter split-orientation="horizontal" split-proportion="0.83063513">
       <split-first>
         <leaf>
-          <file leaf-file-name="MRsController.php" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MRsController.php">
+          <file leaf-file-name="2016_02_29_125552_create_tenders_table.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8707593" vertical-offset="4721" max-vertical-offset="5520">
-                  <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#40#68#0#PHP" expanded="true" />
-                  </folding>
+                <state vertical-scroll-proportion="0.51534736" vertical-offset="681" max-vertical-offset="1600">
+                  <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -51,8 +55,8 @@
           <file leaf-file-name="TendersController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TendersController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.5815832" vertical-offset="4560" max-vertical-offset="5720">
-                  <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
+                <state vertical-scroll-proportion="0.3231018" vertical-offset="4560" max-vertical-offset="5720">
+                  <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -73,12 +77,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/storage/framework/views/79e76c5209c12c654414c5b52f46a3c3" />
-        <option value="$PROJECT_DIR$/storage/framework/views/fcd96f9bcd3fea3b2296fc67b2ac15d8" />
-        <option value="$PROJECT_DIR$/resources/views/pos/pos_all_template.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tenders/excel_all_tenders.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/pos/pos_excel_template.blade.php" />
-        <option value="$PROJECT_DIR$/config/excel.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_04_18_203507_create_po_tender_pivot_table.php" />
         <option value="$PROJECT_DIR$/resources/views/pos/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pos/show.blade.php" />
@@ -117,13 +115,19 @@
         <option value="$PROJECT_DIR$/app/Providers/ViewComposerServiceProvider.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php" />
         <option value="$PROJECT_DIR$/resources/views/mrs/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/mrs/import_all.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/PO.php" />
-        <option value="$PROJECT_DIR$/app/MR.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MRsController.php" />
+        <option value="$PROJECT_DIR$/app/MR.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php" />
       </list>
     </option>
   </component>
@@ -173,6 +177,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,7 +352,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,12 +410,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1366" height="737" extended-state="0" />
+    <frame x="0" y="31" width="1366" height="737" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12371134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40868926" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -471,76 +475,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54226476" vertical-offset="0" max-vertical-offset="960">
-          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/contentheader.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/controlsidebar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/mainheader.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4880383" vertical-offset="1560" max-vertical-offset="3280">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pos/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="820">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/pos/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8931419" vertical-offset="4020" max-vertical-offset="5020">
-          <caret line="229" column="38" selection-start-line="229" selection-start-column="38" selection-end-line="229" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/htmlheader.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7448166" vertical-offset="453" max-vertical-offset="1080">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/search/vlist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6060606" vertical-offset="0" max-vertical-offset="2060">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/scripts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13875598" vertical-offset="35993" max-vertical-offset="37000">
-          <caret line="1804" column="29" selection-start-line="1804" selection-start-column="29" selection-end-line="1804" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/vlist/supplier_excel_template.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9665072" vertical-offset="1233" max-vertical-offset="1860">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/vlist/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.37161085" vertical-offset="233" max-vertical-offset="2480">
@@ -737,20 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93097913" vertical-offset="120" max-vertical-offset="1780">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38523275" vertical-offset="180" max-vertical-offset="1700">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/mrs/upload_mrs.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09630819" vertical-offset="0" max-vertical-offset="740">
@@ -787,10 +707,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Tag.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1240">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/PO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.904685" vertical-offset="5161" max-vertical-offset="6560">
+          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TendersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3231018" vertical-offset="4560" max-vertical-offset="5720">
+          <caret line="257" column="0" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MRsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.450727" vertical-offset="3501" max-vertical-offset="5200">
+          <caret line="205" column="18" selection-start-line="205" selection-start-column="18" selection-end-line="205" selection-end-column="18" />
+          <folding>
+            <marker date="1462016478919" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param CreateMRRequest $request ..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param MR $mr ..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param $id ..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param MR $mr ..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder=" @param MRRequest $request ..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016478919" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/MR.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22617124" vertical-offset="7020" max-vertical-offset="8280">
+          <caret line="362" column="5" selection-start-line="362" selection-start-column="5" selection-end-line="362" selection-end-column="5" />
+          <folding>
+            <marker date="1462016811127" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder=" @param $date ..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder=" get created on attribute ..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462016811127" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_01_143307_create_mr_tender_pivot_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6138934" vertical-offset="0" max-vertical-offset="800">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="33" />
           <folding>
             <marker date="1460534891356" expanded="false" signature="-1:-1" placeholder="..." />
             <marker date="1460534891356" expanded="true" signature="-1:-1" placeholder="{...}" />
@@ -804,167 +863,221 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Tag.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_11_29_081529_create_vlist_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1240">
+        <state vertical-scroll-proportion="-0.18987341" vertical-offset="120" max-vertical-offset="1180">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1460534891308" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder=" Get the Vlist associated with a given tag ..." />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1460534891308" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/PO.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.904685" vertical-offset="5161" max-vertical-offset="6560">
-          <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6329114" vertical-offset="0" max-vertical-offset="800">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding>
-            <marker date="1462009742995" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder=" @param $date ..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder=" get created on attribute ..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="//..." />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009742995" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/MR.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_15_103828_create_mrs_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2907916" vertical-offset="0" max-vertical-offset="8240">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.6462036" vertical-offset="780" max-vertical-offset="1820">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding>
-            <marker date="1462009893155" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder=" @param $query ..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder=" @param $date ..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder=" get created on attribute ..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder=" @return mixed ..." />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1462009893155" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515863" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TendersController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_21_085451_create_pos_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.5815832" vertical-offset="4560" max-vertical-offset="5720">
-          <caret line="229" column="16" selection-start-line="229" selection-start-column="16" selection-end-line="229" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.53797466" vertical-offset="480" max-vertical-offset="1740">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
+          <folding>
+            <marker date="1462017515859" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017515859" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_12_21_085755_create_tags_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5815832" vertical-offset="360" max-vertical-offset="1560">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460534891360" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1460534891360" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_15_114122_create_mr_po_pivot_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.450727" vertical-offset="101" max-vertical-offset="780">
+          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding>
+            <marker date="1462017156667" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017156667" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_15_114315_create_po_vlist_pivot_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5815832" vertical-offset="0" max-vertical-offset="760">
+          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+          <folding>
+            <marker date="1460534891352" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_29_131101_create_tender_user_pivot_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460534891348" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1460534891348" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_03_082634_create_materials_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75949365" vertical-offset="240" max-vertical-offset="1340">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <marker date="1462017515855" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017515855" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_03_03_094740_create_material_mr_pivot_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460534891352" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1460534891352" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_29_130020_create_budgetries_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.549273" vertical-offset="300" max-vertical-offset="1260">
+          <caret line="33" column="28" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <marker date="1462017515863" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder=" Run the migrations. ..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder=" Reverse the migrations. ..." />
+            <marker date="1462017515863" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_02_29_125552_create_tenders_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51534736" vertical-offset="681" max-vertical-offset="1600">
+          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MRsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8707593" vertical-offset="4721" max-vertical-offset="5520">
-          <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

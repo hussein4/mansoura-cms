@@ -47,8 +47,9 @@ class CreateTendersTable extends Migration
             $table->timestamp('mr_t_sending_fin_memo')->nullable();
 
             $table->boolean('mr_t_finished')->nullable();
-            $table->timestamps();
 
+            $table->string('mr_t_remarks')->nullable();
+            $table->timestamps();
 
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')

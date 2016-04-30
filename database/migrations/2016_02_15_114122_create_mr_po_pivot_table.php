@@ -18,6 +18,7 @@ class CreateMrPoPivotTable extends Migration
             $table->integer('po_id')->unsigned()->index();
             $table->foreign('po_id')->references('id')->on('pos')->onDelete('cascade');
             $table->primary(['mr_id', 'po_id']);
+            $table->timestamps();
         });
     }
 

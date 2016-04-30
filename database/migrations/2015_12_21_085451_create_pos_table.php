@@ -42,6 +42,8 @@ class CreatePosTable extends Migration
             $table->timestamp('po_cover_invoice')->nullable();
 
             $table->boolean('po_completed')->nullable();
+            $table->string('po_remarks')->nullable();
+
           //  $table->string('po_remarks')->nullable();
             $table->string('popath')->nullable();
 

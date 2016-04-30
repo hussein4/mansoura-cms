@@ -30,6 +30,7 @@ class CreateBudgetriesTable extends Migration
             $table->char('mr_b_currency', 255)->nullable();
 
             $table->boolean('mr_b_finished')->nullable();
+            $table->char('mr_b_remarks', 255)->nullable();
             $table->timestamps();
 
 

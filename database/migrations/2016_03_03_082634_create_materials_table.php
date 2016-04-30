@@ -36,6 +36,7 @@ class CreateMaterialsTable extends Migration
             $table->timestamp('m_last_update_date')->nullable();
 
 
+
             $table->timestamps();
 
 

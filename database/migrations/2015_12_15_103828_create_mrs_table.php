@@ -57,6 +57,8 @@ class CreateMrsTable extends Migration
 
             $table->integer('user_id')->unsigned();
             $table->string('mrpath')->nullable();
+            $table->string('mr_remarks')->nullable();
+
 
 
             $table->timestamps();

@@ -366,7 +366,7 @@ class MR extends Model  implements SluggableInterface
 
     public function po()
     {
-        return $this->hasMany('App\PO','mr_po','mr_id')->withTimestamps();
+        return $this->belongsToMany('App\PO','mr_po','mr_id','po_id')->withTimestamps();
     }
 
     public function tags()
