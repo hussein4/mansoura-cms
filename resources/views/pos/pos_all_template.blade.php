@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html
         PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -64,13 +66,15 @@
 
 @foreach($pos as $p)
 @foreach($p->mr as $m)
+@unless ($p->suppliers->isEmpty())
 @foreach($p->suppliers as $s)
+
 
 <tr style="color:rgb(0, 0, 0);" align="center" >
 
-    <th align="center" > {{ $m['mr_no'] }} </th>
-    <th align="center" > {{ $p['po_no'] }} </th>
-    <th align="center" > {{ $p['po_subject'] }} </th>
+    <th align="center" > {{ $m->mr_no }} </th>
+    <th align="center" > {{ $p->po_no }} </th>
+    <th align="center" > {{ $p->po_subject }} </th>
     <th align="center" >{{ $p['po_issued'] }} </th>
     <th align="center" >{{ $s['vname'] }} </th>
     <th align="center" >{{ $p['po_total_cost'] }} </th>
@@ -94,8 +98,10 @@
 
 </tr>
 @endforeach
+@endunless
 @endforeach
 @endforeach
+
 
 
 

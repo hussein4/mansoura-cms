@@ -76,7 +76,8 @@
     </tr>
     @foreach($tenders as $tender)
     @foreach($tender->mr as $m)
-            @foreach($tender->suppliers as $s)
+    @unless ($tender->suppliers->isEmpty())
+    @foreach($tender->suppliers as $s)
 
     <tr>
         <td align="center">{{ $m->mr_no }}</td>
@@ -101,6 +102,7 @@
 
     </tr>
          @endforeach
+            @endunless
     @endforeach
     @endforeach
 

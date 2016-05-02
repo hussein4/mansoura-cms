@@ -98,14 +98,18 @@ Route::resource('mrs','MRsController');
 
 
 
-
+Route::get('po_s/exportall','POsController@exportAll');
 
 Route::get('po_s/import', function () {
     return view('pos.upload_pos');
 });
 Route::put('po_s/import','POsController@import');
 Route::get('po_s/exportExcel/{pos}','POsController@exportExcel');
-Route::get('po_s/exportall','POsController@exportAll');
+
+
+
+
+
 
 Route::resource('pos','POsController');
 

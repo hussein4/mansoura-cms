@@ -223,8 +223,10 @@ class TendersController extends Controller
         $mrs = [];
         $pos = [];
 
-        foreach ($results as $row) {
-            if($tender->mr_t_no == $row->mr_t_no){
+        foreach ($results as $row)
+        {
+            if ($tender->mr_t_no == $row->mr_t_no)
+            {
                 $mr_no = $row->mr_no;
                 $mr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->mr_received_date));
                 $mr = MR::updateOrCreate(compact('mr_no', 'mr_received_date', 'user_id'));
@@ -237,62 +239,66 @@ class TendersController extends Controller
                 $po_mrr_received_date = date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($row->po_mrr_received));
                 $po = PO::updateOrCreate(compact('po_no', 'user_id', 'po_issued', 'po_total_cost', 'po_delivery_date', 'po_mrr_received_date'));
                 $pos[] = $po->id;
+
+                $this->syncMr($tender, $mrs);
+                $this->syncPo($tender, $pos);
             }
         }
-
-        $this->syncMr($tender, $mrs);
-        $this->syncPo($tender, $pos);
     }
 
+            public function exportTender(Tender $tenders)
+            {
+                Excel::create($tenders->mr_t_no, function ($excel) use ($tenders)
+                {
+                    $excel->setTitle('Tender Details');
+                    $excel->setCreator('Hussein')
+                        ->setCompany('Mansoura');
 
-    public function exportTender( Tender $tenders )
-    {
-        Excel::create( $tenders->mr_t_no, function($excel) use($tenders)
-        {
-            $excel->setTitle('Tender Details');
-            $excel->setCreator('Hussein')
-                ->setCompany('Mansoura');
+                    $excel->sheet($tenders->mr_t_no, function ($sheet) use ($tenders)
+                    {
 
-            $excel->sheet( $tenders->mr_t_no, function($sheet) use ($tenders)
+                        $sheet->loadView('tenders.tenders_excel_template')->with('tenders', $tenders);
+                    });
+                })->export('xlsx');
+            }
+
+            public function exportAll()
             {
 
-                $sheet->loadView( 'tenders.tenders_excel_template' )->with('tenders', $tenders);
-            } );
-        } )->export('xlsx');
-    }
+                Excel::create('Tender', function ($excel)
+                {
+                    $excel->setTitle('Tenders');
 
-    public function exportAll(){
-
-        Excel::create('Tender', function($excel)
-        {
-            $excel->setTitle('Tenders');
-
-            $excel->sheet('Tenders', function($sheet)
-            {
-                $tenders = Tender::all();
-
-                $arr =array();
-                foreach($tenders as $tender) {
-                    foreach($tender->mr as $m)
-                        foreach($tender->suppliers as $supplier)
-
+                    $excel->sheet('Tenders', function ($sheet)
+                    {
+                        $tenders = Tender::all();
+/*
+                        $arr = array();
+                        foreach ($tenders as $tender)
                         {
-                            $data =  array($m->mr_no, $m->mr_estimated_cost, $m->mr_currency,
-                                $tender->mr_t_no, $tender->mr_t_subject, $tender->mr_t_identity,
-                                $tender->mr_t_officer,$supplier->vname,$tender->mr_t_send_invitation_fax,
-                                $tender->mr_t_closing_date,$tender->mr_t_open_tech_envelops,
-                                $tender->mr_t_tech_eval_signature,$tender->mr_t_open_commercial_offers,
-                                $tender->mr_t_commercial_evaluation_signature
+                            foreach ($tender->mr as $m)
+                                foreach ($tender->suppliers as $supplier)
 
-                            );
-                            array_push($arr, $data);
+                                {
+                                    $data = array($m->mr_no, $m->mr_estimated_cost, $m->mr_currency,
+                                        $tender->mr_t_no, $tender->mr_t_subject, $tender->mr_t_identity,
+                                        $tender->mr_t_officer, $supplier->vname,
+                                        $tender->mr_t_tender_send_invitation_fax,
+                                        $tender->mr_t_closing_date, $tender->mr_t_open_tech_envelops,
+                                        $tender->mr_t_tech_eval_signature, $tender->mr_t_open_commercial_offers,
+                                        $tender->mr_t_commercial_evaluation_signature
+
+                                    );
+                                    array_push($arr, $data);
+                                }
                         }
-                }
 
-             $sheet->loadView( 'tenders.excel_all_tenders' )->with('tenders',$tenders);
-            });
-        })->export('xls');
-    }
+                      //  $sheet->fromArray($tender);
+*/
+                        $sheet->loadView('tenders.excel_all_tenders')->with('tenders', $tenders);
+                    });
+                })->export('xls');
+            }
 
 
 

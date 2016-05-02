@@ -213,42 +213,113 @@ class POsController extends Controller {
         } )->export('xlsx');
     }
 
-    public function exportAll(){
 
-        Excel::create('PO', function($excel)
-        {
-            $excel->setTitle('Pos');
 
-            $excel->sheet('POs', function($sheet)
-            {
-                $pos = PO::all();
+        /*
+         {
+
+             $excel->setTitle('Purchase Orders');
+
+             $excel->sheet('POs', function($sheet) use ($pos)
+
+             {
+
+             //    $user = Auth::user();
+               //  $pos = PO::all();
+
                 $arr =array();
-                foreach($pos as $po) {
-                    foreach($po->mr as $m)
-                        foreach($po->suppliers as $supplier)
-
-                        {
-                            $data =  array($m->mr_no,$po->po_no,$po->po_subject,
-                                $po->po_issued,$po->po_total_cost,$po->po_currency,
-                                $po->po_purchase_method,$po->po_payment_method,
-                                $po->po_delivery_method,$po->po_confirmation,
-                                $po->po_loaded_on_ideas,$supplier->vname,
-                                $po->po_loaded_on_ideas,$po->po_approved_on_ideas,
-                                $po->memo_to_fin,$po->po_delivery_date,
-                                $po->po_mr_received_date,$po->po_mrr_received_date,
-                                $po->po_invoice_received_date,$po->po_penalty,
-                                $po->po_cover_invoice,$po->po_completed
+               foreach($pos as $po) {
+                   foreach($po->mr as $m)
+                       foreach($po->suppliers as $supplier)
+                       {
 
 
-                            );
-                            array_push($arr, $data);
+                             $data =  array($m->mr_no,$po->po_no,$po->po_subject,
+                                 $po->date('d-M-Y g:i A', \PHPExcel_Shared_Date::ExcelToPHP($po->po_issued)),
+                                 $po->po_purchase_method,$po->po_payment_method,
+                                 $po->po_delivery_method,$po->po_confirmation,
+                                 $po->po_loaded_on_ideas,$supplier->vname,
+                                 $po->po_loaded_on_ideas,$po->po_approved_on_ideas,
+                                 $po->memo_to_fin,$po->po_delivery_date,
+                                 $po->po_mr_received_date,$po->po_mrr_received_date,
+                                 $po->po_invoice_received_date,$po->po_penalty,
+                                 $po->po_cover_invoice,$po->po_completed
+
+
+                             );
+                             array_push($arr, $data);
+
+
                         }
-                }
-                $sheet->loadView( 'pos.pos_all_template' )->with('pos',$pos);
+               }
 
+
+                 $sheet->setOrientation('landscape');
+
+                 $sheet->fromArray($arr);
+
+          //       $sheet->loadView( 'pos.pos_all_template');
+
+             });
+
+         })->download('xls');
+
+
+
+ */
+
+    public function exportAll()
+    {
+
+            Excel::create('POs', function($excel)
+            {
+                $excel->sheet('pos', function($sheet)
+                {
+
+                    $pos = PO::all();
+                    /*
+                    $data = array('MR No','PO No','PO Subject','PO Issued','Purchase Method'
+                    ,'Payment Method','Delivery Method','Confirmation','Loaded on Ideas','Awarded Supplier'
+                    ,'Approved On Ideas','Finance Memo','Delivery Date'
+                    ,'Actual Received Date','MRR Date','Invoice Received Date'
+                    ,'Penalty','Cover Invoice' );
+                    $sheet->fromArray(array($data),null,'A1',false,false);
+                    foreach($pos as $po)
+                    {
+                        foreach($po->mr as $m)
+
+                        //    foreach ($po->suppliers as $supplier)
+                            {
+
+                                $data = array
+                                ($m->mr_no, $po->po_no, $po->po_subject,
+                                    $po->po_issued, $po->po_purchase_method, $po->po_payment_method,
+                                    $po->po_delivery_method, $po->po_confirmation,
+                                    $po->po_loaded_on_ideas,
+                                    $po->po_approved_on_ideas,
+                                    $po->memo_to_fin, $po->po_delivery_date,
+                                    $po->po_mr_received_date, $po->po_mrr_received_date,
+                                    $po->po_invoice_received_date, $po->po_penalty,
+                                    $po->po_cover_invoice
+
+                                );
+
+
+                            //    $sheet->fromArray(array($data), null, 'A1', false, false);
+
+
+                            }
+
+                    }
+                    */
+                $sheet->loadView( 'pos.pos_all_template')->with('pos',$pos);
+
+                })->download('xls');
             });
 
-        })->export('xls');
     }
+
+
+
 
 }
