@@ -41,43 +41,66 @@
                                     <td>{{ $budgetry->mr_b_received_by_officer_date }}</td>
                                 </tr>
 
+                                @if(isset($mr->mr_budgetry_rfq))
                                 <tr>
                                     <th>MR Budgetry RFQ</th>
                                     <td>{{ $budgetry->mr_budgetry_rfq }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_rfq_budgetry_closing_date))
                                 <tr>
                                     <th>MR Budgetry RFQ Closing Date</th>
                                     <td>{{ $budgetry->mr_rfq_budgetry_closing_date }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_rfq_budgetry_reminder))
                                 <tr>
                                     <th>MR Budgetry RFQ Reminder</th>
                                     <td>{{ $budgetry->mr_rfq_budgetry_reminder }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_budgetry_memo))
                                 <tr>
                                     <th>MR Budgetry Memo</th>
                                     <td>{{ $budgetry->mr_budgetry_memo }}</td>
                                 </tr>
+                                @endif
 
+                                @if(isset($mr->mr_b_estimated_cost))
                                 <tr>
                                     <th>MR Estimated Cost</th>
                                     <td>{{ $budgetry->mr_b_estimated_cost }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_b_currency))
                                 <tr>
                                     <th>MR Currency</th>
                                     <td>{{ $budgetry->mr_b_currency }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_sent_for_budget_expansion))
                                 <tr>
                                     <th>Sent for Budget Expansion  </th>
                                     <td>{{ $budgetry->mr_sent_for_budget_expansion }}</td>
                                 </tr>
+                                @endif
+
+                                @if(isset($mr->mr_sent_for_budget_expansion))
                                 <tr>
                                     <th>Sent for Budget Expansion Reminder </th>
                                     <td>{{ $budgetry->mr_sent_for_budget_expansion_reminder }}</td>
                                 </tr>
-
-                                </thead>
+                                @endif
 
                                 </tbody>
+                                </thead>
+
+
                             </table>
 
                             @unless ($budgetry->tags->isEmpty())
