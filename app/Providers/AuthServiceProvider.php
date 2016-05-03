@@ -28,13 +28,15 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(GateContract $gate)
     {
-       // parent::registerPolicies($gate);
+        // parent::registerPolicies($gate);
         $this->registerPolicies($gate);
 
-        $gate->define('delete-vlist', function($user, $vlist) {
+        $gate->define('delete-vlist', function ($user, $vlist)
+        {
             return $user->id == $vlist->user_id;
         });
-
+    }
+/*
         foreach ($this->getPermissions() as $permission)
         {
             $gate->define($permission->name ,function($user)
@@ -43,11 +45,11 @@ class AuthServiceProvider extends ServiceProvider
             });
         }
 
-    }
+
 
     protected function getPermissions()
     {
         return Permission::with('roles')->get();
     }
-
+*/
 }
