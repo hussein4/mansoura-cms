@@ -1,23 +1,15 @@
-<html>
-	<head>
-		<title>Algolia</title>
-		<link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+@extends('app')
 
-
-	</head>
-	<body>
+@section('main-content')
     <div class="container">
-        <h1>Search Results</h1>
-        <ul class="list-group">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Welcome<h3><b> Mansoura Procurement Site </b> </h3> </div>
 
-            @foreach($results as $user)
-                <li class="list-group-item">
-                    {{ $user['name'] }} : {{ $user['alternative_name'] }}
-                </li>
-                @endforeach
 
-        </ul>
+                </div>
+            </div>
+        </div>
     </div>
-
-	</body>
-</html>
+@endsection

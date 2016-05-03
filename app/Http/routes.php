@@ -20,13 +20,11 @@ use App\Contracts\Search;
 use Maatwebsite\Excel\Facades\Excel;
 
 
-Route::get('/', function (Search $search ,Request $request) {
-
-    $results = $search->index('mrs')
-        ->get($request->name);
-    return view('welcome', compact('results'));
+Route::get('/',function (){
+    return view('welcome');
 });
 
+/*
 Route::get('/search/supplier', function (Search $search ,Request $request ) {
 
 
@@ -36,6 +34,7 @@ Route::get('/search/supplier', function (Search $search ,Request $request ) {
     return view ('search.supplier',compact('results'));
 
 });
+
 
 
 Route::get('/search/materials', function (Search $search , Request $request ){
@@ -48,6 +47,7 @@ Route::get('/search/materials', function (Search $search , Request $request ){
 
 });
 
+*/
 
 
 
