@@ -2,8 +2,10 @@
     <meta charset="UTF-8">
 
 
-    <title> Mansoura CMS - @yield('htmlheader_title', 'Your title here') </title>
+    <title> Mansoura CMS - @yield('htmlheader_title', 'Mansoura') </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <meta name="description" content="Mansoura Work Flow Site " />
+    <meta name="keywords" content="business , workflow , procurement  " />
     <!-- Bootstrap 3.3.4 -->
     <link href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
