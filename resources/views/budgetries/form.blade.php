@@ -27,7 +27,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_b_date',$budgetry->mr_b_date, ['class'=> 'form-control','id'=>'datetimepicker3']) !!}
+            {!! Form::input('text','mr_b_date',$budgetry->mr_b_date, ['class'=> 'form-control','id'=>'datetimepicker300']) !!}
         </div>
     </div>
 </div>

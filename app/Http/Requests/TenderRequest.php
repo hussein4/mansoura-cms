@@ -24,7 +24,9 @@ class TenderRequest extends Request
     public function rules()
     {
         return [
-            //
+            'mr_t_no' => 'required|regex:/^([A-Z]{3,3}\s\d{2}\-\d{2})$/',
+            'mr_t_subject'=> 'required|regex:/^[a-zA-Z0-9\s]*$/',
+            'mr_t_officer'=> 'required|regex:/^[a-zA-Z]*$/'
         ];
     }
 }

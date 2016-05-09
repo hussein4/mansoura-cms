@@ -105,11 +105,10 @@
 <script>
     $(function()
     {
-        $('#datetimepicker3').datetimepicker
+        $('#datetimepicker300').datetimepicker
         ({
 
             format: 'DD-MMMM-YYYY hh:00 A',
-
             useCurrent: false,
             inline:true,
             sideBySide: true
@@ -1749,6 +1748,15 @@
 
 <script type="text/javascript">
     $('#po_tender_list').select2({
+        placeholder: 'choose a PO',
+        tags:true,
+        data:[
+        ]
+    });
+</script>
+
+<script type="text/javascript">
+    $('#po_mr_list').select2({
         placeholder: 'choose a PO',
         tags:true,
         data:[

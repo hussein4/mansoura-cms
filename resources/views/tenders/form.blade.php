@@ -14,7 +14,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_t_no',$tender->mr_t_no, ['class'=> 'form-control']) !!}
+            {!! Form::input('text','mr_t_no',$tender->mr_t_no, ['class'=> 'form-control','placeholder'=>'MAT 00-00']) !!}
 
         </div>
     </div>

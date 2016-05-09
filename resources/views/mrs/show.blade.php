@@ -176,11 +176,27 @@
                                 </tr>
                                 @endif
 
+                                @unless ($mr->po->isEmpty())
+<tr>
+                                    <th><h5>POs:</h5></th>
+                                   <td>
+                                    <ul>
+                                        @foreach ($mr->po as $p)
+                                            <li>  <a href=" {{ action('POsController@show', [$p->slug]) }} " > <span> {{ $p->po_no }} </span></a></li>
+
+                                        @endforeach
+                                    </ul>
+                                   </td>
+</tr>
+                                @endunless
+
                                 </tbody>
                                 </thead>
 
 
                             </table>
+
+
 
                             @unless ($mr->tags->isEmpty())
 

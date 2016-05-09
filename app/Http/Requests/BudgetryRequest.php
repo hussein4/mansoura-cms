@@ -24,7 +24,13 @@ class BudgetryRequest extends Request
     public function rules()
     {
         return [
-            //
+            'mr_b_no' => 'required|regex:/^([A-Z]{3,}\s\d{3}\-\d{2})$/',
+            'mr_b_subject'=>'required|regex:/^[a-zA-Z0-9\s]*$/',
+            'mr_b_date'=>'required|regex:/^[a-zA-Z0-9\s\-\:]*$/',
+            'mr_b_received_date'=>'required',
+            'mr_b_officer'=>'required|regex:/^[a-zA-Z]*$/',
+            
+            
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 <div class="form-group" >
     {!! Form::label('po_no', 'PO Number:') !!}
-    {!! Form::text('po_no',null , ['class'=> 'form-control']) !!}
+    {!! Form::text('po_no',null , ['class'=> 'form-control','placeholder'=>'0000-0000']) !!}
 </div>
 
 <div class="form-group" >

@@ -2,7 +2,7 @@
 
 <div class="form-group" >
     {!! Form::label('mr_no', 'MR Number:') !!}
-    {!! Form::text('mr_no', null , ['class'=> 'form-control']) !!}
+    {!! Form::text('mr_no', null , ['class'=> 'form-control' ,'placeholder'=>'MANS 000-00']) !!}
 </div>
 
 
@@ -237,7 +237,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('mr_offers_evaluation', 'Offers Evaluation:') !!}
+    {!! Form::label('mr_offers_evaluation', 'Offers Evaluation') !!}
     <div class="row">
         <div class='col-sm-6'>
             {!! Form::input('text','mr_offers_evaluation',$mr->mr_offers_evaluation, ['class'=> 'form-control','id'=>'datetimepicker39']) !!}
@@ -247,6 +247,11 @@
 
 
 
+<div class="form-group">
+
+    {!! Form::label('po_mr_list', 'PO:') !!}
+    {!! Form::select('po_mr_list[]',$po,null,[ 'class'=>'form-control','id'=> 'po_mr_list' ,'multiple']) !!}
+</div>
 
 <div class="form-group">
 
