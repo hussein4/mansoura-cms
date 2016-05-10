@@ -54,6 +54,7 @@ class MR extends Model  implements SluggableInterface
         'mr_offers_evaluation',
         'mr_sent_for_budget_expansion',
         'mr_sent_for_budget_expansion_reminder',
+        'mr_remarks',
 
 
         'slug',

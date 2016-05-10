@@ -35,6 +35,7 @@ class Budgetry extends Model implements SluggableInterface
         'mr_budgetry_memo',
         'mr_b_finished',
         'slug',
+        'mr_b_remarks',
         'user_id',
 
     ];

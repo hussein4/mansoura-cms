@@ -64,7 +64,7 @@ class PO extends Model implements SluggableInterface
         'po_invoice_received_date',
         'po_penalty',
         'po_cover_invoice',
-
+        'po_remarks',
         'po_completed',
         'slug',
 

@@ -24,6 +24,7 @@
                                     <th>MR Received Date</th>
                                     <th>Officer</th>
                                     <th>Budgetry Memo to Tech. Dept.</th>
+                                    <th>Remarks</th>
 
 
 
@@ -39,6 +40,7 @@
                                         <td>{{$b->mr_b_received_date}}</td>
                                         <td>{{$b->mr_b_officer}}</td>
                                         <td>{{$b->mr_budgetry_memo}}</td>
+                                        <td>{{$b->mr_b_remarks}}</td>
 
 
 

@@ -176,6 +176,13 @@
                                 </tr>
                                 @endif
 
+                                @if(isset($mr->mr_remarks))
+                                    <tr>
+                                        <th>Remarks </th>
+                                        <td>{{ $mr->mr_remarks }}</td>
+                                    </tr>
+                                @endif
+
                                 @unless ($mr->po->isEmpty())
 <tr>
                                     <th><h5>POs:</h5></th>

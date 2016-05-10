@@ -83,18 +83,11 @@
                                 </tr>
                                 @endif
 
-                                @if(isset($budgetry->mr_sent_for_budget_expansion))
-                                <tr>
-                                    <th>Sent for Budget Expansion  </th>
-                                    <td>{{ $budgetry->mr_sent_for_budget_expansion }}</td>
-                                </tr>
-                                @endif
-
-                                @if(isset($budgetry->mr_sent_for_budget_expansion))
-                                <tr>
-                                    <th>Sent for Budget Expansion Reminder </th>
-                                    <td>{{ $budgetry->mr_sent_for_budget_expansion_reminder }}</td>
-                                </tr>
+                                @if(isset($budgetry->mr_b_remarks))
+                                    <tr>
+                                        <th>Remarks</th>
+                                        <td>{{ $budgetry->mr_b_remarks }}</td>
+                                    </tr>
                                 @endif
 
                                 </tbody>

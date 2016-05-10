@@ -4,7 +4,7 @@
     <div class="row">
         <div class='col-sm-6'>
 
-            {!! Form::input('text','mr_b_no',$budgetry->mr_b_no, ['class'=> 'form-control']) !!}
+            {!! Form::input('text','mr_b_no',$budgetry->mr_b_no, ['class'=> 'form-control','placeholder'=>'MANS-000-00']) !!}
         </div>
     </div>
 </div>
@@ -137,6 +137,11 @@
     </div>
 </div>
 
+
+<div class="form-group">
+    {!! Form::label('mr_b_remarks', 'Remarks:') !!}
+    {!! Form::textarea('mr_b_remarks', null , ['class'=> 'form-control']) !!}
+</div>
 
 
 <div class="form-group">

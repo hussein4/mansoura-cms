@@ -53,6 +53,7 @@ class Tender extends Model implements SluggableInterface
         'mr_t_sending_awarding_faxes',
         'mr_t_sending_fin_memo',
         'mr_t_finished',
+        'mr_t_remarks',
         'slug',
 
         'user_id',

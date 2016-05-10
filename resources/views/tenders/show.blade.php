@@ -240,6 +240,13 @@
                                 </tr>
                                 @endif
 
+                                @if(isset($tender->mr_t_remarks))
+                                    <tr>
+                                        <th>Remarks </th>
+                                        <td>{{ $tender->mr_t_remarks }}</td>
+                                    </tr>
+                                @endif
+
                                 @unless ($tender->po->isEmpty())
                                 <tr>
                                     <th>PO No.</th>

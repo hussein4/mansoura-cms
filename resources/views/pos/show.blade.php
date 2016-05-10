@@ -211,6 +211,13 @@
                                         <td>{{ $po->po_completed }}</td>
                                     </tr>
                                 @endif
+                                @if(isset($po->po_remarks) && !empty ($po->po_remarks))
+                                    <tr>
+                                        <th>Remarks </th>
+                                        <td>{{ $po->po_remarks }}</td>
+                                    </tr>
+                                @endif
+
 
                                 </tbody>
                             </thead>

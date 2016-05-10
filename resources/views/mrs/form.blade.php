@@ -246,6 +246,11 @@
 </div>
 
 
+<div class="form-group">
+    {!! Form::label('mr_remarks', 'Remarks:') !!}
+    {!! Form::textarea('mr_remarks', null , ['class'=> 'form-control']) !!}
+</div>
+
 
 <div class="form-group">
 

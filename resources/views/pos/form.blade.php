@@ -315,6 +315,11 @@
 </div>
 
 
+<div class="form-group">
+    {!! Form::label('po_remarks', 'Remarks:') !!}
+    {!! Form::textarea('po_remarks', null , ['class'=> 'form-control']) !!}
+</div>
+
 
 
 <div class="form-group">
