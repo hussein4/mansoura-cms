@@ -42,6 +42,11 @@
                                     <th>MR Estimated Cost</th>
                                     <td>{{ $mr->mr_estimated_cost }}</td>
                                 </tr>
+                                <tr>
+                                    <th>Currency</th>
+                                    <td>{{ $mr->mr_currency }}</td>
+                                </tr>
+
                                 @unless ($mr->materials->isEmpty())
 
 
